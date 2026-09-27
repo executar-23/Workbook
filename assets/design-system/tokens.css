@@ -1,0 +1,93 @@
+/*
+ * Tokens do Design System — Edição HTML do Workbook (WB-H01–H17)
+ * Deriva de tokens.yaml. Não redeclarar valores soltos em componentes: referenciar var(--...).
+ * status: proposed — ver tokens.yaml e workbook_manual.yaml#html_edition.design_system
+ */
+
+:root {
+  /* cor — neutros */
+  --ws-papel: #FFFFFF;
+  --ws-papel-secundario: #F6F5F2;
+  --ws-linha: #D8D6D0;
+  --ws-tinta-primaria: #1A1A18;
+  --ws-tinta-secundaria: #5C5A54;
+  --ws-tinta-terciaria: #8C8A83;
+
+  /* cor — marca */
+  --ws-marca: #1B3A5C;
+  --ws-marca-forte: #12283F;
+  --ws-foco: #1B3A5C;
+
+  /* cor — estados de registro */
+  --ws-estado-proposed-texto: #8A5A00;
+  --ws-estado-proposed-fundo: #FBF0DA;
+  --ws-estado-proposed-borda: #E4C285;
+  --ws-estado-active-texto: #1E5C34;
+  --ws-estado-active-fundo: #E7F3EA;
+  --ws-estado-active-borda: #8FC79E;
+  --ws-estado-deprecated-texto: #6B6558;
+  --ws-estado-deprecated-fundo: #EFEDE7;
+  --ws-estado-deprecated-borda: #C8C3B7;
+  --ws-estado-archived-texto: #55524B;
+  --ws-estado-archived-fundo: #E7E5DF;
+  --ws-estado-archived-borda: #B9B6AC;
+
+  /* cor — governança */
+  --ws-conflito-texto: #8C2A22;
+  --ws-conflito-fundo: #FBE8E5;
+  --ws-conflito-borda: #E2A79F;
+  --ws-lacuna-texto: #7A4A00;
+  --ws-lacuna-fundo: #FDF0DA;
+  --ws-lacuna-borda: #E7C077;
+  --ws-decisao-texto: #1B3A5C;
+  --ws-decisao-fundo: #E8EEF4;
+  --ws-decisao-borda: #9FB9D1;
+  --ws-gate-texto: #4A2E7A;
+  --ws-gate-fundo: #EFE9F7;
+  --ws-gate-borda: #C6B4E3;
+
+  /* tipografia */
+  --ws-fonte-titulo: 'Source Serif 4', Georgia, serif;
+  --ws-fonte-corpo: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --ws-fonte-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --ws-tam-titulo-capa: 32px;
+  --ws-tam-titulo-parte: 24px;
+  --ws-tam-titulo-capitulo: 19px;
+  --ws-tam-subtitulo: 15px;
+  --ws-tam-corpo: 13px;
+  --ws-tam-legenda: 11px;
+  --ws-tam-id-mono: 12px;
+
+  /* espaçamento */
+  --ws-esp-xs: 4px;
+  --ws-esp-sm: 8px;
+  --ws-esp-md: 16px;
+  --ws-esp-lg: 24px;
+  --ws-esp-xl: 32px;
+  --ws-esp-xxl: 48px;
+
+  /* raio */
+  --ws-raio-sm: 3px;
+  --ws-raio-md: 6px;
+  --ws-raio-lg: 10px;
+
+  /* elevação */
+  --ws-sombra-quadro: 0 1px 2px rgba(26, 26, 24, 0.08);
+  --ws-sombra-ficha: 0 1px 3px rgba(26, 26, 24, 0.12);
+
+  /* impressão */
+  --ws-margem-segura: 20mm;
+}
+
+@media print {
+  :root {
+    /* impressão P&B: estados/gates dependem do rótulo textual em components.md, nunca só da cor */
+    --ws-sombra-quadro: none;
+    --ws-sombra-ficha: none;
+  }
+  @page {
+    size: A4;
+    margin: var(--ws-margem-segura);
+  }
+}

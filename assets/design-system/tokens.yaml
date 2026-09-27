@@ -1,0 +1,75 @@
+# Tokens do Design System — Edição HTML do Workbook (WB-H01–H17)
+#
+# Deliverable: D21-E01 (registry/session_a/architecture.yaml, D21.SD01)
+# Especificação estrutural: registry/session_a/workbook_manual.yaml#html_edition.design_system
+# status: proposed — valores ainda não aprovados por humano (ver AI_AGENT_PROTOCOL.md#modelo-epistêmico).
+# epistemic_class: PROPOSED · source_refs: [SRC-04]
+#
+# Este arquivo é a fonte de verdade dos VALORES de token (a estrutura/escopo vive no registry).
+# tokens.css deriva destes valores; não duplicar números soltos em componentes.
+
+status: proposed
+epistemic_class: PROPOSED
+source_refs: [SRC-04]
+
+cor:
+  # Neutros — papel/tinta, uso editorial (relatório de governança, não produto SaaS)
+  papel: "#FFFFFF"
+  papel_secundario: "#F6F5F2"
+  linha: "#D8D6D0"
+  tinta_primaria: "#1A1A18"
+  tinta_secundaria: "#5C5A54"
+  tinta_terciaria: "#8C8A83"
+  # Marca — usado com moderação (títulos de parte, cabeçalhos de capítulo, links)
+  marca: "#1B3A5C"
+  marca_forte: "#12283F"
+  # Estados de registro (registry status: proposed/active/deprecated/archived)
+  estado_proposed: {texto: "#8A5A00", fundo: "#FBF0DA", borda: "#E4C285"}
+  estado_active: {texto: "#1E5C34", fundo: "#E7F3EA", borda: "#8FC79E"}
+  estado_deprecated: {texto: "#6B6558", fundo: "#EFEDE7", borda: "#C8C3B7"}
+  estado_archived: {texto: "#55524B", fundo: "#E7E5DF", borda: "#B9B6AC"}
+  # Governança (CNF/GAP/DEC — nunca só cor: sempre com rótulo textual, ver components.md)
+  conflito: {texto: "#8C2A22", fundo: "#FBE8E5", borda: "#E2A79F"}
+  lacuna: {texto: "#7A4A00", fundo: "#FDF0DA", borda: "#E7C077"}
+  decisao: {texto: "#1B3A5C", fundo: "#E8EEF4", borda: "#9FB9D1"}
+  gate: {texto: "#4A2E7A", fundo: "#EFE9F7", borda: "#C6B4E3"}
+  foco: "#1B3A5C"   # anel de foco / acessibilidade de teclado
+
+tipografia:
+  familia_titulo: "'Source Serif 4', Georgia, serif"        # capa, títulos de parte/capítulo — tom editorial
+  familia_corpo: "'Source Sans 3', 'Segoe UI', sans-serif"   # texto corrido, tabela, quadro, ficha, lista
+  familia_mono: "'IBM Plex Mono', 'Courier New', monospace"  # IDs (WB-Hxx, Dxx, CNF-nnn), diagrama textual
+  escala:
+    titulo_capa: {tamanho: 32px, peso: 700, entrelinha: 1.15}
+    titulo_parte: {tamanho: 24px, peso: 700, entrelinha: 1.2}
+    titulo_capitulo: {tamanho: 19px, peso: 600, entrelinha: 1.25}
+    subtitulo: {tamanho: 15px, peso: 600, entrelinha: 1.3}
+    corpo: {tamanho: 13px, peso: 400, entrelinha: 1.5}
+    legenda: {tamanho: 11px, peso: 400, entrelinha: 1.4}
+    id_mono: {tamanho: 12px, peso: 500, entrelinha: 1.3, letter_spacing: 0.02em}
+
+espacamento:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 32px
+  xxl: 48px
+
+raio:
+  sm: 3px    # chip de estado/gate
+  md: 6px    # quadro, ficha
+  lg: 10px   # capa, painel executivo (WB-H15)
+
+elevacao:
+  nenhuma: none
+  quadro: "0 1px 2px rgba(26,26,24,0.08)"
+  ficha: "0 1px 3px rgba(26,26,24,0.12)"
+
+impressao:
+  # "area_segura" citada em D21-DOC-PWB-001#printing — margens seguras para PDF/impressão A4
+  pagina: A4
+  margem_segura: 20mm
+  cabecalho_repetido: [nome_ecossistema, id_parte, versao]
+  rodape_repetido: [numero_pagina, data_consolidacao]
+  regra: cor não pode ser o único portador de significado (estados/gates repetem rótulo textual no impresso P&B)

@@ -22,6 +22,7 @@ Fonte canônica, versionada e legível por máquina do Master Schema do ecossist
 | `schema/workbook.schema.yaml` | JSON Schema do documento consolidado |
 | `scripts/validate.py` | Schema + integridade referencial + regra B→A |
 | `docs/` | Arquitetura, IDs, navegação, protocolo de agentes |
+| `assets/design-system/` | Tokens + componentes da edição HTML do Workbook (WB-H01–H17), deliverable `D21-E01` — `status: proposed` |
 
 ## Validação
 
