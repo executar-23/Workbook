@@ -33,6 +33,17 @@ Os outros 3 arquivos deste lote (`Schema_de_Producao_Campanha_.zip`, `PD-CLB-202
 |---|---|---|
 | `D01-UNIFIED-AGENT-PACKAGE/` | `D01_UNIFIED_AGENT_PACKAGE.zip` | O corpus primário mais denso recebido até agora: 4.287 parágrafos, 75 tópicos (`TOP-001..075`) cobrindo praticamente toda a arquitetura do EXECUTAR App e do ecossistema de agentes, mais o trace completo dos 29 campos do `D01-DOC-TAP-001` (todos ainda não preenchidos). Traz duas **correções declaradas pela própria fonte** (`CORR-001`, `CORR-002`) — uma delas toca diretamente o `GAP-003` já registrado. Ver `INS-013` para detalhes. |
 
+### Lote 5 (recebido 2026-09-27, mesma sessão)
+
+| Pasta | Origem | Conteúdo |
+|---|---|---|
+| `EXECUTAR-COP-V0.3.0/` | `executar-cop-v0.3.0.zip` | Plugin orquestrador `executar-cop` (agents, 39 commands, evals, referências, **30 skills** já unificadas) |
+| `COPILOTO-OPERACIONAL/` | `copiloto-operacional.zip` | Plugin/MCP server funcional (`src/`, `dist/servidor.mjs`, agents, 14 commands, 1 skill) |
+| `EXECUTAR-OPERACOES/` | `EXECUTAR-OPERACOES._.zip` | Bundle de 12 zips/skill/docx/png, incluindo uma cópia integral (2.795 arquivos) do repositório público de plugins da Anthropic |
+| `MAESTRO-HANDOFF/` | `Maestro-Handoff_.zip` | Handoff de projeto de orquestração "Maestro" — **não é skill** |
+
+Este lote também alimenta **`skills-catalog/`** (pasta irmã de `insumos/` na raiz do repo): 31 skills catalogadas a partir de `EXECUTAR-COP-V0.3.0/skills/*` (30) + `COPILOTO-OPERACIONAL/skills/copiloto-operacional` (1). Ver `skills-catalog/README.md` e `insumos/SOURCE_REGISTER.yaml` (`INS-014`..`017`) para o detalhamento completo de proveniência e exclusões (a cópia do marketplace da Anthropic e os zips já superados pela vendorização do ADR-0003, incluindo `EXECUTAR-TAREFAS-full-skill-directory.zip` que é o mesmo `execution-toolkit` em empacotamento anterior, não foram recatalogados).
+
 Ver `SOURCE_REGISTER.yaml` para o inventário formal (id `INS-nnn`, hash, relação sugerida, status).
 
 ## Regras para o agente que for processar isto

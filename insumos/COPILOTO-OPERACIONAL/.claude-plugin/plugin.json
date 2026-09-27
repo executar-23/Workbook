@@ -1,0 +1,70 @@
+{
+  "$schema": "https://code.claude.com/schemas/plugin.json",
+  "name": "copiloto-operacional",
+  "displayName": "Copiloto Operacional EXECUTAR",
+  "version": "1.0.0",
+  "description": "Opera o programa EXECUTAR direto no Claude Code: /hoje, /fila, /feito, /progresso, /campanha, /status-report (com envio opcional por e-mail via Resend), /criar-* e reconciliação, sobre as issues do GitHub (fonte da verdade). Mesmo núcleo do Worker do ADR-015, sem Cloudflare.",
+  "author": { "name": "Sas-Executar", "url": "https://github.com/Sas-Executar" },
+  "homepage": "https://github.com/Sas-Executar/executar-Blog/tree/main/plugins/copiloto-operacional",
+  "repository": "https://github.com/Sas-Executar/executar-Blog",
+  "keywords": ["executar", "copiloto", "github-issues", "campanha", "status-report", "pt-br"],
+  "userConfig": {
+    "github_token": {
+      "type": "string",
+      "title": "Token do GitHub",
+      "description": "Token fine-grained: Issues (leitura e escrita) no repositório das tarefas; Contents e Pull requests (leitura e escrita) no repositório das definições. Fica no keychain, nunca no plugin.",
+      "sensitive": true,
+      "required": false
+    },
+    "ops_repo": {
+      "type": "string",
+      "title": "Repositório das tarefas",
+      "description": "owner/repo onde as tarefas são issues com labels state/* e bloco task-spec (execução). Sas-Executar/Copiloto passou a ser só catálogo do ecossistema (leitura) — ADR-015/016, emenda 2026-09-26.",
+      "default": "Sas-Executar/executar-Blog"
+    },
+    "blog_repo": {
+      "type": "string",
+      "title": "Repositório das definições",
+      "description": "owner/repo com ops/workflows, ops/routines, ops/runbooks e ops/areas.yaml (só a main vale; propostas viram PR).",
+      "default": "Sas-Executar/executar-Blog"
+    },
+    "papel": {
+      "type": "string",
+      "title": "Papel",
+      "description": "OPERADOR escreve tudo; EDITOR só /feito, /ideia editorial e relatórios; LEITOR só lê. Valor desconhecido vira LEITOR.",
+      "default": "OPERADOR",
+      "options": ["OPERADOR", "EDITOR", "LEITOR"]
+    },
+    "operador": {
+      "type": "string",
+      "title": "Seu e-mail (autoria)",
+      "description": "Aparece na auditoria e nos PRs de /criar-*.",
+      "default": ""
+    },
+    "briefing": {
+      "type": "boolean",
+      "title": "Briefing ao abrir a sessão",
+      "description": "Mostra /hoje no início de cada sessão (somente leitura; equivale à rotina ROT-001).",
+      "default": false
+    },
+    "resend_api_key": {
+      "type": "string",
+      "title": "Chave da API do Resend",
+      "description": "Só para /status-report ... enviar. Sem ela, enviar responde unsupported — o relatório continua sendo gravado como arquivo normalmente. Fica no keychain, nunca no plugin.",
+      "sensitive": true,
+      "required": false
+    },
+    "email_de": {
+      "type": "string",
+      "title": "Remetente do e-mail (From)",
+      "description": "Precisa ser um endereço de um domínio verificado na sua conta Resend, ex.: \"Copiloto EXECUTAR <copiloto@seu-dominio.com>\". Sem isso, o Resend recusa o envio.",
+      "default": ""
+    },
+    "email_para": {
+      "type": "string",
+      "title": "Destinatário padrão do /status-report ... enviar",
+      "description": "Usado quando o comando não traz \"para: outro@dominio\". Pode ser sobrescrito por chamada.",
+      "default": "executar-rotina@outlook.com"
+    }
+  }
+}

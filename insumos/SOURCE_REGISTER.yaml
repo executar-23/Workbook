@@ -319,3 +319,151 @@ sources:
         como "sugestão" até confirmação formal no prefill, por consistência
         com as demais entradas deste registro.
     status: NAO_PROCESSADO
+
+  # --- lote 5, recebido 2026-09-27 (mesma sessão) ---
+  # Estes 4 itens alimentam também o catálogo de Skills em skills-catalog/
+  # (ver skills-catalog/README.md e skills-catalog/reports/). O registro
+  # aqui cobre só a proveniência bruta, não repete os metadados de skill.
+
+  - id: INS-014
+    title: executar-cop v0.3.0 (plugin/agente orquestrador)
+    path: insumos/EXECUTAR-COP-V0.3.0/
+    format: repositório de plugin Claude Code
+    plugin: {name: executar-cop, version: 0.3.0}
+    contents_summary: >
+      .claude-plugin/plugin.json; agents/ (4: orquestrador-cop,
+      dominio-operacoes, dominio-produto, cadeia-de-valor-proprietaria);
+      commands/ (39 slash commands); evals/ (4 suites com graders);
+      references/ (cmd-cop-index.md — índice único de IDs verbais CV-XXX-NNN,
+      grafo-dependencias.json+schema, nucleo-dependencias.md); scripts/;
+      assets/design-tokens/; skills/ com 30 skills (ver skills-catalog/);
+      LICENSE-APACHE-2.0; THIRD_PARTY_NOTICES.md; CONNECTORS.md.
+    license_note: >
+      cmd-cop-index.md declara que, desde a emenda b do ADR-0003
+      (2026-09-27), as skills historicamente distribuídas como plugins
+      Anthropic separados (operations, productivity, product-management,
+      cowork-plugin-management) foram vendorizadas como skills internas
+      do executar-cop sob Apache-2.0 (ver THIRD_PARTY_NOTICES.md). Por
+      isso v0.3.0 já chega com as 30 skills unificadas em skills/, sem
+      necessidade de reconciliar separadamente os zips soltos de
+      INS-016.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M5, M6]
+      domains: [D01, D07]
+      confidence: alta
+      nao_vinculado_formalmente: true
+    status: PARCIALMENTE_PROCESSADO
+    processing_note: 'skills/ catalogadas em skills-catalog/; demais pastas (agents, commands, evals, references, scripts, assets) permanecem apenas em insumos/'
+
+  - id: INS-015
+    title: copiloto-operacional (plugin/MCP server funcional)
+    path: insumos/COPILOTO-OPERACIONAL/
+    format: repositório de plugin Claude Code + servidor MCP TypeScript compilado
+    plugin: {name: copiloto-operacional, version: 1.0.0}
+    contents_summary: >
+      skills/copiloto-operacional/SKILL.md (1 skill); src/*.ts (servidor,
+      tipos, d1-sqlite, entrada); dist/servidor.mjs (build compilado,
+      ~1,1 MB); agents/ (definições, relatórios, campanha, backlog,
+      reconciliação); commands/ (14 slash commands: hoje, amanha, feito,
+      urgente, campanha, status-report, fila, ideia, confirmar, cancelar,
+      criar-workflow, criar-rotina, criar-runbook, progresso, espelho,
+      ajuda, reconciliar); hooks/hooks.json; .claude-plugin/plugin.json;
+      .mcp.json; README.md.
+    summary: >
+      Opera o programa EXECUTAR direto no Claude Code sobre as issues do
+      GitHub (fonte da verdade), mesmo núcleo do Worker do ADR-015, sem
+      Cloudflare. Único item deste lote referenciado no CLAUDE.md do
+      próprio operador de sessão (repositório executar-23/Copiloto-ops).
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M5]
+      domains: [D01, D07, D08]
+      confidence: alta
+      nao_vinculado_formalmente: true
+      nota: >
+        Pertence conceitualmente ao repositório operacional
+        executar-23/Copiloto-ops (ver CLAUDE.md), não ao Workbook; mantido
+        aqui só como inbox porque foi enviado nesta conversa e por pedido
+        explícito o catálogo de skills vive no Workbook.
+    status: PARCIALMENTE_PROCESSADO
+    processing_note: 'skill copiloto-operacional catalogada em skills-catalog/; src/dist/agents/commands/hooks permanecem apenas em insumos/'
+
+  - id: INS-016
+    title: EXECUTAR-OPERACOES (bundle de 12 zips/skill/docx/png)
+    path: insumos/EXECUTAR-OPERACOES/
+    format: pasta com múltiplos zips e arquivos soltos
+    contents:
+      - anthropic-knowledge-work-plugins.zip (3.323.464 bytes; 2.795 entradas)
+      - operations.zip
+      - productivity.zip
+      - product-management.zip
+      - cowork-plugin-management.zip
+      - product-code-development.skill.zip
+      - executar-plan-mode.zip
+      - executar-arvore-roadmap.zip
+      - EXECUTAR-TAREFAS-full-skill-directory.zip
+      - EXECUTAR-ARVORE-VISUAL-v1.0.zip
+      - obsidian-editorial-pipeline-v2.2.skill (zip completo apesar da extensão)
+      - 'CMD-COP-001 — Índice de Slash Commands e IDs Verbais.docx'
+      - calendario-light-mode-preview.png
+    excluded_from_skills_catalog:
+      - id: anthropic-knowledge-work-plugins.zip
+        reason: >
+          Cópia integral do repositório público de plugins da Anthropic
+          (customer-support, design, enterprise-search, small-business,
+          sales, bio-research, partner-built, human-resources, operations,
+          pdf-viewer, product-management, marketing, finance, legal, data,
+          engineering, productivity, cowork-plugin-management — 17
+          categorias, 2.795 arquivos). Catalogar item a item seria
+          recatalogar o marketplace da Anthropic, não as skills do
+          usuário; mantido só como arquivo de referência/hash.
+      - id: 'operations.zip / productivity.zip / product-management.zip / cowork-plugin-management.zip'
+        reason: >
+          Estado anterior à vendorização — as mesmas skills já chegam
+          unificadas e mais completas dentro de INS-014
+          (executar-cop v0.3.0/skills/). Mantidos como histórico de
+          proveniência, não recatalogados.
+      - id: 'product-code-development.skill.zip / executar-plan-mode.zip / executar-arvore-roadmap.zip'
+        reason: Variantes/versões anteriores das mesmas skills já presentes em INS-014; catalogadas uma única vez a partir de INS-014.
+      - id: EXECUTAR-TAREFAS-full-skill-directory.zip
+        reason: >
+          Apesar do nome da pasta, o SKILL.md interno declara
+          `name: execution-toolkit` com a mesma description da skill
+          já presente em INS-014/skills/execution-toolkit — é a mesma
+          skill em empacotamento anterior, não uma 32ª skill. Registrado
+          como fonte histórica adicional no `duplicates-and-overlaps.md`.
+      - id: 'CMD-COP-001...docx / calendario-light-mode-preview.png'
+        reason: Documentação/asset avulso, não é skill.
+    included_in_skills_catalog:
+      - id: EXECUTAR-ARVORE-VISUAL-v1.0.zip
+        note: 'skill/executar-mergulhe/ já coberta via INS-014 (mesmo slug); pacote também traz index.html/docs/exemplos/modelos exclusivos, mantidos só em insumos/.'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M5, M6]
+      domains: [D01, D07, D11]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: PARCIALMENTE_PROCESSADO
+
+  - id: INS-017
+    title: Maestro-Handoff (pacote de handoff de projeto — NÃO é skill)
+    path: insumos/MAESTRO-HANDOFF/
+    format: markdown + zip aninhado (não extraído)
+    contents:
+      - PROMPT-DE-PARTIDA.md
+      - HANDOFF.md
+      - divergencias-e-lacunas.md
+      - maestro-handoff.zip (34 itens: contratos C-00..C-04, mapa de lançamento F0-F8, matriz de entregas x lanes, ficha de 22 pontos, inventário de skills, prompts por estágio E0-E9, maestro.agent-spec.md, maestro-topologia.md, ESTADO.md)
+    summary: >
+      Handoff de um projeto de orquestração "Maestro" (arquitetura alvo,
+      contratos entre agentes, estado de execução) — material de
+      governança/planejamento, não uma skill executável. Não entra em
+      skills-catalog/.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M6]
+      domains: [D01, D22]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
