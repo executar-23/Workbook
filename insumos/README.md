@@ -19,6 +19,14 @@ Esta pasta **não é** `registry/` (canônico, validado por `scripts/validate.py
 | `SCHEMA-PRODUCAO-CAMPANHA/` | `Schema_de_Producao_Campanha_.zip` | `MASTER_EDITORIAL_RISCO_COGNITIVO_V1.xlsx` (9 abas, schema de produção editorial); `campanha_tdah_gestao_projetos_12_abas_numbers_print.xlsx` (12 abas — **atenção**: os rótulos `D01`..`D10` aí são capítulos de ebook sobre TDAH, não os domínios do Workbook); `EXECUTAR-CAMPANHA-ESTRATEGICA.txt` (posicionamento de marca do app EXECUTAR); `EXECUTAR-CAMPANHA-ESTRATEGICA-nota-video-gtm.txt` (nota sobre um pacote de vídeo GTM que **não** foi enviado). O `Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx` deste zip é byte-idêntico ao de `RISCO-COGNITIVO-HUB-EDITORIAL-CMS/` (lote 1) — não duplicado aqui, ver `DUP-001` no registro. |
 | `SOP-EXECUTAR-OPERATING-SYSTEM/` | `SOP_EXECUTAR_Operating_System.zip` | PDF "Process Document EXECUTAR Operating System" (~9 páginas: Controle Operacional, Purpose…). |
 
+### Lote 3 (recebido 2026-09-27, mesma sessão, "Bench 04")
+
+| Pasta | Origem | Conteúdo |
+|---|---|---|
+| `EVIDENCIAS/` | `EVIDENCIAS_.zip` | `DOC-0021.html` — leitor "EXECUTAR · Workbook Reader Integral" que renderiza vários markdowns-fonte (Matriz mestre de técnicas/práticas, Plano Final Integrado, Editorial, Infoprodutos, Master Index de Produtos Físicos); `base_evidencias_tdah_adulto_WAREHOUSE.json` — 240 evidências sobre TDAH adulto com fonte, confiança e limitações por registro. |
+
+Os outros 3 arquivos deste lote (`Schema_de_Producao_Campanha_.zip`, `PD-CLB-20260906-F01-DOC-V01_YAML_BUNDLE_2.zip`, `SOP_EXECUTAR_Operating_System.zip`) são **reenvios byte-idênticos** do lote 2 — nada novo foi copiado; ver `DUP-002`, `DUP-003`, `DUP-004` no registro.
+
 Ver `SOURCE_REGISTER.yaml` para o inventário formal (id `INS-nnn`, hash, relação sugerida, status).
 
 ## Regras para o agente que for processar isto

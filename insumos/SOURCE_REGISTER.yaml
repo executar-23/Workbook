@@ -194,3 +194,72 @@ sources:
     sha256: '92626db713ff7f656421d50afc2b69946488e3c6efbf2971790e6252aa3e700a'
     note: Byte-idêntico ao arquivo já registrado em INS-004; não copiado para insumos/ novamente.
     status: DUPLICADO_IGNORADO
+
+  # --- lote 3, recebido 2026-09-27 (mesma sessão, mensagem "Bench 04") ---
+  # 3 dos 4 arquivos enviados neste lote são reenvios byte-idênticos do lote 2 (mesmo sha256
+  # do zip inteiro); apenas registrados como duplicata, sem novo conteúdo.
+
+  - id: DUP-002
+    title: Schema_de_Producao_Campanha_.zip (reenvio)
+    duplicate_of: [INS-006, INS-007, INS-008, INS-009, DUP-001]
+    note: Zip inteiro byte-idêntico ao já processado no lote 2; nenhum arquivo novo.
+    status: DUPLICADO_IGNORADO
+
+  - id: DUP-003
+    title: PD-CLB-20260906-F01-DOC-V01_YAML_BUNDLE_2.zip (reenvio)
+    duplicate_of: INS-005
+    note: Zip inteiro byte-idêntico ao já processado no lote 2; nenhum arquivo novo.
+    status: DUPLICADO_IGNORADO
+
+  - id: DUP-004
+    title: SOP_EXECUTAR_Operating_System.zip (reenvio)
+    duplicate_of: INS-010
+    note: Zip inteiro byte-idêntico ao já processado no lote 2; nenhum arquivo novo.
+    status: DUPLICADO_IGNORADO
+
+  - id: INS-011
+    title: 'DOC-0021.html — EXECUTAR · Workbook Reader Integral'
+    path: insumos/EVIDENCIAS/DOC-0021.html
+    format: html
+    bytes: 347005
+    sha256: 'c49f7bcea3eac6c322b584d1bbae0ab018ae50404f0dbc2b418b25033d0dd253'
+    summary: >
+      Leitor HTML autocontido que renderiza vários markdowns-fonte em
+      sequência ("Sas-06(1).md", "Sas-07(1).md" entre outros), incluindo
+      uma "Matriz mestre — técnicas, práticas, métodos e terminologias",
+      um "Plano Final Integrado" (blocos NOW/DEPENDÊNCIAS/PRODUÇÃO/
+      INTEGRAÇÃO/DISTRIBUIÇÃO/EVIDÊNCIA/DONE?), e seções "Editorial",
+      "Infoprodutos" e "Sericoes" (sic) com um "Master Index — Produtos
+      Físicos".
+    headings_observed: ['WORKBOOK INDEX / ORDEM DAS FONTES', 'Matriz mestre — técnicas práticas métodos e terminologias', 'Plano Final Integrado', 'Editorial', 'Infoprodutos', 'Sericoes / Master Index — Produtos Físicos']
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M8, M9, M10]
+      domains: [D07, D16, D18, D21]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+      nota: Conteúdo denso e não estruturado por IDs próprios; exige leitura completa antes de qualquer mapeamento.
+    status: NAO_PROCESSADO
+
+  - id: INS-012
+    title: base_evidencias_tdah_adulto_WAREHOUSE.json
+    path: insumos/EVIDENCIAS/base_evidencias_tdah_adulto_WAREHOUSE.json
+    format: json (representação tabular de um csv de origem)
+    bytes: 327715
+    sha256: 'b1aedb13dff7e58689ecd98e87b9f476396fc4b30f9c77cfd16fc62d616be33c'
+    row_count: 240
+    columns: [evidencia_id, tipo_registro, conjunto, tema, subtema, indicador_ou_achado, detalhe_secundario, grupo_segmento, valor_pontual, valor_minimo, valor_maximo, unidade, comparador_grupo, comparador_valor, periodo, geografia, base_amostral, natureza_qualitativa, publico_contexto, fonte_nome, fonte_tipo, arquivo_origem, pagina_secao, referencia_indicada, status_validacao, confianca_extracao, observacoes_limitacoes, 'perguntas_694_vinculadas', 'n_perguntas_694_vinculadas', score_vinculo_max]
+    summary: >
+      Base de 240 evidências (qualitativas e quantitativas) sobre TDAH
+      adulto, cada registro já com fonte, tipo, confiança de extração e
+      limitações — no mesmo espírito epistemológico do
+      EXECUTAR_ADHD_PM_CANONICAL_BUNDLE (INS-002), mas maior e mais granular.
+      Menciona um conjunto externo "perguntas_694" ainda não recebido.
+    gap: 'O conjunto "perguntas_694" referenciado nas colunas não está em insumos/.'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: []
+      domains: [D09]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
