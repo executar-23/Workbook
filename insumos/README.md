@@ -27,6 +27,12 @@ Esta pasta **não é** `registry/` (canônico, validado por `scripts/validate.py
 
 Os outros 3 arquivos deste lote (`Schema_de_Producao_Campanha_.zip`, `PD-CLB-20260906-F01-DOC-V01_YAML_BUNDLE_2.zip`, `SOP_EXECUTAR_Operating_System.zip`) são **reenvios byte-idênticos** do lote 2 — nada novo foi copiado; ver `DUP-002`, `DUP-003`, `DUP-004` no registro.
 
+### Lote 4 (recebido 2026-09-27, mesma sessão)
+
+| Pasta | Origem | Conteúdo |
+|---|---|---|
+| `D01-UNIFIED-AGENT-PACKAGE/` | `D01_UNIFIED_AGENT_PACKAGE.zip` | O corpus primário mais denso recebido até agora: 4.287 parágrafos, 75 tópicos (`TOP-001..075`) cobrindo praticamente toda a arquitetura do EXECUTAR App e do ecossistema de agentes, mais o trace completo dos 29 campos do `D01-DOC-TAP-001` (todos ainda não preenchidos). Traz duas **correções declaradas pela própria fonte** (`CORR-001`, `CORR-002`) — uma delas toca diretamente o `GAP-003` já registrado. Ver `INS-013` para detalhes. |
+
 Ver `SOURCE_REGISTER.yaml` para o inventário formal (id `INS-nnn`, hash, relação sugerida, status).
 
 ## Regras para o agente que for processar isto
