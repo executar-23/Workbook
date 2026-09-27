@@ -1,0 +1,159 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://github.com/executar-23/Workbook/schema/workbook.schema.yaml
+title: Workbook EXECUTAR Registry
+type: object
+additionalProperties: false
+required: [schema_version, metadata, agent_contract, architecture, portfolio, governance]
+properties:
+  schema_version:
+    type: string
+    pattern: '^1\\.[0-9]+\\.[0-9]+$'
+  metadata:
+    type: object
+    additionalProperties: false
+    required: [id, name, language, status, updated_at]
+    properties:
+      id: {const: GOV-WORKBOOK-001}
+      name: {type: string, minLength: 1}
+      language: {const: pt-BR}
+      status: {$ref: '#/$defs/status'}
+      updated_at: {type: string, format: date}
+  agent_contract:
+    type: object
+    additionalProperties: false
+    required: [read_order, required_flow, invariants]
+    properties:
+      read_order: {type: array, minItems: 1, items: {type: string}}
+      required_flow: {const: 'sync -> inspect -> change -> validate -> commit -> sync'}
+      invariants: {type: array, minItems: 1, uniqueItems: true, items: {type: string}}
+  architecture:
+    type: object
+    additionalProperties: false
+    required: [functional_hierarchy, macro_areas, domains]
+    properties:
+      functional_hierarchy:
+        type: array
+        const: [ecosystem, macro_area, domain, subdomain, process_or_cycle, deliverable, artifact_or_record]
+      macro_areas:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/macroArea'}
+      domains:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/domain'}
+  portfolio:
+    type: object
+    additionalProperties: false
+    required: [programs, initiatives]
+    properties:
+      programs: {type: array, minItems: 1, items: {$ref: '#/$defs/program'}}
+      initiatives: {type: array, minItems: 1, items: {$ref: '#/$defs/initiative'}}
+  governance:
+    type: object
+    additionalProperties: false
+    required: [gates, sources, id_migrations]
+    properties:
+      gates: {type: array, items: {$ref: '#/$defs/gate'}}
+      sources: {type: array, items: {$ref: '#/$defs/source'}}
+      id_migrations: {type: array, items: {$ref: '#/$defs/migration'}}
+$defs:
+  status:
+    type: string
+    enum: [proposed, active, deprecated, archived]
+  entityBase:
+    type: object
+    required: [id, name, status]
+    properties:
+      id: {type: string}
+      name: {type: string, minLength: 1}
+      description: {type: string}
+      status: {$ref: '#/$defs/status'}
+      source_refs: {type: array, uniqueItems: true, items: {type: string, pattern: '^SRC-[0-9]{2}$'}}
+  macroArea:
+    allOf:
+      - {$ref: '#/$defs/entityBase'}
+      - type: object
+        additionalProperties: false
+        required: [id, name, status, purpose]
+        properties:
+          id: {type: string, pattern: '^A[0-9]{2}$'}
+          name: {type: string}
+          description: {type: string}
+          status: {$ref: '#/$defs/status'}
+          source_refs: {type: array, uniqueItems: true, items: {type: string}}
+          purpose: {type: string, minLength: 1}
+  domain:
+    allOf:
+      - {$ref: '#/$defs/entityBase'}
+      - type: object
+        additionalProperties: false
+        required: [id, name, status, primary_area]
+        properties:
+          id: {type: string, pattern: '^D[0-9]{2}$'}
+          name: {type: string}
+          description: {type: string}
+          status: {$ref: '#/$defs/status'}
+          source_refs: {type: array, uniqueItems: true, items: {type: string}}
+          primary_area: {type: string, pattern: '^A[0-9]{2}$'}
+          supporting_areas: {type: array, uniqueItems: true, items: {type: string, pattern: '^A[0-9]{2}$'}}
+  program:
+    allOf:
+      - {$ref: '#/$defs/entityBase'}
+      - type: object
+        additionalProperties: false
+        required: [id, name, status]
+        properties:
+          id: {type: string, pattern: '^P[0-9]{2}$'}
+          name: {type: string}
+          description: {type: string}
+          status: {$ref: '#/$defs/status'}
+          source_refs: {type: array, uniqueItems: true, items: {type: string}}
+  initiative:
+    allOf:
+      - {$ref: '#/$defs/entityBase'}
+      - type: object
+        additionalProperties: false
+        required: [id, name, status, program_id, consumes_areas, consumes_domains]
+        properties:
+          id: {type: string, pattern: '^M[0-9]+(?:\\.[0-9]+)?$'}
+          name: {type: string}
+          description: {type: string}
+          status: {$ref: '#/$defs/status'}
+          source_refs: {type: array, uniqueItems: true, items: {type: string}}
+          program_id: {type: string, pattern: '^P[0-9]{2}$'}
+          parent_initiative: {type: string, pattern: '^M[0-9]+(?:\\.[0-9]+)?$'}
+          consumes_areas: {type: array, uniqueItems: true, items: {type: string, pattern: '^A[0-9]{2}$'}}
+          consumes_domains: {type: array, uniqueItems: true, items: {type: string, pattern: '^D[0-9]{2}$'}}
+  gate:
+    allOf:
+      - {$ref: '#/$defs/entityBase'}
+      - type: object
+        additionalProperties: false
+        required: [id, name, status]
+        properties:
+          id: {type: string, pattern: '^G(?:0[0-9]|1[01])$'}
+          name: {type: string}
+          description: {type: string}
+          status: {$ref: '#/$defs/status'}
+          source_refs: {type: array, uniqueItems: true, items: {type: string}}
+          acceptance_criteria: {type: array, items: {type: string}}
+  source:
+    type: object
+    additionalProperties: false
+    required: [id, title, type, status]
+    properties:
+      id: {type: string, pattern: '^SRC-[0-9]{2}$'}
+      title: {type: string, minLength: 1}
+      type: {type: string, enum: [document, repository, decision, external_standard]}
+      location: {type: string}
+      status: {$ref: '#/$defs/status'}
+  migration:
+    type: object
+    additionalProperties: false
+    required: [old_id, new_id, reason, effective_at]
+    properties:
+      old_id: {type: string}
+      new_id: {type: string}
+      reason: {type: string, minLength: 1}
+      effective_at: {type: string, format: date}

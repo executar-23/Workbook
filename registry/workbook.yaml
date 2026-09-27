@@ -1,0 +1,113 @@
+schema_version: 1.0.0
+metadata:
+  id: GOV-WORKBOOK-001
+  name: Sistema Integrado de Governança e Operação EXECUTAR
+  language: pt-BR
+  status: proposed
+  updated_at: '2026-09-27'
+
+agent_contract:
+  read_order:
+    - AGENTS.md
+    - docs/AI_AGENT_PROTOCOL.md
+    - schema/workbook.schema.yaml
+    - registry/workbook.yaml
+  required_flow: sync -> inspect -> change -> validate -> commit -> sync
+  invariants:
+    - IDs publicados são estáveis e nunca são reutilizados.
+    - Macroáreas e domínios representam capacidades permanentes.
+    - Produtos e iniciativas consomem capacidades por referência.
+    - Toda referência aponta para um ID existente.
+    - Conteúdo sem aprovação permanece com status proposed.
+
+architecture:
+  functional_hierarchy:
+    - ecosystem
+    - macro_area
+    - domain
+    - subdomain
+    - process_or_cycle
+    - deliverable
+    - artifact_or_record
+
+  macro_areas:
+    - {id: A00, name: Governança Estratégia e Gestão, purpose: Direção decisões planejamento e controles, status: proposed}
+    - {id: A01, name: Negócio e Go to Market, purpose: Modelo de negócio mercado aquisição e comercialização, status: proposed}
+    - {id: A02, name: Produto e Experiência, purpose: Discovery e definição da solução, status: proposed}
+    - {id: A03, name: Handoff Produto para Engenharia, purpose: Preparação de pacotes implementáveis, status: proposed}
+    - {id: A04, name: Arquitetura Engenharia e Implementação, purpose: Arquitetura construção integração e qualidade técnica, status: proposed}
+    - {id: A05, name: Operações Plataforma e Segurança, purpose: Produção observabilidade segurança e continuidade, status: proposed}
+    - {id: A06, name: Dados Pesquisa e Conhecimento, purpose: Evidência dados pesquisa e inteligência, status: proposed}
+    - {id: A07, name: Corporativo e Suporte, purpose: Funções empresariais estruturantes, status: proposed}
+    - {id: A08, name: Conteúdo Comunicação e Growth, purpose: Produção editorial distribuição comunicação e crescimento, status: proposed}
+    - {id: A09, name: Execução e Planejamento do Trabalho, purpose: Planejamento convertido em trabalho executável, status: proposed}
+    - {id: A10, name: Documentação e Governança do Conhecimento, purpose: Referências contratos registros e sínteses, status: proposed}
+    - {id: A11, name: Ferramentas IA e Ativos Reutilizáveis, purpose: Capacidades técnicas e ativos reutilizáveis, status: proposed}
+    - {id: A12, name: Stakeholders e Ecossistema, purpose: Relações com atores parceiros fornecedores e comunidade, status: proposed}
+
+  domains:
+    - {id: D01, name: Gestão Empresarial, primary_area: A00, status: proposed}
+    - {id: D02, name: Jurídico Riscos e Conformidade, primary_area: A07, supporting_areas: [A00], status: proposed}
+    - {id: D03, name: Finanças, primary_area: A07, supporting_areas: [A00], status: proposed}
+    - {id: D04, name: Pessoas e RH, primary_area: A07, status: proposed}
+    - {id: D05, name: Dados, primary_area: A06, supporting_areas: [A04], status: proposed}
+    - {id: D06, name: Conhecimento e Busca, primary_area: A06, supporting_areas: [A10], status: proposed}
+    - {id: D07, name: Produtividade e Execução, primary_area: A09, status: proposed}
+    - {id: D08, name: Operações, primary_area: A05, status: proposed}
+    - {id: D09, name: Pesquisa e Inovação, primary_area: A06, supporting_areas: [A02], status: proposed}
+    - {id: D10, name: Gestão de Produto, primary_area: A02, supporting_areas: [A03], status: proposed}
+    - {id: D11, name: Experiência e Projeto, primary_area: A02, supporting_areas: [A03], status: proposed}
+    - {id: D12, name: Engenharia, primary_area: A04, supporting_areas: [A03, A05], status: proposed}
+    - {id: D13, name: Mercado e Demanda, primary_area: A01, status: proposed}
+    - {id: D14, name: Vendas, primary_area: A01, status: proposed}
+    - {id: D15, name: Atendimento e Sucesso, primary_area: A01, status: proposed}
+    - {id: D16, name: Mídias e Comunicação, primary_area: A08, supporting_areas: [A01], status: proposed}
+    - {id: D17, name: Emprego e Portfólio, primary_area: A12, status: proposed}
+    - {id: D18, name: Contratos e Esquemas, primary_area: A10, status: proposed}
+    - {id: D19, name: Assets e CTA, primary_area: A11, supporting_areas: [A08], status: proposed}
+    - {id: D20, name: Plataformas e Repositórios, primary_area: A11, supporting_areas: [A05], status: proposed}
+    - {id: D21, name: Workbook, primary_area: A10, status: proposed}
+    - {id: D22, name: Decision and Register Log, primary_area: A00, supporting_areas: [A10], status: proposed}
+    - {id: D23, name: Blueprints, primary_area: A10, supporting_areas: [A11], status: proposed}
+
+portfolio:
+  programs:
+    - {id: P00, name: Programa EXECUTAR, status: proposed}
+  initiatives:
+    - {id: M0, name: Executar Institucional, program_id: P00, consumes_areas: [A00], consumes_domains: [D01, D22], status: proposed}
+    - {id: M1, name: Executar App, program_id: P00, consumes_areas: [A00, A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12], consumes_domains: [D01, D02, D03, D05, D07, D08, D10, D11, D12, D13, D16, D18, D20, D22], status: proposed}
+    - {id: M2, name: Executar Blog, program_id: P00, consumes_areas: [A00, A01, A02, A03, A04, A05, A06, A08, A09, A10, A11], consumes_domains: [D05, D06, D07, D08, D10, D11, D12, D13, D16, D18, D19, D20, D21, D22, D23], status: proposed}
+    - {id: M2.1, name: Risco Cognitivo Blog, parent_initiative: M2, program_id: P00, consumes_areas: [A02, A06, A08], consumes_domains: [D05, D09, D10, D11, D16], status: proposed}
+    - {id: M3, name: Executar Oficina, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M4, name: Executar Mapa Cognitivo, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M5, name: Agente Copiloto, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M6, name: Agente Maestro, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M7, name: Agente Vera, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M7.1, name: Emprego e Portfólio, parent_initiative: M7, program_id: P00, consumes_areas: [A12], consumes_domains: [D17], status: proposed}
+    - {id: M8, name: Consultoria e Studio, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M9, name: Marketplace Digital, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M10, name: Marketplace Produtos Físicos, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M11, name: Comunidade, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M12, name: ONG, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M13, name: Afiliados, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M14, name: Parcerias, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M15, name: Schola AI, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+    - {id: M16, name: Lead Business Creator, program_id: P00, consumes_areas: [], consumes_domains: [], status: proposed}
+
+governance:
+  gates:
+    - {id: G00, name: Entrada, status: proposed, acceptance_criteria: []}
+    - {id: G01, name: Gate 01, status: proposed, acceptance_criteria: []}
+    - {id: G02, name: Gate 02, status: proposed, acceptance_criteria: []}
+    - {id: G03, name: Gate 03, status: proposed, acceptance_criteria: []}
+    - {id: G04, name: Gate 04, status: proposed, acceptance_criteria: []}
+    - {id: G05, name: Gate 05, status: proposed, acceptance_criteria: []}
+    - {id: G06, name: Gate 06, status: proposed, acceptance_criteria: []}
+    - {id: G07, name: Gate 07, status: proposed, acceptance_criteria: []}
+    - {id: G08, name: Gate 08, status: proposed, acceptance_criteria: []}
+    - {id: G09, name: Gate 09, status: proposed, acceptance_criteria: []}
+    - {id: G10, name: Gate 10, status: proposed, acceptance_criteria: []}
+    - {id: G11, name: Gate 11, status: proposed, acceptance_criteria: []}
+  sources:
+    - {id: SRC-01, title: INDX.docx, type: document, status: active}
+  id_migrations: []
