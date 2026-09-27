@@ -87,6 +87,20 @@ domains:
   - {id: D18, name: Contratos e Esquemas, aliases: [Contratos e Schemas], primary_area: A10, documents: [D18-DOC-PCE-001], source_refs: [SRC-01, SRC-03], status: proposed}
   - {id: D19, name: Assets e CTA, primary_area: A11, supporting_areas: [A08], documents: [D19-DOC-PAC-001], source_refs: [SRC-01, SRC-03], status: proposed}
   - {id: D20, name: Plataformas e Repositórios, primary_area: A11, supporting_areas: [A05], documents: [D20-DOC-PPR-001], source_refs: [SRC-01, SRC-03], status: proposed}
-  - {id: D21, name: Workbook, primary_area: A10, documents: [D21-DOC-PWB-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - id: D21
+    name: Workbook
+    primary_area: A10
+    documents: [D21-DOC-PWB-001]
+    subdomains:
+      - id: D21.SD01
+        name: Edição HTML
+        deliverables:
+          # Design system (tokens + componentes) para renderizar WB-H01–H17 em WORKBOOK_INTEGRADO.html.
+          # Especificação em session_a/workbook_manual.yaml#html_edition.design_system; ativos em assets/design-system/.
+          - {id: D21-E01, name: "Design System — Edição HTML (WB-H01–H17)"}
+        source_refs: [SRC-04, SRC-07]
+        status: proposed
+    source_refs: [SRC-01, SRC-03]
+    status: proposed
   - {id: D22, name: Decision and Register Log, primary_area: A00, supporting_areas: [A10], documents: [D22-DOC-DRL-001], source_refs: [SRC-01, SRC-03], status: proposed}
   - {id: D23, name: Blueprints, primary_area: A10, supporting_areas: [A11], documents: [D23-DOC-PBL-001], source_refs: [SRC-01, SRC-03], status: proposed}

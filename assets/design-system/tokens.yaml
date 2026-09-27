@@ -1,0 +1,95 @@
+# Tokens do Design System — Edição HTML do Workbook (WB-H01–H17)
+#
+# Deliverable: D21-E01 (registry/session_a/architecture.yaml, D21.SD01)
+# Especificação estrutural: registry/session_a/workbook_manual.yaml#html_edition.design_system
+#
+# grupo "cor"/"tipografia"/"espacamento"/"raio"/"elevacao": extraídos LITERALMENTE de
+# docs/handoff/handoff-spec-onboarding-patterns.md ("Design Tokens Used" + Addendum) = SRC-07.
+# Nomes e valores abaixo reproduzem o handoff; nenhum hex/px foi inventado.
+# grupo "impressao": não coberto por SRC-07 (handoff é de produto digital) — usa SRC-04
+# (Project Caracter.docx, que especifica o pipeline HTML/impressão), epistemic_class PROPOSED.
+#
+# status: proposed — pendente de aprovação humana (ver AI_AGENT_PROTOCOL.md#modelo-epistêmico).
+# A aplicação dos tokens do handoff a componentes de governança (chip de estado/gate, que não
+# existem no produto de origem) é uma DERIVAÇÃO explícita, marcada em cada entrada — nunca cor
+# nova fora do handoff.
+
+status: proposed
+source_refs: [SRC-04, SRC-07]
+
+cor:
+  epistemic_class: DIRECT
+  source_refs: [SRC-07]
+  # nomes e valores exatamente como em SRC-07 "Design Tokens Used"
+  color-primary-blue: {valor: "#0A63C9", gradiente_ate: "#1565D8", uso: "CTA primário, cabeçalhos, links, anel de foco"}
+  color-accent-red: {valor: "#D93341", uso: "destaque de evento/urgência"}
+  color-surface: {valor: "#FFFFFF", uso: "fundo de modal/card/linha de lista"}
+  color-surface-muted: {valor: "#F3F4F6", uso: "fundo de popover, linha desabilitada, chip"}
+  color-overlay-scrim: {valor: "rgba(0,0,0,0.35)", uso: "backdrop atrás de modal"}
+  color-text-primary: {valor: "#1A1A1A", uso: "títulos, texto principal"}
+  color-text-secondary: {valor: "#6B6F76", uso: "timestamps, texto auxiliar, meta"}
+  color-border: {valor: "#E2E4E8", uso: "contorno de card, divisor de lista"}
+  # addendum (Batch 2)
+  color-ai-suggestion-bg: {valor: "#EAF1FE", uso: "bolha de prompt do usuário em painel de IA"}
+  color-success-check: {valor: "#2E7D32", uso: "check de sucesso/aceite"}
+  color-rsvp-accept: {valor: "#0A63C9", forma: "outline pill", uso: "ação já confirmada"}
+  color-teams-badge: {valor: "#5B5FC7", uso: "acento de integração/ação especial"}
+  color-calendar-gridline: {valor: "#E7E9ED", uso: "linha de grade (tracejada em meia-hora)"}
+  color-sidebar-bg: {valor: "#FFFFFF", uso: "fundo de sidebar/lista de contas"}
+  color-folder-unread-badge: {valor: "#EDEFF2", uso: "badge de contagem"}
+  color-marketing-cta-primary: {valor: "#2547E0", uso: "CTA sólido"}
+  color-marketing-ink: {valor: "#0B0B0E", uso: "texto de destaque em preto quase puro"}
+  # Derivação para componentes de governança que o handoff não cobre (chip de estado/gate/CNF/GAP/DEC).
+  # Cada mapeamento reusa um token acima; nenhuma cor nova. "proposed" fica neutro (surface-muted/text-secondary)
+  # porque SRC-07 não tem um token de "pendente/aviso" — registrado como lacuna, não preenchido por invenção.
+  derivacao_governanca:
+    epistemic_class: DERIVED
+    gap: "SRC-07 não define token de estado 'pendente/aviso'; chip_estado--proposed usa neutro até decisão humana"
+    chip_estado--proposed: {texto: color-text-secondary, fundo: color-surface-muted, borda: color-border}
+    chip_estado--active: {texto: color-success-check, fundo: color-ai-suggestion-bg, borda: color-success-check}
+    chip_estado--deprecated: {texto: color-text-secondary, fundo: color-surface-muted, borda: color-border, opacidade: 0.7}
+    chip_estado--archived: {texto: color-text-secondary, fundo: color-surface-muted, borda: color-border, opacidade: 0.55}
+    chip_conflito: {texto: color-accent-red, fundo: color-surface-muted, borda: color-accent-red}
+    chip_lacuna: {texto: color-text-secondary, fundo: color-surface-muted, borda: color-border}
+    chip_decisao: {texto: color-primary-blue, fundo: color-ai-suggestion-bg, borda: color-primary-blue}
+    chip_gate: {texto: color-teams-badge, fundo: color-surface-muted, borda: color-teams-badge}
+
+tipografia:
+  epistemic_class: DIRECT
+  source_refs: [SRC-07]
+  font-heading-lg: {tamanho: "28–32px", peso: 700, familia: "system sans", uso: "títulos de capa/parte"}
+  font-heading-md: {tamanho: "20–22px", peso: 600, familia: "system sans", uso: "títulos de painel/card, título de capítulo"}
+  font-body: {tamanho: "14–16px", peso: 400, familia: "system sans", uso: "texto corrido, lista, tabela"}
+  font-caption: {tamanho: "12–13px", peso: 400, familia: "system sans", uso: "timestamp, legenda, disclaimer"}
+  font-mono: {tamanho: "15px", peso: 500, familia: monospace, uso: "código/ID em chip (OTP no handoff; ID Dxx/WB-Hxx aqui)"}
+
+espacamento:
+  epistemic_class: DIRECT
+  source_refs: [SRC-07]
+  spacing-xs: 4px   # gap ícone-rótulo
+  spacing-sm: 8px   # padding interno de linha
+  spacing-md: 16px  # padding de card, gap de seção
+  spacing-lg: 24px  # padding de modal/painel
+  spacing-xl: 32px  # espaço acima/abaixo de título em modal
+
+raio:
+  epistemic_class: DIRECT
+  source_refs: [SRC-07]
+  radius-sm: 6px    # chip, badge, bloco de código
+  radius-md: 12px   # botão, linha de lista, painel de dropdown
+  radius-lg: 20px   # modal/diálogo, card de tooltip
+
+elevacao:
+  epistemic_class: DIRECT
+  source_refs: [SRC-07]
+  shadow-modal: "0 8px 24px rgba(0,0,0,0.15)"  # diálogo elevado, popover, tooltip — único valor no handoff
+
+impressao:
+  # "area_segura" citada em D21-DOC-PWB-001#printing — SRC-07 não cobre impressão (produto digital)
+  epistemic_class: PROPOSED
+  source_refs: [SRC-04]
+  pagina: A4
+  margem_segura: 20mm
+  cabecalho_repetido: [nome_ecossistema, id_parte, versao]
+  rodape_repetido: [numero_pagina, data_consolidacao]
+  regra: cor não pode ser o único portador de significado (estados/gates repetem rótulo textual no impresso P&B)

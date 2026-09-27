@@ -115,6 +115,29 @@ html_edition:
     workflow: fluxo de trabalho
     handoff: transferência entre etapas
   density_priority: [tabela, quadro, ficha, diagrama textual, lista, texto corrido]
+  # Design system para a renderização de WB-H01–H17. Estrutura aqui; valores de token e markup em assets/design-system/
+  # (README.md, tokens.yaml, tokens.css, components.md). Nenhum valor é canônico até aprovação humana (status: proposed).
+  design_system:
+    deliverable_ref: D21-E01
+    assets_path: assets/design-system/
+    scope: [WB-H01, WB-H02, WB-H03, WB-H04, WB-H05, WB-H06, WB-H07, WB-H08, WB-H09, WB-H10, WB-H11, WB-H12, WB-H13, WB-H14, WB-H15, WB-H16, WB-H17]
+    # Valores de cor/tipografia/raio/espaçamento/sombra extraídos literalmente de SRC-07 (handoff), não inventados;
+    # "impressao" não é coberto por SRC-07 (produto digital) e permanece PROPOSED só com SRC-04.
+    token_groups: [cor, tipografia, espacamento, raio, elevacao, impressao]
+    token_source: SRC-07  # docs/handoff/handoff-spec-onboarding-patterns.md — tabelas "Design Tokens Used"
+    components:
+      - {id: capa, maps_to: html_edition.cover}
+      - {id: quadro, maps_to: density_priority}
+      - {id: ficha, maps_to: WB-H09.critical_process_sheet}
+      - {id: tabela, maps_to: density_priority}
+      - {id: diagrama_textual, maps_to: density_priority}
+      - {id: lista, maps_to: density_priority}
+      - {id: chip_estado, states: [proposed, active, deprecated, archived]}
+      - {id: chip_gate, refs: G00}
+    constraints: [respeitar language_rule, respeitar prohibitions, area_segura_impressao, contraste_AA, sem cor como único portador de significado]
+    epistemic_class: DIRECT
+    status: proposed
+    source_refs: [SRC-04, SRC-07]
   final_audit: [cobertura, consistência, relações, governança, rastreabilidade, HTML]
   prohibitions: [concatenar documentos, reproduzir duplicados, capítulos vazios, preencher lacunas com invenção, consultoria genérica, jargão, estilo acadêmico, estilo de engenharia, ferramenta como objetivo, plano como resultado, arquivo criado como entrega concluída, workbook como lista de documentos]
   source_refs: [SRC-04]
