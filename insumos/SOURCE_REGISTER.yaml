@@ -69,3 +69,128 @@ sources:
       confidence: media
       nao_vinculado_formalmente: true
     status: NAO_PROCESSADO
+
+  # --- lote 2, recebido 2026-09-27 (mesma sessão, mensagem "BENCH 2") ---
+
+  - id: INS-005
+    title: PD-CLB-20260906-F01-DOC-V01 (bundle YAML canônico)
+    path: insumos/PD-CLB-20260906-F01-DOC-V01-YAML-BUNDLE/PD-CLB-20260906-F01-DOC-V01.bundle.yaml
+    format: yaml
+    bytes: 5030
+    sha256: 'fee0e7e2084096a27a81dd777f1f032dc8f8405e330786f66f03e91fa7153d3b'
+    manifest: insumos/PD-CLB-20260906-F01-DOC-V01-YAML-BUNDLE/manifest.yaml
+    declared_source:
+      repository: Sas-Executar/executar-Blog
+      source_document: ops/runbooks/PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.md
+      original_format: DOCX
+    relation_to_other_insumos: >
+      Provável mesma origem documental do AIKB-0001 em INS-001
+      (original_filename em MANIFEST_AI.jsonl cita o mesmo
+      "PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.docx") —
+      conteúdo aqui já convertido/estruturado em YAML; não confirmado byte a byte.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M1, M2]
+      domains: [D07, D08, D16]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-006
+    title: MASTER_EDITORIAL_RISCO_COGNITIVO_V1.xlsx
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/MASTER_EDITORIAL_RISCO_COGNITIVO_V1.xlsx
+    format: xlsx
+    bytes: 64758
+    sha256: 'd9b6a5dcaed895622b10fff52761d2a914fce80f54b27651e7100ca78ab43bba'
+    sheet_count: 9
+    sheets: [00_README, 01_PROBLEMS, 02_SOLUTIONS, 03_ASSET_FACTORY, 04_CONTENT_ARCHITECTURE, 05_CTA_ROUTING, 06_METRICS, 07_TAXONOMIES, 08_AUTOMATION_MAP, 09_DASHBOARD]
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2.1]
+      domains: [D16, D19]
+      confidence: media
+      nao_vinculado_formalmente: true
+      nota: Schema editorial distinto do CMS de INS-004; possivelmente complementar (produção vs. operação do hub).
+    status: NAO_PROCESSADO
+
+  - id: INS-007
+    title: campanha_tdah_gestao_projetos_12_abas_numbers_print.xlsx
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/campanha_tdah_gestao_projetos_12_abas_numbers_print.xlsx
+    format: xlsx
+    bytes: 52155
+    sha256: '9f23eea7bdbf022d62dac1478e0bda493f3c14d036395cbbc7fd31ebcaefd6da'
+    sheet_count: 12
+    sheets: ['00 MAPA', 'D01 TDAH e o custo invisível', 'D02 Projeto tarefa e...', '... D03..D10 (temas TDAH)', '11 EBOOK 12 CAPS']
+    warning: >
+      Os rótulos de aba "D01".."D10" desta planilha são uma numeração de
+      capítulos de ebook sobre TDAH — NÃO correspondem aos domínios
+      D01–D23 do Workbook. Não confundir ao citar em field_id.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: []
+      domains: [D09]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-008
+    title: EXECUTAR CAMPANHA ESTRATEGICA (posicionamento de marca)
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/EXECUTAR-CAMPANHA-ESTRATEGICA.txt
+    format: txt
+    bytes: 2722
+    sha256: '7e4ca61cf38a08a8da33fdfa7d4804678e42ef8980498b87d80c405da3f13658'
+    summary: >
+      Posicionamento de marca do app EXECUTAR ("sistema de execução e
+      entrega" para profissionais neurodivergentes), mensagens-chave,
+      CTA e regras de formulação de evidências (o que evitar/preferir
+      ao citar embasamento científico).
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M1]
+      domains: [D13, D16]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-009
+    title: EXECUTAR CAMPANHA ESTRTEGICA (nota sobre pacote de vídeo GTM Claude Design)
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/EXECUTAR-CAMPANHA-ESTRATEGICA-nota-video-gtm.txt
+    format: txt
+    bytes: 1429
+    sha256: 'b4ac3d37a71160a32a294b3559fc7401cafc49df1d793002efdd585d6763f051'
+    summary: >
+      Nota descrevendo um pacote "EXECUTAR_GTM_VIDEO_CLAUDE_DESIGN.zip"
+      (Master Index, ADRs de UI/Split View, PRD de campanha audiovisual,
+      catálogo de vídeos, handoff para Claude Design) — o zip em si
+      NÃO foi enviado, só esta nota descritiva.
+    gap: O arquivo EXECUTAR_GTM_VIDEO_CLAUDE_DESIGN.zip citado não está em insumos/.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M1]
+      domains: [D11, D16, D19]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-010
+    title: SOP EXECUTAR Operating System
+    path: insumos/SOP-EXECUTAR-OPERATING-SYSTEM/SOP-EXECUTAR-Operating-System.pdf
+    format: pdf
+    bytes: 251673
+    sha256: 'abfb184b14fb7f7999e9a37ab87c62de1efb5b8d841cab1045fe75c20a64b2bf'
+    page_count_approx: 9
+    title_sections_observed: ['Process Document EXECUTAR Operating System', '1. Controle Operacional', '2. Purpose', 'Included']
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M0]
+      domains: [D01, D08, D22]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: DUP-001
+    title: Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx (dentro de Schema_de_Producao_Campanha_.zip)
+    duplicate_of: INS-004
+    sha256: '92626db713ff7f656421d50afc2b69946488e3c6efbf2971790e6252aa3e700a'
+    note: Byte-idêntico ao arquivo já registrado em INS-004; não copiado para insumos/ novamente.
+    status: DUPLICADO_IGNORADO

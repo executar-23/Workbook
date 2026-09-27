@@ -1,0 +1,9 @@
+bundle_id: "PD-CLB-20260906-F01-DOC-V01"
+bundle_version: "1.0"
+format: "yaml-bundle"
+files:
+  - path: "PD-CLB-20260906-F01-DOC-V01.bundle.yaml"
+    role: "canonical_bundle"
+source:
+  repository: "Sas-Executar/executar-Blog"
+  source_document: "ops/runbooks/PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.md"
