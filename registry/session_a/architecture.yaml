@@ -1,0 +1,92 @@
+# Sessão A — Arquitetura de capacidades permanentes (SA-02, SA-03, SA-04).
+# Hierarquia: ECOSSISTEMA → Axx → Dxx → Dxx.SDyy → PROCESSO (Dxx-PRC-nnn) → ENTREGÁVEL (Dxx-Enn) → ARTEFATO/DOCUMENTO (Dxx-DOC-ACR-nnn)
+# Produtos/iniciativas (Mxx) NÃO pertencem a esta árvore: consomem capacidades por referência (portfolio.yaml).
+functional_hierarchy: [ecosystem, macro_area, domain, subdomain, process_or_cycle, deliverable, artifact_or_record]
+
+ecosystem:
+  id: ECO-EXECUTAR
+  name: Ecossistema EXECUTAR
+  status: proposed
+  source_refs: [SRC-01, SRC-02]
+
+macro_areas:
+  - {id: A00, name: Governança Estratégia e Gestão, purpose: Direção decisões planejamento e controles, function: [direção, charter, decisões, planejamento, controles], aliases: [Governance], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A01, name: Negócio e Go to Market, purpose: Modelo de negócio mercado aquisição e comercialização, aliases: [Negócio], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A02, name: Produto e Experiência, purpose: Discovery e definição da solução, aliases: [Produto], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A03, name: Handoff Produto para Engenharia, purpose: Preparação de pacotes implementáveis, aliases: [Handoff, Handoff e Preparação para Desenvolvimento], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A04, name: Arquitetura Engenharia e Implementação, purpose: Arquitetura construção integração e qualidade técnica, aliases: [Arquitetura, Arquitetura e Engenharia], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A05, name: Operações Plataforma e Segurança, purpose: Produção observabilidade segurança e continuidade, aliases: [OPS, Operações Plataforma Deploy e Segurança], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A06, name: Dados Pesquisa e Conhecimento, purpose: Evidência dados pesquisa e inteligência, aliases: [Dados e Pesquisa], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A07, name: Corporativo e Suporte, purpose: Funções empresariais estruturantes, aliases: [Capacidades e Suporte], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A08, name: Conteúdo Comunicação e Growth, purpose: Produção editorial distribuição comunicação e crescimento, aliases: [Conteúdo], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A09, name: Execução e Planejamento do Trabalho, purpose: Planejamento convertido em trabalho executável, aliases: [Execução e Planejamento], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A10, name: Documentação e Governança do Conhecimento, purpose: Referências contratos registros e sínteses, aliases: [Documentação e Conhecimento], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A11, name: Ferramentas IA e Ativos Reutilizáveis, purpose: Capacidades técnicas e ativos reutilizáveis, aliases: [Ferramentas IA e Ativos], scope_hint: [skills, plugins, agentes, prompts, comandos, ferramentas], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A12, name: Stakeholders e Ecossistema, purpose: Relações com atores parceiros fornecedores e comunidade, scope_hint: [stakeholders, parceiros, fornecedores, comunidade, atores, matriz de relacionamento], source_refs: [SRC-01, SRC-02], status: proposed}
+
+# primary_area/supporting_areas preservados do commit 718d21b. documents → documents.yaml.
+domains:
+  - {id: D01, name: Gestão Empresarial, primary_area: A00, documents: [D01-DOC-DDE-001, D01-DOC-TAP-001, D01-DOC-MNE-001, D01-DOC-MRE-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D02, name: Jurídico Riscos e Conformidade, primary_area: A07, supporting_areas: [A00], documents: [D02-DOC-DGRC-001, D02-DOC-MRC-001, D02-DOC-PPT-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D03, name: Finanças, primary_area: A07, supporting_areas: [A00], documents: [D03-DOC-PFO-001, D03-DOC-MFO-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D04, name: Pessoas e RH, primary_area: A07, documents: [D04-DOC-PPC-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D05, name: Dados, primary_area: A06, supporting_areas: [A04], documents: [D05-DOC-EPGD-001, D05-DOC-DCM-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D06, name: Conhecimento e Busca, aliases: [Conhecimento e Busca Corporativa], primary_area: A06, supporting_areas: [A10], documents: [D06-DOC-EGC-001, D06-DOC-RMI-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - id: D07
+    name: Produtividade e Execução
+    primary_area: A09
+    documents: [D07-DOC-PEX-001, D07-DOC-PIM-001]
+    subdomains:
+      - {id: D07.SD01, name: Planejamento, children: [Estratégico, Tático, Operacional], source_refs: [SRC-01], status: proposed}
+      - {id: D07.SD02, name: Roadmap, source_refs: [SRC-01], status: proposed}
+      - {id: D07.SD03, name: Backlog, source_refs: [SRC-01], status: proposed}
+      - {id: D07.SD04, name: Ciclos, source_refs: [SRC-01], status: proposed}
+      - {id: D07.SD05, name: Tasks, source_refs: [SRC-01], status: proposed}
+      - {id: D07.SD06, name: SOP, source_refs: [SRC-01], status: proposed}
+      - {id: D07.SD07, name: Runbook, source_refs: [SRC-01], status: proposed}
+    source_refs: [SRC-01, SRC-03]
+    status: proposed
+  - {id: D08, name: Operações, primary_area: A05, documents: [D08-DOC-MOP-001, D08-DOC-RUN-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D09, name: Pesquisa e Inovação, primary_area: A06, supporting_areas: [A02], documents: [D09-DOC-PPE-001, D09-DOC-DEB-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D10, name: Gestão de Produto, primary_area: A02, supporting_areas: [A03], documents: [D10-DOC-DRP-001, D10-DOC-PRD-001], lifecycle_ref: pm_lifecycle, source_refs: [SRC-01, SRC-03, SRC-05], status: proposed}
+  - {id: D11, name: Experiência e Projeto, primary_area: A02, supporting_areas: [A03], documents: [D11-DOC-EEP-001, D11-DOC-DSI-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - id: D12
+    name: Engenharia
+    primary_area: A04
+    supporting_areas: [A03, A05]
+    documents: [D12-DOC-ETE-001]
+    # SRC-01 lista estes subdomínios sob "D13 — Engenharia" (numeração antiga, ver CNF-001).
+    subdomains:
+      - id: D12.SD01
+        name: Development Ready Package
+        handoff_area: A03
+        deliverables:
+          - {id: D12-E01, name: PRD}
+          - {id: D12-E02, name: UX Flows}
+          - {id: D12-E03, name: Functional Requirements}
+          - {id: D12-E04, name: Acceptance Criteria}
+          - {id: D12-E05, name: NFR}
+          - {id: D12-E06, name: Data / Integration Requirements}
+          - {id: D12-E07, name: Analytics}
+          - {id: D12-E08, name: Release Constraints}
+        source_refs: [SRC-01]
+        status: proposed
+      - {id: D12.SD02, name: Arquitetura Full Stack, source_refs: [SRC-01], status: proposed}
+      - {id: D12.SD03, name: Implementação, source_refs: [SRC-01], status: proposed}
+      - {id: D12.SD04, name: Integrações, source_refs: [SRC-01], status: proposed}
+      - {id: D12.SD05, name: Qualidade e Testes, source_refs: [SRC-01], status: proposed}
+      - {id: D12.SD06, name: ADRs Técnicos, source_refs: [SRC-01], status: proposed}
+      - {id: D12.SD07, name: Engenharia de Release, source_refs: [SRC-01], status: proposed}
+    source_refs: [SRC-01, SRC-03]
+    status: proposed
+  - {id: D13, name: Mercado e Demanda, aliases: [Mercado e Geração de Demanda], primary_area: A01, documents: [D13-DOC-DRM-001, D13-DOC-GTM-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D14, name: Vendas, primary_area: A01, documents: [D14-DOC-PCV-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D15, name: Atendimento e Sucesso, aliases: [Atendimento e Sucesso do Cliente], primary_area: A01, documents: [D15-DOC-PASC-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D16, name: Mídias e Comunicação, aliases: [Mídias Sociais e Distribuição/Estratégia, Mídias Sociais e Distribuição Digital, Mídias Sociais e Estratégias], primary_area: A08, supporting_areas: [A01], documents: [D16-DOC-PEM-001], source_refs: [SRC-01, SRC-03, SRC-06], status: proposed}
+  - {id: D17, name: Emprego e Portfólio, primary_area: A12, documents: [D17-DOC-PEP-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D18, name: Contratos e Esquemas, aliases: [Contratos e Schemas], primary_area: A10, documents: [D18-DOC-PCE-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D19, name: Assets e CTA, primary_area: A11, supporting_areas: [A08], documents: [D19-DOC-PAC-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D20, name: Plataformas e Repositórios, primary_area: A11, supporting_areas: [A05], documents: [D20-DOC-PPR-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D21, name: Workbook, primary_area: A10, documents: [D21-DOC-PWB-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D22, name: Decision and Register Log, primary_area: A00, supporting_areas: [A10], documents: [D22-DOC-DRL-001], source_refs: [SRC-01, SRC-03], status: proposed}
+  - {id: D23, name: Blueprints, primary_area: A10, supporting_areas: [A11], documents: [D23-DOC-PBL-001], source_refs: [SRC-01, SRC-03], status: proposed}

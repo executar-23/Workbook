@@ -1,0 +1,43 @@
+# Sessão B — Tipos de objetos de produção e suas instâncias.
+# Todo objeto: id, name, status (official_states), refs_a (≥1 ID Sessão A), owner (TBD), evidence.
+# Proibido em objetos B: campos de conhecimento canônico (definition, sections, record_schema, purpose_canonical).
+object_types:
+  - {prefix: CYC, name: Ciclo, id_pattern: 'CYC-[0-9]{4}-[0-9]{2}'}
+  - {prefix: OBJ, name: Objetivo do ciclo, id_pattern: 'OBJ-[0-9]{3}'}
+  - {prefix: RDM, name: Roadmap, id_pattern: 'RDM-(M[0-9]+(\.[0-9]+)?|D[0-9]{2})-[0-9]{3}'}
+  - {prefix: BKL, name: Backlog, id_pattern: 'BKL-[0-9]{3}'}
+  - {prefix: SPR, name: Sprint, id_pattern: 'SPR-[0-9]{3}'}
+  - {prefix: TSK, name: Task, id_pattern: 'TSK-[0-9]{4}'}
+  - {prefix: ISS, name: Issue / Risco / Bloqueio, id_pattern: 'ISS-[0-9]{4}'}
+  - {prefix: PRJ, name: Projeto, id_pattern: 'PRJ-M[0-9]+(\.[0-9]+)?-[0-9]{3}'}
+  - {prefix: RB, name: Runbook por área, id_pattern: 'RB-D[0-9]{2}-[0-9]{3}', shape_ref: D08-DOC-RUN-001}
+  - {prefix: ROT, name: Rotina operacional, id_pattern: 'ROT-[0-9]{3}'}
+  - {prefix: CRN, name: Cronograma, id_pattern: 'CRN-[0-9]{3}'}
+  - {prefix: TPL, name: Template estratégico, id_pattern: 'TPL-[0-9]{3}'}
+  - {prefix: AGT, name: Agente, id_pattern: 'AGT-[0-9]{3}'}
+  - {prefix: CMD, name: Slash command, id_pattern: 'CMD-[0-9]{3}'}
+  - {prefix: EDL, name: Linha editorial, id_pattern: 'EDL-[0-9]{3}', shape_ref: D16-DOC-PEM-001}
+  - {prefix: WF, name: Workflow, id_pattern: 'WF-[A-Z]+-[0-9]{3}'}
+  - {prefix: SOP, name: Procedimento, id_pattern: 'SOP-[0-9]{3}'}
+
+# Runbook shape é herdado por referência (shape_ref) — nunca copiado.
+# Nenhuma instância confirmada em fonte; listas vazias até haver evidência.
+instances:
+  cycles: []
+  objectives: []
+  roadmaps: []
+  backlogs: []
+  sprints: []
+  tasks: []
+  issues: []
+  projects: []
+  runbooks: []
+  routines: []
+  chronograms: []
+  templates: []
+  agents: []
+  commands: []
+  editorial_lines: []
+  workflows:
+    - {id: WF-PREFILL-001, name: Pré-preenchimento documental D01–D23, status: PREPARADO, refs_a: [SA-12, D06-DOC-RMI-001], owner: TBD, evidence: [], source_refs: [SRC-03]}
+  sops: []

@@ -1,0 +1,18 @@
+# Sessão A — Ciclo de Product Management (SRC-05). Transversal: aplicável a qualquer Dxx ou Mxx; não é camada de domínio (SRC-01).
+flow: [Discover, Define, Design, Validate, Build, Launch, Measure, Learn, Iterate]
+owner_domain: D10
+phases:
+  - {id: PM01, name: Identificação do problema / oportunidade, deliverables: [Problem Statement, oportunidade documentada, stakeholders], questions: ["Para quem?", "Qual problema?", "Qual impacto?", "Que evidência existe?"]}
+  - {id: PM02, name: Discovery / Pesquisa, related_domains: [D09, D11], deliverables: [Plano de pesquisa, entrevistas/dados, jornada, hipóteses], questions: ["Problema é real?", "Frequente?", "Relevante?", "Como é resolvido hoje?"]}
+  - {id: PM03, name: Estratégia de Produto, deliverables: [Product Vision, Value Proposition, objetivos/OKRs, KPIs], questions: ["Por que este produto?", "Para quem?", "Qual diferencial?", "Como sucesso será medido?"]}
+  - {id: PM04, name: Priorização, deliverables: [Backlog priorizado, critérios registrados, decisão de escopo], methods: [RICE, ICE, MoSCoW, Value × Effort], questions: ["Maior impacto?", "Custo?", "Risco?", "Urgência?"]}
+  - {id: PM05, name: Definição da solução, related_documents: [D10-DOC-PRD-001], deliverables: [PRD, fluxos, protótipo, escopo MVP, critérios de aceite], questions: ["Qual mínimo necessário?", "O que fica fora?"]}
+  - {id: PM06, name: Validação, deliverables: [Plano de teste, resultados, evidências, decisão Go/No-Go], questions: ["Usuário entende?", "Usa?", "Valor foi comprovado?"]}
+  - {id: PM07, name: Delivery / Desenvolvimento, related_domains: [D12], deliverables: [Backlog técnico, release candidate, QA aprovado, documentação], questions: ["Critérios atendidos?", "Riscos resolvidos?", "Pronto para produção?"]}
+  - {id: PM08, name: Lançamento / Go-to-Market, related_documents: [D13-DOC-GTM-001], deliverables: [GTM Plan, release notes, documentação, suporte preparado], questions: ["Quem lança?", "Para quem?", "Quando?", "Como comunicar?"]}
+  - {id: PM09, name: Medição, related_domains: [D05], deliverables: [Dashboard, KPIs, baseline, relatório pós-lançamento], questions: ["Objetivos foram atingidos?", "Onde há abandono?"]}
+  - {id: PM10, name: Aprendizado e otimização, deliverables: [Insights, backlog de melhorias, decisões documentadas], questions: ["O que funcionou?", "O que falhou?", "O que mudar?"]}
+  - {id: PM11, name: Growth / Escala, deliverables: [Growth backlog, experimentos, métricas AARRR], questions: ["Qual alavanca limita crescimento?", "É escalável?"]}
+  - {id: PM12, name: Maturidade / Manutenção, deliverables: [SLA/SLO, roadmap técnico, plano de manutenção], questions: ["Produto permanece competitivo seguro e rentável?"]}
+  - {id: PM13, name: Evolução / Pivot / Descontinuação, deliverables: [Lifecycle Review, decisão executiva, plano de transição], questions: ["Investir manter pivotar ou encerrar?", "Por quê?"]}
+source_refs: [SRC-05]

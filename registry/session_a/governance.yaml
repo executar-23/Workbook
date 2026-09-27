@@ -1,0 +1,142 @@
+# Sessão A — SA-07 Governança Operacional + SA-10 Alertas: gates, estados, modelo epistêmico, fontes, conflitos, gaps, decisões.
+tbd_marker: TBD   # equivalentes nas fontes: "A DEFINIR" (SRC-04), "A_DEFINIR" (SRC-03) — ver CNF-004 / DEC-001
+
+gates:  # G00–G11 (SRC-01 "Gates G00 → G11"); critérios não definidos em nenhuma fonte
+  - {id: G00, name: Entrada, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G01, name: Gate 01, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G02, name: Gate 02, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G03, name: Gate 03, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G04, name: Gate 04, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G05, name: Gate 05, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G06, name: Gate 06, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G07, name: Gate 07, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G08, name: Gate 08, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G09, name: Gate 09, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G10, name: Gate 10, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+  - {id: G11, name: Gate 11, status: proposed, acceptance_criteria: [], source_refs: [SRC-01]}
+gate_record_shape: [marco, entrada_exigida, criterio, autoridade, saida]   # SRC-04
+
+state_models:   # três vocabulários coexistem (CNF-003); cada um tem escopo próprio
+  registry_status: {values: [proposed, active, deprecated, archived], scope: entidades do registry}
+  official_states:
+    values: [NAO_INICIADO, PREPARADO, EM_EXECUCAO, BLOQUEADO, SUBMETIDO, APROVADO, LIBERADO, VERIFICADO, CONCLUIDO]
+    scope: trabalho e entregas (Sessão B)
+    completion_rule: execução + resultado esperado + verificação + evidência
+    source_refs: [SRC-04]
+  implementation_states:
+    values: [IDENTIFICADO, PRE_PREENCHIDO, ESPECIFICADO, APROVADO, EM_DESENVOLVIMENTO, IMPLEMENTADO, TESTADO, VERIFICADO, LIBERADO, PUBLICADO]
+    scope: documentos canônicos (documents.yaml)
+    rule: Nunca promover o estado apenas porque existe um arquivo ou texto.
+    source_refs: [SRC-03]
+  approval_status: {values: [PENDENTE, APROVADO, REJEITADO], note: "REJEITADO é PROPOSED (não está nas fontes)"}
+  state_control:
+    - Documento encontrado != documento completo
+    - Documento completo != aprovado
+    - Código encontrado != implementado
+    - Deploy encontrado != verificado
+    - Asset encontrado != publicado
+    - Decisão proposta != decisão aprovada
+    - Plano != resultado executado
+    - Arquivo criado != entrega concluída
+
+epistemic_model:  # SRC-03
+  classes: [DIRECT, DERIVED, EXTERNAL_EVIDENCE, PROPOSED, GAP, CONFLICT, HYPOTHESIS]
+  field_status: [FOUND, DERIVED, EXTERNAL, CONFLICT, NOT_FOUND]
+  confidence: [alta, media, baixa, n/a]
+  derivation_requirements: [mínimo de duas evidências compatíveis, nenhum novo requisito introduzido, classe DERIVED, justificativa explícita]
+  proposal_rule: A resposta canônica permanece TBD; sugestão vai em proposed_value.
+  field_contract: [field_id, label, value, normalized_value, evidence_status, epistemic_class, confidence, evidence, conflicts, derived_from, proposed_value, proposed_rationale, notes]
+  source_precedence:
+    - Fonte original ou documento canônico mais recente
+    - Documento macro/especializado da própria área
+    - Registros extraídos da área
+    - Documentos de áreas relacionadas
+    - Inferência formal explicitamente marcada DERIVED
+  external_research: Pode complementar requisitos legais técnicos científicos ou de mercado; nunca substitui evidência interna sobre decisão estado owner orçamento implementação ou aprovação.
+  sensitive_values: Não reproduzir senhas tokens chaves ou segredos; registrar apenas existência e localização segura.
+
+risk_issue_block:  # SRC-04 — não misturar
+  risco: Algo que pode ocorrer
+  problema: Algo que já está ocorrendo
+  bloqueio: Algo que impede a continuação de uma atividade
+
+change_management: [proposta, avaliador, impacto, decisao, atualizacao_documental, evidencia]  # SRC-04
+
+sources:  # SRC-01…SRC-06 = Archive.zip entregue em 2026-09-27; SRC-01 → SRC-05 do INDX original ainda não inventariados (GAP-006)
+  - {id: SRC-01, title: INDX.docx, type: document, authority: fonte_principal, status: active}
+  - {id: SRC-02, title: Schema Workbook.md, type: document, authority: fonte_principal, status: active}
+  - {id: SRC-03, title: PROMPT MESTRE — PRÉ-PREENCHIMENTO DOCUMENTAL DO ECOSSISTEMA (EXECUTAR-DOC-PREFILL-001), type: document, authority: fonte_principal, status: active}
+  - {id: SRC-04, title: Project Caracter.docx (GOV-WORKBOOK-001 prompt de workbook HTML), type: document, authority: complementar, status: active}
+  - {id: SRC-05, title: Product mangemnet.docx (Checklist de Product Management), type: document, authority: complementar, status: active}
+  - {id: SRC-06, title: PEM area .rtf (D16-DOC-PEM-001), type: document, authority: evidencia, status: active}
+
+id_migrations:  # numeração antiga do INDX (tabela macroárea→domínios) → canônica. Registradas, não aplicadas silenciosamente.
+  - {old_id: D0, new_id: TBD, reason: "PMBOK/Governança citado como D0 sob A00; sem domínio canônico — ver CNF-001", effective_at: '2026-09-27'}
+  - {old_id: 'D13 (Engenharia; INDX antigo)', new_id: D12, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D12 (Produto → Engenharia; INDX antigo)', new_id: D12.SD01, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D14 (Mercado/Geração de Demanda; INDX antigo)', new_id: D13, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D15 (Vendas; INDX antigo)', new_id: D14, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D16 (Atendimento/Sucesso; INDX antigo)', new_id: D15, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D17 (Mídias Sociais; INDX antigo)', new_id: D16, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D19 (Contratos/Esquemas; INDX antigo)', new_id: D18, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D20 (Assets/CTA; INDX antigo)', new_id: D19, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D21 (Plataformas/Repositórios; INDX antigo)', new_id: D20, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D22 (Workbook; INDX antigo)', new_id: D21, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D23 (Decision Log; INDX antigo)', new_id: D22, reason: CNF-001, effective_at: '2026-09-27'}
+  - {old_id: 'D24 (Blueprints; INDX antigo)', new_id: D23, reason: CNF-001, effective_at: '2026-09-27'}
+
+conflicts:
+  - id: CNF-001
+    issue: Numeração de domínios divergente dentro de SRC-01 (tabela macroárea→domínios usa D0, D13 Engenharia … D24 Blueprints; Master Index do mesmo documento e SRC-03 usam D01–D23 canônico).
+    source_a: {source: SRC-01 Master Index / SRC-03, value: D01–D23 canônico}
+    source_b: {source: SRC-01 tabela de macroáreas, value: numeração deslocada}
+    impact: Referências antigas podem apontar para o domínio errado.
+    resolution_rule: Canônico D01–D23 prevalece (maior autoridade e mais recente); antigos mapeados em id_migrations.
+    requires_human_decision: true
+    status: proposed
+  - id: CNF-002
+    issue: Nomes de macroáreas com variantes entre fontes (ex. A03 "Handoff Produto → Engenharia" × "Handoff e Preparação para Desenvolvimento").
+    impact: Baixo — IDs estáveis; nomes alternativos guardados em aliases.
+    resolution_rule: Manter name do commit 718d21b; demais variantes em aliases.
+    requires_human_decision: true
+    status: proposed
+  - id: CNF-003
+    issue: Três vocabulários de estado (registry, estados oficiais SRC-04, implementation_states SRC-03).
+    resolution_rule: Coexistem com escopos distintos (state_models).
+    requires_human_decision: true
+    status: proposed
+  - id: CNF-004
+    issue: Marcador de lacuna TBD (SRC-02) × A DEFINIR (SRC-04) × A_DEFINIR (SRC-03).
+    resolution_rule: Registry usa TBD; renderização humana PT-BR pode exibir "A DEFINIR" (DEC-001).
+    requires_human_decision: false
+    status: proposed
+  - id: CNF-005
+    issue: Workbook dividido em 3 partes (SRC-01/SRC-02) × 17 partes (SRC-04).
+    resolution_rule: As 17 partes de SRC-04 são mapeadas dentro das 3 partes (workbook_manual.yaml).
+    requires_human_decision: false
+    status: proposed
+  - id: CNF-006
+    issue: Hierarquia documental de SRC-03 (ECOSSISTEMA → ÁREA → DOC MACRO → DOC ESPECIALIZADO → WORKFLOW → ENTREGÁVEL → TAREFA → AÇÃO → EVIDÊNCIA → REGISTRO) × hierarquia funcional (… → PROCESSO → ENTREGÁVEL → ARTEFATO).
+    resolution_rule: Funcional na Sessão A; WORKFLOW/TAREFA/AÇÃO pertencem à Sessão B; documentos ficam no nível ARTEFATO.
+    requires_human_decision: false
+    status: proposed
+  - id: CNF-007
+    issue: Regra de commit — AGENTS.md (commit direto em main) × instrução da sessão de automação (branch dedicada + PR).
+    resolution_rule: Esta mudança seguiu branch + PR draft; regra permanente fica para decisão humana.
+    requires_human_decision: true
+    status: proposed
+
+gaps:
+  - {id: GAP-001, missing_information: "Frente 'Copiloto-OPERACIONAL' confirmada como M5 Agente Copiloto?", requires_human_decision: true, blocks: [ecosystem_fronts]}
+  - {id: GAP-002, missing_information: "Mxx de Infoprodutos / E-book", requires_human_decision: true, blocks: [ecosystem_fronts]}
+  - {id: GAP-003, missing_information: "Mxx de Curso Cognitivo.org (relação com M4 Mapa Cognitivo não comprovada)", requires_human_decision: true, blocks: [ecosystem_fronts]}
+  - {id: GAP-004, missing_information: "Mxx de Creator Mídia / Mídias Sociais (relação com M16 Lead Business Creator não comprovada)", requires_human_decision: true, blocks: [ecosystem_fronts]}
+  - {id: GAP-005, missing_information: "Natureza e Mxx de 'Estudos'", requires_human_decision: true, blocks: [ecosystem_fronts]}
+  - {id: GAP-006, missing_information: "Fontes SRC-01…SRC-05 citadas no Business Docs original (07 Governança Operacional) e os 1.125 campos do Control Plane não foram fornecidos", requires_human_decision: false, blocks: [SA-06]}
+  - {id: GAP-007, missing_information: "Nomes e critérios de aceite dos gates G01–G11", requires_human_decision: true, blocks: [gates]}
+  - {id: GAP-008, missing_information: "Owners de macroáreas domínios e documentos", requires_human_decision: true, blocks: [domain_contracts]}
+  - {id: GAP-009, missing_information: "consumes_areas/consumes_domains de M3–M16 (exceto M7.1)", requires_human_decision: true, blocks: [portfolio]}
+
+decisions:
+  - {id: DEC-001, title: Marcador canônico de lacuna = TBD, epistemic_class: PROPOSED, status: proposed, owner: TBD}
+  - {id: DEC-002, title: Estrutura do registry dividida em session_a/ e session_b/ com includes, epistemic_class: PROPOSED, status: proposed, owner: TBD}
