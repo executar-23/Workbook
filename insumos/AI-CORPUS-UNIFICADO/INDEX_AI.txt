@@ -1,0 +1,17 @@
+id	filename	topic	title
+AIKB-0001	AIKB-0001__process-doc-creator-led-growth-multiplataforma.docx	governanca-editorial	Process Doc — Creator-Led Business + Creator-Led Growth
+AIKB-0002	AIKB-0002__arquitetura-blog-creator-economy-operacao-integrada.html	arquitetura-blog	Blog de Creator Economy como operação editorial, comercial e tecnológica
+AIKB-0003	AIKB-0003__conceito-blog-full-stack.txt	arquitetura-blog	Conceito de blog full stack
+AIKB-0004	AIKB-0004__topologia-diretorios-creator-led-blog-2026.md	arquitetura-tecnica	Topologia moderna de diretórios para ecossistema creator-led
+AIKB-0005	AIKB-0005__topologia-diretorios-creator-led-blog-2026.docx	arquitetura-tecnica	Topologia moderna de diretórios para ecossistema creator-led — versão DOCX
+AIKB-0006	AIKB-0006__equipe-aquisicao-retencao-experiencia.txt	operacao-growth	Equipe de aquisição, retenção e experiência
+AIKB-0007	AIKB-0007__arquitetura-agentes-ai-creator-ops.txt	sistema-agentivo	Arquitetura de agentes para Creator Operations
+AIKB-0008	AIKB-0008__schema-v2-ai-native-creator-os.html	sistema-agentivo	Schema V2 — AI-native Creator Business Operating System
+AIKB-0009	AIKB-0009__proximo-artefato-ai-native-creator-os-schema.txt	sistema-agentivo	Próximo artefato: AI-NATIVE-CREATOR-OS-SCHEMA-001
+AIKB-0010	AIKB-0010__estrategia-tres-pilares-riscos-cognitivos.html	estrategia-editorial	Estratégia de três pilares — Riscos Cognitivos
+AIKB-0011	AIKB-0011__pilares-editoriais-e-niveis-consciencia.html	estrategia-editorial	Pilares editoriais × níveis de consciência
+AIKB-0012	AIKB-0012__progressao-curricular-editorial-riscos-cognitivos.html	estrategia-editorial	Progressão curricular editorial de Riscos Cognitivos
+AIKB-0013	AIKB-0013__cadeia-causal-risco-cognitivo.rtf	framework-risco-cognitivo	Cadeia causal de risco cognitivo
+AIKB-0014	AIKB-0014__risco-endogeno-primario-secundario-loop.txt	framework-risco-cognitivo	Risco endógeno primário e secundário
+AIKB-0015	AIKB-0015__biblioteca-visual-risco-cognitivo.txt	framework-risco-cognitivo	Biblioteca visual do framework de Risco Cognitivo
+AIKB-0016	AIKB-0016__pacote-claude-design-react-fullstack.html	execucao-design	Pacote Claude Design + React Full Stack

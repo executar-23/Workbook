@@ -1,0 +1,71 @@
+# Inventário PF-00 (WF-PREFILL-001) — inbox de material bruto recebido em 2026-09-27.
+# id INS-nnn != SRC-nn: só vira SRC-nn quando promovido em registry/session_a/governance.yaml#sources
+# durante a execução real do prefill. suggested_relation é leitura de primeira passagem, não vínculo formal.
+status: NAO_PROCESSADO
+next_step: WF-PREFILL-001 / PF-00
+
+sources:
+  - id: INS-001
+    title: AI_CORPUS_UNIFICADO
+    path: insumos/AI-CORPUS-UNIFICADO/
+    format: pacote (docx, html, md, txt, rtf) + manifesto próprio
+    contents_manifest: insumos/AI-CORPUS-UNIFICADO/MANIFEST_AI.jsonl
+    item_count: 16
+    own_id_scheme: 'AIKB-[0-9]{4}'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2, M2.1]
+      domains: [D09, D12, D16, D20]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-002
+    title: EXECUTAR_ADHD_PM_CANONICAL_BUNDLE
+    path: insumos/EXECUTAR-ADHD-PM-CANONICAL-BUNDLE/
+    format: yaml + md
+    contents:
+      - 01_YAML_BUNDLE.yaml
+      - 02_AGENT_INDEX.md
+    own_id_scheme: 'namespace próprio: DATA-, DRIVE-, SCHEMA-, MATRIX-GP-01..11, HYPOTHESIS-, ARCH-, EPISTEMIC-, PM-01..08, HUM-CAP-, TAX- (não usa Axx/Dxx/Mxx)'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: []
+      domains: [D09]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+      nota: Nenhum Mxx declara uso deste corpus; permanece pesquisa desacoplada até haver evidência de consumo por uma iniciativa.
+    status: NAO_PROCESSADO
+
+  - id: INS-003
+    title: EXECUTAR-BLOG-LANCAMENTO-FULLSTACK.bundle.yaml
+    path: insumos/EXECUTAR-BLOG-LANCAMENTO-FULLSTACK/EXECUTAR-BLOG-LANCAMENTO-FULLSTACK.bundle.yaml
+    format: yaml
+    bytes: 511610
+    sha256: '129fedad4ba6ea97d4711dd945faee29a33c5569157125e12ad17a0e84ecde95'
+    declared_primary_source: EXECUTAR_HUB_Control_Plane_v2.xlsx (não enviada)
+    field_count: 1047
+    field_id_scheme: 'Dxx-DOC-ACR-nnn.SECAO.CAMPO — já no formato do contrato de campo do Workbook'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2]
+      domains: [D01, D02, D03, D05, D06, D07, D08, D09, D10, D11, D12, D13, D14, D15, D16, D18, D19, D20, D21, D22, D23]
+      confidence: alta
+      nao_vinculado_formalmente: true
+      nota: Declarado no próprio arquivo (bundle.portfolio_id = M2); ainda sujeito a confirmação formal no prefill.
+    status: NAO_PROCESSADO
+
+  - id: INS-004
+    title: Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx
+    path: insumos/RISCO-COGNITIVO-HUB-EDITORIAL-CMS/Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx
+    format: xlsx
+    bytes: 97435
+    sha256: '92626db713ff7f656421d50afc2b69946488e3c6efbf2971790e6252aa3e700a'
+    sheet_count: 22
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2.1]
+      domains: [D16, D19]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
