@@ -1,0 +1,71 @@
+# Sessão A — SA-05 Portfólio EXECUTAR (árvore separada da árvore funcional).
+# Mapa: Axx ↔ Dxx ↔ Portfólio(P00) ↔ Programa ↔ Produto/Iniciativa(Mxx) ↔ Projeto(PRJ, TBD)
+# consumes_* preservados do commit 718d21b; listas vazias = TBD (nenhuma fonte define).
+programs:
+  - {id: P00, name: Programa EXECUTAR, source_refs: [SRC-01], status: proposed}
+
+initiatives:
+  - {id: M0, name: Executar Institucional, program_id: P00, consumes_areas: [A00], consumes_domains: [D01, D22], source_refs: [SRC-01], status: proposed}
+  - id: M1
+    name: Executar App
+    program_id: P00
+    consumes_areas: [A00, A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12]
+    consumes_domains: [D01, D02, D03, D05, D07, D08, D10, D11, D12, D13, D16, D18, D20, D22]
+    # SRC-01 "M1 — Executar App": função consumida → capacidade (numeração D antiga convertida, ver CNF-001)
+    capability_map:
+      - {function: Governança, area: A00}
+      - {function: Negócio, area: A01}
+      - {function: Produto, area: A02, domain: D10}
+      - {function: UX, area: A02, domain: D11}
+      - {function: Handoff, area: A03, domain: D12}
+      - {function: Engenharia, area: A04, domain: D12}
+      - {function: Deploy, area: A05}
+      - {function: Dados, area: A06, domain: D05}
+      - {function: Jurídico, area: A07, domain: D02}
+      - {function: Finanças, area: A07, domain: D03}
+      - {function: GTM, area: A01}
+      - {function: Conteúdo, area: A08}
+      - {function: Execução, area: A09, domain: D07}
+      - {function: Documentação, area: A10}
+      - {function: Skills/Prompts, area: A11}
+      - {function: Stakeholders, area: A12}
+    source_refs: [SRC-01]
+    status: proposed
+  - {id: M2, name: Executar Blog, program_id: P00, consumes_areas: [A00, A01, A02, A03, A04, A05, A06, A08, A09, A10, A11], consumes_domains: [D05, D06, D07, D08, D10, D11, D12, D13, D16, D18, D19, D20, D21, D22, D23], source_refs: [SRC-01], status: proposed}
+  - {id: M2.1, name: Risco Cognitivo Blog, parent_initiative: M2, program_id: P00, consumes_areas: [A02, A06, A08], consumes_domains: [D05, D09, D10, D11, D16], source_refs: [SRC-01], status: proposed}
+  - {id: M3, name: Executar Oficina, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M4, name: Executar Mapa Cognitivo, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M5, name: Agente Copiloto, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M6, name: Agente Maestro, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M7, name: Agente Vera, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M7.1, name: Emprego e Portfólio, parent_initiative: M7, program_id: P00, consumes_areas: [A12], consumes_domains: [D17], source_refs: [SRC-01], status: proposed}
+  - {id: M8, name: Consultoria e Studio, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M9, name: Marketplace Digital, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M10, name: Marketplace Produtos Físicos, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M11, name: Comunidade, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M12, name: ONG, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M13, name: Afiliados, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M14, name: Parcerias, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M15, name: Schola AI, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+  - {id: M16, name: Lead Business Creator, program_id: P00, consumes_areas: [], consumes_domains: [], source_refs: [SRC-01], status: proposed}
+
+# Projetos (PRJ-Mxx-nnn) nascem na Sessão B; nenhum confirmado nas fontes.
+projects: []
+
+# Frentes do ecossistema às quais o Playbook (CTR-PLAYBOOK) deve ser aplicado (SRC-02).
+# Nenhuma frente cria ID novo: mapeia para Mxx existente ou fica GAP.
+ecosystem_fronts:
+  - {label: EXECUTAR App, initiatives: [M1], epistemic_class: DIRECT}
+  - {label: EXECUTAR Blog, initiatives: [M2], epistemic_class: DIRECT}
+  - {label: EXECUTAR Copiloto-OPERACIONAL, initiatives: [M5], epistemic_class: DERIVED, confidence: baixa, gap_ref: GAP-001}
+  - {label: EXECUTAR Oficina Ferramentas, initiatives: [M3], epistemic_class: DIRECT}
+  - {label: EXECUTAR Consultoria / Estúdio, initiatives: [M8], epistemic_class: DIRECT}
+  - {label: EXECUTAR Comunidade / ONG, initiatives: [M11, M12], epistemic_class: DIRECT}
+  - {label: EXECUTAR Marketplace / Produtos Físicos, initiatives: [M9, M10], epistemic_class: DIRECT}
+  - {label: Infoprodutos / E-book, initiatives: [], epistemic_class: GAP, gap_ref: GAP-002}
+  - {label: EXECUTAR Afiliados, initiatives: [M13], epistemic_class: DIRECT}
+  - {label: Curso Cognitivo.org, initiatives: [], epistemic_class: GAP, gap_ref: GAP-003}
+  - {label: SCHOLA AI, initiatives: [M15], epistemic_class: DIRECT}
+  - {label: EXECUTAR Emprego e Portfólio, initiatives: [M7.1], epistemic_class: DIRECT}
+  - {label: EXECUTAR Creator Mídia / Mídias Sociais, initiatives: [], related_domains: [D16], epistemic_class: GAP, gap_ref: GAP-004}
+  - {label: Estudos, initiatives: [], epistemic_class: GAP, gap_ref: GAP-005}

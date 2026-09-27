@@ -1,13 +1,13 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://github.com/executar-23/Workbook/schema/workbook.schema.yaml
-title: Workbook EXECUTAR Registry
+title: Workbook EXECUTAR Master Schema
+description: >
+  Valida o documento consolidado = registry/workbook.yaml + includes (session_a.*, session_b.*),
+  montado por scripts/validate.py. Integridade referencial e regras B→A são checadas no script.
 type: object
-additionalProperties: false
-required: [schema_version, metadata, agent_contract, architecture, portfolio, governance]
+required: [schema_version, metadata, agent_contract, includes, id_conventions, session_a, session_b]
 properties:
-  schema_version:
-    type: string
-    pattern: '^1\\.[0-9]+\\.[0-9]+$'
+  schema_version: {type: string, pattern: '^1\.[0-9]+\.[0-9]+$'}
   metadata:
     type: object
     additionalProperties: false
@@ -17,7 +17,7 @@ properties:
       name: {type: string, minLength: 1}
       language: {const: pt-BR}
       status: {$ref: '#/$defs/status'}
-      updated_at: {type: string, format: date}
+      updated_at: {type: string}
   agent_contract:
     type: object
     additionalProperties: false
@@ -26,118 +26,148 @@ properties:
       read_order: {type: array, minItems: 1, items: {type: string}}
       required_flow: {const: 'sync -> inspect -> change -> validate -> commit -> sync'}
       invariants: {type: array, minItems: 1, uniqueItems: true, items: {type: string}}
-  architecture:
+  includes: {type: object}
+  id_conventions: {type: object}
+  session_a:
     type: object
-    additionalProperties: false
-    required: [functional_hierarchy, macro_areas, domains]
+    required: [master_index, architecture, domain_contracts, documents, portfolio, governance, workbook_manual, pm_lifecycle]
     properties:
-      functional_hierarchy:
-        type: array
-        const: [ecosystem, macro_area, domain, subdomain, process_or_cycle, deliverable, artifact_or_record]
-      macro_areas:
-        type: array
-        minItems: 1
-        items: {$ref: '#/$defs/macroArea'}
-      domains:
-        type: array
-        minItems: 1
-        items: {$ref: '#/$defs/domain'}
-  portfolio:
+      master_index:
+        type: object
+        required: [transversal_pattern, sections]
+        properties:
+          sections: {type: array, minItems: 13, maxItems: 13, items: {$ref: '#/$defs/saSection'}}
+      architecture:
+        type: object
+        required: [functional_hierarchy, macro_areas, domains]
+        properties:
+          functional_hierarchy: {const: [ecosystem, macro_area, domain, subdomain, process_or_cycle, deliverable, artifact_or_record]}
+          macro_areas: {type: array, minItems: 13, maxItems: 13, items: {$ref: '#/$defs/macroArea'}}
+          domains: {type: array, minItems: 23, maxItems: 23, items: {$ref: '#/$defs/domain'}}
+      domain_contracts:
+        type: object
+        required: [contracts, domain_contracts]
+        properties:
+          domain_contracts: {type: array, minItems: 23, items: {$ref: '#/$defs/domainContract'}}
+      documents:
+        type: object
+        required: [documents]
+        properties:
+          documents: {type: array, minItems: 37, items: {$ref: '#/$defs/document'}}
+      portfolio:
+        type: object
+        required: [programs, initiatives, ecosystem_fronts]
+        properties:
+          programs: {type: array, minItems: 1, items: {$ref: '#/$defs/program'}}
+          initiatives: {type: array, minItems: 1, items: {$ref: '#/$defs/initiative'}}
+      governance:
+        type: object
+        required: [gates, sources, id_migrations, conflicts, gaps, decisions, state_models, epistemic_model]
+        properties:
+          gates: {type: array, items: {$ref: '#/$defs/gate'}}
+          sources: {type: array, items: {$ref: '#/$defs/source'}}
+          conflicts: {type: array, items: {type: object, required: [id, issue, resolution_rule, requires_human_decision, status], properties: {id: {pattern: '^CNF-[0-9]{3}$'}}}}
+          gaps: {type: array, items: {type: object, required: [id, missing_information, requires_human_decision], properties: {id: {pattern: '^GAP-[0-9]{3}$'}}}}
+          decisions: {type: array, items: {type: object, required: [id, title, status], properties: {id: {pattern: '^DEC-[0-9]{3}$'}}}}
+          id_migrations: {type: array, items: {type: object, required: [old_id, new_id, reason, effective_at]}}
+      pm_lifecycle:
+        type: object
+        required: [phases]
+        properties:
+          phases: {type: array, minItems: 13, maxItems: 13, items: {type: object, required: [id, name, deliverables], properties: {id: {pattern: '^PM(0[1-9]|1[0-3])$'}}}}
+  session_b:
     type: object
-    additionalProperties: false
-    required: [programs, initiatives]
+    required: [foundation, execution_flow, objects]
     properties:
-      programs: {type: array, minItems: 1, items: {$ref: '#/$defs/program'}}
-      initiatives: {type: array, minItems: 1, items: {$ref: '#/$defs/initiative'}}
-  governance:
-    type: object
-    additionalProperties: false
-    required: [gates, sources, id_migrations]
-    properties:
-      gates: {type: array, items: {$ref: '#/$defs/gate'}}
-      sources: {type: array, items: {$ref: '#/$defs/source'}}
-      id_migrations: {type: array, items: {$ref: '#/$defs/migration'}}
+      foundation:
+        type: object
+        required: [foundation_sections]
+        properties:
+          foundation_sections: {type: array, minItems: 12, maxItems: 12, items: {$ref: '#/$defs/sbObject'}}
+      execution_flow:
+        type: object
+        required: [cycle_flow]
+        properties:
+          cycle_flow: {type: array, minItems: 16, maxItems: 16}
+      objects:
+        type: object
+        required: [object_types, instances]
 $defs:
-  status:
-    type: string
-    enum: [proposed, active, deprecated, archived]
-  entityBase:
+  status: {type: string, enum: [proposed, active, deprecated, archived]}
+  srcRefs: {type: array, uniqueItems: true, items: {type: string, pattern: '^SRC-[0-9]{2}$'}}
+  saSection:
     type: object
     required: [id, name, status]
     properties:
-      id: {type: string}
-      name: {type: string, minLength: 1}
-      description: {type: string}
-      status: {$ref: '#/$defs/status'}
-      source_refs: {type: array, uniqueItems: true, items: {type: string, pattern: '^SRC-[0-9]{2}$'}}
+      id: {type: string, pattern: '^SA-[0-9]{2}$'}
   macroArea:
-    allOf:
-      - {$ref: '#/$defs/entityBase'}
-      - type: object
-        additionalProperties: false
-        required: [id, name, status, purpose]
-        properties:
-          id: {type: string, pattern: '^A[0-9]{2}$'}
-          name: {type: string}
-          description: {type: string}
-          status: {$ref: '#/$defs/status'}
-          source_refs: {type: array, uniqueItems: true, items: {type: string}}
-          purpose: {type: string, minLength: 1}
+    type: object
+    required: [id, name, purpose, status]
+    properties:
+      id: {type: string, pattern: '^A[0-9]{2}$'}
+      aliases: {type: array, items: {type: string}}
+      status: {$ref: '#/$defs/status'}
+      source_refs: {$ref: '#/$defs/srcRefs'}
   domain:
-    allOf:
-      - {$ref: '#/$defs/entityBase'}
-      - type: object
-        additionalProperties: false
-        required: [id, name, status, primary_area]
-        properties:
-          id: {type: string, pattern: '^D[0-9]{2}$'}
-          name: {type: string}
-          description: {type: string}
-          status: {$ref: '#/$defs/status'}
-          source_refs: {type: array, uniqueItems: true, items: {type: string}}
-          primary_area: {type: string, pattern: '^A[0-9]{2}$'}
-          supporting_areas: {type: array, uniqueItems: true, items: {type: string, pattern: '^A[0-9]{2}$'}}
+    type: object
+    required: [id, name, primary_area, documents, status]
+    properties:
+      id: {type: string, pattern: '^D[0-9]{2}$'}
+      primary_area: {type: string, pattern: '^A[0-9]{2}$'}
+      supporting_areas: {type: array, uniqueItems: true, items: {type: string, pattern: '^A[0-9]{2}$'}}
+      documents: {type: array, minItems: 1, items: {type: string, pattern: '^D[0-9]{2}-DOC-[A-Z]{2,5}-[0-9]{3}$'}}
+      subdomains:
+        type: array
+        items:
+          type: object
+          required: [id, name, status]
+          properties:
+            id: {type: string, pattern: '^D[0-9]{2}\.SD[0-9]{2}$'}
+            deliverables: {type: array, items: {type: object, required: [id, name], properties: {id: {pattern: '^D[0-9]{2}-E[0-9]{2}$'}}}}
+      status: {$ref: '#/$defs/status'}
+      source_refs: {$ref: '#/$defs/srcRefs'}
+  domainContract:
+    type: object
+    required: [domain_id, playbook, interface]
+    properties:
+      domain_id: {type: string, pattern: '^D[0-9]{2}$'}
+      playbook: {type: object, required: [identidade, missao, objetivo, escopo, stakeholders, entradas, processos, saidas, entregaveis, produtos_servicos, dados, sistemas, dependencias, kpis, riscos, governanca, planejamento, capacidade, financeiro, evidencias, status]}
+      interface:
+        type: array
+        minItems: 1
+        items: {type: object, required: [recebe, de, processa, produz, entrega_para, gate, sistema_de_registro, evidencia, sla, owner]}
+  document:
+    type: object
+    required: [id, acronym, name, domain_id, document_class, document_status, approval_status, owner, source_refs, status]
+    anyOf: [{required: [sections]}, {required: [record_schema]}]
+    properties:
+      id: {type: string, pattern: '^D[0-9]{2}-DOC-[A-Z]{2,5}-[0-9]{3}$'}
+      domain_id: {type: string, pattern: '^D[0-9]{2}$'}
+      document_class: {enum: [MACRO, SPECIALIZED]}
+      document_status: {enum: [IDENTIFICADO, PRE_PREENCHIDO, ESPECIFICADO, APROVADO, EM_DESENVOLVIMENTO, IMPLEMENTADO, TESTADO, VERIFICADO, LIBERADO, PUBLICADO]}
+      approval_status: {enum: [PENDENTE, APROVADO, REJEITADO]}
+      source_refs: {$ref: '#/$defs/srcRefs'}
+      status: {$ref: '#/$defs/status'}
   program:
-    allOf:
-      - {$ref: '#/$defs/entityBase'}
-      - type: object
-        additionalProperties: false
-        required: [id, name, status]
-        properties:
-          id: {type: string, pattern: '^P[0-9]{2}$'}
-          name: {type: string}
-          description: {type: string}
-          status: {$ref: '#/$defs/status'}
-          source_refs: {type: array, uniqueItems: true, items: {type: string}}
+    type: object
+    required: [id, name, status]
+    properties:
+      id: {type: string, pattern: '^P[0-9]{2}$'}
   initiative:
-    allOf:
-      - {$ref: '#/$defs/entityBase'}
-      - type: object
-        additionalProperties: false
-        required: [id, name, status, program_id, consumes_areas, consumes_domains]
-        properties:
-          id: {type: string, pattern: '^M[0-9]+(?:\\.[0-9]+)?$'}
-          name: {type: string}
-          description: {type: string}
-          status: {$ref: '#/$defs/status'}
-          source_refs: {type: array, uniqueItems: true, items: {type: string}}
-          program_id: {type: string, pattern: '^P[0-9]{2}$'}
-          parent_initiative: {type: string, pattern: '^M[0-9]+(?:\\.[0-9]+)?$'}
-          consumes_areas: {type: array, uniqueItems: true, items: {type: string, pattern: '^A[0-9]{2}$'}}
-          consumes_domains: {type: array, uniqueItems: true, items: {type: string, pattern: '^D[0-9]{2}$'}}
+    type: object
+    required: [id, name, status, program_id, consumes_areas, consumes_domains]
+    properties:
+      id: {type: string, pattern: '^M[0-9]+(\.[0-9]+)?$'}
+      program_id: {type: string, pattern: '^P[0-9]{2}$'}
+      parent_initiative: {type: string, pattern: '^M[0-9]+(\.[0-9]+)?$'}
+      consumes_areas: {type: array, uniqueItems: true, items: {type: string, pattern: '^A[0-9]{2}$'}}
+      consumes_domains: {type: array, uniqueItems: true, items: {type: string, pattern: '^D[0-9]{2}$'}}
   gate:
-    allOf:
-      - {$ref: '#/$defs/entityBase'}
-      - type: object
-        additionalProperties: false
-        required: [id, name, status]
-        properties:
-          id: {type: string, pattern: '^G(?:0[0-9]|1[01])$'}
-          name: {type: string}
-          description: {type: string}
-          status: {$ref: '#/$defs/status'}
-          source_refs: {type: array, uniqueItems: true, items: {type: string}}
-          acceptance_criteria: {type: array, items: {type: string}}
+    type: object
+    required: [id, name, status]
+    properties:
+      id: {type: string, pattern: '^G(0[0-9]|1[01])$'}
+      acceptance_criteria: {type: array, items: {type: string}}
   source:
     type: object
     additionalProperties: false
@@ -146,14 +176,12 @@ $defs:
       id: {type: string, pattern: '^SRC-[0-9]{2}$'}
       title: {type: string, minLength: 1}
       type: {type: string, enum: [document, repository, decision, external_standard]}
+      authority: {enum: [fonte_principal, complementar, historica, evidencia]}
       location: {type: string}
       status: {$ref: '#/$defs/status'}
-  migration:
+  sbObject:
     type: object
-    additionalProperties: false
-    required: [old_id, new_id, reason, effective_at]
+    required: [id, name, refs_a, status]
     properties:
-      old_id: {type: string}
-      new_id: {type: string}
-      reason: {type: string, minLength: 1}
-      effective_at: {type: string, format: date}
+      id: {type: string, pattern: '^SB-(0[0-9]|1[01])$'}
+      refs_a: {type: array, minItems: 1, items: {type: string}}

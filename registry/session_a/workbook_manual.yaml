@@ -1,0 +1,120 @@
+# Sessão A — SA-01 Workbook (GOV-WORKBOOK-001). Representação humana do sistema; fonte editorial em HTML (SRC-04).
+id: GOV-WORKBOOK-001
+name: Sistema Integrado de Governança e Operação EXECUTAR
+basis: PMBOK 8 + gestão de portfólio + gestão de programas + governança organizacional + operação/SOP + execução ágil  # SRC-01
+principle: Metodologias são instrumento de raciocínio do agente, não conteúdo do workbook.  # SRC-04
+systems_of_record_rule: Drive GitHub Supabase Vercel planilhas agentes e automações são sistemas de registro/execução, não a governança.  # SRC-01
+
+parts:
+  - id: WB-P1
+    name: Parte I — Manual de Governança
+    stability: estável
+    chapters:  # SRC-01 (20 capítulos); cobre a lista de SRC-02
+      - {id: WB-P1-01, name: Propósito}
+      - {id: WB-P1-02, name: Visão do ecossistema}
+      - {id: WB-P1-03, name: Princípios de governança}
+      - {id: WB-P1-04, name: Estrutura organizacional}
+      - {id: WB-P1-05, name: Arquitetura das áreas, refs: [SA-02, SA-03, SA-04]}
+      - {id: WB-P1-06, name: Cadeia de valor}
+      - {id: WB-P1-07, name: Modelo Portfólio → Programa → Projeto → Operação, refs: [SA-05]}
+      - {id: WB-P1-08, name: Papéis e responsabilidades}
+      - {id: WB-P1-09, name: Autoridades de decisão, refs: [D22]}
+      - {id: WB-P1-10, name: Estados oficiais}
+      - {id: WB-P1-11, name: Gates, refs: [G00]}
+      - {id: WB-P1-12, name: Critérios de aceite}
+      - {id: WB-P1-13, name: Gestão de mudanças}
+      - {id: WB-P1-14, name: Gestão documental, refs: [D06, D18]}
+      - {id: WB-P1-15, name: Governança de dados, refs: [D05]}
+      - {id: WB-P1-16, name: Governança de tecnologia, refs: [D12, D20]}
+      - {id: WB-P1-17, name: Governança financeira, refs: [D03]}
+      - {id: WB-P1-18, name: Governança de riscos, refs: [D02]}
+      - {id: WB-P1-19, name: Governança de IA e automações, refs: [A11]}
+      - {id: WB-P1-20, name: Sistema de evidências}
+    source_refs: [SRC-01, SRC-02]
+  - id: WB-P2
+    name: Parte II — Playbook D01–D23
+    contract: CTR-PLAYBOOK
+    interface_contract: CTR-INTERFACE
+    applies_to: [D01–D23, ecosystem_fronts]
+    registry: registry/session_a/domain_contracts.yaml
+    source_refs: [SRC-01, SRC-02]
+  - id: WB-P3
+    name: Parte III — Workbook de Execução
+    stability: muda constantemente
+    delegated_to: SB-09   # Sessão B; aqui somente referência
+    registry: registry/session_b/execution_flow.yaml
+    source_refs: [SRC-01]
+
+# Arquitetura fractal: mesmos blocos na escala ecossistema e na escala área (SRC-01)
+fractal_matrix:
+  - {bloco: Identidade, ecossistema: propósito do ecossistema, area: mandato da área}
+  - {bloco: Objetivos, ecossistema: objetivos estratégicos, area: objetivos da área}
+  - {bloco: Escopo, ecossistema: produtos/serviços abrangidos, area: responsabilidades}
+  - {bloco: Valor, ecossistema: cadeia de valor global, area: contribuição para a cadeia}
+  - {bloco: Governança, ecossistema: modelo decisório, area: autoridade da área}
+  - {bloco: Stakeholders, ecossistema: stakeholders globais, area: stakeholders da área}
+  - {bloco: Processos, ecossistema: macroprocessos, area: processos operacionais}
+  - {bloco: Entregáveis, ecossistema: resultados do ecossistema, area: outputs da área}
+  - {bloco: Dados, ecossistema: arquitetura de dados, area: dados produzidos/consumidos}
+  - {bloco: Sistemas, ecossistema: mapa de plataformas, area: ferramentas da área}
+  - {bloco: Roadmap, ecossistema: roadmap integrado, area: roadmap específico}
+  - {bloco: Gates, ecossistema: gates corporativos, area: critérios de passagem}
+  - {bloco: Backlog, ecossistema: portfólio priorizado, area: backlog da área}
+  - {bloco: Sprint, ecossistema: ciclos globais, area: execução corrente}
+  - {bloco: Recursos, ecossistema: capacidade total, area: capacidade disponível}
+  - {bloco: Finanças, ecossistema: CAPEX/OPEX global, area: orçamento da área}
+  - {bloco: Riscos, ecossistema: riscos sistêmicos, area: riscos locais}
+  - {bloco: Dependências, ecossistema: mapa cross-area, area: entradas/saídas}
+  - {bloco: KPI, ecossistema: indicadores estratégicos, area: indicadores operacionais}
+  - {bloco: Evidências, ecossistema: registro mestre, area: provas de execução}
+  - {bloco: Aprendizado, ecossistema: melhoria do sistema, area: melhoria do processo}
+
+# Níveis de gestão L0–L6 (SRC-01)
+management_levels:
+  - {id: L0, name: Estratégia / Ecossistema, contents: [visão, objetivos, resultados esperados, portfólio, prioridades, capacidade, governança], session: A}
+  - {id: L1, name: Áreas D01–D23, session: A}
+  - {id: L2, name: Programas / Value Streams, session: A}
+  - {id: L3, name: Produtos / Serviços / Projetos, session: A}
+  - {id: L4, name: Entregáveis, session: A}
+  - {id: L5, name: Tarefas / Sprints, session: B}
+  - {id: L6, name: Ações / Evidências, session: B}
+
+# Edição HTML (SRC-04): 17 partes mapeadas às 3 partes (CNF-005)
+html_edition:
+  output: WORKBOOK_INTEGRADO.html
+  pipeline: [corpus documental, consolidação semântica, WORKBOOK_INTEGRADO.html, Cloud Design, renderização editorial, PDF / impressão / versão digital]
+  consolidation_technique: [EXTRAIR, NORMALIZAR, RELACIONAR, RECONCILIAR, SINTETIZAR]
+  workflow: Corpus → Inventário → Classificação → Consolidação → Workbook → Validação → HTML
+  cover: [nome do ecossistema, título, versão, data da consolidação, situação documental, período coberto]
+  parts:
+    - {id: WB-H01, name: Visão Executiva, subsections: [como utilizar, visão geral do ecossistema, objetivos, mapa do ecossistema], maps_to: WB-P1}
+    - {id: WB-H02, name: Governança, maps_to: WB-P1}
+    - {id: WB-H03, name: Cadeia de Valor, table: [etapa, entrada, processo, saida, area, destino, evidencia], maps_to: WB-P1}
+    - {id: WB-H04, name: Áreas do Ecossistema, maps_to: WB-P2}
+    - {id: WB-H05, name: Portfólio, table: [id, tipo, nome, area, objetivo, situacao, dependencias, proxima_entrega], maps_to: WB-P1}
+    - {id: WB-H06, name: Planejamento (estratégico/tático/operacional), maps_to: WB-P3}
+    - {id: WB-H07, name: Roteiro de Evolução (agora/próximo/futuro), maps_to: WB-P3}
+    - {id: WB-H08, name: Ciclos de Trabalho, maps_to: WB-P3}
+    - {id: WB-H09, name: Processos, table: [id, processo, area, gatilho, entrada, saida, proximo_processo], critical_process_sheet: [objetivo, entrada, pre_condicoes, passos, saida, criterio_de_aceite, responsavel, evidencia, excecoes], maps_to: WB-P2}
+    - {id: WB-H10, name: Interfaces entre Áreas, contract: CTR-INTERFACE, maps_to: WB-P2}
+    - {id: WB-H11, name: Dados e Fontes Principais, table: [informacao, fonte_principal, area_responsavel, atualizacao, consumidores], maps_to: WB-P1}
+    - {id: WB-H12, name: Documentos e Evidências, classes: [principal, derivado, evidencia, historico, duplicado, obsoleto, em_conflito], maps_to: WB-P1}
+    - {id: WB-H13, name: Riscos Problemas e Bloqueios, table: [tipo, descricao, area, impacto, acao, responsavel, situacao], maps_to: WB-P3}
+    - {id: WB-H14, name: Indicadores, chain: [objetivo, indicador, fonte, frequencia, meta, resultado, decisao], maps_to: WB-P1}
+    - {id: WB-H15, name: Painel Executivo, maps_to: WB-P3}
+    - {id: WB-H16, name: Lacunas e Decisões Pendentes, table: [id, lacuna, impacto, informacao_necessaria, quem_decide, o_que_desbloqueia], maps_to: SA-10}
+    - {id: WB-H17, name: Rastreabilidade, shape: [fonte, arquivo, localizacao, versao, data, evidencias], maps_to: SA-00}
+  language_rule:  # SRC-04: PT-BR na edição humana; nomes oficiais preservados
+    roadmap: roteiro de evolução
+    backlog: lista priorizada
+    sprint: ciclo de trabalho
+    WIP: limite de trabalho em andamento
+    gate: marco de decisão
+    deliverable: entrega
+    owner: responsável
+    workflow: fluxo de trabalho
+    handoff: transferência entre etapas
+  density_priority: [tabela, quadro, ficha, diagrama textual, lista, texto corrido]
+  final_audit: [cobertura, consistência, relações, governança, rastreabilidade, HTML]
+  prohibitions: [concatenar documentos, reproduzir duplicados, capítulos vazios, preencher lacunas com invenção, consultoria genérica, jargão, estilo acadêmico, estilo de engenharia, ferramenta como objetivo, plano como resultado, arquivo criado como entrega concluída, workbook como lista de documentos]
+  source_refs: [SRC-04]

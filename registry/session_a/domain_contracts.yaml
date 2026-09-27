@@ -1,0 +1,1070 @@
+# Sessão A — Parte II do Workbook: Playbook D01–D23 (contrato único) + Interface Contract.
+# Somente identidade (ref) e entregáveis (refs aos documentos) são preenchidos; o resto é TBD até haver fonte.
+contracts:
+  playbook_contract:
+    id: CTR-PLAYBOOK
+    order:
+    - identidade
+    - missao
+    - objetivo
+    - escopo
+    - stakeholders
+    - entradas
+    - processos
+    - saidas
+    - entregaveis
+    - produtos_servicos
+    - dados
+    - sistemas
+    - dependencias
+    - kpis
+    - riscos
+    - governanca
+    - planejamento
+    - capacidade
+    - financeiro
+    - evidencias
+    - status
+    source_refs:
+    - SRC-01
+    - SRC-02
+    field_shapes:
+      escopo:
+        inclui: []
+        exclui: []
+      dados:
+        produz: []
+        consome: []
+        fonte_da_verdade: TBD
+      dependencias:
+        depends_on: []
+        blocks: []
+      kpis:
+        kpi: []
+        metas: []
+      governanca:
+        decisoes: []
+        aprovacoes: []
+        gates: []
+      planejamento:
+        roadmap: TBD
+        backlog: TBD
+        sprint_atual: TBD
+      capacidade:
+        pessoas: TBD
+        horas: TBD
+        recursos: TBD
+      financeiro:
+        capex: TBD
+        opex: TBD
+    table_shapes_src04:
+      processos:
+      - processo
+      - entrada
+      - atividades_principais
+      - saida
+      - responsavel
+      - evidencia
+      entregaveis:
+      - entrega
+      - destinatario
+      - frequencia
+      - criterio_de_aceite
+      - situacao
+      responsabilidades:
+      - papel
+      - responsabilidade
+      - autoridade
+      kpis:
+      - indicador
+      - objetivo_relacionado
+      - medida
+      - meta
+      - frequencia
+      - fonte
+      riscos:
+      - risco
+      - impacto
+      - controle_atual
+      - acao_necessaria
+  interface_contract:
+    id: CTR-INTERFACE
+    order:
+    - recebe
+    - de
+    - processa
+    - produz
+    - entrega_para
+    - gate
+    - sistema_de_registro
+    - evidencia
+    - sla
+    - owner
+    source_refs:
+    - SRC-01
+    - SRC-02
+    - SRC-04
+    allowed_values:
+      recebe:
+      - dado
+      - documento
+      - decisao
+      - ativo
+      - solicitacao
+      de: Axx|Dxx|Mxx
+      entrega_para: Axx|Dxx|Mxx
+      sistema_de_registro:
+      - Drive
+      - GitHub
+      - banco
+      - ferramenta
+      evidencia:
+      - URL
+      - arquivo
+      - registro
+      - commit
+    pairwise_interface_src04:
+    - origem
+    - destino
+    - recebe
+    - processa
+    - entrega
+    - criterio_de_aceite
+    - prazo
+    - registro
+    - evidencia
+domain_contracts:
+- domain_id: D01
+  playbook:
+    identidade:
+      ref: D01
+      parent: A00
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D01-DOC-DDE-001
+    - ref: D01-DOC-TAP-001
+    - ref: D01-DOC-MNE-001
+    - ref: D01-DOC-MRE-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D02
+  playbook:
+    identidade:
+      ref: D02
+      parent: A07
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D02-DOC-DGRC-001
+    - ref: D02-DOC-MRC-001
+    - ref: D02-DOC-PPT-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D03
+  playbook:
+    identidade:
+      ref: D03
+      parent: A07
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D03-DOC-PFO-001
+    - ref: D03-DOC-MFO-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D04
+  playbook:
+    identidade:
+      ref: D04
+      parent: A07
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D04-DOC-PPC-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D05
+  playbook:
+    identidade:
+      ref: D05
+      parent: A06
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D05-DOC-EPGD-001
+    - ref: D05-DOC-DCM-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D06
+  playbook:
+    identidade:
+      ref: D06
+      parent: A06
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D06-DOC-EGC-001
+    - ref: D06-DOC-RMI-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D07
+  playbook:
+    identidade:
+      ref: D07
+      parent: A09
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D07-DOC-PEX-001
+    - ref: D07-DOC-PIM-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D08
+  playbook:
+    identidade:
+      ref: D08
+      parent: A05
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D08-DOC-MOP-001
+    - ref: D08-DOC-RUN-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D09
+  playbook:
+    identidade:
+      ref: D09
+      parent: A06
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D09-DOC-PPE-001
+    - ref: D09-DOC-DEB-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D10
+  playbook:
+    identidade:
+      ref: D10
+      parent: A02
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D10-DOC-DRP-001
+    - ref: D10-DOC-PRD-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D11
+  playbook:
+    identidade:
+      ref: D11
+      parent: A02
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D11-DOC-EEP-001
+    - ref: D11-DOC-DSI-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D12
+  playbook:
+    identidade:
+      ref: D12
+      parent: A04
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D12-DOC-ETE-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D13
+  playbook:
+    identidade:
+      ref: D13
+      parent: A01
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D13-DOC-DRM-001
+    - ref: D13-DOC-GTM-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D14
+  playbook:
+    identidade:
+      ref: D14
+      parent: A01
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D14-DOC-PCV-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D15
+  playbook:
+    identidade:
+      ref: D15
+      parent: A01
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D15-DOC-PASC-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D16
+  playbook:
+    identidade:
+      ref: D16
+      parent: A08
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D16-DOC-PEM-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D17
+  playbook:
+    identidade:
+      ref: D17
+      parent: A12
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D17-DOC-PEP-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D18
+  playbook:
+    identidade:
+      ref: D18
+      parent: A10
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D18-DOC-PCE-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D19
+  playbook:
+    identidade:
+      ref: D19
+      parent: A11
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D19-DOC-PAC-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D20
+  playbook:
+    identidade:
+      ref: D20
+      parent: A11
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D20-DOC-PPR-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D21
+  playbook:
+    identidade:
+      ref: D21
+      parent: A10
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D21-DOC-PWB-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D22
+  playbook:
+    identidade:
+      ref: D22
+      parent: A00
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D22-DOC-DRL-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP
+- domain_id: D23
+  playbook:
+    identidade:
+      ref: D23
+      parent: A10
+    missao: TBD
+    objetivo: TBD
+    escopo: TBD
+    stakeholders: TBD
+    entradas: TBD
+    processos: TBD
+    saidas: TBD
+    entregaveis:
+    - ref: D23-DOC-PBL-001
+    produtos_servicos: TBD
+    dados: TBD
+    sistemas: TBD
+    dependencias: TBD
+    kpis: TBD
+    riscos: TBD
+    governanca: TBD
+    planejamento: TBD
+    capacidade: TBD
+    financeiro: TBD
+    evidencias: TBD
+    status: proposed
+  interface:
+  - recebe: TBD
+    de: TBD
+    processa: TBD
+    produz: TBD
+    entrega_para: TBD
+    gate: TBD
+    sistema_de_registro: TBD
+    evidencia: TBD
+    sla: TBD
+    owner: TBD
+  source_refs:
+  - SRC-01
+  epistemic_class: GAP

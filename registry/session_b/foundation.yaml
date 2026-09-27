@@ -1,0 +1,17 @@
+# Sessão B — Foundation / Execution System. Sessão B define COMO o sistema executa.
+# Regra: todo objeto referencia IDs da Sessão A em refs_a e nunca copia conhecimento canônico.
+# Estrutura 00–11 registrada no Notion como "Estrutura do Foundation Doc" (projeto GTM-Blog — Launch Control) — SRC-01.
+# scope: aplicado por produto/iniciativa (Mxx); instâncias ainda não existem.
+foundation_sections:
+  - {id: SB-00, name: Project Character, purpose: identidade propósito e caráter do projeto, refs_a: [D01-DOC-DDE-001, D01-DOC-TAP-001, SA-05], source_refs: [SRC-01], status: proposed}
+  - {id: SB-01, name: Frameworks Description, purpose: frameworks métodos e modelos adotados, refs_a: [PM01, WB-P1-03], source_refs: [SRC-01], status: proposed}
+  - {id: SB-02, name: PRD Description, purpose: requisitos de produto objetivos escopo e funcionalidades, refs_a: [D10-DOC-DRP-001, D10-DOC-PRD-001, D12.SD01], source_refs: [SRC-01], status: proposed}
+  - {id: SB-03, name: Tech Description, purpose: arquitetura técnica stack integrações e requisitos tecnológicos, refs_a: [D12-DOC-ETE-001, D20-DOC-PPR-001, D18-DOC-PCE-001], source_refs: [SRC-01], status: proposed}
+  - {id: SB-04, name: Editorial Description, purpose: estratégia editorial conteúdo voz formato e publicação, refs_a: [D16-DOC-PEM-001, D19-DOC-PAC-001], source_refs: [SRC-01], status: proposed}
+  - {id: SB-05, name: Pain Description, purpose: problemas dores riscos e necessidades, refs_a: [PM01, PM02, D09-DOC-DEB-001, D02-DOC-MRC-001], source_refs: [SRC-01], status: proposed}
+  - {id: SB-06, name: Agent Description, purpose: agentes de IA papéis responsabilidades habilidades e limites, refs_a: [A11, SA-09, M5, M6, M7], source_refs: [SRC-01], status: proposed}
+  - {id: SB-07, name: Operation Description, purpose: modelo operacional fluxos governança e procedimentos, refs_a: [D08-DOC-MOP-001, D08-DOC-RUN-001], source_refs: [SRC-01], status: proposed}
+  - {id: SB-08, name: Tasks and Issues, purpose: tarefas pendências problemas e itens de execução, refs_a: [D07-DOC-PEX-001, D22-DOC-DRL-001], source_refs: [SRC-01], status: proposed}
+  - {id: SB-09, name: Sprints Roadmaps and Chronogram, purpose: sprints roadmap cronograma marcos e sequência, refs_a: [D07-DOC-PIM-001, D07.SD02, D07.SD04, WB-P3], source_refs: [SRC-01], status: proposed}
+  - {id: SB-10, name: Control, purpose: controles acompanhamento status métricas e governança, refs_a: [SA-07, G00, D05-DOC-DCM-001], source_refs: [SRC-01], status: proposed}
+  - {id: SB-11, name: Complete System Mental Model, purpose: mapa consolidado do sistema componentes relações dependências e funcionamento, refs_a: [SA-02, D01-DOC-MRE-001, D23-DOC-PBL-001], source_refs: [SRC-01], status: proposed}

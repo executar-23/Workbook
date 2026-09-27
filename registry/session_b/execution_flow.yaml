@@ -1,0 +1,41 @@
+# Sessão B — Fluxo operacional (SRC-01 Parte III, SRC-02). Ciclo fechado.
+cycle_flow:
+  - {step: 1, id: FL-CICLO, name: Ciclo, object_type: CYC}
+  - {step: 2, id: FL-OBJETIVOS, name: Objetivos, object_type: OBJ}
+  - {step: 3, id: FL-CAPACIDADE, name: Capacidade, refs_a: [D04-DOC-PPC-001, D07-DOC-PEX-001]}
+  - {step: 4, id: FL-ROADMAP, name: Roadmap, object_type: RDM}
+  - {step: 5, id: FL-PRIORIDADES, name: Prioridades, refs_a: [PM04]}
+  - {step: 6, id: FL-BACKLOG, name: Backlog, object_type: BKL}
+  - {step: 7, id: FL-SPRINT, name: Sprint, object_type: SPR}
+  - {step: 8, id: FL-WIP, name: WIP, rule: WIP=1 por agente}
+  - {step: 9, id: FL-ENTREGAVEIS, name: Entregáveis, refs_pattern: 'D[0-9]{2}-E[0-9]{2}'}
+  - {step: 10, id: FL-DEPENDENCIAS, name: Dependências}
+  - {step: 11, id: FL-RISKS-ISSUES, name: Risks/Issues, object_type: ISS, refs_a: [D02-DOC-MRC-001, D22-DOC-DRL-001]}
+  - {step: 12, id: FL-GATE, name: Gate, refs_a: [G00]}
+  - {step: 13, id: FL-RESULTADO, name: Resultado}
+  - {step: 14, id: FL-KPI, name: KPI, refs_a: [D05-DOC-DCM-001]}
+  - {step: 15, id: FL-LEARNING, name: Learning, refs_a: [PM10, D22-DOC-DRL-001]}
+  - {step: 16, id: FL-PROXIMO-CICLO, name: Próximo Ciclo, next: FL-CICLO}
+strategic_chain:  # SRC-01
+  [ESTRATÉGIA, PORTFÓLIO, PROGRAMAS / VALUE STREAMS, PROJETOS / PRODUTOS, ROADMAP, BACKLOG, SPRINT, TAREFA, AÇÃO, ENTREGÁVEL, GATE, RELEASE, KPI, LEARNING, ESTRATÉGIA]
+relation_chains:  # SRC-04
+  - [Objetivo, Área, Processo, Entrega, Indicador, Responsável, Dependência, Evidência]
+  - [Estratégia, Portfólio, Programa, Produto/Serviço, Projeto, Entrega, Atividade, Ação]
+  - [Objetivo, Resultado, Iniciativa, Entrega, Atividade, Evidência]
+horizons: [agora, próximo, futuro]   # SRC-04; SRC-03 D10 usa agora/próximo/depois
+prefill_execution_graph:   # SRC-03 — workflow de pré-preenchimento documental (WF-PREFILL-001)
+  id: WF-PREFILL-001
+  refs_a: [SA-12, D06-DOC-RMI-001]
+  steps:
+    - {id: PF-00, task: Inventariar fontes, output: SOURCE_REGISTER, gate: fontes identificadas}
+    - {id: PF-01…PF-23, task: Processar D01 → D23 sequencialmente, rule: WIP = 1}
+    - {id: PF-24, task: Reconciliação cruzada}
+    - {id: PF-25, task: Gerar Master Document Register}
+    - {id: PF-26, task: Gerar Gap Register}
+    - {id: PF-27, task: Gerar Conflict Register}
+    - {id: PF-28, task: QA e validação}
+    - {id: PF-29, task: Entregar pacote final}
+  outputs: [00_MASTER_DOCUMENT_REGISTER, 00_SOURCE_REGISTER, 00_GAP_REGISTER, 00_CONFLICT_REGISTER, D01–D23, PREFILL_REPORT, VALIDATION_REPORT, NEXT_ACTIONS_REGISTER, USER_ACTION_REQUIRED]
+  master_document_register_columns: [domain_id, domain_name, document_id, acronym, document_name, document_class, parent_document_id, source_folder, source_files, owner, status, approval_status, evidence_coverage_percent, gaps, conflicts, depends_on, blocks, next_action]
+  end_state: PRE_PREENCHIDO
+source_refs: [SRC-01, SRC-02, SRC-03, SRC-04]

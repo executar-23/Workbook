@@ -1,0 +1,21 @@
+# Sessão A — Master Index (SRC-01, SRC-02). Sessão A define o que o sistema é e conhece.
+transversal_pattern:   # aplicar em toda mudança relevante de contexto; nunca duplicar — referenciar
+  applies_to: [master_index_section, macro_area, domain, document_set]
+  elements: [capa, como_ler_utilizar, resumo_executivo, ids_relacionados, fonte_canonica]
+  executive_summary_shape: [what, why, who, how]   # SRC-03 document_output.executive_summary
+  source_refs: [SRC-02, SRC-03]
+
+sections:
+  - {id: SA-00, name: Document Control, contents: [objetivo e propósito, contrato operacional, regras de uso, convenções de IDs, referência canônica], registry: [registry/workbook.yaml, docs/ID_CONVENTIONS.md], status: proposed}
+  - {id: SA-01, name: Workbook Executivo, contents: [capa, índice, como usar/ler, sumário executivo, análise estratégica, Orchestrator/Maestro], registry: [registry/session_a/workbook_manual.yaml], related_ids: [M6, D21], status: proposed}
+  - {id: SA-02, name: Arquitetura do Ecossistema, contents: [programa/ecossistema, macroárea, domínio, subdomínio, processo/ciclo, entregável, artefato/registro], registry: [registry/session_a/architecture.yaml], status: proposed}
+  - {id: SA-03, name: Macroáreas A00–A12, registry: [registry/session_a/architecture.yaml#macro_areas], status: proposed}
+  - {id: SA-04, name: Domínios Canônicos D01–D23, registry: [registry/session_a/architecture.yaml#domains, registry/session_a/domain_contracts.yaml], status: proposed}
+  - {id: SA-05, name: Portfólio EXECUTAR — P00 / M0–M16, registry: [registry/session_a/portfolio.yaml], status: proposed}
+  - {id: SA-06, name: Control Plane, contents: [índice das abas, mapa macroárea → domínios, índice de artefatos, templates, 1.125 campos (TBD — GAP-006), evidências], registry: [registry/session_a/documents.yaml], status: proposed}
+  - {id: SA-07, name: Governança Operacional, contents: [gates G00–G11, dependências, decisões, gaps, conflitos, fontes], registry: [registry/session_a/governance.yaml], status: proposed}
+  - {id: SA-08, name: Documentos Finais, contents: [documentos por macroárea, documentos por portfólio, documento do programa], registry: [registry/session_a/documents.yaml], status: proposed}
+  - {id: SA-09, name: Protocolo de Agentes IA, registry: [docs/AI_AGENT_PROTOCOL.md, AGENTS.md], status: proposed}
+  - {id: SA-10, name: Alertas de Governança, registry: [registry/session_a/governance.yaml#conflicts, registry/session_a/governance.yaml#gaps], status: proposed}
+  - {id: SA-11, name: Próximas Ações Críticas, registry: [registry/session_a/governance.yaml#gaps], items: TBD, status: proposed}
+  - {id: SA-12, name: Corpus Detalhado D01–D23, registry: [registry/session_a/documents.yaml], status: proposed}
