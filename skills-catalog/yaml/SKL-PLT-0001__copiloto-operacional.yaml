@@ -1,0 +1,78 @@
+skill:
+  id: SKL-PLT-0001
+  name: copiloto-operacional
+  slug: copiloto-operacional
+  version: 1.0.0
+  status: identificado
+  visibility: interno
+  classification:
+    area: PLT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id002
+    - mcp
+    - github-issues
+    - adr-015
+    - programa-executar
+  purpose:
+    problem:
+      statement: Opera tarefas, campanhas e relatórios do programa EXECUTAR sobre as issues do GitHub (fonte da verdade), com as regras do Copiloto Operacional (ADR-015). Use quando o usuário perguntar
+        o que tem para hoje ou amanhã, o que está urgente, quanto falta (percentual), quiser pôr algo na fila, registrar uma ideia, marcar tarefa como feita, iniciar ou acompanhar uma campanha (runbook
+        com gates), gerar status report, propor workflow/rotina/runbook ou reconciliar estados — mesmo sem digitar o comando de barra.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /rotina
+    - /runbook
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: copiloto-operacional
+    headline: Opera tarefas, campanhas e relatórios do programa EXECUTAR sobre as issues do GitHub (fonte da verdade), com as regras do Copiloto Operacional (ADR-015).
+    category: Platform
+    problem_summary: Opera tarefas, campanhas e relatórios do programa EXECUTAR sobre as issues do GitHub (fonte da verdade), com as regras do Copiloto Operacional (ADR-015). Use quando o usuário perguntar
+      o que tem para hoje ou amanhã, o que está urgente, quanto falta (percentual), quiser pôr algo na fila, registrar uma ideia, marcar tarefa como feita, iniciar ou acompanhar uma campanha (runbook com
+      gates), gerar status report, propor workflow/rotina/runbook ou reconciliar estados — mesmo sem digitar o comando de barra.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/COPILOTO-OPERACIONAL
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+    notes: source/ contém o plugin completo (src, dist, agents, commands, hooks), não só a pasta skills/.

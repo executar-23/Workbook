@@ -1,0 +1,70 @@
+skill:
+  id: SKL-PRO-0003
+  name: task-management
+  slug: task-management
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRO
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tool
+    tags: &id002
+    - tarefas
+    - tasks-md
+  purpose:
+    problem:
+      statement: Simple task management using a shared TASKS.md file. Reference this when the user asks about their tasks, wants to add/complete tasks, or needs help tracking commitments.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /complete
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: task-management
+    headline: Simple task management using a shared TASKS.
+    category: Productivity
+    problem_summary: Simple task management using a shared TASKS.md file. Reference this when the user asks about their tasks, wants to add/complete tasks, or needs help tracking commitments.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/task-management
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

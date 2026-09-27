@@ -1,0 +1,151 @@
+manifest:
+  generated_at: '2026-09-27'
+  total_skills: 31
+  areas:
+    OPS: 10
+    PRD: 9
+    AUT: 4
+    DOC: 3
+    PRO: 4
+    PLT: 1
+  sources:
+  - insumos/EXECUTAR-COP-V0.3.0/skills/* (30 skills)
+  - insumos/COPILOTO-OPERACIONAL/skills/copiloto-operacional (1 skill)
+  excluded_sources:
+  - insumos/EXECUTAR-OPERACOES/anthropic-knowledge-work-plugins.zip
+  - insumos/EXECUTAR-OPERACOES/operations.zip
+  - insumos/EXECUTAR-OPERACOES/productivity.zip
+  - insumos/EXECUTAR-OPERACOES/product-management.zip
+  - insumos/EXECUTAR-OPERACOES/cowork-plugin-management.zip
+  - insumos/EXECUTAR-OPERACOES/product-code-development.skill.zip
+  - insumos/EXECUTAR-OPERACOES/executar-plan-mode.zip
+  - insumos/EXECUTAR-OPERACOES/executar-arvore-roadmap.zip
+  - insumos/EXECUTAR-OPERACOES/EXECUTAR-TAREFAS-full-skill-directory.zip
+  - insumos/EXECUTAR-OPERACOES/EXECUTAR-ARVORE-VISUAL-v1.0.zip
+  - insumos/EXECUTAR-OPERACOES/obsidian-editorial-pipeline-v2.2.skill
+  - insumos/MAESTRO-HANDOFF/
+  skills:
+  - id: SKL-AUT-0001
+    slug: cowork-plugin-customizer
+    area: AUT
+    package_path: skills-catalog/skills/SKL-AUT-0001__cowork-plugin-customizer
+  - id: SKL-AUT-0002
+    slug: create-cowork-plugin
+    area: AUT
+    package_path: skills-catalog/skills/SKL-AUT-0002__create-cowork-plugin
+  - id: SKL-AUT-0003
+    slug: executar-plan-mode
+    area: AUT
+    package_path: skills-catalog/skills/SKL-AUT-0003__executar-plan-mode
+  - id: SKL-AUT-0004
+    slug: execution-toolkit
+    area: AUT
+    package_path: skills-catalog/skills/SKL-AUT-0004__execution-toolkit
+  - id: SKL-DOC-0001
+    slug: executar-arvore-roadmap
+    area: DOC
+    package_path: skills-catalog/skills/SKL-DOC-0001__executar-arvore-roadmap
+  - id: SKL-DOC-0002
+    slug: executar-mergulhe
+    area: DOC
+    package_path: skills-catalog/skills/SKL-DOC-0002__executar-mergulhe
+  - id: SKL-DOC-0003
+    slug: obsidian-editorial-pipeline
+    area: DOC
+    package_path: skills-catalog/skills/SKL-DOC-0003__obsidian-editorial-pipeline
+  - id: SKL-OPS-0001
+    slug: capacity-plan
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0001__capacity-plan
+  - id: SKL-OPS-0002
+    slug: change-request
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0002__change-request
+  - id: SKL-OPS-0003
+    slug: compliance-tracking
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0003__compliance-tracking
+  - id: SKL-OPS-0004
+    slug: executar-dependency-architect
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0004__executar-dependency-architect
+  - id: SKL-OPS-0005
+    slug: process-doc
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0005__process-doc
+  - id: SKL-OPS-0006
+    slug: process-optimization
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0006__process-optimization
+  - id: SKL-OPS-0007
+    slug: risk-assessment
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0007__risk-assessment
+  - id: SKL-OPS-0008
+    slug: runbook
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0008__runbook
+  - id: SKL-OPS-0009
+    slug: status-report
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0009__status-report
+  - id: SKL-OPS-0010
+    slug: vendor-review
+    area: OPS
+    package_path: skills-catalog/skills/SKL-OPS-0010__vendor-review
+  - id: SKL-PLT-0001
+    slug: copiloto-operacional
+    area: PLT
+    package_path: skills-catalog/skills/SKL-PLT-0001__copiloto-operacional
+  - id: SKL-PRD-0001
+    slug: competitive-brief
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0001__competitive-brief
+  - id: SKL-PRD-0002
+    slug: metrics-review
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0002__metrics-review
+  - id: SKL-PRD-0003
+    slug: product-brainstorming
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0003__product-brainstorming
+  - id: SKL-PRD-0004
+    slug: product-code-development
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0004__product-code-development
+  - id: SKL-PRD-0005
+    slug: roadmap-update
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0005__roadmap-update
+  - id: SKL-PRD-0006
+    slug: sprint-planning
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0006__sprint-planning
+  - id: SKL-PRD-0007
+    slug: stakeholder-update
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0007__stakeholder-update
+  - id: SKL-PRD-0008
+    slug: synthesize-research
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0008__synthesize-research
+  - id: SKL-PRD-0009
+    slug: write-spec
+    area: PRD
+    package_path: skills-catalog/skills/SKL-PRD-0009__write-spec
+  - id: SKL-PRO-0001
+    slug: memory-management
+    area: PRO
+    package_path: skills-catalog/skills/SKL-PRO-0001__memory-management
+  - id: SKL-PRO-0002
+    slug: start
+    area: PRO
+    package_path: skills-catalog/skills/SKL-PRO-0002__start
+  - id: SKL-PRO-0003
+    slug: task-management
+    area: PRO
+    package_path: skills-catalog/skills/SKL-PRO-0003__task-management
+  - id: SKL-PRO-0004
+    slug: update
+    area: PRO
+    package_path: skills-catalog/skills/SKL-PRO-0004__update

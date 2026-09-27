@@ -1,0 +1,74 @@
+skill:
+  id: SKL-AUT-0003
+  name: executar-plan-mode
+  slug: executar-plan-mode
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: AUT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: planner
+    tags: &id002
+    - plan-mode
+    - rastreabilidade
+    - execucao
+  purpose:
+    problem:
+      statement: Transforma prompts brutos, extensos, ambíguos ou multidisciplinares em planos de execução estruturados, rastreáveis e verificáveis antes de qualquer implementação. Use quando o usuário
+        pedir para planejar pesquisa, auditoria, implementação, migração, documentação, criação de arquivos, workflows de agentes, Codex ou Claude Code; quando for necessário separar planejamento de execução;
+        ou quando o prompt precisar de fases, dependências, gates, entregáveis e Definition of Done.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-plan-mode
+    headline: Transforma prompts brutos, extensos, ambíguos ou multidisciplinares em planos de execução estruturados, rastreáveis e verificáveis antes de qualquer implementação.
+    category: Automation
+    problem_summary: Transforma prompts brutos, extensos, ambíguos ou multidisciplinares em planos de execução estruturados, rastreáveis e verificáveis antes de qualquer implementação. Use quando o usuário
+      pedir para planejar pesquisa, auditoria, implementação, migração, documentação, criação de arquivos, workflows de agentes, Codex ou Claude Code; quando for necessário separar planejamento de execução;
+      ou quando o prompt precisar de fases, dependências, gates, entregáveis e Definition of Done.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-plan-mode
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

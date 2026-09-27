@@ -1,0 +1,73 @@
+skill:
+  id: SKL-PRD-0006
+  name: sprint-planning
+  slug: sprint-planning
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: planner
+    tags: &id002
+    - sprint
+    - capacidade
+    - backlog
+  purpose:
+    problem:
+      statement: Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan. Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO and
+        meetings), deciding what's P0 vs. stretch, or handling carryover from the last sprint.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO and meetings), deciding what's P0 vs.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: sprint-planning
+    headline: Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan.
+    category: Product
+    problem_summary: Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan. Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO
+      and meetings), deciding what's P0 vs. stretch, or handling carryover from the last sprint.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/sprint-planning
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

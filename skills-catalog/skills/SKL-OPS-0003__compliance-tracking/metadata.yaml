@@ -1,0 +1,74 @@
+skill:
+  id: SKL-OPS-0003
+  name: compliance-tracking
+  slug: compliance-tracking
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tracker
+    tags: &id002
+    - compliance
+    - auditoria
+    - SOC2
+    - ISO27001
+    - GDPR
+  purpose:
+    problem:
+      statement: Track compliance requirements and audit readiness. Trigger with "compliance", "audit prep", "SOC 2", "ISO 27001", "GDPR", "regulatory requirement", or when the user needs help tracking,
+        preparing for, or documenting compliance activities.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: compliance-tracking
+    headline: Track compliance requirements and audit readiness.
+    category: Operations
+    problem_summary: Track compliance requirements and audit readiness. Trigger with "compliance", "audit prep", "SOC 2", "ISO 27001", "GDPR", "regulatory requirement", or when the user needs help tracking,
+      preparing for, or documenting compliance activities.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/compliance-tracking
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

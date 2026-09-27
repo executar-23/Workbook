@@ -1,0 +1,80 @@
+skill:
+  id: SKL-DOC-0001
+  name: executar-arvore-roadmap
+  slug: executar-arvore-roadmap
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: DOC
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: transformer
+    tags: &id002
+    - arvore
+    - roadmap
+    - navegacao
+  purpose:
+    problem:
+      statement: Converte planejamentos, roadmaps, sprints e cronogramas longos e desestruturados (planilhas, PDFs, documentos de metodologia, ou até uma simples descrição de projeto) em uma árvore de navegação
+        hierárquica — mês → semana → dia → ciclo → tarefa → dependência → porta → evidência. Use sempre que o usuário pedir para transformar um plano em "árvore", "diretório navegável", "roadmap em texto",
+        "cronograma em árvore", quando mencionar IDs desta skill (ARVORE-TXT-01, ARVORE-ZIP-02, ARVORE-OBSIDIAN-03, ARVORE-CSV-04, ARVOREKIT), quando pedir um vault Obsidian de mergulho progressivo para
+        um plano operacional, ou quando pedir para converter um plano inteiro em CSV estruturado. Também dispare quando o usuário descrever um projeto do zero (sem plano pronto) e pedir para gerar o kit
+        completo de planejamento em formato de árvore. Acionada também pelo ID verbal CV-ARVORE-001 (/arvore) do plugin executar-cop.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /arvore
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-arvore-roadmap
+    headline: Converte planejamentos, roadmaps, sprints e cronogramas longos e desestruturados (planilhas, PDFs, documentos de metodologia, ou até uma simples descrição de projeto) em uma árvore de navegação
+      hierárquica — mês → semana → dia → ciclo → tarefa → dependência → porta → evidência.
+    category: Documentation
+    problem_summary: Converte planejamentos, roadmaps, sprints e cronogramas longos e desestruturados (planilhas, PDFs, documentos de metodologia, ou até uma simples descrição de projeto) em uma árvore
+      de navegação hierárquica — mês → semana → dia → ciclo → tarefa → dependência → porta → evidência. Use sempre que o usuário pedir para transformar um plano em "árvore", "diretório navegável", "roadmap
+      em texto", "cronograma em árvore", quando mencionar IDs desta skill (ARVORE-TXT-01, ARVORE-ZIP-02, ARVORE-OBSIDIAN-03, ARVORE-CSV-04, ARVOREKIT), quando pedir um vault Obsidian de mergulho progressivo
+      para um plano operacional, ou quando pedir para converter um plano inteiro em CSV estruturado. Também dispare quando o usuário descrever um projeto do zero (sem plano pronto) e pedir para gerar o
+      kit completo de planejamento em formato de árvore. Acionada também pelo ID verbal CV-ARVORE-001 (/arvore) do plugin executar-cop.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-arvore-roadmap
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

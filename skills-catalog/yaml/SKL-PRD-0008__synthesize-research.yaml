@@ -1,0 +1,74 @@
+skill:
+  id: SKL-PRD-0008
+  name: synthesize-research
+  slug: synthesize-research
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id002
+    - pesquisa
+    - insights
+    - entrevistas
+  purpose:
+    problem:
+      statement: Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense
+        of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into roadmap recommendations.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when you have a pile of interview notes, survey responses, or support tickets to make sense of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into
+      roadmap recommendations.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: synthesize-research
+    headline: Synthesize user research from interviews, surveys, and feedback into structured insights.
+    category: Product
+    problem_summary: Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense
+      of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into roadmap recommendations.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/synthesize-research
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

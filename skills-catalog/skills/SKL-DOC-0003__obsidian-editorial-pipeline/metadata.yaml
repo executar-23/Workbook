@@ -1,0 +1,78 @@
+skill:
+  id: SKL-DOC-0003
+  name: obsidian-editorial-pipeline
+  slug: obsidian-editorial-pipeline
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: DOC
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id002
+    - editorial
+    - obsidian
+    - producao-de-conteudo
+  purpose:
+    problem:
+      statement: Opera a produção editorial faseada no Obsidian a partir de formulário/briefing editorial, Process Doc e estado existente do job. Use para criar, continuar, revisar, organizar ou empacotar
+        ciclos editoriais; compõe dinamicamente artigo, evidências, vídeo, carrosséis, imagens, stories, newsletters, ebooks, CTAs e handoff sem exigir um perfil único. Acionada também pelo ID verbal CV-EDITORIAL-001
+        (/editorial) do plugin executar-cop.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use para criar, continuar, revisar, organizar ou empacotar ciclos editoriais; compõe dinamicamente artigo, evidências, vídeo, carrosséis, imagens, stories, newsletters, ebooks, CTAs e handoff sem
+      exigir um perfil único.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /briefing
+    - /editorial
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: obsidian-editorial-pipeline
+    headline: Opera a produção editorial faseada no Obsidian a partir de formulário/briefing editorial, Process Doc e estado existente do job.
+    category: Documentation
+    problem_summary: Opera a produção editorial faseada no Obsidian a partir de formulário/briefing editorial, Process Doc e estado existente do job. Use para criar, continuar, revisar, organizar ou empacotar
+      ciclos editoriais; compõe dinamicamente artigo, evidências, vídeo, carrosséis, imagens, stories, newsletters, ebooks, CTAs e handoff sem exigir um perfil único. Acionada também pelo ID verbal CV-EDITORIAL-001
+      (/editorial) do plugin executar-cop.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/obsidian-editorial-pipeline
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

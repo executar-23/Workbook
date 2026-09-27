@@ -1,0 +1,74 @@
+skill:
+  id: SKL-PRD-0002
+  name: metrics-review
+  slug: metrics-review
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id002
+    - metricas
+    - tendencia
+    - produto
+  purpose:
+    problem:
+      statement: Review and analyze product metrics with trend analysis and actionable insights. Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop, comparing
+        performance against targets, or turning raw numbers into a scorecard with recommended actions.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop, comparing performance against targets, or turning raw numbers into a scorecard with recommended
+      actions.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: metrics-review
+    headline: Review and analyze product metrics with trend analysis and actionable insights.
+    category: Product
+    problem_summary: Review and analyze product metrics with trend analysis and actionable insights. Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop,
+      comparing performance against targets, or turning raw numbers into a scorecard with recommended actions.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/metrics-review
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

@@ -1,0 +1,81 @@
+skill:
+  id: SKL-OPS-0004
+  name: executar-dependency-architect
+  slug: executar-dependency-architect
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id002
+    - dependencias
+    - control-plane
+    - executar-hub
+  purpose:
+    problem:
+      statement: Arquiteto de Dependências do EXECUTAR HUB (EXECUTAR-DEPENDENCY-ARCHITECT-001, ID verbal CV-DEPEND-001, /dependencias). Reconstrói formalmente a rede de dependências da planilha EXECUTAR_HUB_Control_Plane_v2.xlsx
+        — campo → artefato → domínio → macroárea → Gate — e entrega, sempre em três partes, as linhas prontas para 16_REG_Dependencias, o mapa origem → destino → motivo → Gate → impacto e a Arquitetura
+        de Preenchimento (fases por contexto cognitivo único, derivadas das dependências reais). Use sempre que o usuário falar em Control Plane, EXECUTAR HUB, 16_REG_Dependencias, 17_REG_Gates, ordem ou
+        sequência de preenchimento da planilha, os 1.125 campos, formulários A00–A12, transição Produto → Engenharia (A03), PF-24/reconciliação cruzada, depends_on/blocks, "qual artefato vem primeiro",
+        dependências circulares entre entregáveis ou desenho de Gates — mesmo que não diga "dependência" nem use o slash.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /blocks
+    - /dependencias
+    - /reconcilia
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-dependency-architect
+    headline: Arquiteto de Dependências do EXECUTAR HUB (EXECUTAR-DEPENDENCY-ARCHITECT-001, ID verbal CV-DEPEND-001, /dependencias).
+    category: Operations
+    problem_summary: Arquiteto de Dependências do EXECUTAR HUB (EXECUTAR-DEPENDENCY-ARCHITECT-001, ID verbal CV-DEPEND-001, /dependencias). Reconstrói formalmente a rede de dependências da planilha EXECUTAR_HUB_Control_Plane_v2.xlsx
+      — campo → artefato → domínio → macroárea → Gate — e entrega, sempre em três partes, as linhas prontas para 16_REG_Dependencias, o mapa origem → destino → motivo → Gate → impacto e a Arquitetura de
+      Preenchimento (fases por contexto cognitivo único, derivadas das dependências reais). Use sempre que o usuário falar em Control Plane, EXECUTAR HUB, 16_REG_Dependencias, 17_REG_Gates, ordem ou sequência
+      de preenchimento da planilha, os 1.125 campos, formulários A00–A12, transição Produto → Engenharia (A03), PF-24/reconciliação cruzada, depends_on/blocks, "qual artefato vem primeiro", dependências
+      circulares entre entregáveis ou desenho de Gates — mesmo que não diga "dependência" nem use o slash.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-dependency-architect
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

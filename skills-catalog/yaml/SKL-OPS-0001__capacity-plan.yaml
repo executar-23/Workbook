@@ -1,0 +1,74 @@
+skill:
+  id: SKL-OPS-0001
+  name: capacity-plan
+  slug: capacity-plan
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: planner
+    tags: &id002
+    - capacidade
+    - planejamento
+    - recursos
+  purpose:
+    problem:
+      statement: Plan resource capacity — workload analysis and utilization forecasting. Use when heading into quarterly planning, the team feels overallocated and you need the numbers, deciding whether
+        to hire or deprioritize, or stress-testing whether upcoming projects fit the people you have.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when heading into quarterly planning, the team feels overallocated and you need the numbers, deciding whether to hire or deprioritize, or stress-testing whether upcoming projects fit the people
+      you have.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: capacity-plan
+    headline: Plan resource capacity — workload analysis and utilization forecasting.
+    category: Operations
+    problem_summary: Plan resource capacity — workload analysis and utilization forecasting. Use when heading into quarterly planning, the team feels overallocated and you need the numbers, deciding whether
+      to hire or deprioritize, or stress-testing whether upcoming projects fit the people you have.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/capacity-plan
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
