@@ -1,0 +1,469 @@
+# Inventário PF-00 (WF-PREFILL-001) — inbox de material bruto recebido em 2026-09-27.
+# id INS-nnn != SRC-nn: só vira SRC-nn quando promovido em registry/session_a/governance.yaml#sources
+# durante a execução real do prefill. suggested_relation é leitura de primeira passagem, não vínculo formal.
+status: NAO_PROCESSADO
+next_step: WF-PREFILL-001 / PF-00
+
+sources:
+  - id: INS-001
+    title: AI_CORPUS_UNIFICADO
+    path: insumos/AI-CORPUS-UNIFICADO/
+    format: pacote (docx, html, md, txt, rtf) + manifesto próprio
+    contents_manifest: insumos/AI-CORPUS-UNIFICADO/MANIFEST_AI.jsonl
+    item_count: 16
+    own_id_scheme: 'AIKB-[0-9]{4}'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2, M2.1]
+      domains: [D09, D12, D16, D20]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-002
+    title: EXECUTAR_ADHD_PM_CANONICAL_BUNDLE
+    path: insumos/EXECUTAR-ADHD-PM-CANONICAL-BUNDLE/
+    format: yaml + md
+    contents:
+      - 01_YAML_BUNDLE.yaml
+      - 02_AGENT_INDEX.md
+    own_id_scheme: 'namespace próprio: DATA-, DRIVE-, SCHEMA-, MATRIX-GP-01..11, HYPOTHESIS-, ARCH-, EPISTEMIC-, PM-01..08, HUM-CAP-, TAX- (não usa Axx/Dxx/Mxx)'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: []
+      domains: [D09]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+      nota: Nenhum Mxx declara uso deste corpus; permanece pesquisa desacoplada até haver evidência de consumo por uma iniciativa.
+    status: NAO_PROCESSADO
+
+  - id: INS-003
+    title: EXECUTAR-BLOG-LANCAMENTO-FULLSTACK.bundle.yaml
+    path: insumos/EXECUTAR-BLOG-LANCAMENTO-FULLSTACK/EXECUTAR-BLOG-LANCAMENTO-FULLSTACK.bundle.yaml
+    format: yaml
+    bytes: 511610
+    sha256: '129fedad4ba6ea97d4711dd945faee29a33c5569157125e12ad17a0e84ecde95'
+    declared_primary_source: EXECUTAR_HUB_Control_Plane_v2.xlsx (não enviada)
+    field_count: 1047
+    field_id_scheme: 'Dxx-DOC-ACR-nnn.SECAO.CAMPO — já no formato do contrato de campo do Workbook'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2]
+      domains: [D01, D02, D03, D05, D06, D07, D08, D09, D10, D11, D12, D13, D14, D15, D16, D18, D19, D20, D21, D22, D23]
+      confidence: alta
+      nao_vinculado_formalmente: true
+      nota: Declarado no próprio arquivo (bundle.portfolio_id = M2); ainda sujeito a confirmação formal no prefill.
+    status: NAO_PROCESSADO
+
+  - id: INS-004
+    title: Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx
+    path: insumos/RISCO-COGNITIVO-HUB-EDITORIAL-CMS/Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx
+    format: xlsx
+    bytes: 97435
+    sha256: '92626db713ff7f656421d50afc2b69946488e3c6efbf2971790e6252aa3e700a'
+    sheet_count: 22
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2.1]
+      domains: [D16, D19]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  # --- lote 2, recebido 2026-09-27 (mesma sessão, mensagem "BENCH 2") ---
+
+  - id: INS-005
+    title: PD-CLB-20260906-F01-DOC-V01 (bundle YAML canônico)
+    path: insumos/PD-CLB-20260906-F01-DOC-V01-YAML-BUNDLE/PD-CLB-20260906-F01-DOC-V01.bundle.yaml
+    format: yaml
+    bytes: 5030
+    sha256: 'fee0e7e2084096a27a81dd777f1f032dc8f8405e330786f66f03e91fa7153d3b'
+    manifest: insumos/PD-CLB-20260906-F01-DOC-V01-YAML-BUNDLE/manifest.yaml
+    declared_source:
+      repository: Sas-Executar/executar-Blog
+      source_document: ops/runbooks/PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.md
+      original_format: DOCX
+    relation_to_other_insumos: >
+      Provável mesma origem documental do AIKB-0001 em INS-001
+      (original_filename em MANIFEST_AI.jsonl cita o mesmo
+      "PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.docx") —
+      conteúdo aqui já convertido/estruturado em YAML; não confirmado byte a byte.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M1, M2]
+      domains: [D07, D08, D16]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-006
+    title: MASTER_EDITORIAL_RISCO_COGNITIVO_V1.xlsx
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/MASTER_EDITORIAL_RISCO_COGNITIVO_V1.xlsx
+    format: xlsx
+    bytes: 64758
+    sha256: 'd9b6a5dcaed895622b10fff52761d2a914fce80f54b27651e7100ca78ab43bba'
+    sheet_count: 9
+    sheets: [00_README, 01_PROBLEMS, 02_SOLUTIONS, 03_ASSET_FACTORY, 04_CONTENT_ARCHITECTURE, 05_CTA_ROUTING, 06_METRICS, 07_TAXONOMIES, 08_AUTOMATION_MAP, 09_DASHBOARD]
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M2.1]
+      domains: [D16, D19]
+      confidence: media
+      nao_vinculado_formalmente: true
+      nota: Schema editorial distinto do CMS de INS-004; possivelmente complementar (produção vs. operação do hub).
+    status: NAO_PROCESSADO
+
+  - id: INS-007
+    title: campanha_tdah_gestao_projetos_12_abas_numbers_print.xlsx
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/campanha_tdah_gestao_projetos_12_abas_numbers_print.xlsx
+    format: xlsx
+    bytes: 52155
+    sha256: '9f23eea7bdbf022d62dac1478e0bda493f3c14d036395cbbc7fd31ebcaefd6da'
+    sheet_count: 12
+    sheets: ['00 MAPA', 'D01 TDAH e o custo invisível', 'D02 Projeto tarefa e...', '... D03..D10 (temas TDAH)', '11 EBOOK 12 CAPS']
+    warning: >
+      Os rótulos de aba "D01".."D10" desta planilha são uma numeração de
+      capítulos de ebook sobre TDAH — NÃO correspondem aos domínios
+      D01–D23 do Workbook. Não confundir ao citar em field_id.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: []
+      domains: [D09]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-008
+    title: EXECUTAR CAMPANHA ESTRATEGICA (posicionamento de marca)
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/EXECUTAR-CAMPANHA-ESTRATEGICA.txt
+    format: txt
+    bytes: 2722
+    sha256: '7e4ca61cf38a08a8da33fdfa7d4804678e42ef8980498b87d80c405da3f13658'
+    summary: >
+      Posicionamento de marca do app EXECUTAR ("sistema de execução e
+      entrega" para profissionais neurodivergentes), mensagens-chave,
+      CTA e regras de formulação de evidências (o que evitar/preferir
+      ao citar embasamento científico).
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M1]
+      domains: [D13, D16]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-009
+    title: EXECUTAR CAMPANHA ESTRTEGICA (nota sobre pacote de vídeo GTM Claude Design)
+    path: insumos/SCHEMA-PRODUCAO-CAMPANHA/EXECUTAR-CAMPANHA-ESTRATEGICA-nota-video-gtm.txt
+    format: txt
+    bytes: 1429
+    sha256: 'b4ac3d37a71160a32a294b3559fc7401cafc49df1d793002efdd585d6763f051'
+    summary: >
+      Nota descrevendo um pacote "EXECUTAR_GTM_VIDEO_CLAUDE_DESIGN.zip"
+      (Master Index, ADRs de UI/Split View, PRD de campanha audiovisual,
+      catálogo de vídeos, handoff para Claude Design) — o zip em si
+      NÃO foi enviado, só esta nota descritiva.
+    gap: O arquivo EXECUTAR_GTM_VIDEO_CLAUDE_DESIGN.zip citado não está em insumos/.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M1]
+      domains: [D11, D16, D19]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: INS-010
+    title: SOP EXECUTAR Operating System
+    path: insumos/SOP-EXECUTAR-OPERATING-SYSTEM/SOP-EXECUTAR-Operating-System.pdf
+    format: pdf
+    bytes: 251673
+    sha256: 'abfb184b14fb7f7999e9a37ab87c62de1efb5b8d841cab1045fe75c20a64b2bf'
+    page_count_approx: 9
+    title_sections_observed: ['Process Document EXECUTAR Operating System', '1. Controle Operacional', '2. Purpose', 'Included']
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M0]
+      domains: [D01, D08, D22]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  - id: DUP-001
+    title: Risco_Cognitivo_Hub_Editorial_CMS_v1.0.xlsx (dentro de Schema_de_Producao_Campanha_.zip)
+    duplicate_of: INS-004
+    sha256: '92626db713ff7f656421d50afc2b69946488e3c6efbf2971790e6252aa3e700a'
+    note: Byte-idêntico ao arquivo já registrado em INS-004; não copiado para insumos/ novamente.
+    status: DUPLICADO_IGNORADO
+
+  # --- lote 3, recebido 2026-09-27 (mesma sessão, mensagem "Bench 04") ---
+  # 3 dos 4 arquivos enviados neste lote são reenvios byte-idênticos do lote 2 (mesmo sha256
+  # do zip inteiro); apenas registrados como duplicata, sem novo conteúdo.
+
+  - id: DUP-002
+    title: Schema_de_Producao_Campanha_.zip (reenvio)
+    duplicate_of: [INS-006, INS-007, INS-008, INS-009, DUP-001]
+    note: Zip inteiro byte-idêntico ao já processado no lote 2; nenhum arquivo novo.
+    status: DUPLICADO_IGNORADO
+
+  - id: DUP-003
+    title: PD-CLB-20260906-F01-DOC-V01_YAML_BUNDLE_2.zip (reenvio)
+    duplicate_of: INS-005
+    note: Zip inteiro byte-idêntico ao já processado no lote 2; nenhum arquivo novo.
+    status: DUPLICADO_IGNORADO
+
+  - id: DUP-004
+    title: SOP_EXECUTAR_Operating_System.zip (reenvio)
+    duplicate_of: INS-010
+    note: Zip inteiro byte-idêntico ao já processado no lote 2; nenhum arquivo novo.
+    status: DUPLICADO_IGNORADO
+
+  - id: INS-011
+    title: 'DOC-0021.html — EXECUTAR · Workbook Reader Integral'
+    path: insumos/EVIDENCIAS/DOC-0021.html
+    format: html
+    bytes: 347005
+    sha256: 'c49f7bcea3eac6c322b584d1bbae0ab018ae50404f0dbc2b418b25033d0dd253'
+    summary: >
+      Leitor HTML autocontido que renderiza vários markdowns-fonte em
+      sequência ("Sas-06(1).md", "Sas-07(1).md" entre outros), incluindo
+      uma "Matriz mestre — técnicas, práticas, métodos e terminologias",
+      um "Plano Final Integrado" (blocos NOW/DEPENDÊNCIAS/PRODUÇÃO/
+      INTEGRAÇÃO/DISTRIBUIÇÃO/EVIDÊNCIA/DONE?), e seções "Editorial",
+      "Infoprodutos" e "Sericoes" (sic) com um "Master Index — Produtos
+      Físicos".
+    headings_observed: ['WORKBOOK INDEX / ORDEM DAS FONTES', 'Matriz mestre — técnicas práticas métodos e terminologias', 'Plano Final Integrado', 'Editorial', 'Infoprodutos', 'Sericoes / Master Index — Produtos Físicos']
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M8, M9, M10]
+      domains: [D07, D16, D18, D21]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+      nota: Conteúdo denso e não estruturado por IDs próprios; exige leitura completa antes de qualquer mapeamento.
+    status: NAO_PROCESSADO
+
+  - id: INS-012
+    title: base_evidencias_tdah_adulto_WAREHOUSE.json
+    path: insumos/EVIDENCIAS/base_evidencias_tdah_adulto_WAREHOUSE.json
+    format: json (representação tabular de um csv de origem)
+    bytes: 327715
+    sha256: 'b1aedb13dff7e58689ecd98e87b9f476396fc4b30f9c77cfd16fc62d616be33c'
+    row_count: 240
+    columns: [evidencia_id, tipo_registro, conjunto, tema, subtema, indicador_ou_achado, detalhe_secundario, grupo_segmento, valor_pontual, valor_minimo, valor_maximo, unidade, comparador_grupo, comparador_valor, periodo, geografia, base_amostral, natureza_qualitativa, publico_contexto, fonte_nome, fonte_tipo, arquivo_origem, pagina_secao, referencia_indicada, status_validacao, confianca_extracao, observacoes_limitacoes, 'perguntas_694_vinculadas', 'n_perguntas_694_vinculadas', score_vinculo_max]
+    summary: >
+      Base de 240 evidências (qualitativas e quantitativas) sobre TDAH
+      adulto, cada registro já com fonte, tipo, confiança de extração e
+      limitações — no mesmo espírito epistemológico do
+      EXECUTAR_ADHD_PM_CANONICAL_BUNDLE (INS-002), mas maior e mais granular.
+      Menciona um conjunto externo "perguntas_694" ainda não recebido.
+    gap: 'O conjunto "perguntas_694" referenciado nas colunas não está em insumos/.'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: []
+      domains: [D09]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO
+
+  # --- lote 4, recebido 2026-09-27 (mesma sessão, mensagem "bench 04" #2) ---
+
+  - id: INS-013
+    title: D01_UNIFIED_AGENT_PACKAGE
+    path: insumos/D01-UNIFIED-AGENT-PACKAGE/
+    format: yaml (bundle) + md (índice)
+    contents:
+      - 01_YAML_BUNDLE.yaml (1.712.770 bytes; sha256 d121aaa57076db34068af6a3adb1f58ab7c16b720af4354f6142f1644fc757b9)
+      - 02_AGENT_INDEX.md (15.726 bytes; sha256 120a976f94fca47cc0dbd42bd0f1e31af64f3ca3fbe2543c4f37cd120f24d7f6)
+    bundle_id: D01-BUNDLE-UNIFIED-001
+    own_id_scheme: 'D01-DOC-TAP-001.<SECTION>.<FIELD> (trace do TAP oficial); D01-PRIMARY.P##### (parágrafo exato do corpus primário); TOP-### (tópico); FORM-## (formulário); CORR-### (correção declarada pela fonte)'
+    unifies_two_sources:
+      - {source_id: SRC-YAML-TAP-001, file: D01-DOC-TAP-001.yaml, role: SPECIALIZED_SCHEMA}
+      - {source_id: SRC-DOCX-PRIMARY-001, file: 'D01-Executar Ecossitema__PRIMARY_CORPUS.docx', role: PRIMARY_CORPUS}
+    summary: >
+      O corpus primário mais denso recebido até agora: 4.287 parágrafos
+      (3.328 não vazios), 75 tópicos indexados (TOP-001..075) cobrindo
+      praticamente toda a arquitetura do EXECUTAR App e do ecossistema de
+      agentes (Copiloto, Agent Maestro, Multi-Agent SDK, MCP, skills,
+      customer journey de 25 etapas, Mapa-OS/Prisma, design system,
+      roadmap/calendário, entre outros) e 6 formulários de fechamento
+      (FORM-01..06: estratégia comercial, SDK multi-agente, arquitetura
+      do app, metodologia/agent contract, Agent Maestro, family skills).
+      Também traz o trace completo dos 29 campos do D01-DOC-TAP-001 (Termo
+      de Abertura do Ecossistema) — todos ainda UNRESOLVED_REQUIRES_HUMAN_OR_AGENT_REVIEW,
+      nenhum preenchido.
+    source_declared_corrections:
+      - id: CORR-001
+        content: '"Curso Cognitivo Estratégico" — REMOVE_FROM_FUTURE_MASTER_INDEX'
+        evidence: [D01-PRIMARY.P00804, D01-PRIMARY.P00869]
+        relevance: >
+          Toca diretamente o GAP-003 já registrado (Mxx de "Curso
+          Cognitivo.org" não confirmado) — a fonte primária instrui
+          remover, não criar, essa entrada; decisão ainda não aplicada
+          aqui, fica para quem rodar o prefill.
+      - id: CORR-002
+        content: '"Bot / Plot" — INTERPRET_AS_EXECUTAR_BLOG'
+        evidence: [D01-PRIMARY.P00805]
+        relevance: Possível esclarecimento adicional sobre M2 Executar Blog.
+    agent_rules_declared: >
+      candidate_evidence_refs do TAP são candidatos, não devem preencher
+      "resposta" automaticamente; não inferir equivalência entre o TAP e o
+      PRIMARY_CORPUS; preservar A_CONFIRMAR/TBD/conflitos salvo resolução
+      explícita da fonte.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M0, M1, M5, M6]
+      domains: [D01]
+      confidence: alta
+      nao_vinculado_formalmente: true
+      nota: >
+        Nome do pacote e bundle_id já declaram D01; ainda assim, mantido
+        como "sugestão" até confirmação formal no prefill, por consistência
+        com as demais entradas deste registro.
+    status: NAO_PROCESSADO
+
+  # --- lote 5, recebido 2026-09-27 (mesma sessão) ---
+  # Estes 4 itens alimentam também o catálogo de Skills em skills-catalog/
+  # (ver skills-catalog/README.md e skills-catalog/reports/). O registro
+  # aqui cobre só a proveniência bruta, não repete os metadados de skill.
+
+  - id: INS-014
+    title: executar-cop v0.3.0 (plugin/agente orquestrador)
+    path: insumos/EXECUTAR-COP-V0.3.0/
+    format: repositório de plugin Claude Code
+    plugin: {name: executar-cop, version: 0.3.0}
+    contents_summary: >
+      .claude-plugin/plugin.json; agents/ (4: orquestrador-cop,
+      dominio-operacoes, dominio-produto, cadeia-de-valor-proprietaria);
+      commands/ (39 slash commands); evals/ (4 suites com graders);
+      references/ (cmd-cop-index.md — índice único de IDs verbais CV-XXX-NNN,
+      grafo-dependencias.json+schema, nucleo-dependencias.md); scripts/;
+      assets/design-tokens/; skills/ com 30 skills (ver skills-catalog/);
+      LICENSE-APACHE-2.0; THIRD_PARTY_NOTICES.md; CONNECTORS.md.
+    license_note: >
+      cmd-cop-index.md declara que, desde a emenda b do ADR-0003
+      (2026-09-27), as skills historicamente distribuídas como plugins
+      Anthropic separados (operations, productivity, product-management,
+      cowork-plugin-management) foram vendorizadas como skills internas
+      do executar-cop sob Apache-2.0 (ver THIRD_PARTY_NOTICES.md). Por
+      isso v0.3.0 já chega com as 30 skills unificadas em skills/, sem
+      necessidade de reconciliar separadamente os zips soltos de
+      INS-016.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M5, M6]
+      domains: [D01, D07]
+      confidence: alta
+      nao_vinculado_formalmente: true
+    status: PARCIALMENTE_PROCESSADO
+    processing_note: 'skills/ catalogadas em skills-catalog/; demais pastas (agents, commands, evals, references, scripts, assets) permanecem apenas em insumos/'
+
+  - id: INS-015
+    title: copiloto-operacional (plugin/MCP server funcional)
+    path: insumos/COPILOTO-OPERACIONAL/
+    format: repositório de plugin Claude Code + servidor MCP TypeScript compilado
+    plugin: {name: copiloto-operacional, version: 1.0.0}
+    contents_summary: >
+      skills/copiloto-operacional/SKILL.md (1 skill); src/*.ts (servidor,
+      tipos, d1-sqlite, entrada); dist/servidor.mjs (build compilado,
+      ~1,1 MB); agents/ (definições, relatórios, campanha, backlog,
+      reconciliação); commands/ (14 slash commands: hoje, amanha, feito,
+      urgente, campanha, status-report, fila, ideia, confirmar, cancelar,
+      criar-workflow, criar-rotina, criar-runbook, progresso, espelho,
+      ajuda, reconciliar); hooks/hooks.json; .claude-plugin/plugin.json;
+      .mcp.json; README.md.
+    summary: >
+      Opera o programa EXECUTAR direto no Claude Code sobre as issues do
+      GitHub (fonte da verdade), mesmo núcleo do Worker do ADR-015, sem
+      Cloudflare. Único item deste lote referenciado no CLAUDE.md do
+      próprio operador de sessão (repositório executar-23/Copiloto-ops).
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M5]
+      domains: [D01, D07, D08]
+      confidence: alta
+      nao_vinculado_formalmente: true
+      nota: >
+        Pertence conceitualmente ao repositório operacional
+        executar-23/Copiloto-ops (ver CLAUDE.md), não ao Workbook; mantido
+        aqui só como inbox porque foi enviado nesta conversa e por pedido
+        explícito o catálogo de skills vive no Workbook.
+    status: PARCIALMENTE_PROCESSADO
+    processing_note: 'skill copiloto-operacional catalogada em skills-catalog/; src/dist/agents/commands/hooks permanecem apenas em insumos/'
+
+  - id: INS-016
+    title: EXECUTAR-OPERACOES (bundle de 12 zips/skill/docx/png)
+    path: insumos/EXECUTAR-OPERACOES/
+    format: pasta com múltiplos zips e arquivos soltos
+    contents:
+      - anthropic-knowledge-work-plugins.zip (3.323.464 bytes; 2.795 entradas)
+      - operations.zip
+      - productivity.zip
+      - product-management.zip
+      - cowork-plugin-management.zip
+      - product-code-development.skill.zip
+      - executar-plan-mode.zip
+      - executar-arvore-roadmap.zip
+      - EXECUTAR-TAREFAS-full-skill-directory.zip
+      - EXECUTAR-ARVORE-VISUAL-v1.0.zip
+      - obsidian-editorial-pipeline-v2.2.skill (zip completo apesar da extensão)
+      - 'CMD-COP-001 — Índice de Slash Commands e IDs Verbais.docx'
+      - calendario-light-mode-preview.png
+    excluded_from_skills_catalog:
+      - id: anthropic-knowledge-work-plugins.zip
+        reason: >
+          Cópia integral do repositório público de plugins da Anthropic
+          (customer-support, design, enterprise-search, small-business,
+          sales, bio-research, partner-built, human-resources, operations,
+          pdf-viewer, product-management, marketing, finance, legal, data,
+          engineering, productivity, cowork-plugin-management — 17
+          categorias, 2.795 arquivos). Catalogar item a item seria
+          recatalogar o marketplace da Anthropic, não as skills do
+          usuário; mantido só como arquivo de referência/hash.
+      - id: 'operations.zip / productivity.zip / product-management.zip / cowork-plugin-management.zip'
+        reason: >
+          Estado anterior à vendorização — as mesmas skills já chegam
+          unificadas e mais completas dentro de INS-014
+          (executar-cop v0.3.0/skills/). Mantidos como histórico de
+          proveniência, não recatalogados.
+      - id: 'product-code-development.skill.zip / executar-plan-mode.zip / executar-arvore-roadmap.zip'
+        reason: Variantes/versões anteriores das mesmas skills já presentes em INS-014; catalogadas uma única vez a partir de INS-014.
+      - id: EXECUTAR-TAREFAS-full-skill-directory.zip
+        reason: >
+          Apesar do nome da pasta, o SKILL.md interno declara
+          `name: execution-toolkit` com a mesma description da skill
+          já presente em INS-014/skills/execution-toolkit — é a mesma
+          skill em empacotamento anterior, não uma 32ª skill. Registrado
+          como fonte histórica adicional no `duplicates-and-overlaps.md`.
+      - id: 'CMD-COP-001...docx / calendario-light-mode-preview.png'
+        reason: Documentação/asset avulso, não é skill.
+    included_in_skills_catalog:
+      - id: EXECUTAR-ARVORE-VISUAL-v1.0.zip
+        note: 'skill/executar-mergulhe/ já coberta via INS-014 (mesmo slug); pacote também traz index.html/docs/exemplos/modelos exclusivos, mantidos só em insumos/.'
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M5, M6]
+      domains: [D01, D07, D11]
+      confidence: media
+      nao_vinculado_formalmente: true
+    status: PARCIALMENTE_PROCESSADO
+
+  - id: INS-017
+    title: Maestro-Handoff (pacote de handoff de projeto — NÃO é skill)
+    path: insumos/MAESTRO-HANDOFF/
+    format: markdown + zip aninhado (não extraído)
+    contents:
+      - PROMPT-DE-PARTIDA.md
+      - HANDOFF.md
+      - divergencias-e-lacunas.md
+      - maestro-handoff.zip (34 itens: contratos C-00..C-04, mapa de lançamento F0-F8, matriz de entregas x lanes, ficha de 22 pontos, inventário de skills, prompts por estágio E0-E9, maestro.agent-spec.md, maestro-topologia.md, ESTADO.md)
+    summary: >
+      Handoff de um projeto de orquestração "Maestro" (arquitetura alvo,
+      contratos entre agentes, estado de execução) — material de
+      governança/planejamento, não uma skill executável. Não entra em
+      skills-catalog/.
+    received_at: '2026-09-27'
+    suggested_relation:
+      initiatives: [M6]
+      domains: [D01, D22]
+      confidence: baixa
+      nao_vinculado_formalmente: true
+    status: NAO_PROCESSADO

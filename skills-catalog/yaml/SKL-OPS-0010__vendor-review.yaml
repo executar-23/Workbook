@@ -1,0 +1,74 @@
+skill:
+  id: SKL-OPS-0010
+  name: vendor-review
+  slug: vendor-review
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id002
+    - fornecedor
+    - custo
+    - contrato
+  purpose:
+    problem:
+      statement: Evaluate a vendor — cost analysis, risk assessment, and recommendation. Use when reviewing a new vendor proposal, deciding whether to renew or replace a contract, comparing two vendors
+        side-by-side, or building a TCO breakdown and negotiation points before procurement sign-off.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when reviewing a new vendor proposal, deciding whether to renew or replace a contract, comparing two vendors side-by-side, or building a TCO breakdown and negotiation points before procurement
+      sign-off.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: vendor-review
+    headline: Evaluate a vendor — cost analysis, risk assessment, and recommendation.
+    category: Operations
+    problem_summary: Evaluate a vendor — cost analysis, risk assessment, and recommendation. Use when reviewing a new vendor proposal, deciding whether to renew or replace a contract, comparing two vendors
+      side-by-side, or building a TCO breakdown and negotiation points before procurement sign-off.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/vendor-review
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

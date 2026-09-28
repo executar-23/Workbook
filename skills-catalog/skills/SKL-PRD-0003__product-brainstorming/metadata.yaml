@@ -1,0 +1,73 @@
+skill:
+  id: SKL-PRD-0003
+  name: product-brainstorming
+  slug: product-brainstorming
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: expert
+    tags: &id002
+    - brainstorm
+    - ideacao
+    - produto
+  purpose:
+    problem:
+      statement: Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner. Use when exploring a new opportunity, generating solutions to a product problem, stress-testing
+        an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when exploring a new opportunity, generating solutions to a product problem, stress-testing an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: product-brainstorming
+    headline: Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner.
+    category: Product
+    problem_summary: Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner. Use when exploring a new opportunity, generating solutions to a product problem, stress-testing
+      an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/product-brainstorming
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

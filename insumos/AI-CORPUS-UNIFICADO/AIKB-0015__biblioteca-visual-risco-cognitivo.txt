@@ -1,0 +1,50 @@
+Sim. Eu trataria isso como uma biblioteca visual do framework de Risco Cognitivo, não como gráficos decorativos. Cada visual precisa responder uma pergunta analítica. E, como ainda não temos medições, abaixo estão estruturas e propriedades, sem inventar números. Isso combina com a separação Claim → Evidência → Exemplo → Interpretação já prevista no Process Doc. PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.docx
+
+#	Visual	Storytelling	Variáveis / tipos de dados
+01	Flowchart causal	Como o risco nasce?	condição endógena [nominal]; exposição [nominal]; intensidade [ordinal/contínua]; evento [categórica]; impacto [ordinal]
+02	Loop / ciclo vicioso	Como consequência vira novo antecedente?	evento → efeito psicológico → estado cognitivo secundário → exposição seguinte [relacional + temporal]
+03	Camadas concêntricas	Onde o risco se origina?	endógeno primário; endógeno secundário; físico; digital; social; processual; operacional [nominal hierárquico]
+04	Matriz de risco	O que exige intervenção primeiro?	probabilidade [ordinal/contínua] × impacto [ordinal/contínua]; criticidade [derivada]
+05	Heatmap cognitivo-processual	Onde o processo exige mais cognição?	etapas [nominal]; atenção, memória, decisão, alternância, tempo [ordinal]
+06	Scatterplot	Complexidade aumenta exposição?	complexidade processual [contínua] × carga cognitiva [contínua]; neurodivergência [grupo/categórica]
+07	Waterfall de desvalor	Como pequenas fricções se acumulam?	carga inicial → interrupção → atraso → retrabalho → impacto [quantitativo incremental]
+08	Sankey	Por quais caminhos o risco se materializa?	origem → amplificador → mecanismo → evento → consequência [rede + pesos]
+09	Árvore de falhas	Quais combinações produzem um evento?	evento-topo; causas AND/OR; controles [booleano + relacional]
+10	Bow-Tie	O que acontece antes/depois do evento?	ameaças → evento → consequências; barreiras preventivas/mitigadoras [nominal]
+11	Timeline	Como o estado muda ao longo da execução?	tempo [temporal]; carga, estresse, erros, recuperação [contínuos/eventos]
+12	Journey cognitivo	O que a pessoa enfrenta numa tarefa?	etapa; demanda; emoção; fricção; ação; consequência [misto]
+13	Radar de exposição	Qual o perfil multidimensional?	atenção, memória, tempo, inibição, alternância, sensorial etc. [ordinal normalizado]
+14	Network graph	Onde existem dependências cognitivas?	pessoas/sistemas/canais [nós]; handoffs/dependências [arestas]; peso [quantitativo]
+15	Mapa físico/digital	Onde estão os amplificadores ambientais?	localização/interface; estímulo; frequência; intensidade [espacial/categórico/quantitativo]
+16	Before/After	O desenho neuroadaptativo reduziu exposição?	risco pré/pós; carga pré/pós; erros pré/pós [quantitativo longitudinal]
+17	Matriz risco × controle	Qual mitigação atua sobre qual risco?	riscos [nominal]; controles [nominal]; eficácia [ordinal]; cobertura [binária]
+18	Árvore de mitigação	Onde intervir primeiro?	eliminar → reduzir → externalizar → automatizar → monitorar [ordinal/hierárquico]
+
+A estrutura-mãe dos dados pode ser:
+
+ID_RISCO
+ORIGEM
+TIPO_ENDOGENO
+AMPLIFICADOR
+AMBIENTE
+MECANISMO_COGNITIVO
+FUNCAO_EXECUTIVA
+ETAPA_PROCESSO
+EXPOSICAO
+FREQUENCIA
+INTENSIDADE
+PROBABILIDADE
+EVENTO
+IMPACTO
+CONSEQUENCIA_OPERACIONAL
+CONSEQUENCIA_RELACIONAL
+EFEITO_PSICOLOGICO
+RETROALIMENTACAO
+CONTROLE
+TIPO_CONTROLE
+EFICACIA
+RISCO_RESIDUAL
+TEMPO
+CONTEXTO
+
+Essa estrutura permite gerar praticamente toda a coleção a partir do mesmo modelo de dados, mudando apenas a pergunta e a representação visual.

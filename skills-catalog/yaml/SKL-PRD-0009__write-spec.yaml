@@ -1,0 +1,74 @@
+skill:
+  id: SKL-PRD-0009
+  name: write-spec
+  slug: write-spec
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id002
+    - spec
+    - prd
+    - requisitos
+  purpose:
+    problem:
+      statement: Write a feature spec or PRD from a problem statement or feature idea. Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals,
+        defining success metrics and acceptance criteria, or breaking a big ask into a phased spec.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals, defining success metrics and acceptance criteria, or breaking a big ask into a
+      phased spec.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: write-spec
+    headline: Write a feature spec or PRD from a problem statement or feature idea.
+    category: Product
+    problem_summary: Write a feature spec or PRD from a problem statement or feature idea. Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals,
+      defining success metrics and acceptance criteria, or breaking a big ask into a phased spec.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/write-spec
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

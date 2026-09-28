@@ -1,0 +1,134 @@
+bundle:
+  id: "PD-CLB-20260906-F01-DOC-V01"
+  type: "PROCESS_DOC"
+  title: "Pacote de Conhecimento Padrão"
+  subtitle: "Planejamento Estratégico · Tático · Operacional para Lançamento Multiplataforma"
+  issued_at: "2026-09-06"
+  converted_at: "2026-09-25"
+  source:
+    original_format: "DOCX"
+    index: "IDX-07"
+    canonical_source: "PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.docx"
+  status: "RASCUNHO_PRE_PRODUCAO"
+  revision_policy: "sujeito_a_revisao"
+  phase:
+    id: "F01"
+    name: "PRODUCAO"
+    sequence: 1
+    total_phases: 5
+
+strategy:
+  model:
+    - "Creator-Led Business"
+    - "Creator-Led Growth"
+  vertical:
+    - "Neurodivergência"
+    - "Negócios"
+    - "Gestão de Processos"
+    - "Gestão de Projetos"
+    - "Gestão de Riscos"
+  operating_thesis:
+    cycle: "Experiência própria → Problema → Pesquisa → Conteúdo → Audiência → Comunidade → Validação → Produto/Serviço → Venda → Feedback → Novo conteúdo"
+  creator_roles:
+    - {id: "ROLE-01", role: "Creator", function: "Produzir o conteúdo central."}
+    - {id: "ROLE-02", role: "ICP", function: "Viver o problema que será tratado."}
+    - {id: "ROLE-03", role: "Educador", function: "Transformar experiência em conhecimento."}
+    - {id: "ROLE-04", role: "Distribuidor", function: "Operar audiência e canais."}
+    - {id: "ROLE-05", role: "Validador", function: "Validar problemas, linguagem e soluções."}
+    - {id: "ROLE-06", role: "Product Builder", function: "Converter problemas em produtos e serviços."}
+    - {id: "ROLE-07", role: "Vendedor", function: "Gerar demanda por conteúdo, reputação e comunidade."}
+
+editorial_architecture:
+  core_flow: ["PROBLEMA", "METODO", "SOLUCAO"]
+  content_layers:
+    - {id: "CLAIM", definition: "Afirmação central."}
+    - {id: "EVIDENCE", definition: "Dado, estudo, estatística ou fonte."}
+    - {id: "EXAMPLE", definition: "Caso concreto que demonstra o claim."}
+    - {id: "INTERPRETATION", definition: "Leitura editorial do significado."}
+    - {id: "DERIVATIVE", definition: "Recorte reutilizável em outro canal."}
+  thematic_arc:
+    type: "THREE_ARTICLE_TOPIC_PACK"
+    pattern: ["Definir o problema", "Decompor fatores", "Medir ou diagnosticar exposição"]
+    example: ["Risco Cognitivo", "Fatores de Risco Cognitivo", "Exposição Cognitiva"]
+
+production_cycle:
+  duration_days: 15
+  model: "PECA_MAE_TO_DERIVATIVES"
+  assets:
+    article: {quantity: 1, words: "1800-2400"}
+    master_video: {quantity: 1, duration_minutes: "8-12"}
+    infographics: {quantity: 3, ratio: "16:9"}
+    static_images: {quantity: 6}
+    carousels: {quantity: 6}
+    vertical_videos: {quantity: 4}
+    stories: {quantity: "10-12"}
+    tool_ctas: {quantity: 6}
+    newsletters: {quantity: 3}
+    ebooks: {quantity: 3}
+
+value_chain:
+  phases:
+    - {id: "F01", name: "Produção"}
+    - {id: "F02", name: "Geração de imagens e vídeos", dependency: "F01"}
+    - {id: "F03", name: "Revisão", dependency: "F02"}
+    - {id: "F04", name: "Agendamento e publicação", dependency: "F03"}
+    - {id: "F05", name: "Análise e desempenho", dependency: "F04"}
+
+phase_01_tasks:
+  - {id: "T01", task: "Validar tema do ciclo"}
+  - {id: "T02", task: "Pesquisa de evidências"}
+  - {id: "T03", task: "Definir Topic Pack"}
+  - {id: "T04", task: "Criar outline"}
+  - {id: "T05", task: "Redigir artigo mãe"}
+  - {id: "T06", task: "Revisar estilo"}
+  - {id: "T07", task: "Otimizar GEO/SEO"}
+  - {id: "T08", task: "Roteiro vídeo mãe"}
+  - {id: "T09", task: "Marcar fontes dos derivados"}
+  - {id: "T10", task: "Banco de textos curtos"}
+  - {id: "T11", task: "Roteiros vídeos verticais"}
+  - {id: "T12", task: "Copy dos carrosséis"}
+  - {id: "T13", task: "Copy imagens"}
+  - {id: "T14", task: "Briefing infográficos"}
+  - {id: "T15", task: "Stories"}
+  - {id: "T16", task: "Newsletters"}
+  - {id: "T17", task: "Ebooks"}
+  - {id: "T18", task: "Mapear CTAs"}
+  - {id: "T19", task: "Validar arco temático"}
+  - {id: "T20", task: "Indexar arquivos"}
+  - {id: "T21", task: "Gate pré-handoff"}
+  - {id: "T22", task: "Handoff F02"}
+
+governance:
+  naming:
+    pattern: "[HUB]-[PILAR]-[AAAAMMDD]-[SEQ]-[TIPO]-V[VERSAO]__[SLUG]"
+    asset_types:
+      ART: "Artigo"
+      VID: "Vídeo"
+      CRS: "Carrossel"
+      IMG: "Imagem"
+      INF: "Infográfico"
+      STR: "Stories"
+      NWL: "Newsletter"
+      EBK: "Ebook"
+      DOC: "Documento"
+  folders:
+    "01_PLANEJAMENTO": "Tema, Topic Pack e briefing"
+    "02_PESQUISA-EVIDENCIAS": "Fontes e estudos"
+    "03_PECA-MAE": "Artigo e vídeo mãe"
+    "04_DERIVADOS-TEXTO": "Posts, legendas e carrosséis"
+    "05_ROTEIROS-VIDEO": "Vídeos verticais e stories"
+    "06_BRIEFINGS-VISUAIS": "Handoff visual"
+    "07_NEWSLETTERS": "Emails"
+    "08_EBOOKS": "Lead magnets"
+    "09_CTAS-FERRAMENTAS": "Mapa de CTAs"
+    "10_CONTROLE-INDEXACAO": "Índice geral"
+
+control:
+  canonical_cycle:
+    frequency_days: 15
+  traceability:
+    required: true
+  human_review:
+    required: true
+  downstream_handoff:
+    target_phase: "F02"

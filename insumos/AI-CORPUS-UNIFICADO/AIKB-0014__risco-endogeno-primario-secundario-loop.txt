@@ -1,0 +1,61 @@
+Sim. E eu faria uma distinção essencial para o modelo: nem todo risco endógeno precisa ser “de base”. Há um componente primário/estrutural e outro secundário/estado-dependente, produzido e reforçado pela própria experiência.
+
+A literatura sustenta partes importantes dessa retroalimentação: estresse pode prejudicar memória de trabalho, flexibilidade cognitiva e outros processos executivos; estresse crônico está associado a pior funcionamento executivo.  Há também evidência de interação no sentido inverso: controle atencional e memória de trabalho se relacionam à resposta posterior ao estresse.  Portanto, faz sentido modelar um circuito, não uma linha reta.
+
+┌──────────────────────────────────┐
+│ 1. RISCO ENDÓGENO PRIMÁRIO       │
+│ características neurocognitivas  │
+│ atenção • memória • FE • tempo   │
+└────────────────┬─────────────────┘
+                 ↓
+┌──────────────────────────────────┐
+│ 2. EXPOSIÇÃO / AMPLIFICADORES    │
+│ ambiente físico • digital        │
+│ processo • demanda • contexto    │
+└────────────────┬─────────────────┘
+                 ↓
+┌──────────────────────────────────┐
+│ 3. CARGA COGNITIVA EFETIVA       │
+│ esforço • alternância • atenção  │
+│ memória • decisão                │
+└────────────────┬─────────────────┘
+                 ↓
+┌──────────────────────────────────┐
+│ 4. EVENTO DE EXECUÇÃO            │
+│ erro • omissão • atraso          │
+│ interrupção • retrabalho         │
+└────────────────┬─────────────────┘
+                 ↓
+┌──────────────────────────────────┐
+│ 5. CONSEQUÊNCIA                  │
+│ operacional • social • emocional │
+└────────────────┬─────────────────┘
+                 ↓
+┌──────────────────────────────────┐
+│ 6. ESTADO ENDÓGENO SECUNDÁRIO    │
+│ estresse antecipatório           │
+│ evitação • hiperalerta           │
+│ automatismos/hábitos             │
+└────────────────┬─────────────────┘
+                 ↓
+        ↓ disponibilidade executiva
+                 │
+                 └───────────────↺ 1–3
+
+Eu não chamaria inicialmente de “meta-risco endógeno”, porque parece sugerir uma categoria neurocientífica já estabelecida. Como constructo próprio, prefiro:
+
+Risco Endógeno Primário
+= condição relativamente basal/neurocognitiva.
+
+Risco Endógeno Secundário
+= estado interno adquirido ou intensificado pela interação repetida com ambiente, processo e consequências.
+
+Esse segundo é particularmente importante porque já chega à próxima execução como condição antecedente. Portanto, uma consequência do ciclo anterior torna-se fator de risco do ciclo seguinte.
+
+Há inclusive literatura indicando que o estresse pode favorecer respostas mais habituais em detrimento do controle dirigido a objetivos, embora esse efeito não apareça de maneira uniforme em todos os estudos. 
+
+Didaticamente, isso nos dá uma estrutura muito forte:
+
+Predisposição → Exposição → Sobrecarga → Evento → Consequência → Retroalimentação.
+
+E é aqui que, a meu ver, nasce a verdadeira matriz de Risco Cognitivo: precisamos classificar cada fator por origem, estado, mecanismo, amplificador, evento, consequência e mitigação.

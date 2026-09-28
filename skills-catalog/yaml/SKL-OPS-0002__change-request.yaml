@@ -1,0 +1,74 @@
+skill:
+  id: SKL-OPS-0002
+  name: change-request
+  slug: change-request
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: workflow
+    tags: &id002
+    - mudanca
+    - governanca
+    - CAB
+  purpose:
+    problem:
+      statement: Create a change management request with impact analysis and rollback plan. Use when proposing a system or process change that needs approval, preparing a change record for CAB review, documenting
+        risk and rollback steps before a deployment, or planning stakeholder communications for a rollout.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - Use when proposing a system or process change that needs approval, preparing a change record for CAB review, documenting risk and rollback steps before a deployment, or planning stakeholder communications
+      for a rollout.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: change-request
+    headline: Create a change management request with impact analysis and rollback plan.
+    category: Operations
+    problem_summary: Create a change management request with impact analysis and rollback plan. Use when proposing a system or process change that needs approval, preparing a change record for CAB review,
+      documenting risk and rollback steps before a deployment, or planning stakeholder communications for a rollout.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/change-request
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

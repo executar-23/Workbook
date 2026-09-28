@@ -1,0 +1,2270 @@
+skills:
+- id: SKL-AUT-0001
+  name: cowork-plugin-customizer
+  slug: cowork-plugin-customizer
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: AUT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: transformer
+    tags: &id002
+    - cowork
+    - plugin
+    - customizacao
+  purpose:
+    problem:
+      statement: 'Customize a Claude Code plugin for a specific organization''s tools and workflows. Use when: customize plugin, set up plugin, configure plugin, tailor plugin, adjust plugin settings, customize
+        plugin connectors, customize plugin skill, tweak plugin, modify plugin configuration.'
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001
+    - 'Use when: customize plugin, set up plugin, configure plugin, tailor plugin, adjust plugin settings, customize plugin connectors, customize plugin skill, tweak plugin, modify plugin configuration.'
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: cowork-plugin-customizer
+    headline: Customize a Claude Code plugin for a specific organization's tools and workflows.
+    category: Automation
+    problem_summary: 'Customize a Claude Code plugin for a specific organization''s tools and workflows. Use when: customize plugin, set up plugin, configure plugin, tailor plugin, adjust plugin settings,
+      customize plugin connectors, customize plugin skill, tweak plugin, modify plugin configuration.'
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/cowork-plugin-customizer
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-AUT-0002
+  name: create-cowork-plugin
+  slug: create-cowork-plugin
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: AUT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id004
+    - cowork
+    - plugin
+    - scaffold
+  purpose:
+    problem:
+      statement: Guide users through creating a new plugin from scratch in a cowork session. Use when users want to create a plugin, build a plugin, make a new plugin, develop a plugin, scaffold a plugin,
+        start a plugin from scratch, or design a plugin. This skill requires Cowork mode with access to the outputs directory for delivering the final .plugin file.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id003
+    - Use when users want to create a plugin, build a plugin, make a new plugin, develop a plugin, scaffold a plugin, start a plugin from scratch, or design a plugin.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id003
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: create-cowork-plugin
+    headline: Guide users through creating a new plugin from scratch in a cowork session.
+    category: Automation
+    problem_summary: Guide users through creating a new plugin from scratch in a cowork session. Use when users want to create a plugin, build a plugin, make a new plugin, develop a plugin, scaffold a plugin,
+      start a plugin from scratch, or design a plugin. This skill requires Cowork mode with access to the outputs directory for delivering the final .plugin file.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id004
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/create-cowork-plugin
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-AUT-0003
+  name: executar-plan-mode
+  slug: executar-plan-mode
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: AUT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: planner
+    tags: &id006
+    - plan-mode
+    - rastreabilidade
+    - execucao
+  purpose:
+    problem:
+      statement: Transforma prompts brutos, extensos, ambíguos ou multidisciplinares em planos de execução estruturados, rastreáveis e verificáveis antes de qualquer implementação. Use quando o usuário
+        pedir para planejar pesquisa, auditoria, implementação, migração, documentação, criação de arquivos, workflows de agentes, Codex ou Claude Code; quando for necessário separar planejamento de execução;
+        ou quando o prompt precisar de fases, dependências, gates, entregáveis e Definition of Done.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id005 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id005
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-plan-mode
+    headline: Transforma prompts brutos, extensos, ambíguos ou multidisciplinares em planos de execução estruturados, rastreáveis e verificáveis antes de qualquer implementação.
+    category: Automation
+    problem_summary: Transforma prompts brutos, extensos, ambíguos ou multidisciplinares em planos de execução estruturados, rastreáveis e verificáveis antes de qualquer implementação. Use quando o usuário
+      pedir para planejar pesquisa, auditoria, implementação, migração, documentação, criação de arquivos, workflows de agentes, Codex ou Claude Code; quando for necessário separar planejamento de execução;
+      ou quando o prompt precisar de fases, dependências, gates, entregáveis e Definition of Done.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id006
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-plan-mode
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-AUT-0004
+  name: execution-toolkit
+  slug: execution-toolkit
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: AUT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id008
+    - multi-agente
+    - imagem
+    - redacao-tecnica
+  purpose:
+    problem:
+      statement: 'Skill composta para orquestração de workflows com múltiplos agentes, processamento de imagens existentes e redação técnica estruturada. Use progressive disclosure: leia apenas a referência
+        necessária para a tarefa.'
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id007 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id007
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: execution-toolkit
+    headline: Skill composta para orquestração de workflows com múltiplos agentes, processamento de imagens existentes e redação técnica estruturada.
+    category: Automation
+    problem_summary: 'Skill composta para orquestração de workflows com múltiplos agentes, processamento de imagens existentes e redação técnica estruturada. Use progressive disclosure: leia apenas a referência
+      necessária para a tarefa.'
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id008
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/execution-toolkit
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-DOC-0001
+  name: executar-arvore-roadmap
+  slug: executar-arvore-roadmap
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: DOC
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: transformer
+    tags: &id010
+    - arvore
+    - roadmap
+    - navegacao
+  purpose:
+    problem:
+      statement: Converte planejamentos, roadmaps, sprints e cronogramas longos e desestruturados (planilhas, PDFs, documentos de metodologia, ou até uma simples descrição de projeto) em uma árvore de navegação
+        hierárquica — mês → semana → dia → ciclo → tarefa → dependência → porta → evidência. Use sempre que o usuário pedir para transformar um plano em "árvore", "diretório navegável", "roadmap em texto",
+        "cronograma em árvore", quando mencionar IDs desta skill (ARVORE-TXT-01, ARVORE-ZIP-02, ARVORE-OBSIDIAN-03, ARVORE-CSV-04, ARVOREKIT), quando pedir um vault Obsidian de mergulho progressivo para
+        um plano operacional, ou quando pedir para converter um plano inteiro em CSV estruturado. Também dispare quando o usuário descrever um projeto do zero (sem plano pronto) e pedir para gerar o kit
+        completo de planejamento em formato de árvore. Acionada também pelo ID verbal CV-ARVORE-001 (/arvore) do plugin executar-cop.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id009 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /arvore
+    natural_requests: *id009
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-arvore-roadmap
+    headline: Converte planejamentos, roadmaps, sprints e cronogramas longos e desestruturados (planilhas, PDFs, documentos de metodologia, ou até uma simples descrição de projeto) em uma árvore de navegação
+      hierárquica — mês → semana → dia → ciclo → tarefa → dependência → porta → evidência.
+    category: Documentation
+    problem_summary: Converte planejamentos, roadmaps, sprints e cronogramas longos e desestruturados (planilhas, PDFs, documentos de metodologia, ou até uma simples descrição de projeto) em uma árvore
+      de navegação hierárquica — mês → semana → dia → ciclo → tarefa → dependência → porta → evidência. Use sempre que o usuário pedir para transformar um plano em "árvore", "diretório navegável", "roadmap
+      em texto", "cronograma em árvore", quando mencionar IDs desta skill (ARVORE-TXT-01, ARVORE-ZIP-02, ARVORE-OBSIDIAN-03, ARVORE-CSV-04, ARVOREKIT), quando pedir um vault Obsidian de mergulho progressivo
+      para um plano operacional, ou quando pedir para converter um plano inteiro em CSV estruturado. Também dispare quando o usuário descrever um projeto do zero (sem plano pronto) e pedir para gerar o
+      kit completo de planejamento em formato de árvore. Acionada também pelo ID verbal CV-ARVORE-001 (/arvore) do plugin executar-cop.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id010
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-arvore-roadmap
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-DOC-0002
+  name: executar-mergulhe
+  slug: executar-mergulhe
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: DOC
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id012
+    - arvore-visual
+    - obsidian
+    - hierarquia
+  purpose:
+    problem:
+      statement: Organiza conteúdo, projetos, operações e documentação em uma hierarquia navegável da família Executar, combinando árvore visual, mergulho progressivo, Obsidian, relações entre nós, dependências,
+        portas e evidências. Use quando o usuário pedir para estruturar em ramos, pastas, mergulho, nós, fila única, cadeia de dependências, mapa hierárquico, Obsidian ou uma visualização compatível com
+        Executar · Árvore Visual. Acionada também pelo ID verbal CV-VISUAL-001 (/arvore-visual) do plugin executar-cop.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id011 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /arvore-visual
+    natural_requests: *id011
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-mergulhe
+    headline: Organiza conteúdo, projetos, operações e documentação em uma hierarquia navegável da família Executar, combinando árvore visual, mergulho progressivo, Obsidian, relações entre nós, dependências,
+      portas e evidências.
+    category: Documentation
+    problem_summary: Organiza conteúdo, projetos, operações e documentação em uma hierarquia navegável da família Executar, combinando árvore visual, mergulho progressivo, Obsidian, relações entre nós,
+      dependências, portas e evidências. Use quando o usuário pedir para estruturar em ramos, pastas, mergulho, nós, fila única, cadeia de dependências, mapa hierárquico, Obsidian ou uma visualização compatível
+      com Executar · Árvore Visual. Acionada também pelo ID verbal CV-VISUAL-001 (/arvore-visual) do plugin executar-cop.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id012
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-mergulhe
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-DOC-0003
+  name: obsidian-editorial-pipeline
+  slug: obsidian-editorial-pipeline
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: DOC
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id014
+    - editorial
+    - obsidian
+    - producao-de-conteudo
+  purpose:
+    problem:
+      statement: Opera a produção editorial faseada no Obsidian a partir de formulário/briefing editorial, Process Doc e estado existente do job. Use para criar, continuar, revisar, organizar ou empacotar
+        ciclos editoriais; compõe dinamicamente artigo, evidências, vídeo, carrosséis, imagens, stories, newsletters, ebooks, CTAs e handoff sem exigir um perfil único. Acionada também pelo ID verbal CV-EDITORIAL-001
+        (/editorial) do plugin executar-cop.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id013
+    - Use para criar, continuar, revisar, organizar ou empacotar ciclos editoriais; compõe dinamicamente artigo, evidências, vídeo, carrosséis, imagens, stories, newsletters, ebooks, CTAs e handoff sem
+      exigir um perfil único.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /briefing
+    - /editorial
+    natural_requests: *id013
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: obsidian-editorial-pipeline
+    headline: Opera a produção editorial faseada no Obsidian a partir de formulário/briefing editorial, Process Doc e estado existente do job.
+    category: Documentation
+    problem_summary: Opera a produção editorial faseada no Obsidian a partir de formulário/briefing editorial, Process Doc e estado existente do job. Use para criar, continuar, revisar, organizar ou empacotar
+      ciclos editoriais; compõe dinamicamente artigo, evidências, vídeo, carrosséis, imagens, stories, newsletters, ebooks, CTAs e handoff sem exigir um perfil único. Acionada também pelo ID verbal CV-EDITORIAL-001
+      (/editorial) do plugin executar-cop.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id014
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/obsidian-editorial-pipeline
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0001
+  name: capacity-plan
+  slug: capacity-plan
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: planner
+    tags: &id016
+    - capacidade
+    - planejamento
+    - recursos
+  purpose:
+    problem:
+      statement: Plan resource capacity — workload analysis and utilization forecasting. Use when heading into quarterly planning, the team feels overallocated and you need the numbers, deciding whether
+        to hire or deprioritize, or stress-testing whether upcoming projects fit the people you have.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id015
+    - Use when heading into quarterly planning, the team feels overallocated and you need the numbers, deciding whether to hire or deprioritize, or stress-testing whether upcoming projects fit the people
+      you have.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id015
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: capacity-plan
+    headline: Plan resource capacity — workload analysis and utilization forecasting.
+    category: Operations
+    problem_summary: Plan resource capacity — workload analysis and utilization forecasting. Use when heading into quarterly planning, the team feels overallocated and you need the numbers, deciding whether
+      to hire or deprioritize, or stress-testing whether upcoming projects fit the people you have.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id016
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/capacity-plan
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0002
+  name: change-request
+  slug: change-request
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: workflow
+    tags: &id018
+    - mudanca
+    - governanca
+    - CAB
+  purpose:
+    problem:
+      statement: Create a change management request with impact analysis and rollback plan. Use when proposing a system or process change that needs approval, preparing a change record for CAB review, documenting
+        risk and rollback steps before a deployment, or planning stakeholder communications for a rollout.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id017
+    - Use when proposing a system or process change that needs approval, preparing a change record for CAB review, documenting risk and rollback steps before a deployment, or planning stakeholder communications
+      for a rollout.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id017
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: change-request
+    headline: Create a change management request with impact analysis and rollback plan.
+    category: Operations
+    problem_summary: Create a change management request with impact analysis and rollback plan. Use when proposing a system or process change that needs approval, preparing a change record for CAB review,
+      documenting risk and rollback steps before a deployment, or planning stakeholder communications for a rollout.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id018
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/change-request
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0003
+  name: compliance-tracking
+  slug: compliance-tracking
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tracker
+    tags: &id020
+    - compliance
+    - auditoria
+    - SOC2
+    - ISO27001
+    - GDPR
+  purpose:
+    problem:
+      statement: Track compliance requirements and audit readiness. Trigger with "compliance", "audit prep", "SOC 2", "ISO 27001", "GDPR", "regulatory requirement", or when the user needs help tracking,
+        preparing for, or documenting compliance activities.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id019 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id019
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: compliance-tracking
+    headline: Track compliance requirements and audit readiness.
+    category: Operations
+    problem_summary: Track compliance requirements and audit readiness. Trigger with "compliance", "audit prep", "SOC 2", "ISO 27001", "GDPR", "regulatory requirement", or when the user needs help tracking,
+      preparing for, or documenting compliance activities.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id020
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/compliance-tracking
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0004
+  name: executar-dependency-architect
+  slug: executar-dependency-architect
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id022
+    - dependencias
+    - control-plane
+    - executar-hub
+  purpose:
+    problem:
+      statement: Arquiteto de Dependências do EXECUTAR HUB (EXECUTAR-DEPENDENCY-ARCHITECT-001, ID verbal CV-DEPEND-001, /dependencias). Reconstrói formalmente a rede de dependências da planilha EXECUTAR_HUB_Control_Plane_v2.xlsx
+        — campo → artefato → domínio → macroárea → Gate — e entrega, sempre em três partes, as linhas prontas para 16_REG_Dependencias, o mapa origem → destino → motivo → Gate → impacto e a Arquitetura
+        de Preenchimento (fases por contexto cognitivo único, derivadas das dependências reais). Use sempre que o usuário falar em Control Plane, EXECUTAR HUB, 16_REG_Dependencias, 17_REG_Gates, ordem ou
+        sequência de preenchimento da planilha, os 1.125 campos, formulários A00–A12, transição Produto → Engenharia (A03), PF-24/reconciliação cruzada, depends_on/blocks, "qual artefato vem primeiro",
+        dependências circulares entre entregáveis ou desenho de Gates — mesmo que não diga "dependência" nem use o slash.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id021 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /blocks
+    - /dependencias
+    - /reconcilia
+    natural_requests: *id021
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: executar-dependency-architect
+    headline: Arquiteto de Dependências do EXECUTAR HUB (EXECUTAR-DEPENDENCY-ARCHITECT-001, ID verbal CV-DEPEND-001, /dependencias).
+    category: Operations
+    problem_summary: Arquiteto de Dependências do EXECUTAR HUB (EXECUTAR-DEPENDENCY-ARCHITECT-001, ID verbal CV-DEPEND-001, /dependencias). Reconstrói formalmente a rede de dependências da planilha EXECUTAR_HUB_Control_Plane_v2.xlsx
+      — campo → artefato → domínio → macroárea → Gate — e entrega, sempre em três partes, as linhas prontas para 16_REG_Dependencias, o mapa origem → destino → motivo → Gate → impacto e a Arquitetura de
+      Preenchimento (fases por contexto cognitivo único, derivadas das dependências reais). Use sempre que o usuário falar em Control Plane, EXECUTAR HUB, 16_REG_Dependencias, 17_REG_Gates, ordem ou sequência
+      de preenchimento da planilha, os 1.125 campos, formulários A00–A12, transição Produto → Engenharia (A03), PF-24/reconciliação cruzada, depends_on/blocks, "qual artefato vem primeiro", dependências
+      circulares entre entregáveis ou desenho de Gates — mesmo que não diga "dependência" nem use o slash.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id022
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/executar-dependency-architect
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0005
+  name: process-doc
+  slug: process-doc
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id024
+    - processo
+    - RACI
+    - SOP
+  purpose:
+    problem:
+      statement: Document a business process — flowcharts, RACI, and SOPs. Use when formalizing a process that lives in someone's head, building a RACI to clarify who owns what, writing an SOP for a handoff
+        or audit, or capturing the exceptions and edge cases of how work actually gets done.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id023
+    - Use when formalizing a process that lives in someone's head, building a RACI to clarify who owns what, writing an SOP for a handoff or audit, or capturing the exceptions and edge cases of how work
+      actually gets done.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id023
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: process-doc
+    headline: Document a business process — flowcharts, RACI, and SOPs.
+    category: Operations
+    problem_summary: Document a business process — flowcharts, RACI, and SOPs. Use when formalizing a process that lives in someone's head, building a RACI to clarify who owns what, writing an SOP for a
+      handoff or audit, or capturing the exceptions and edge cases of how work actually gets done.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id024
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/process-doc
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0006
+  name: process-optimization
+  slug: process-optimization
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id026
+    - processo
+    - gargalo
+    - eficiencia
+  purpose:
+    problem:
+      statement: Analyze and improve business processes. Trigger with "this process is slow", "how can we improve", "streamline this workflow", "too many steps", "bottleneck", or when the user describes
+        an inefficient process they want to fix.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id025 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id025
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: process-optimization
+    headline: Analyze and improve business processes.
+    category: Operations
+    problem_summary: Analyze and improve business processes. Trigger with "this process is slow", "how can we improve", "streamline this workflow", "too many steps", "bottleneck", or when the user describes
+      an inefficient process they want to fix.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id026
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/process-optimization
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0007
+  name: risk-assessment
+  slug: risk-assessment
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id028
+    - risco
+    - mitigacao
+    - registro-de-riscos
+  purpose:
+    problem:
+      statement: Identify, assess, and mitigate operational risks. Trigger with "what are the risks", "risk assessment", "risk register", "what could go wrong", or when the user is evaluating risks associated
+        with a project, vendor, process, or decision.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id027 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id027
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: risk-assessment
+    headline: Identify, assess, and mitigate operational risks.
+    category: Operations
+    problem_summary: Identify, assess, and mitigate operational risks. Trigger with "what are the risks", "risk assessment", "risk register", "what could go wrong", or when the user is evaluating risks
+      associated with a project, vendor, process, or decision.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id028
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/risk-assessment
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0008
+  name: runbook
+  slug: runbook
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id030
+    - runbook
+    - operacional
+    - procedimento
+  purpose:
+    problem:
+      statement: Create or update an operational runbook for a recurring task or procedure. Use when documenting a task that on-call or ops needs to run repeatably, turning tribal knowledge into exact step-by-step
+        commands, adding troubleshooting and rollback steps to an existing procedure, or writing escalation paths for when things go wrong.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id029
+    - Use when documenting a task that on-call or ops needs to run repeatably, turning tribal knowledge into exact step-by-step commands, adding troubleshooting and rollback steps to an existing procedure,
+      or writing escalation paths for when things go wrong.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id029
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: runbook
+    headline: Create or update an operational runbook for a recurring task or procedure.
+    category: Operations
+    problem_summary: Create or update an operational runbook for a recurring task or procedure. Use when documenting a task that on-call or ops needs to run repeatably, turning tribal knowledge into exact
+      step-by-step commands, adding troubleshooting and rollback steps to an existing procedure, or writing escalation paths for when things go wrong.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id030
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/runbook
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0009
+  name: status-report
+  slug: status-report
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id032
+    - status-report
+    - kpi
+    - lideranca
+  purpose:
+    problem:
+      statement: Generate a status report with KPIs, risks, and action items. Use when writing a weekly or monthly update for leadership, summarizing project health with green/yellow/red status, surfacing
+        risks and decisions that need stakeholder attention, or turning a pile of project tracker activity into a readable narrative.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id031
+    - Use when writing a weekly or monthly update for leadership, summarizing project health with green/yellow/red status, surfacing risks and decisions that need stakeholder attention, or turning a pile
+      of project tracker activity into a readable narrative.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /red
+    - /yellow
+    natural_requests: *id031
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: status-report
+    headline: Generate a status report with KPIs, risks, and action items.
+    category: Operations
+    problem_summary: Generate a status report with KPIs, risks, and action items. Use when writing a weekly or monthly update for leadership, summarizing project health with green/yellow/red status, surfacing
+      risks and decisions that need stakeholder attention, or turning a pile of project tracker activity into a readable narrative.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id032
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/status-report
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-OPS-0010
+  name: vendor-review
+  slug: vendor-review
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: OPS
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id034
+    - fornecedor
+    - custo
+    - contrato
+  purpose:
+    problem:
+      statement: Evaluate a vendor — cost analysis, risk assessment, and recommendation. Use when reviewing a new vendor proposal, deciding whether to renew or replace a contract, comparing two vendors
+        side-by-side, or building a TCO breakdown and negotiation points before procurement sign-off.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id033
+    - Use when reviewing a new vendor proposal, deciding whether to renew or replace a contract, comparing two vendors side-by-side, or building a TCO breakdown and negotiation points before procurement
+      sign-off.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id033
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: vendor-review
+    headline: Evaluate a vendor — cost analysis, risk assessment, and recommendation.
+    category: Operations
+    problem_summary: Evaluate a vendor — cost analysis, risk assessment, and recommendation. Use when reviewing a new vendor proposal, deciding whether to renew or replace a contract, comparing two vendors
+      side-by-side, or building a TCO breakdown and negotiation points before procurement sign-off.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id034
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/vendor-review
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PLT-0001
+  name: copiloto-operacional
+  slug: copiloto-operacional
+  version: 1.0.0
+  status: identificado
+  visibility: interno
+  classification:
+    area: PLT
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id036
+    - mcp
+    - github-issues
+    - adr-015
+    - programa-executar
+  purpose:
+    problem:
+      statement: Opera tarefas, campanhas e relatórios do programa EXECUTAR sobre as issues do GitHub (fonte da verdade), com as regras do Copiloto Operacional (ADR-015). Use quando o usuário perguntar
+        o que tem para hoje ou amanhã, o que está urgente, quanto falta (percentual), quiser pôr algo na fila, registrar uma ideia, marcar tarefa como feita, iniciar ou acompanhar uma campanha (runbook
+        com gates), gerar status report, propor workflow/rotina/runbook ou reconciliar estados — mesmo sem digitar o comando de barra.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id035 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /rotina
+    - /runbook
+    natural_requests: *id035
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: copiloto-operacional
+    headline: Opera tarefas, campanhas e relatórios do programa EXECUTAR sobre as issues do GitHub (fonte da verdade), com as regras do Copiloto Operacional (ADR-015).
+    category: Platform
+    problem_summary: Opera tarefas, campanhas e relatórios do programa EXECUTAR sobre as issues do GitHub (fonte da verdade), com as regras do Copiloto Operacional (ADR-015). Use quando o usuário perguntar
+      o que tem para hoje ou amanhã, o que está urgente, quanto falta (percentual), quiser pôr algo na fila, registrar uma ideia, marcar tarefa como feita, iniciar ou acompanhar uma campanha (runbook com
+      gates), gerar status report, propor workflow/rotina/runbook ou reconciliar estados — mesmo sem digitar o comando de barra.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id036
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/COPILOTO-OPERACIONAL
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+    notes: source/ contém o plugin completo (src, dist, agents, commands, hooks), não só a pasta skills/.
+- id: SKL-PRD-0001
+  name: competitive-brief
+  slug: competitive-brief
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id038
+    - concorrencia
+    - battlecard
+    - estrategia
+  purpose:
+    problem:
+      statement: Create a competitive analysis brief for one or more competitors or a feature area. Use when informing product strategy or feature prioritization, building sales battle cards, prepping board
+        or investor materials, or deciding where to differentiate vs. achieve parity.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id037
+    - Use when informing product strategy or feature prioritization, building sales battle cards, prepping board or investor materials, or deciding where to differentiate vs.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id037
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: competitive-brief
+    headline: Create a competitive analysis brief for one or more competitors or a feature area.
+    category: Product
+    problem_summary: Create a competitive analysis brief for one or more competitors or a feature area. Use when informing product strategy or feature prioritization, building sales battle cards, prepping
+      board or investor materials, or deciding where to differentiate vs. achieve parity.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id038
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/competitive-brief
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0002
+  name: metrics-review
+  slug: metrics-review
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id040
+    - metricas
+    - tendencia
+    - produto
+  purpose:
+    problem:
+      statement: Review and analyze product metrics with trend analysis and actionable insights. Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop, comparing
+        performance against targets, or turning raw numbers into a scorecard with recommended actions.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id039
+    - Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop, comparing performance against targets, or turning raw numbers into a scorecard with recommended
+      actions.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id039
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: metrics-review
+    headline: Review and analyze product metrics with trend analysis and actionable insights.
+    category: Product
+    problem_summary: Review and analyze product metrics with trend analysis and actionable insights. Use when running a weekly, monthly, or quarterly metrics review, investigating a sudden spike or drop,
+      comparing performance against targets, or turning raw numbers into a scorecard with recommended actions.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id040
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/metrics-review
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0003
+  name: product-brainstorming
+  slug: product-brainstorming
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: expert
+    tags: &id042
+    - brainstorm
+    - ideacao
+    - produto
+  purpose:
+    problem:
+      statement: Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner. Use when exploring a new opportunity, generating solutions to a product problem, stress-testing
+        an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id041
+    - Use when exploring a new opportunity, generating solutions to a product problem, stress-testing an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id041
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: product-brainstorming
+    headline: Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner.
+    category: Product
+    problem_summary: Brainstorm product ideas, explore problem spaces, and challenge assumptions as a thinking partner. Use when exploring a new opportunity, generating solutions to a product problem, stress-testing
+      an idea, or when a PM needs to think out loud with a sharp sparring partner before converging on a direction.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id042
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/product-brainstorming
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0004
+  name: product-code-development
+  slug: product-code-development
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id044
+    - produto
+    - engenharia
+    - arquitetura
+    - vertical-slice
+  purpose:
+    problem:
+      statement: Especialista integrado de Product Management + Software Engineering para transformar objetivos, pesquisa, requisitos e blueprints em arquitetura, planos de implementação de código, vertical
+        slices, revisão, testes, deploy, operação e evolução. Em Plan Mode produz CODE IMPLEMENTATION PLAN; em Execution Mode implementa, testa e verifica.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id043 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id043
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: product-code-development
+    headline: Especialista integrado de Product Management + Software Engineering para transformar objetivos, pesquisa, requisitos e blueprints em arquitetura, planos de implementação de código, vertical
+      slices, revisão, testes, deploy, operação e evolução.
+    category: Product
+    problem_summary: Especialista integrado de Product Management + Software Engineering para transformar objetivos, pesquisa, requisitos e blueprints em arquitetura, planos de implementação de código,
+      vertical slices, revisão, testes, deploy, operação e evolução. Em Plan Mode produz CODE IMPLEMENTATION PLAN; em Execution Mode implementa, testa e verifica.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id044
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/product-code-development
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0005
+  name: roadmap-update
+  slug: roadmap-update
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tool
+    tags: &id046
+    - roadmap
+    - priorizacao
+  purpose:
+    problem:
+      statement: Update, create, or reprioritize your product roadmap. Use when adding a new initiative and deciding what moves to make room, shifting priorities after new information comes in, moving timelines
+        due to a dependency slip, or building a Now/Next/Later view from scratch.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id045
+    - Use when adding a new initiative and deciding what moves to make room, shifting priorities after new information comes in, moving timelines due to a dependency slip, or building a Now/Next/Later view
+      from scratch.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /Later
+    - /Next
+    natural_requests: *id045
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: roadmap-update
+    headline: Update, create, or reprioritize your product roadmap.
+    category: Product
+    problem_summary: Update, create, or reprioritize your product roadmap. Use when adding a new initiative and deciding what moves to make room, shifting priorities after new information comes in, moving
+      timelines due to a dependency slip, or building a Now/Next/Later view from scratch.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id046
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/roadmap-update
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0006
+  name: sprint-planning
+  slug: sprint-planning
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: planner
+    tags: &id048
+    - sprint
+    - capacidade
+    - backlog
+  purpose:
+    problem:
+      statement: Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan. Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO and
+        meetings), deciding what's P0 vs. stretch, or handling carryover from the last sprint.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id047
+    - Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO and meetings), deciding what's P0 vs.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id047
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: sprint-planning
+    headline: Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan.
+    category: Product
+    problem_summary: Plan a sprint — scope work, estimate capacity, set goals, and draft a sprint plan. Use when kicking off a new sprint, sizing a backlog against team availability (accounting for PTO
+      and meetings), deciding what's P0 vs. stretch, or handling carryover from the last sprint.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id048
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/sprint-planning
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0007
+  name: stakeholder-update
+  slug: stakeholder-update
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id050
+    - comunicacao
+    - stakeholders
+  purpose:
+    problem:
+      statement: Generate a stakeholder update tailored to audience and cadence. Use when writing a weekly or monthly status for leadership, announcing a launch, escalating a risk or blocker, or translating
+        the same progress into exec-brief, engineering-detail, or customer-facing versions.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id049
+    - Use when writing a weekly or monthly status for leadership, announcing a launch, escalating a risk or blocker, or translating the same progress into exec-brief, engineering-detail, or customer-facing
+      versions.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id049
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: stakeholder-update
+    headline: Generate a stakeholder update tailored to audience and cadence.
+    category: Product
+    problem_summary: Generate a stakeholder update tailored to audience and cadence. Use when writing a weekly or monthly status for leadership, announcing a launch, escalating a risk or blocker, or translating
+      the same progress into exec-brief, engineering-detail, or customer-facing versions.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id050
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/stakeholder-update
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0008
+  name: synthesize-research
+  slug: synthesize-research
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: analyzer
+    tags: &id052
+    - pesquisa
+    - insights
+    - entrevistas
+  purpose:
+    problem:
+      statement: Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense
+        of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into roadmap recommendations.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id051
+    - Use when you have a pile of interview notes, survey responses, or support tickets to make sense of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into
+      roadmap recommendations.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id051
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: synthesize-research
+    headline: Synthesize user research from interviews, surveys, and feedback into structured insights.
+    category: Product
+    problem_summary: Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense
+      of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into roadmap recommendations.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id052
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/synthesize-research
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRD-0009
+  name: write-spec
+  slug: write-spec
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: generator
+    tags: &id054
+    - spec
+    - prd
+    - requisitos
+  purpose:
+    problem:
+      statement: Write a feature spec or PRD from a problem statement or feature idea. Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals,
+        defining success metrics and acceptance criteria, or breaking a big ask into a phased spec.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id053
+    - Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals, defining success metrics and acceptance criteria, or breaking a big ask into a
+      phased spec.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id053
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: write-spec
+    headline: Write a feature spec or PRD from a problem statement or feature idea.
+    category: Product
+    problem_summary: Write a feature spec or PRD from a problem statement or feature idea. Use when turning a vague idea or user request into a structured document, scoping a feature with goals and non-goals,
+      defining success metrics and acceptance criteria, or breaking a big ask into a phased spec.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id054
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/write-spec
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRO-0001
+  name: memory-management
+  slug: memory-management
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRO
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tool
+    tags: &id056
+    - memoria
+    - claude-md
+    - colaboracao
+  purpose:
+    problem:
+      statement: Two-tier memory system that makes Claude a true workplace collaborator. Decodes shorthand, acronyms, nicknames, and internal language so Claude understands requests like a colleague would.
+        CLAUDE.md for working memory, memory/ directory for the full knowledge base.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id055 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id055
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: memory-management
+    headline: Two-tier memory system that makes Claude a true workplace collaborator.
+    category: Productivity
+    problem_summary: Two-tier memory system that makes Claude a true workplace collaborator. Decodes shorthand, acronyms, nicknames, and internal language so Claude understands requests like a colleague
+      would. CLAUDE.md for working memory, memory/ directory for the full knowledge base.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id056
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/memory-management
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRO-0002
+  name: start
+  slug: start
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRO
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tool
+    tags: &id058
+    - bootstrap
+    - dashboard
+    - produtividade
+  purpose:
+    problem:
+      statement: Initialize the productivity system and open the dashboard. Use when setting up the plugin for the first time, bootstrapping working memory from your existing task list, or decoding the
+        shorthand (nicknames, acronyms, project codenames) you use in your todos.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id057
+    - Use when setting up the plugin for the first time, bootstrapping working memory from your existing task list, or decoding the shorthand (nicknames, acronyms, project codenames) you use in your todos.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id057
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: start
+    headline: Initialize the productivity system and open the dashboard.
+    category: Productivity
+    problem_summary: Initialize the productivity system and open the dashboard. Use when setting up the plugin for the first time, bootstrapping working memory from your existing task list, or decoding
+      the shorthand (nicknames, acronyms, project codenames) you use in your todos.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id058
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/start
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRO-0003
+  name: task-management
+  slug: task-management
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRO
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tool
+    tags: &id060
+    - tarefas
+    - tasks-md
+  purpose:
+    problem:
+      statement: Simple task management using a shared TASKS.md file. Reference this when the user asks about their tasks, wants to add/complete tasks, or needs help tracking commitments.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id059 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands:
+    - /complete
+    natural_requests: *id059
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: task-management
+    headline: Simple task management using a shared TASKS.
+    category: Productivity
+    problem_summary: Simple task management using a shared TASKS.md file. Reference this when the user asks about their tasks, wants to add/complete tasks, or needs help tracking commitments.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id060
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/task-management
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
+- id: SKL-PRO-0004
+  name: update
+  slug: update
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRO
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: tool
+    tags: &id062
+    - sincronizacao
+    - memoria
+    - tarefas
+  purpose:
+    problem:
+      statement: Sync tasks and refresh memory from your current activity. Use when pulling new assignments from your project tracker into TASKS.md, triaging stale or overdue tasks, filling memory gaps
+        for unknown people or projects, or running a comprehensive scan to catch todos buried in chat and email.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id061
+    - Use when pulling new assignments from your project tracker into TASKS.
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id061
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: update
+    headline: Sync tasks and refresh memory from your current activity.
+    category: Productivity
+    problem_summary: Sync tasks and refresh memory from your current activity. Use when pulling new assignments from your project tracker into TASKS.md, triaging stale or overdue tasks, filling memory gaps
+      for unknown people or projects, or running a comprehensive scan to catch todos buried in chat and email.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id062
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/update
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category

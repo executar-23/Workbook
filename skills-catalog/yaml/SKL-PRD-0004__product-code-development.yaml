@@ -1,0 +1,74 @@
+skill:
+  id: SKL-PRD-0004
+  name: product-code-development
+  slug: product-code-development
+  version: TBD
+  status: identificado
+  visibility: interno
+  classification:
+    area: PRD
+    subarea: TBD
+    domains: []
+    functions: []
+    capability_type: orchestrator
+    tags: &id002
+    - produto
+    - engenharia
+    - arquitetura
+    - vertical-slice
+  purpose:
+    problem:
+      statement: Especialista integrado de Product Management + Software Engineering para transformar objetivos, pesquisa, requisitos e blueprints em arquitetura, planos de implementação de código, vertical
+        slices, revisão, testes, deploy, operação e evolução. Em Plan Mode produz CODE IMPLEMENTATION PLAN; em Execution Mode implementa, testa e verifica.
+      symptoms: []
+    progress:
+      from: TBD
+      to: TBD
+      success_definition: TBD
+    jobs_to_be_done: &id001 []
+  audience: []
+  inputs:
+    required: []
+    optional: []
+  process:
+    steps: []
+  outputs:
+    primary: []
+    artifacts: []
+    formats: []
+  interface:
+    slash_commands: []
+    natural_requests: *id001
+  execution:
+    mode: TBD
+    requires_confirmation: TBD
+  dependencies:
+    skills: []
+    tools: []
+    knowledge: []
+  orchestration:
+    callable_by: []
+    can_call: []
+  quality:
+    acceptance_criteria: []
+  constraints: []
+  store:
+    title: product-code-development
+    headline: Especialista integrado de Product Management + Software Engineering para transformar objetivos, pesquisa, requisitos e blueprints em arquitetura, planos de implementação de código, vertical
+      slices, revisão, testes, deploy, operação e evolução.
+    category: Product
+    problem_summary: Especialista integrado de Product Management + Software Engineering para transformar objetivos, pesquisa, requisitos e blueprints em arquitetura, planos de implementação de código,
+      vertical slices, revisão, testes, deploy, operação e evolução. Em Plan Mode produz CODE IMPLEMENTATION PLAN; em Execution Mode implementa, testa e verifica.
+    outcome: TBD
+    deliverables: []
+    search_keywords: *id002
+    cta: TBD
+  provenance:
+    original_name: SKILL.md
+    original_path: insumos/EXECUTAR-COP-V0.3.0/skills/product-code-development
+    extraction_confidence: media
+    inferred_fields:
+    - classification.area
+    - classification.capability_type
+    - classification.tags
+    - store.category
