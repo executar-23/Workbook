@@ -1,0 +1,2802 @@
+bundle_manifest:
+  bundle_id: EXECUTAR-ADHD-PM-CANONICAL-001
+  title: Gestão de Projetos × TDAH — Bundle Canônico Rastreável
+  bundle_version: 1.0.0
+  generated_at: '2026-09-27T05:55:00-03:00'
+  language: pt-BR
+  purpose: Unificar os dois documentos-fonte sem perda de conteúdo, com IDs canônicos, proveniência e navegação por agentes
+    de IA.
+  canonicalization_policy:
+  - Não apagar divergências entre fontes.
+  - Deduplicar apenas no nível canônico; preservar originais no source_archive.
+  - Não completar lacunas documentais por conhecimento externo.
+  - Usar TBD quando o documento não fornece valor explícito.
+  - Toda entidade canônica deve apontar para source_refs.
+  deliverables:
+  - 01_YAML_BUNDLE.yaml
+  - 02_AGENT_INDEX.md
+source_documents:
+- source_id: SRC-PMI-TDHA-EVID-20260821
+  filename: ✅ PMI X TDHA X Evidencias - 21.08.docx
+  sha256: 07fa1debb1feb3bef9f9e475e7d4de9166b2576005340a5f469c044b14ecdbdf
+  format: docx
+  paragraph_count_nonempty: 127
+  table_count: 3
+- source_id: SRC-ADM-20260821
+  filename: ✅ ADM-26-21-08.docx
+  sha256: 28b0c00a8242eb0a07db9607e85f37297a4e55e880f71683cc3a1e29a078df89
+  format: docx
+  paragraph_count_nonempty: 234
+  table_count: 4
+canonical_records:
+  DATA-ADHD-PM-001:
+    id: DATA-ADHD-PM-001
+    tipo: Pesquisa · Matriz de evidências e implicações de produto
+    owner: Não determinado
+    versao: '1.0'
+    data: '2026-08-19'
+    fase: Síntese e correlação
+    projeto: Não determinado
+    para: Produto · Arquitetura neuroinclusiva baseada em evidências
+    referencias_declaradas:
+    - JSON AEVO
+    - HOJE > Preencher(1).md
+    - PMBOK® Guide 8
+    - NIMH
+    - NICE
+    - literatura científica
+    tags:
+    - TDAH
+    - gestaodeprojetos
+    - neurodesign
+    objective: Testar a tese de que parte da carga normalmente deixada para o usuário pode ser deslocada para arquitetura,
+      regras e automação do sistema.
+    central_claim_status: Parcialmente sustentado; forte convergência em organização, planejamento, gestão temporal, atenção
+      sustentada e conclusão; evidência moderada em memória prospectiva, flexibilidade e metacognição.
+    next_actions:
+    - Transformar a matriz em requisitos funcionais e princípios de design verificáveis.
+    - Separar evidência clínica de decisão de arquitetura, mantendo cada feature como hipótese testável.
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:p:0-9
+    - SRC-ADM-20260821:p:47-56
+  DRIVE-PROD-002:
+    id: DRIVE-PROD-002
+    tipo: Operação · Registro de schema CSV
+    owner: Não determinado
+    versao: '1.0'
+    data: '2026-08-19'
+    fase: Registrado · verificado
+    projeto: Não determinado
+    para: Produto · Pesquisa e estruturação progressiva
+    referencia: Tag Produto · DATA-ADHD-PM-001
+    artefato: SCHEMA_MATRIZ_GESTAO_TDAH_V1.csv
+    local_declarado: Tag Produto / SCHEMA_MATRIZ_GESTAO_TDAH_V1.csv
+    estado_epistemologico: Estrutura, não evidência consolidada.
+    estado_documental: Existente + registrado + verificado; não preenchido, não aprovado como schema final e não distribuído
+      nos tópicos de Produto.
+    next_action: Expandir e validar o schema/evidências antes de distribuir conteúdo entre 2.2–2.12.
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:p:12-49
+schema_contract:
+  canonical_id: SCHEMA-MATRIZ-GESTAO-TDAH-V1
+  registered_artifact: SCHEMA_MATRIZ_GESTAO_TDAH_V1.csv
+  fields_in_registered_order:
+  - schema_version
+  - row_id
+  - funcoes_fundamentais_gestao_projetos
+  - funcoes_executivas_area_gestao_projetos
+  - capacidades_humanas_operacionais_exigidas
+  - funcao_deficit_tdah
+  - fonte_clinica
+  - fonte_cientifica
+  - funcao_executiva_cognitiva
+  - evidencia
+  - impacto_operacional_funcao_afetada
+  - impacto_operacional_mecanismo
+  - impacto_operacional_consequencia
+  - impacto_operacional_compensacao
+  - conclusao_produto_design
+  - classe_epistemica
+  - estado_validacao
+  - observacoes
+  status: Registrado/verificado como estrutura; conteúdo não preenchido no CSV segundo a fonte.
+  source_refs:
+  - SRC-PMI-TDHA-EVID-20260821:p:29-48
+  - SRC-ADM-20260821:p:139-158
+  normalization_note: A tabela de 13 colunas combina mecanismo e consequência; o bundle preserva o valor bruto combinado e
+    marca os dois campos separados do contrato CSV como TBD para evitar inferência.
+domain_model:
+  flow_model:
+    canonical_id: FLOW-GP-ADHD-PRODUCT-001
+    sequence:
+    - função de gestão
+    - função/déficit TDAH + fontes + função executiva + evidência
+    - impacto operacional
+    - compensação
+    - conclusão de produto/design
+    source_refs:
+    - SRC-ADM-20260821:p:1-43
+  management_function_chain:
+    canonical_id: GP-CHAIN-001
+    items:
+    - Definir objetivo
+    - Definir escopo
+    - Planejar
+    - Decompor trabalho
+    - Atribuir responsabilidades
+    - Estimar/definir prazo
+    - Sequenciar atividades
+    - Executar
+    - Acompanhar execução
+    - Monitorar prazo
+    - Monitorar indicadores
+    - Detectar desvios
+    - Resolver imprevistos
+    - Comunicar
+    - Dar/receber feedback
+    - Ajustar plano
+    - Finalizar
+    - Registrar aprendizado
+    source_refs:
+    - SRC-ADM-20260821:p:171-190
+  fundamental_management_functions:
+  - canonical_id: GP-FUNC-01
+    nome: Iniciação e escopo
+    funcoes:
+    - identificar necessidades
+    - identificar riscos
+    - identificar restrições
+    - avaliar viabilidade
+    - obter autorizações
+    - definir limites iniciais do projeto
+    resultado: definição inicial do projeto e de seu escopo
+    source_refs:
+    - SRC-ADM-20260821:p:194-202
+  - canonical_id: GP-FUNC-02
+    nome: Planejamento
+    funcoes:
+    - construir plano de ação
+    - definir o que será feito
+    - atribuir responsáveis
+    - definir prazos
+    - identificar validadores
+    - montar cronograma
+    resultado: plano operacional + cronograma
+    source_refs:
+    - SRC-ADM-20260821:p:203-211
+  - canonical_id: GP-FUNC-03
+    nome: Execução
+    funcoes:
+    - executar segundo o cronograma
+    - seguir definições do planejamento
+    - acompanhar responsabilidades
+    - acompanhar entregas
+    - acompanhar prazos
+    - utilizar ferramentas de gestão
+    resultado: entregas produzidas e projeto em andamento controlado
+    source_refs:
+    - SRC-ADM-20260821:p:212-220
+  - canonical_id: GP-FUNC-04
+    nome: Monitoramento e finalização
+    funcoes:
+    - monitorar a execução
+    - detectar imprevistos
+    - criar alternativas
+    - evitar paralisações
+    - avaliar resultados
+    - comparar resultado × objetivo
+    - realizar retrospectiva
+    - registrar aprendizados
+    resultado: projeto encerrado + resultados avaliados + aprendizado acumulado
+    source_refs:
+    - SRC-ADM-20260821:p:221-231
+  area_responsibilities:
+    canonical_id: PM-RESPONSIBILITIES-001
+    mission: Garantir a realização dos projetos, principalmente aqueles estratégicos.
+    items:
+    - canonical_id: PM-01
+      funcao_gestao: Coordenar projetos
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:1
+    - canonical_id: PM-02
+      funcao_gestao: Cumprir prazos
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:2
+    - canonical_id: PM-03
+      funcao_gestao: Manter aderência a metas e expectativas
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:3
+    - canonical_id: PM-04
+      funcao_gestao: Elaborar planos de ação
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:4
+    - canonical_id: PM-05
+      funcao_gestao: Manter comunicação alinhada
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:5
+    - canonical_id: PM-06
+      funcao_gestao: Buscar métodos e ferramentas
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:6
+    - canonical_id: PM-07
+      funcao_gestao: Promover melhoria contínua
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:7
+    - canonical_id: PM-08
+      funcao_gestao: Apoiar entregas eficazes e completas
+      source_refs:
+      - SRC-ADM-20260821:t:2:r:8
+    source_refs:
+    - SRC-ADM-20260821:p:247-250
+    - SRC-ADM-20260821:t:2
+  human_operational_capabilities:
+    canonical_id: HUM-CAP-001
+    items:
+    - criatividade
+    - definição de metas
+    - disseminação de metas
+    - feedback
+    - cobrança e acompanhamento de resultados
+    - planejamento de atividades
+    - controle de execução
+    - acompanhamento de indicadores
+    - comunicação interna
+    - treinamento
+    - ajuste contínuo
+    source_refs:
+    - SRC-ADM-20260821:p:232-245
+  taxonomy_terms:
+    canonical_id: TAX-ADHD-PM-001
+    items:
+    - neurodivergence
+    - adhd
+    - tdah
+    - executive_function
+    - executive_dysfunction
+    - working_memory
+    - inhibition
+    - attention
+    - time_perception
+    - task_initiation
+    - cognitive_flexibility
+    - emotional_regulation
+    source_refs:
+    - SRC-ADM-20260821:p:159-170
+evidence_and_product_matrix:
+  canonical_id: MATRIX-GP-ADHD-001
+  column_source_labels:
+  - ID
+  - Funções fundamentais de gestão de projetos
+  - Funções executivas de uma área de gestão de projetos
+  - Capacidades humanas / operacionais exigidas
+  - FUNÇÃO / DÉFICIT TDAH associado
+  - Fonte clínica
+  - Fonte científica
+  - Função executiva
+  - Evidência
+  - IMPACTO · função afetada
+  - Mecanismo → consequência
+  - Compensação sistêmica
+  - CONCLUSÃO DE PRODUTO / DESIGN
+  row_count: 11
+  rows:
+  - row_id: GP-01
+    funcoes_fundamentais_gestao_projetos: 'Iniciação e escopo: necessidades, riscos, restrições, viabilidade'
+    funcoes_executivas_area_gestao_projetos: Definir problema, objetivo, limites e critérios
+    capacidades_humanas_operacionais_exigidas: Manter múltiplas variáveis; abstrair estado futuro; decidir
+    funcao_deficit_tdah: Organização/planejamento podem ser frágeis; grandes tarefas podem gerar procrastinação
+    fonte_clinica: NIMH relata desorganização, planejamento deficiente e dificuldade com grandes projetos. (NIMH)
+    fonte_cientifica: Meta-análise em TDAH adulto encontra diferenças moderadas em medidas executivas. (PubMed)
+    funcao_executiva_cognitiva: Planejamento · memória de trabalho · controle executivo
+    evidencia: C · moderada/forte
+    impacto_operacional_funcao_afetada: Definição do projeto
+    impacto_operacional_mecanismo_consequencia_raw: Muitas decisões simultâneas → sobrecarga → escopo incompleto ou início
+      postergado
+    impacto_operacional_compensacao: Brief guiado; progressive disclosure; restrições externalizadas; uma decisão por etapa
+    conclusao_produto_design: O sistema deve estruturar o projeto antes de pedir ao usuário que o gerencie. E · Inferido
+    canonical_id: GP-01
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:1
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:1
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-02
+    funcoes_fundamentais_gestao_projetos: 'Planejamento: plano de ação, responsáveis, prazos, cronograma'
+    funcoes_executivas_area_gestao_projetos: Converter objetivo em trabalho executável
+    capacidades_humanas_operacionais_exigidas: Sequenciar, decompor, organizar, prever dependências
+    funcao_deficit_tdah: Dificuldades de planejamento/organização
+    fonte_clinica: NIMH inclui má gestão de tempo, planejamento e organização entre dificuldades funcionais possíveis. (NIMH)
+    fonte_cientifica: Boonstra et al.; Pievsky & McGrath sintetizam alterações neurocognitivas/executivas em TDAH. (PubMed)
+    funcao_executiva_cognitiva: Planejamento · working memory · organização
+    evidencia: C · forte para associação; não universal
+    impacto_operacional_funcao_afetada: Formação do plano
+    impacto_operacional_mecanismo_consequencia_raw: Objetivo macro exige muitas transformações mentais → plano incompleto
+      ou pouco executável
+    impacto_operacional_compensacao: Projeto → entregável → tarefa → ação atômica, dependências calculadas
+    conclusao_produto_design: Decomposição deve ser função do motor, não trabalho cognitivo repetido do usuário. E
+    canonical_id: GP-02
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:2
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:2
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-03
+    funcoes_fundamentais_gestao_projetos: Priorizar e sequenciar
+    funcoes_executivas_area_gestao_projetos: Garantir aderência a metas; determinar ordem de ação
+    capacidades_humanas_operacionais_exigidas: Comparar valor, urgência, dependências e custo
+    funcao_deficit_tdah: Priorização/organização podem ser prejudicadas; não é um critério diagnóstico isolado
+    fonte_clinica: Revisões clínicas descrevem dificuldade de auto-organização, priorização e início; NIMH recomenda trabalhar
+      organização e tarefas sensíveis ao tempo. (PubMed Central (PMC))
+    fonte_cientifica: Modelos de EF em TDAH associam comportamento dirigido a metas à autorregulação executiva. (PubMed)
+    funcao_executiva_cognitiva: Goal management · inibição · planejamento
+    evidencia: C · moderada
+    impacto_operacional_funcao_afetada: Escolha do próximo trabalho
+    impacto_operacional_mecanismo_consequencia_raw: Reavaliar continuamente alternativas → custo decisório → seleção instável/adiamento
+    impacto_operacional_compensacao: Motor de prioridade usando dependência, critical path, prazo, bloqueio e valor + override
+      humano
+    conclusao_produto_design: 'Não oferecer apenas uma lista: oferecer “próxima ação recomendada + por quê”. E'
+    canonical_id: GP-03
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:3
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:3
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-04
+    funcoes_fundamentais_gestao_projetos: Cronograma e prazos
+    funcoes_executivas_area_gestao_projetos: Apoiar cumprimento de prazos e sincronizar atividades
+    capacidades_humanas_operacionais_exigidas: Estimar duração; perceber passagem do tempo; lembrar eventos futuros
+    funcao_deficit_tdah: Má gestão de tempo é clinicamente descrita; percepção temporal mostra resultados heterogêneos
+    fonte_clinica: NIMH cita explicitamente gestão de tempo deficiente e dificuldade com compromissos. (NIMH)
+    fonte_cientifica: Revisão de percepção temporal em adultos conclui que há evidência relevante, mas não sustenta um déficit
+      temporal universal. (PubMed Central (PMC))
+    funcao_executiva_cognitiva: Organização temporal · memória prospectiva
+    evidencia: C · moderada / heterogênea
+    impacto_operacional_funcao_afetada: Schedule
+    impacto_operacional_mecanismo_consequencia_raw: Dependência de estimativa intuitiva → atraso, compressão do prazo, planejamento
+      otimista
+    impacto_operacional_compensacao: Tempo externalizado; marcos visíveis; buffers; dados históricos; previsão probabilística
+    conclusao_produto_design: Tempo deve ser observado pelo sistema, não presumido pelo usuário. E
+    canonical_id: GP-04
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:4
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:4
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-05
+    funcoes_fundamentais_gestao_projetos: Iniciar execução
+    funcoes_executivas_area_gestao_projetos: Colocar o plano em movimento
+    capacidades_humanas_operacionais_exigidas: Transição intenção → ação; selecionar primeiro comportamento; reduzir ambiguidade
+    funcao_deficit_tdah: Procrastinação e dificuldade de iniciar tarefas aparecem clinicamente
+    fonte_clinica: NIMH registra procrastinação; literatura clínica adulta descreve dificuldade de começar tarefas. (NIMH)
+    fonte_cientifica: Estudos de memória prospectiva mostram que adultos com TDAH podem ter dificuldade para planejar e executar
+      intenções futuras. (PubMed)
+    funcao_executiva_cognitiva: Ativação dirigida a objetivo · planejamento prospectivo
+    evidencia: C · moderada
+    impacto_operacional_funcao_afetada: Start
+    impacto_operacional_mecanismo_consequencia_raw: Tarefa abstrata/grande → alto custo de ativação → não iniciar
+    impacto_operacional_compensacao: Mostrar somente primeira ação concreta; critérios de conclusão explícitos; botão iniciar
+      imediato
+    conclusao_produto_design: A unidade de interface deve começar executável, não apenas informativa. E
+    canonical_id: GP-05
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:5
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:5
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-06
+    funcoes_fundamentais_gestao_projetos: Execução
+    funcoes_executivas_area_gestao_projetos: Produzir entregas conforme plano e prazo
+    capacidades_humanas_operacionais_exigidas: Atenção sustentada; persistência; inibição de distrações; memória operacional
+    funcao_deficit_tdah: Distratibilidade, dificuldade em manter-se na tarefa e terminar projetos
+    fonte_clinica: 'NIMH: dificuldade de atenção, distração, manutenção da tarefa e conclusão. (NIMH)'
+    fonte_cientifica: Estudos experimentais em adultos encontram prejuízo em atenção sustentada e deterioração relacionada
+      ao tempo-na-tarefa. (PubMed)
+    funcao_executiva_cognitiva: Atenção sustentada · inibição
+    evidencia: B/C · forte
+    impacto_operacional_funcao_afetada: Trabalho em andamento
+    impacto_operacional_mecanismo_consequencia_raw: Competição entre estímulos + duração → abandono, fragmentação ou múltiplos
+      trabalhos parcialmente abertos
+    impacto_operacional_compensacao: Modo foco, WIP baixo, fila separada, captura de interrupções sem abandonar tarefa atual
+    conclusao_produto_design: 1 ação dominante + queue secundária é uma arquitetura coerente com a evidência. E
+    canonical_id: GP-06
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:6
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:6
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-07
+    funcoes_fundamentais_gestao_projetos: Monitorar execução e progresso
+    funcoes_executivas_area_gestao_projetos: Acompanhar status, entregas, prazo e indicadores
+    capacidades_humanas_operacionais_exigidas: Lembrar intenções; comparar estado atual × objetivo; autocontrole
+    funcao_deficit_tdah: Esquecimento de tarefas + dificuldades de memória prospectiva
+    fonte_clinica: NIMH cita dificuldade em lembrar tarefas diárias. (NIMH)
+    fonte_cientifica: Fuermaier et al. observaram comprometimento em memória prospectiva complexa, especialmente ligado ao
+      planejamento. (PubMed)
+    funcao_executiva_cognitiva: Memória prospectiva · working memory
+    evidencia: B/C · moderada/forte
+    impacto_operacional_funcao_afetada: Controle de estado
+    impacto_operacional_mecanismo_consequencia_raw: Estado existe apenas “na cabeça” → intenção desaparece → trabalho fica
+      incompleto
+    impacto_operacional_compensacao: Status persistente; progresso automático; lembretes vinculados ao objeto; critérios DoD
+    conclusao_produto_design: O sistema deve ser memória externa do estado operacional. E
+    canonical_id: GP-07
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:7
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:7
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-08
+    funcoes_fundamentais_gestao_projetos: Detectar desvios e adaptar
+    funcoes_executivas_area_gestao_projetos: Criar alternativas e responder a imprevistos
+    capacidades_humanas_operacionais_exigidas: Flexibilidade cognitiva; alternar conjunto mental sem perder objetivo
+    funcao_deficit_tdah: Evidência de dificuldade de set-shifting existe, mas é menos uniforme que atenção/organização
+    fonte_clinica: Não é um sintoma clínico específico isolado em NIMH/NICE; deve ser tratado como domínio neuropsicológico,
+      não característica obrigatória
+    fonte_cientifica: Estudos em adultos encontraram dificuldades específicas de set-shifting; resultados na literatura permanecem
+      heterogêneos. (PubMed)
+    funcao_executiva_cognitiva: Flexibilidade cognitiva · set shifting
+    evidencia: B/C · moderada
+    impacto_operacional_funcao_afetada: Replanejamento
+    impacto_operacional_mecanismo_consequencia_raw: Mudança inesperada exige reconstrução mental do plano → perda de contexto/dependências
+    impacto_operacional_compensacao: Branches pré-calculados; alternativas limitadas; dependências preservadas; retorno ao
+      ponto anterior
+    conclusao_produto_design: Permitir não-linearidade controlada, não navegação caótica. E
+    canonical_id: GP-08
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:8
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:8
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-09
+    funcoes_fundamentais_gestao_projetos: Comunicação e stakeholders
+    funcoes_executivas_area_gestao_projetos: Manter partes alinhadas, registrar decisões e follow-up
+    capacidades_humanas_operacionais_exigidas: Atenção, memória prospectiva, inibição, recuperação contextual
+    funcao_deficit_tdah: Esquecimento, distração e impulsividade podem interferir na continuidade comunicacional
+    fonte_clinica: NIMH inclui esquecimento, distração e interrupção/impulsividade entre manifestações possíveis. (NIMH)
+    fonte_cientifica: Evidência de memória prospectiva e controle executivo oferece mecanismo plausível. (PubMed)
+    funcao_executiva_cognitiva: Memória prospectiva · inibição · atenção
+    evidencia: C + E para efeito específico em PM
+    impacto_operacional_funcao_afetada: Follow-up
+    impacto_operacional_mecanismo_consequencia_raw: Informação espalhada → necessidade de reconstrução de contexto → decisões
+      e compromissos perdidos
+    impacto_operacional_compensacao: Comunicação associada ao objeto; resumos; decisões persistidas; follow-up convertido
+      em ação
+    conclusao_produto_design: Centralizar contexto é mais importante que simplesmente adicionar chat. E
+    canonical_id: GP-09
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:9
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:9
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-10
+    funcoes_fundamentais_gestao_projetos: Finalização e avaliação
+    funcoes_executivas_area_gestao_projetos: Confirmar entrega, comparar objetivo × resultado, retrospectiva
+    capacidades_humanas_operacionais_exigidas: Fechamento, autocontrole, avaliação do próprio desempenho
+    funcao_deficit_tdah: Dificuldade em finalizar projetos + potenciais diferenças metacognitivas
+    fonte_clinica: NIMH descreve dificuldade em terminar projetos. (NIMH)
+    fonte_cientifica: Estudo de metacognição em adultos encontrou falta de correspondência entre avaliações subjetivas e objetivas
+      em alguns domínios. (Springer)
+    funcao_executiva_cognitiva: Metacognição · self-monitoring
+    evidencia: B/C · moderada
+    impacto_operacional_funcao_afetada: Closure
+    impacto_operacional_mecanismo_consequencia_raw: “Parece pronto” ≠ critério objetivo → fechamento inconsistente
+    impacto_operacional_compensacao: DoD explícito; evidência anexada; validação; retrospectiva estruturada
+    conclusao_produto_design: DONE deve ser uma transição verificável, não uma sensação de conclusão. E
+    canonical_id: GP-10
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:10
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:10
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+  - row_id: GP-11
+    funcoes_fundamentais_gestao_projetos: Capacidade e forecasting
+    funcoes_executivas_area_gestao_projetos: Planejar recursos/prazo e proteger compromisso de entrega
+    capacidades_humanas_operacionais_exigidas: Autoavaliação, previsão temporal e planejamento
+    funcao_deficit_tdah: Má gestão temporal é documentada; desalinhamento metacognitivo é possível, não universal
+    fonte_clinica: NIMH documenta problemas de planejamento/tempo; não afirma “incapacidade de estimar capacidade produtiva”.
+      (NIMH)
+    fonte_cientifica: Evidência de percepção temporal e metacognição sustenta cautela com estimativas subjetivas, mas não
+      valida diretamente seu algoritmo. (PubMed Central (PMC))
+    funcao_executiva_cognitiva: Metacognição · previsão · temporalidade
+    evidencia: C para vulnerabilidade; E para solução
+    impacto_operacional_funcao_afetada: Compromisso de capacidade
+    impacto_operacional_mecanismo_consequencia_raw: “horas livres” confundidas com output → excesso de compromisso
+    impacto_operacional_compensacao: Throughput, cycle time e histórico individual; forecast probabilístico; EB separado de
+      tempo
+    conclusao_produto_design: Sua arquitetura EB = ação, tempo = medida observada é defensável como decisão de operações,
+      não como tratamento clínico. E
+    canonical_id: GP-11
+    source_refs:
+    - SRC-ADM-20260821:t:3:r:11
+    - SRC-PMI-TDHA-EVID-20260821:t:0:r:11
+    registered_schema_unfilled_fields:
+      impacto_operacional_mecanismo: TBD
+      impacto_operacional_consequencia: TBD
+      classe_epistemica: TBD
+      estado_validacao: TBD
+      observacoes: TBD
+hypothesis_validation:
+  canonical_id: HYPOTHESIS-SET-001
+  items:
+  - canonical_id: HYP-01
+    hypotese_original: Dificuldades de planejamento/organização são relevantes no TDAH adulto
+    estado_canonico: Sustentado — C (NIMH)
+    source_variant_adm: Sustentado — C
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:1
+    - SRC-ADM-20260821:t:1:r:1
+  - canonical_id: HYP-02
+    hypotese_original: Gestão de tempo pode ser problemática
+    estado_canonico: Sustentado — C (NIMH)
+    source_variant_adm: Sustentado — C
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:2
+    - SRC-ADM-20260821:t:1:r:2
+  - canonical_id: HYP-03
+    hypotese_original: Atenção sustentada pode prejudicar execução prolongada
+    estado_canonico: Sustentado — B/C (PubMed)
+    source_variant_adm: Sustentado — B/C
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:3
+    - SRC-ADM-20260821:t:1:r:3
+  - canonical_id: HYP-04
+    hypotese_original: Memória prospectiva pode afetar follow-through
+    estado_canonico: Sustentado — B (PubMed)
+    source_variant_adm: Sustentado — B
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:4
+    - SRC-ADM-20260821:t:1:r:4
+  - canonical_id: HYP-05
+    hypotese_original: Flexibilidade/set-shifting pode ser afetada
+    estado_canonico: Sustentado com heterogeneidade — B/C (PubMed)
+    source_variant_adm: Sustentado com heterogeneidade — B/C
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:5
+    - SRC-ADM-20260821:t:1:r:5
+  - canonical_id: HYP-06
+    hypotese_original: Autoavaliação cognitiva sempre é imprecisa no TDAH
+    estado_canonico: Não sustentado como universal; há evidência de diferenças metacognitivas, mas não uma regra universal.
+      (Springer)
+    source_variant_adm: Não sustentado como universal; há evidência de diferenças metacognitivas, mas não uma regra universal.
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:6
+    - SRC-ADM-20260821:t:1:r:6
+  - canonical_id: HYP-07
+    hypotese_original: Sistema deve automaticamente priorizar
+    estado_canonico: E · decisão de produto plausível, não conclusão clínica
+    source_variant_adm: E · decisão de produto plausível, não conclusão clínica
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:7
+    - SRC-ADM-20260821:t:1:r:7
+  - canonical_id: HYP-08
+    hypotese_original: Sistema deve usar WIP=1
+    estado_canonico: E · política de arquitetura, não prescrição clínica
+    source_variant_adm: E · política de arquitetura, não prescrição clínica
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:8
+    - SRC-ADM-20260821:t:1:r:8
+  - canonical_id: HYP-09
+    hypotese_original: Impressão/analógico corrige memória de trabalho
+    estado_canonico: E · hipótese de design, ainda precisa ser validada
+    source_variant_adm: E · hipótese de design, ainda precisa ser validada
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:9
+    - SRC-ADM-20260821:t:1:r:9
+  - canonical_id: HYP-10
+    hypotese_original: Ciclos fixos corrigem planejamento de longo prazo
+    estado_canonico: E · hipótese de produto, não resultado clínico demonstrado
+    source_variant_adm: E · hipótese de produto, não resultado clínico demonstrado
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:10
+    - SRC-ADM-20260821:t:1:r:10
+  - canonical_id: HYP-11
+    hypotese_original: Throughput histórico deve substituir percepção subjetiva de capacidade
+    estado_canonico: E · forte decisão de operações, mas precisa ser validada no produto
+    source_variant_adm: E · forte decisão de operações, mas precisa ser validada no produto
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:1:r:11
+    - SRC-ADM-20260821:t:1:r:11
+  source_refs:
+  - SRC-PMI-TDHA-EVID-20260821:t:1
+  - SRC-ADM-20260821:t:1
+architecture_mapping:
+  canonical_id: ARCH-COMPENSATORY-001
+  system_principle: O usuário executa. O sistema sustenta a execução.
+  product_formulation: transferir carga executiva evitável do operador para o sistema.
+  items:
+  - canonical_id: SYS-CAP-01
+    operacao_humana: lembrar tudo
+    sistema_assume_ou_assiste: memória externa persistente
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:1
+    - SRC-ADM-20260821:t:0:r:1
+  - canonical_id: SYS-CAP-02
+    operacao_humana: decompor projeto
+    sistema_assume_ou_assiste: decomposição assistida
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:2
+    - SRC-ADM-20260821:t:0:r:2
+  - canonical_id: SYS-CAP-03
+    operacao_humana: recalcular prioridade
+    sistema_assume_ou_assiste: motor de prioridade
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:3
+    - SRC-ADM-20260821:t:0:r:3
+  - canonical_id: SYS-CAP-04
+    operacao_humana: escolher continuamente o próximo passo
+    sistema_assume_ou_assiste: next action
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:4
+    - SRC-ADM-20260821:t:0:r:4
+  - canonical_id: SYS-CAP-05
+    operacao_humana: reconstruir contexto
+    sistema_assume_ou_assiste: estado/contexto persistente
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:5
+    - SRC-ADM-20260821:t:0:r:5
+  - canonical_id: SYS-CAP-06
+    operacao_humana: estimar capacidade intuitivamente
+    sistema_assume_ou_assiste: throughput observado
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:6
+    - SRC-ADM-20260821:t:0:r:6
+  - canonical_id: SYS-CAP-07
+    operacao_humana: lembrar prazo
+    sistema_assume_ou_assiste: sistema temporal
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:7
+    - SRC-ADM-20260821:t:0:r:7
+  - canonical_id: SYS-CAP-08
+    operacao_humana: acompanhar dependências
+    sistema_assume_ou_assiste: grafo/dependency engine
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:8
+    - SRC-ADM-20260821:t:0:r:8
+  - canonical_id: SYS-CAP-09
+    operacao_humana: perceber progresso
+    sistema_assume_ou_assiste: progressão visual automática
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:9
+    - SRC-ADM-20260821:t:0:r:9
+  - canonical_id: SYS-CAP-10
+    operacao_humana: saber se acabou
+    sistema_assume_ou_assiste: DoD verificável
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:10
+    - SRC-ADM-20260821:t:0:r:10
+  - canonical_id: SYS-CAP-11
+    operacao_humana: reorganizar após interrupção
+    sistema_assume_ou_assiste: retomada do estado anterior
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:11
+    - SRC-ADM-20260821:t:0:r:11
+  - canonical_id: SYS-CAP-12
+    operacao_humana: abrir múltiplas superfícies
+    sistema_assume_ou_assiste: centralização por objeto
+    source_refs:
+    - SRC-PMI-TDHA-EVID-20260821:t:2:r:12
+    - SRC-ADM-20260821:t:0:r:12
+  system_chain:
+  - GESTÃO DE PROJETOS
+  - OPERAÇÕES COGNITIVAS
+  - TDAH pode aumentar vulnerabilidade em parte desses domínios
+  - ATRITO OPERACIONAL
+  - ARQUITETURA COMPENSATÓRIA
+  - MAIOR FRAÇÃO DA CAPACIDADE COGNITIVA DISPONÍVEL PARA EXECUÇÃO
+  critical_caveat: A última seta é hipótese de produto e precisa ser testada empiricamente; a fonte não sustenta afirmar ganho
+    percentual de capacidade cognitiva.
+  unverified_product_claim: Ainda não verificado que a arquitetura produza aumento mensurável de execução, conclusão ou produtividade
+    em usuários com TDAH.
+  source_refs:
+  - SRC-PMI-TDHA-EVID-20260821:p:61-115
+  - SRC-PMI-TDHA-EVID-20260821:p:127-137
+  - SRC-ADM-20260821:p:83-138
+epistemic_governance:
+  canonical_id: EPISTEMIC-GOV-001
+  explicit_definitions:
+    C: Publicado — definição explicitamente indicada na classificação final da fonte.
+    E: Inferido — definição explicitamente indicada na classificação final da fonte.
+    B: TBD — a letra é usada nas classes B/C e B, mas não há definição explícita nos dois documentos fornecidos.
+  guardrails:
+  - Não generalizar vulnerabilidades para todas as pessoas com TDAH.
+  - Não converter associação em causalidade universal.
+  - Decisões de produto/arquitetura permanecem hipóteses testáveis quando marcadas como E.
+  - Manter separação entre evidência clínica/científica e decisão de produto.
+  source_refs:
+  - SRC-PMI-TDHA-EVID-20260821:p:55-57
+  - SRC-PMI-TDHA-EVID-20260821:p:134-137
+  - SRC-ADM-20260821:p:58-68
+relationships:
+- from: DRIVE-PROD-002
+  relation: registers_schema_for
+  to: DATA-ADHD-PM-001
+- from: SCHEMA-MATRIZ-GESTAO-TDAH-V1
+  relation: structures
+  to: MATRIX-GP-ADHD-001
+- from: GP-FUNC-01
+  relation: maps_into
+  to: GP-01
+- from: GP-FUNC-02
+  relation: maps_into
+  to: GP-02
+- from: GP-FUNC-03
+  relation: maps_into
+  to: GP-06
+- from: GP-FUNC-04
+  relation: maps_into
+  to:
+  - GP-07
+  - GP-08
+  - GP-10
+- from: HYPOTHESIS-SET-001
+  relation: governs_interpretation_of
+  to: MATRIX-GP-ADHD-001
+- from: MATRIX-GP-ADHD-001
+  relation: supports_product_reasoning_for
+  to: ARCH-COMPENSATORY-001
+external_references_unresolved:
+- reference: JSON AEVO / documento-base / SEC-002 / SEC-004 / SEC-005
+  status: Mencionado nas fontes, mas não fornecido no conjunto de arquivos atual.
+- reference: HOJE > Preencher(1).md
+  status: Mencionado, não fornecido.
+- reference: PMBOK® Guide 8 / PMI
+  status: Mencionado, não incorporado como arquivo-fonte.
+- reference: NIMH / NICE / PubMed / PMC / Springer / literatura científica
+  status: Mencionados pelas fontes; referências bibliográficas completas/URLs não estão integralmente presentes nos DOCX fornecidos.
+- reference: SCHEMA_MATRIZ_GESTAO_TDAH_V1.csv
+  status: Registrado como existente no Drive pela fonte, mas o CSV não foi fornecido neste upload.
+agent_resolution_rules:
+  lookup_precedence:
+  - 1. Resolver pelo canonical_id.
+  - 2. Ler a entidade canônica.
+  - 3. Conferir source_refs quando precisão textual/proveniência for necessária.
+  - 4. Consultar source_archive para o texto original integral.
+  - 5. Não preencher TBD sem nova fonte explicitamente incorporada ao corpus.
+  conflict_policy: Preservar variantes por fonte; não escolher silenciosamente uma variante quando houver diferença material.
+  traceability_locator_syntax:
+    paragraph: <SOURCE_ID>:p:<paragraph_index>
+    paragraph_range: <SOURCE_ID>:p:<start>-<end>
+    table: <SOURCE_ID>:t:<table_index>
+    table_row: <SOURCE_ID>:t:<table_index>:r:<row_index>
+source_archive:
+  SRC-PMI-TDHA-EVID-20260821:
+    source_id: SRC-PMI-TDHA-EVID-20260821
+    filename: ✅ PMI X TDHA X Evidencias - 21.08.docx
+    sha256: 07fa1debb1feb3bef9f9e475e7d4de9166b2576005340a5f469c044b14ecdbdf
+    format: docx
+    paragraph_count_nonempty: 127
+    table_count: 3
+    paragraphs:
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:0
+      paragraph_index: 0
+      text: '[Pesquisa] · DATA-ADHD-PM-001'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:1
+      paragraph_index: 1
+      text: DOCUMENT READER · VALU-MODE V3
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:2
+      paragraph_index: 2
+      text: ⸻
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:3
+      paragraph_index: 3
+      text: 'ID DATA-ADHD-PM-001
+
+        Tipo Pesquisa · Matriz de evidências e implicações de produto
+
+        Owner Não determinado
+
+        Versão 1.0
+
+        Data 19/08/2026
+
+        Fase Síntese e correlação
+
+        Projeto Não determinado
+
+        PARA Produto · Arquitetura neuroinclusiva baseada em evidências
+
+        Referência JSON AEVO · HOJE > Preencher(1).md · PMBOK® Guide 8 · NIMH · NICE · literatura científica
+
+        3# #TDAH #gestaodeprojetos #neurodesign'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:4
+      paragraph_index: 4
+      text: ⸻
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:5
+      paragraph_index: 5
+      text: RESUMO EXECUTIVO
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:6
+      paragraph_index: 6
+      text: 'O quê Matriz paralela Gestão de Projetos → exigência humana → vulnerabilidade associada ao TDAH → impacto operacional
+        → compensação sistêmica → decisão de produto.
+
+        Por quê Testar a tese de que parte da carga normalmente deixada para o usuário pode ser deslocada para arquitetura,
+        regras e automação do sistema.
+
+        Quem Adultos com TDAH executando trabalho intelectual/projetos; produto, design e engenharia que constroem o sistema.
+
+        Como Funções de projeto extraídas do documento-base e confrontadas com PMI, NIMH/NICE e estudos sobre funções executivas
+        em TDAH adulto.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:7
+      paragraph_index: 7
+      text: ⸻
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:8
+      paragraph_index: 8
+      text: 3P+N · APLICAÇÃO
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:9
+      paragraph_index: 9
+      text: 'Problema A gestão de projetos pressupõe diversas operações cognitivas — planejar, organizar, priorizar, lembrar,
+        acompanhar, estimar tempo, iniciar e concluir — justamente em domínios nos quais adultos com TDAH podem, com grande
+        heterogeneidade individual, apresentar dificuldades.
+
+        Processo Decompor cada função operacional e procurar correspondência clínica e neuropsicológica, evitando transformar
+        associação em causalidade universal.
+
+        Progresso A hipótese central é parcialmente sustentada: há convergência forte para organização, planejamento, gestão
+        temporal, atenção sustentada e conclusão; evidência moderada para memória prospectiva, flexibilidade e metacognição.
+
+        Next 01 Transformar a matriz abaixo em requisitos funcionais e princípios de design verificáveis.
+
+        Next 02 Separar evidência clínica de decisão de arquitetura, mantendo cada feature como hipótese testável.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:12
+      paragraph_index: 12
+      text: '[Operação] · DRIVE-PROD-002'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:13
+      paragraph_index: 13
+      text: DOCUMENT READER · VALU-MODE V3
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:14
+      paragraph_index: 14
+      text: ⸻
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:15
+      paragraph_index: 15
+      text: 'ID DRIVE-PROD-002
+
+        Tipo Operação · Registro de schema CSV
+
+        Owner Não determinado
+
+        Versão 1.0
+
+        Data 19/08/2026
+
+        Fase Registrado · verificado
+
+        Projeto Não determinado
+
+        PARA Produto · Pesquisa e estruturação progressiva
+
+        Referência Tag Produto · DATA-ADHD-PM-001
+
+        3# #schema #produto #evidencia'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:16
+      paragraph_index: 16
+      text: ⸻
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:17
+      paragraph_index: 17
+      text: RESUMO EXECUTIVO
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:18
+      paragraph_index: 18
+      text: 'O quê Schema da matriz Gestão de Projetos × TDAH registrado em CSV.
+
+        Por quê Preservar a estrutura antes da expansão da pesquisa, sem antecipar conteúdo de PRD, FRD, persona ou jornadas.
+
+        Quem Produto · Pesquisa · Design · Engenharia.
+
+        Como CSV contendo apenas cabeçalhos estruturais e campos de governança; nenhuma linha de conteúdo preenchida.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:19
+      paragraph_index: 19
+      text: ⸻
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:20
+      paragraph_index: 20
+      text: 3P+N · APLICAÇÃO
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:21
+      paragraph_index: 21
+      text: 'Problema A matriz ainda precisa ser expandida antes de alimentar os tópicos de Produto.
+
+        Processo Formalização do contrato tabular → exportação CSV → registro na raiz de Tag Produto → verificação.
+
+        Progresso Concluído e verificado. O CSV está na pasta correta.
+
+        Next 01 Expandir e validar o schema/evidências antes de distribuir conteúdo entre 2.2–2.12.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:23
+      paragraph_index: 23
+      text: Registro criado
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:24
+      paragraph_index: 24
+      text: SCHEMA_MATRIZ_GESTAO_TDAH_V1.csv
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:25
+      paragraph_index: 25
+      text: 'Local:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:26
+      paragraph_index: 26
+      text: Tag Produto / SCHEMA_MATRIZ_GESTAO_TDAH_V1.csv
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:27
+      paragraph_index: 27
+      text: A pasta Tag Produto utilizada é a pasta já existente no Drive.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:28
+      paragraph_index: 28
+      text: 'O diretório foi verificado após a operação: o CSV aparece na raiz ao lado das subpastas 2.2 a 2.12, sem criação
+        de documentos dentro desses tópicos.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:29
+      paragraph_index: 29
+      text: Schema registrado
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:30
+      paragraph_index: 30
+      text: schema_version
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:31
+      paragraph_index: 31
+      text: row_id
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:32
+      paragraph_index: 32
+      text: funcoes_fundamentais_gestao_projetos
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:33
+      paragraph_index: 33
+      text: funcoes_executivas_area_gestao_projetos
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:34
+      paragraph_index: 34
+      text: capacidades_humanas_operacionais_exigidas
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:35
+      paragraph_index: 35
+      text: funcao_deficit_tdah
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:36
+      paragraph_index: 36
+      text: fonte_clinica
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:37
+      paragraph_index: 37
+      text: fonte_cientifica
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:38
+      paragraph_index: 38
+      text: funcao_executiva_cognitiva
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:39
+      paragraph_index: 39
+      text: evidencia
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:40
+      paragraph_index: 40
+      text: impacto_operacional_funcao_afetada
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:41
+      paragraph_index: 41
+      text: impacto_operacional_mecanismo
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:42
+      paragraph_index: 42
+      text: impacto_operacional_consequencia
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:43
+      paragraph_index: 43
+      text: impacto_operacional_compensacao
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:44
+      paragraph_index: 44
+      text: conclusao_produto_design
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:45
+      paragraph_index: 45
+      text: classe_epistemica
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:46
+      paragraph_index: 46
+      text: estado_validacao
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:47
+      paragraph_index: 47
+      text: observacoes
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:48
+      paragraph_index: 48
+      text: 'Estado epistemológico: o arquivo contém estrutura, não evidência consolidada.
+
+        Estado documental: existente + registrado + verificado; não preenchido, não aprovado como schema final e não distribuído
+        nos tópicos de Produto.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:49
+      paragraph_index: 49
+      text: Abrir o CSV no Google Drive
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:54
+      paragraph_index: 54
+      text: 1. ACHADO CENTRAL
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:55
+      paragraph_index: 55
+      text: 'Seu documento-base formula exatamente a hipótese a ser testada: se priorização, iniciação, memória de trabalho,
+        controle temporal, planejamento de longo prazo, troca de contexto e percepção da própria capacidade criarem atrito,
+        o sistema deveria absorver parte dessas operações.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:56
+      paragraph_index: 56
+      text: A literatura permite sustentar boa parte dessa direção, mas não permite declarar que toda pessoa com TDAH possui
+        todos esses déficits. O NIMH descreve em adultos dificuldades possíveis com organização, procrastinação, planejamento,
+        gestão de tempo, lembrança de tarefas, manutenção de foco e conclusão de grandes projetos. (NIMH) Meta-análises encontram
+        diferenças de função executiva entre grupos com e sem TDAH, mas também mostram heterogeneidade substancial; portanto,
+        TDAH ≠ déficit executivo global obrigatório. (PubMed)
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:57
+      paragraph_index: 57
+      text: Do lado da gestão de projetos, seu JSON já estrutura iniciação/escopo → planejamento → execução → monitoramento/finalização.
+        Isso é compatível com a organização tradicional dos processos de gestão e, na edição atual, o PMBOK® Guide 8 também
+        enfatiza domínios como governança, escopo, cronograma, stakeholders, recursos e risco. (Project Management Institute)
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:59
+      paragraph_index: 59
+      text: 2. MATRIZ TABULAR PRINCIPAL
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:61
+      paragraph_index: 61
+      text: 3. A RELAÇÃO FICA MAIS CLARA QUANDO VISTA COMO SISTEMA
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:62
+      paragraph_index: 62
+      text: 'A síntese é esta:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:63
+      paragraph_index: 63
+      text: GESTÃO DE PROJETOS
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:64
+      paragraph_index: 64
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:65
+      paragraph_index: 65
+      text: │ exige
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:66
+      paragraph_index: 66
+      text: ▼
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:67
+      paragraph_index: 67
+      text: OPERAÇÕES COGNITIVAS
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:68
+      paragraph_index: 68
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:69
+      paragraph_index: 69
+      text: ├── planejar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:70
+      paragraph_index: 70
+      text: ├── organizar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:71
+      paragraph_index: 71
+      text: ├── priorizar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:72
+      paragraph_index: 72
+      text: ├── sequenciar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:73
+      paragraph_index: 73
+      text: ├── lembrar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:74
+      paragraph_index: 74
+      text: ├── iniciar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:75
+      paragraph_index: 75
+      text: ├── sustentar atenção
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:76
+      paragraph_index: 76
+      text: ├── estimar/acompanhar tempo
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:77
+      paragraph_index: 77
+      text: ├── monitorar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:78
+      paragraph_index: 78
+      text: ├── adaptar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:79
+      paragraph_index: 79
+      text: └── finalizar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:80
+      paragraph_index: 80
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:81
+      paragraph_index: 81
+      text: ▼
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:82
+      paragraph_index: 82
+      text: TDAH
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:83
+      paragraph_index: 83
+      text: pode aumentar a vulnerabilidade
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:84
+      paragraph_index: 84
+      text: em parte desses domínios
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:85
+      paragraph_index: 85
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:86
+      paragraph_index: 86
+      text: ▼
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:87
+      paragraph_index: 87
+      text: ATRITO OPERACIONAL
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:88
+      paragraph_index: 88
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:89
+      paragraph_index: 89
+      text: ├── início tardio
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:90
+      paragraph_index: 90
+      text: ├── planejamento incompleto
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:91
+      paragraph_index: 91
+      text: ├── prioridades instáveis
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:92
+      paragraph_index: 92
+      text: ├── múltiplos trabalhos abertos
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:93
+      paragraph_index: 93
+      text: ├── esquecimento de intenções
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:94
+      paragraph_index: 94
+      text: ├── perda de contexto
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:95
+      paragraph_index: 95
+      text: ├── atraso
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:96
+      paragraph_index: 96
+      text: └── fechamento incompleto
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:97
+      paragraph_index: 97
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:98
+      paragraph_index: 98
+      text: ▼
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:99
+      paragraph_index: 99
+      text: ARQUITETURA COMPENSATÓRIA
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:100
+      paragraph_index: 100
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:101
+      paragraph_index: 101
+      text: ├── externalizar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:102
+      paragraph_index: 102
+      text: ├── decompor
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:103
+      paragraph_index: 103
+      text: ├── priorizar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:104
+      paragraph_index: 104
+      text: ├── ordenar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:105
+      paragraph_index: 105
+      text: ├── lembrar
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:106
+      paragraph_index: 106
+      text: ├── limitar WIP
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:107
+      paragraph_index: 107
+      text: ├── mostrar estado
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:108
+      paragraph_index: 108
+      text: ├── registrar histórico
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:109
+      paragraph_index: 109
+      text: └── prever com dados observados
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:110
+      paragraph_index: 110
+      text: │
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:111
+      paragraph_index: 111
+      text: ▼
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:112
+      paragraph_index: 112
+      text: MAIOR FRAÇÃO DA CAPACIDADE COGNITIVA
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:113
+      paragraph_index: 113
+      text: DISPONÍVEL PARA EXECUÇÃO
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:114
+      paragraph_index: 114
+      text: A última seta é E · hipótese de produto. Ainda precisa ser testada empiricamente; a literatura não permite, neste
+        estágio, afirmar que seu sistema necessariamente “liberará X% de capacidade cognitiva”.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:116
+      paragraph_index: 116
+      text: 4. SUA TESE, AGORA COM CORREÇÕES EPISTÊMICAS
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:117
+      paragraph_index: 117
+      text: 'Seu documento propõe:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:118
+      paragraph_index: 118
+      text: 'priorização → sistema prioriza;
+
+        memória de trabalho → reduzir variáveis;
+
+        inicialização → reduzir complexidade;
+
+        tempo → flexibilizar;
+
+        planejamento de longo prazo → ciclos;
+
+        troca de contexto → agrupar;
+
+        centralização → reduzir dispersão.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:119
+      paragraph_index: 119
+      text: 'Depois da pesquisa, eu classificaria assim:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:120
+      paragraph_index: 120
+      text: Essa separação é importante porque seu próprio documento já propõe não confundir horas disponíveis com capacidade
+        produtiva e calibrar throughput/cycle time por execução observada. Ele também corretamente separa EB = ação de Q30
+        = capacidade temporal, deixando a duração real como variável observada.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:122
+      paragraph_index: 122
+      text: 5. CONCLUSÃO DE PRODUTO / DESIGN
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:123
+      paragraph_index: 123
+      text: 'A conclusão mais defensável não é:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:124
+      paragraph_index: 124
+      text: “Pessoas com TDAH não conseguem gerir projetos.”
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:125
+      paragraph_index: 125
+      text: 'É:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:126
+      paragraph_index: 126
+      text: A gestão convencional de projetos transfere ao operador humano uma quantidade relevante de funções de planejamento,
+        organização, memória prospectiva, atenção, gestão temporal e autocontrole. Alguns desses mesmos domínios apresentam
+        vulnerabilidades estatisticamente documentadas em adultos com TDAH. Portanto, existe fundamento para investigar uma
+        arquitetura de gestão que externalize e automatize parte dessas operações, preservando decisão e autonomia do usuário.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:127
+      paragraph_index: 127
+      text: Isso é muito mais forte cientificamente.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:128
+      paragraph_index: 128
+      text: 'E gera uma tese arquitetural:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:129
+      paragraph_index: 129
+      text: O usuário executa. O sistema sustenta a execução.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:130
+      paragraph_index: 130
+      text: O NICE inclusive reconhece modificações ambientais como parte relevante da redução do impacto funcional do TDAH
+        e menciona exemplos como reduzir períodos contínuos de foco e reforçar informação verbal com informação escrita. Isso
+        não valida diretamente essas features digitais, mas fortalece o princípio de que o ambiente pode ser configurado para
+        reduzir demandas desnecessárias sobre o indivíduo. (Nice)
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:131
+      paragraph_index: 131
+      text: 'Portanto, o seu conceito de neurodesign não deveria ser “simplificar uma UI para TDAH”. A formulação tecnicamente
+        mais relevante é:'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:132
+      paragraph_index: 132
+      text: transferir carga executiva evitável do operador para o sistema.
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:133
+      paragraph_index: 133
+      text: 'E isso encaixa diretamente na arquitetura do documento-base: cadeia única de objetos e dependências, decomposição
+        até ação observável, estado persistente, redução de alternâncias e capacidade inferida a partir da execução real,
+        não da expectativa subjetiva.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:134
+      paragraph_index: 134
+      text: Classificação final
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:135
+      paragraph_index: 135
+      text: 'C · Publicado: existe sobreposição relevante entre demandas cognitivas da gestão de projetos e domínios em que
+        adultos com TDAH podem apresentar dificuldades. (NIMH)'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:136
+      paragraph_index: 136
+      text: 'E · Inferido: um sistema que absorva planejamento repetitivo, memória operacional externa, priorização, controle
+        de estado e forecasting pode reduzir fricção operacional.'
+    - locator: SRC-PMI-TDHA-EVID-20260821:p:137
+      paragraph_index: 137
+      text: 'Ainda não verificado: que essa arquitetura produza aumento mensurável de execução, conclusão ou produtividade
+        em usuários com TDAH. Esse é precisamente o claim que o produto deverá testar.'
+    tables:
+    - locator: SRC-PMI-TDHA-EVID-20260821:t:0
+      table_index: 0
+      rows:
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:0
+        row_index: 0
+        cells:
+        - ID
+        - Funções fundamentais de gestão de projetos
+        - Funções executivas de uma área de gestão de projetos
+        - Capacidades humanas / operacionais exigidas
+        - FUNÇÃO / DÉFICIT TDAH associado
+        - Fonte clínica
+        - Fonte científica
+        - Função executiva
+        - Evidência
+        - IMPACTO · função afetada
+        - Mecanismo → consequência
+        - Compensação sistêmica
+        - CONCLUSÃO DE PRODUTO / DESIGN
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:1
+        row_index: 1
+        cells:
+        - GP-01
+        - 'Iniciação e escopo: necessidades, riscos, restrições, viabilidade'
+        - Definir problema, objetivo, limites e critérios
+        - Manter múltiplas variáveis; abstrair estado futuro; decidir
+        - Organização/planejamento podem ser frágeis; grandes tarefas podem gerar procrastinação
+        - NIMH relata desorganização, planejamento deficiente e dificuldade com grandes projetos. (NIMH)
+        - Meta-análise em TDAH adulto encontra diferenças moderadas em medidas executivas. (PubMed)
+        - Planejamento · memória de trabalho · controle executivo
+        - C · moderada/forte
+        - Definição do projeto
+        - Muitas decisões simultâneas → sobrecarga → escopo incompleto ou início postergado
+        - Brief guiado; progressive disclosure; restrições externalizadas; uma decisão por etapa
+        - O sistema deve estruturar o projeto antes de pedir ao usuário que o gerencie. E · Inferido
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:2
+        row_index: 2
+        cells:
+        - GP-02
+        - 'Planejamento: plano de ação, responsáveis, prazos, cronograma'
+        - Converter objetivo em trabalho executável
+        - Sequenciar, decompor, organizar, prever dependências
+        - Dificuldades de planejamento/organização
+        - NIMH inclui má gestão de tempo, planejamento e organização entre dificuldades funcionais possíveis. (NIMH)
+        - Boonstra et al.; Pievsky & McGrath sintetizam alterações neurocognitivas/executivas em TDAH. (PubMed)
+        - Planejamento · working memory · organização
+        - C · forte para associação; não universal
+        - Formação do plano
+        - Objetivo macro exige muitas transformações mentais → plano incompleto ou pouco executável
+        - Projeto → entregável → tarefa → ação atômica, dependências calculadas
+        - Decomposição deve ser função do motor, não trabalho cognitivo repetido do usuário. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:3
+        row_index: 3
+        cells:
+        - GP-03
+        - Priorizar e sequenciar
+        - Garantir aderência a metas; determinar ordem de ação
+        - Comparar valor, urgência, dependências e custo
+        - Priorização/organização podem ser prejudicadas; não é um critério diagnóstico isolado
+        - Revisões clínicas descrevem dificuldade de auto-organização, priorização e início; NIMH recomenda trabalhar organização
+          e tarefas sensíveis ao tempo. (PubMed Central (PMC))
+        - Modelos de EF em TDAH associam comportamento dirigido a metas à autorregulação executiva. (PubMed)
+        - Goal management · inibição · planejamento
+        - C · moderada
+        - Escolha do próximo trabalho
+        - Reavaliar continuamente alternativas → custo decisório → seleção instável/adiamento
+        - Motor de prioridade usando dependência, critical path, prazo, bloqueio e valor + override humano
+        - 'Não oferecer apenas uma lista: oferecer “próxima ação recomendada + por quê”. E'
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:4
+        row_index: 4
+        cells:
+        - GP-04
+        - Cronograma e prazos
+        - Apoiar cumprimento de prazos e sincronizar atividades
+        - Estimar duração; perceber passagem do tempo; lembrar eventos futuros
+        - Má gestão de tempo é clinicamente descrita; percepção temporal mostra resultados heterogêneos
+        - NIMH cita explicitamente gestão de tempo deficiente e dificuldade com compromissos. (NIMH)
+        - Revisão de percepção temporal em adultos conclui que há evidência relevante, mas não sustenta um déficit temporal
+          universal. (PubMed Central (PMC))
+        - Organização temporal · memória prospectiva
+        - C · moderada / heterogênea
+        - Schedule
+        - Dependência de estimativa intuitiva → atraso, compressão do prazo, planejamento otimista
+        - Tempo externalizado; marcos visíveis; buffers; dados históricos; previsão probabilística
+        - Tempo deve ser observado pelo sistema, não presumido pelo usuário. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:5
+        row_index: 5
+        cells:
+        - GP-05
+        - Iniciar execução
+        - Colocar o plano em movimento
+        - Transição intenção → ação; selecionar primeiro comportamento; reduzir ambiguidade
+        - Procrastinação e dificuldade de iniciar tarefas aparecem clinicamente
+        - NIMH registra procrastinação; literatura clínica adulta descreve dificuldade de começar tarefas. (NIMH)
+        - Estudos de memória prospectiva mostram que adultos com TDAH podem ter dificuldade para planejar e executar intenções
+          futuras. (PubMed)
+        - Ativação dirigida a objetivo · planejamento prospectivo
+        - C · moderada
+        - Start
+        - Tarefa abstrata/grande → alto custo de ativação → não iniciar
+        - Mostrar somente primeira ação concreta; critérios de conclusão explícitos; botão iniciar imediato
+        - A unidade de interface deve começar executável, não apenas informativa. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:6
+        row_index: 6
+        cells:
+        - GP-06
+        - Execução
+        - Produzir entregas conforme plano e prazo
+        - Atenção sustentada; persistência; inibição de distrações; memória operacional
+        - Distratibilidade, dificuldade em manter-se na tarefa e terminar projetos
+        - 'NIMH: dificuldade de atenção, distração, manutenção da tarefa e conclusão. (NIMH)'
+        - Estudos experimentais em adultos encontram prejuízo em atenção sustentada e deterioração relacionada ao tempo-na-tarefa.
+          (PubMed)
+        - Atenção sustentada · inibição
+        - B/C · forte
+        - Trabalho em andamento
+        - Competição entre estímulos + duração → abandono, fragmentação ou múltiplos trabalhos parcialmente abertos
+        - Modo foco, WIP baixo, fila separada, captura de interrupções sem abandonar tarefa atual
+        - 1 ação dominante + queue secundária é uma arquitetura coerente com a evidência. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:7
+        row_index: 7
+        cells:
+        - GP-07
+        - Monitorar execução e progresso
+        - Acompanhar status, entregas, prazo e indicadores
+        - Lembrar intenções; comparar estado atual × objetivo; autocontrole
+        - Esquecimento de tarefas + dificuldades de memória prospectiva
+        - NIMH cita dificuldade em lembrar tarefas diárias. (NIMH)
+        - Fuermaier et al. observaram comprometimento em memória prospectiva complexa, especialmente ligado ao planejamento.
+          (PubMed)
+        - Memória prospectiva · working memory
+        - B/C · moderada/forte
+        - Controle de estado
+        - Estado existe apenas “na cabeça” → intenção desaparece → trabalho fica incompleto
+        - Status persistente; progresso automático; lembretes vinculados ao objeto; critérios DoD
+        - O sistema deve ser memória externa do estado operacional. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:8
+        row_index: 8
+        cells:
+        - GP-08
+        - Detectar desvios e adaptar
+        - Criar alternativas e responder a imprevistos
+        - Flexibilidade cognitiva; alternar conjunto mental sem perder objetivo
+        - Evidência de dificuldade de set-shifting existe, mas é menos uniforme que atenção/organização
+        - Não é um sintoma clínico específico isolado em NIMH/NICE; deve ser tratado como domínio neuropsicológico, não característica
+          obrigatória
+        - Estudos em adultos encontraram dificuldades específicas de set-shifting; resultados na literatura permanecem heterogêneos.
+          (PubMed)
+        - Flexibilidade cognitiva · set shifting
+        - B/C · moderada
+        - Replanejamento
+        - Mudança inesperada exige reconstrução mental do plano → perda de contexto/dependências
+        - Branches pré-calculados; alternativas limitadas; dependências preservadas; retorno ao ponto anterior
+        - Permitir não-linearidade controlada, não navegação caótica. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:9
+        row_index: 9
+        cells:
+        - GP-09
+        - Comunicação e stakeholders
+        - Manter partes alinhadas, registrar decisões e follow-up
+        - Atenção, memória prospectiva, inibição, recuperação contextual
+        - Esquecimento, distração e impulsividade podem interferir na continuidade comunicacional
+        - NIMH inclui esquecimento, distração e interrupção/impulsividade entre manifestações possíveis. (NIMH)
+        - Evidência de memória prospectiva e controle executivo oferece mecanismo plausível. (PubMed)
+        - Memória prospectiva · inibição · atenção
+        - C + E para efeito específico em PM
+        - Follow-up
+        - Informação espalhada → necessidade de reconstrução de contexto → decisões e compromissos perdidos
+        - Comunicação associada ao objeto; resumos; decisões persistidas; follow-up convertido em ação
+        - Centralizar contexto é mais importante que simplesmente adicionar chat. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:10
+        row_index: 10
+        cells:
+        - GP-10
+        - Finalização e avaliação
+        - Confirmar entrega, comparar objetivo × resultado, retrospectiva
+        - Fechamento, autocontrole, avaliação do próprio desempenho
+        - Dificuldade em finalizar projetos + potenciais diferenças metacognitivas
+        - NIMH descreve dificuldade em terminar projetos. (NIMH)
+        - Estudo de metacognição em adultos encontrou falta de correspondência entre avaliações subjetivas e objetivas em
+          alguns domínios. (Springer)
+        - Metacognição · self-monitoring
+        - B/C · moderada
+        - Closure
+        - “Parece pronto” ≠ critério objetivo → fechamento inconsistente
+        - DoD explícito; evidência anexada; validação; retrospectiva estruturada
+        - DONE deve ser uma transição verificável, não uma sensação de conclusão. E
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:0:r:11
+        row_index: 11
+        cells:
+        - GP-11
+        - Capacidade e forecasting
+        - Planejar recursos/prazo e proteger compromisso de entrega
+        - Autoavaliação, previsão temporal e planejamento
+        - Má gestão temporal é documentada; desalinhamento metacognitivo é possível, não universal
+        - NIMH documenta problemas de planejamento/tempo; não afirma “incapacidade de estimar capacidade produtiva”. (NIMH)
+        - Evidência de percepção temporal e metacognição sustenta cautela com estimativas subjetivas, mas não valida diretamente
+          seu algoritmo. (PubMed Central (PMC))
+        - Metacognição · previsão · temporalidade
+        - C para vulnerabilidade; E para solução
+        - Compromisso de capacidade
+        - “horas livres” confundidas com output → excesso de compromisso
+        - Throughput, cycle time e histórico individual; forecast probabilístico; EB separado de tempo
+        - Sua arquitetura EB = ação, tempo = medida observada é defensável como decisão de operações, não como tratamento
+          clínico. E
+    - locator: SRC-PMI-TDHA-EVID-20260821:t:1
+      table_index: 1
+      rows:
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:0
+        row_index: 0
+        cells:
+        - Hipótese original
+        - Estado após pesquisa
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:1
+        row_index: 1
+        cells:
+        - Dificuldades de planejamento/organização são relevantes no TDAH adulto
+        - Sustentado — C (NIMH)
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:2
+        row_index: 2
+        cells:
+        - Gestão de tempo pode ser problemática
+        - Sustentado — C (NIMH)
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:3
+        row_index: 3
+        cells:
+        - Atenção sustentada pode prejudicar execução prolongada
+        - Sustentado — B/C (PubMed)
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:4
+        row_index: 4
+        cells:
+        - Memória prospectiva pode afetar follow-through
+        - Sustentado — B (PubMed)
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:5
+        row_index: 5
+        cells:
+        - Flexibilidade/set-shifting pode ser afetada
+        - Sustentado com heterogeneidade — B/C (PubMed)
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:6
+        row_index: 6
+        cells:
+        - Autoavaliação cognitiva sempre é imprecisa no TDAH
+        - Não sustentado como universal; há evidência de diferenças metacognitivas, mas não uma regra universal. (Springer)
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:7
+        row_index: 7
+        cells:
+        - Sistema deve automaticamente priorizar
+        - E · decisão de produto plausível, não conclusão clínica
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:8
+        row_index: 8
+        cells:
+        - Sistema deve usar WIP=1
+        - E · política de arquitetura, não prescrição clínica
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:9
+        row_index: 9
+        cells:
+        - Impressão/analógico corrige memória de trabalho
+        - E · hipótese de design, ainda precisa ser validada
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:10
+        row_index: 10
+        cells:
+        - Ciclos fixos corrigem planejamento de longo prazo
+        - E · hipótese de produto, não resultado clínico demonstrado
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:1:r:11
+        row_index: 11
+        cells:
+        - Throughput histórico deve substituir percepção subjetiva de capacidade
+        - E · forte decisão de operações, mas precisa ser validada no produto
+    - locator: SRC-PMI-TDHA-EVID-20260821:t:2
+      table_index: 2
+      rows:
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:0
+        row_index: 0
+        cells:
+        - Operação tradicionalmente humana
+        - Sistema pode assumir/assistir
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:1
+        row_index: 1
+        cells:
+        - lembrar tudo
+        - memória externa persistente
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:2
+        row_index: 2
+        cells:
+        - decompor projeto
+        - decomposição assistida
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:3
+        row_index: 3
+        cells:
+        - recalcular prioridade
+        - motor de prioridade
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:4
+        row_index: 4
+        cells:
+        - escolher continuamente o próximo passo
+        - next action
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:5
+        row_index: 5
+        cells:
+        - reconstruir contexto
+        - estado/contexto persistente
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:6
+        row_index: 6
+        cells:
+        - estimar capacidade intuitivamente
+        - throughput observado
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:7
+        row_index: 7
+        cells:
+        - lembrar prazo
+        - sistema temporal
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:8
+        row_index: 8
+        cells:
+        - acompanhar dependências
+        - grafo/dependency engine
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:9
+        row_index: 9
+        cells:
+        - perceber progresso
+        - progressão visual automática
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:10
+        row_index: 10
+        cells:
+        - saber se acabou
+        - DoD verificável
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:11
+        row_index: 11
+        cells:
+        - reorganizar após interrupção
+        - retomada do estado anterior
+      - locator: SRC-PMI-TDHA-EVID-20260821:t:2:r:12
+        row_index: 12
+        cells:
+        - abrir múltiplas superfícies
+        - centralização por objeto
+  SRC-ADM-20260821:
+    source_id: SRC-ADM-20260821
+    filename: ✅ ADM-26-21-08.docx
+    sha256: 28b0c00a8242eb0a07db9607e85f37297a4e55e880f71683cc3a1e29a078df89
+    format: docx
+    paragraph_count_nonempty: 234
+    table_count: 4
+    paragraphs:
+    - locator: SRC-ADM-20260821:p:1
+      paragraph_index: 1
+      text: A estrutura
+    - locator: SRC-ADM-20260821:p:3
+      paragraph_index: 3
+      text: ┌───────────────────────────┐
+    - locator: SRC-ADM-20260821:p:4
+      paragraph_index: 4
+      text: │ FUNÇÃO DE GESTÃO          │
+    - locator: SRC-ADM-20260821:p:5
+      paragraph_index: 5
+      text: ├───────────────────────────┤
+    - locator: SRC-ADM-20260821:p:6
+      paragraph_index: 6
+      text: │ Definir objetivo          │
+    - locator: SRC-ADM-20260821:p:7
+      paragraph_index: 7
+      text: │ Delimitar escopo          │
+    - locator: SRC-ADM-20260821:p:8
+      paragraph_index: 8
+      text: │ Planejar                  │
+    - locator: SRC-ADM-20260821:p:9
+      paragraph_index: 9
+      text: │ Priorizar                 │
+    - locator: SRC-ADM-20260821:p:10
+      paragraph_index: 10
+      text: │ Sequenciar                │
+    - locator: SRC-ADM-20260821:p:11
+      paragraph_index: 11
+      text: │ Estimar prazo             │
+    - locator: SRC-ADM-20260821:p:12
+      paragraph_index: 12
+      text: │ Iniciar                   │
+    - locator: SRC-ADM-20260821:p:13
+      paragraph_index: 13
+      text: │ Executar                  │
+    - locator: SRC-ADM-20260821:p:14
+      paragraph_index: 14
+      text: │ Sustentar execução        │
+    - locator: SRC-ADM-20260821:p:15
+      paragraph_index: 15
+      text: │ Monitorar                 │
+    - locator: SRC-ADM-20260821:p:16
+      paragraph_index: 16
+      text: │ Corrigir desvios          │
+    - locator: SRC-ADM-20260821:p:17
+      paragraph_index: 17
+      text: │ Comunicar                 │
+    - locator: SRC-ADM-20260821:p:18
+      paragraph_index: 18
+      text: │ Finalizar                 │
+    - locator: SRC-ADM-20260821:p:19
+      paragraph_index: 19
+      text: │ Aprender                  │
+    - locator: SRC-ADM-20260821:p:20
+      paragraph_index: 20
+      text: └───────────────────────────┘
+    - locator: SRC-ADM-20260821:p:21
+      paragraph_index: 21
+      text: ×
+    - locator: SRC-ADM-20260821:p:22
+      paragraph_index: 22
+      text: ┌───────────────────────────┐
+    - locator: SRC-ADM-20260821:p:23
+      paragraph_index: 23
+      text: │ FUNÇÃO/DEFICIT TDAH       │
+    - locator: SRC-ADM-20260821:p:24
+      paragraph_index: 24
+      text: ├───────────────────────────┤
+    - locator: SRC-ADM-20260821:p:25
+      paragraph_index: 25
+      text: │ [fonte clínica]           │
+    - locator: SRC-ADM-20260821:p:26
+      paragraph_index: 26
+      text: │ [fonte científica]        │
+    - locator: SRC-ADM-20260821:p:27
+      paragraph_index: 27
+      text: │ [função executiva]        │
+    - locator: SRC-ADM-20260821:p:28
+      paragraph_index: 28
+      text: │ [evidência]               │
+    - locator: SRC-ADM-20260821:p:29
+      paragraph_index: 29
+      text: └───────────────────────────┘
+    - locator: SRC-ADM-20260821:p:30
+      paragraph_index: 30
+      text: ↓
+    - locator: SRC-ADM-20260821:p:31
+      paragraph_index: 31
+      text: ┌───────────────────────────┐
+    - locator: SRC-ADM-20260821:p:32
+      paragraph_index: 32
+      text: │ IMPACTO OPERACIONAL       │
+    - locator: SRC-ADM-20260821:p:33
+      paragraph_index: 33
+      text: ├───────────────────────────┤
+    - locator: SRC-ADM-20260821:p:34
+      paragraph_index: 34
+      text: │ função afetada            │
+    - locator: SRC-ADM-20260821:p:35
+      paragraph_index: 35
+      text: │ mecanismo                 │
+    - locator: SRC-ADM-20260821:p:36
+      paragraph_index: 36
+      text: │ consequência              │
+    - locator: SRC-ADM-20260821:p:37
+      paragraph_index: 37
+      text: │ compensação               │
+    - locator: SRC-ADM-20260821:p:38
+      paragraph_index: 38
+      text: └───────────────────────────┘
+    - locator: SRC-ADM-20260821:p:39
+      paragraph_index: 39
+      text: ↓
+    - locator: SRC-ADM-20260821:p:40
+      paragraph_index: 40
+      text: ┌───────────────────────────┐
+    - locator: SRC-ADM-20260821:p:41
+      paragraph_index: 41
+      text: │ CONCLUSÃO DE PRODUTO      │
+    - locator: SRC-ADM-20260821:p:42
+      paragraph_index: 42
+      text: │ / DESIGN                  │
+    - locator: SRC-ADM-20260821:p:43
+      paragraph_index: 43
+      text: └───────────────────────────┘
+    - locator: SRC-ADM-20260821:p:46
+      paragraph_index: 46
+      text: CONCLUSÃO DE PRODUTO / DESIGN
+    - locator: SRC-ADM-20260821:p:47
+      paragraph_index: 47
+      text: Pesquisa] · DATA-ADHD-PM-001
+    - locator: SRC-ADM-20260821:p:48
+      paragraph_index: 48
+      text: DOCUMENT READER · VALU-MODE V3
+    - locator: SRC-ADM-20260821:p:49
+      paragraph_index: 49
+      text: ⸻
+    - locator: SRC-ADM-20260821:p:50
+      paragraph_index: 50
+      text: 'ID DATA-ADHD-PM-001
+
+        Tipo Pesquisa · Matriz de evidências e implicações de produto
+
+        Owner Não determinado
+
+        Versão 1.0
+
+        Data 19/08/2026
+
+        Fase Síntese e correlação
+
+        Projeto Não determinado
+
+        PARA Produto · Arquitetura neuroinclusiva baseada em evidências
+
+        Referência JSON AEVO · HOJE > Preencher(1).md · PMBOK® Guide 8 · NIMH · NICE · literatura científica
+
+        3# #TDAH #gestaodeprojetos #neurodesign'
+    - locator: SRC-ADM-20260821:p:51
+      paragraph_index: 51
+      text: ⸻
+    - locator: SRC-ADM-20260821:p:52
+      paragraph_index: 52
+      text: RESUMO EXECUTIVO
+    - locator: SRC-ADM-20260821:p:53
+      paragraph_index: 53
+      text: 'O quê Matriz paralela Gestão de Projetos → exigência humana → vulnerabilidade associada ao TDAH → impacto operacional
+        → compensação sistêmica → decisão de produto.
+
+        Por quê Testar a tese de que parte da carga normalmente deixada para o usuário pode ser deslocada para arquitetura,
+        regras e automação do sistema.
+
+        Quem Adultos com TDAH executando trabalho intelectual/projetos; produto, design e engenharia que constroem o sistema.
+
+        Como Funções de projeto extraídas do documento-base e confrontadas com PMI, NIMH/NICE e estudos sobre funções executivas
+        em TDAH adulto.'
+    - locator: SRC-ADM-20260821:p:54
+      paragraph_index: 54
+      text: ⸻
+    - locator: SRC-ADM-20260821:p:55
+      paragraph_index: 55
+      text: 3P+N · APLICAÇÃO
+    - locator: SRC-ADM-20260821:p:56
+      paragraph_index: 56
+      text: 'Problema A gestão de projetos pressupõe diversas operações cognitivas — planejar, organizar, priorizar, lembrar,
+        acompanhar, estimar tempo, iniciar e concluir — justamente em domínios nos quais adultos com TDAH podem, com grande
+        heterogeneidade individual, apresentar dificuldades.
+
+        Processo Decompor cada função operacional e procurar correspondência clínica e neuropsicológica, evitando transformar
+        associação em causalidade universal.
+
+        Progresso A hipótese central é parcialmente sustentada: há convergência forte para organização, planejamento, gestão
+        temporal, atenção sustentada e conclusão; evidência moderada para memória prospectiva, flexibilidade e metacognição.
+
+        Next 01 Transformar a matriz abaixo em requisitos funcionais e princípios de design verificáveis.
+
+        Next 02 Separar evidência clínica de decisão de arquitetura, mantendo cada feature como hipótese testável.'
+    - locator: SRC-ADM-20260821:p:58
+      paragraph_index: 58
+      text: ACHADO CENTRAL
+    - locator: SRC-ADM-20260821:p:59
+      paragraph_index: 59
+      text: 'Seu documento-base formula exatamente a hipótese a ser testada: se priorização, iniciação, memória de trabalho,
+        controle temporal, planejamento de longo prazo, troca de contexto e percepção da própria capacidade criarem atrito,
+        o sistema deveria absorver parte dessas operações.'
+    - locator: SRC-ADM-20260821:p:60
+      paragraph_index: 60
+      text: A literatura permite sustentar boa parte dessa direção, mas não permite declarar que toda pessoa com TDAH possui
+        todos esses déficits. O NIMH descreve em adultos dificuldades possíveis com organização, procrastinação, planejamento,
+        gestão de tempo, lembrança de tarefas, manutenção de foco e conclusão de grandes projetos. Meta-análises encontram
+        diferenças de função executiva entre grupos com e sem TDAH, mas também mostram heterogeneidade substancial; portanto,
+        TDAH ≠ déficit executivo global obrigatório.
+    - locator: SRC-ADM-20260821:p:61
+      paragraph_index: 61
+      text: Do lado da gestão de projetos, seu JSON já estrutura iniciação/escopo → planejamento → execução → monitoramento/finalização.
+        Isso é compatível com a organização tradicional dos processos de gestão e, na edição atual, o PMBOK® Guide 8 também
+        enfatiza domínios como governança, escopo, cronograma, stakeholders, recursos e risco.
+    - locator: SRC-ADM-20260821:p:63
+      paragraph_index: 63
+      text: 'A conclusão mais defensável não é:'
+    - locator: SRC-ADM-20260821:p:64
+      paragraph_index: 64
+      text: “Pessoas com TDAH não conseguem gerir projetos.”
+    - locator: SRC-ADM-20260821:p:66
+      paragraph_index: 66
+      text: A gestão convencional de projetos transfere ao operador humano uma quantidade relevante de funções de planejamento,
+        organização, memória prospectiva, atenção, gestão temporal e autocontrole. Alguns desses mesmos domínios apresentam
+        vulnerabilidades estatisticamente documentadas em adultos com TDAH. Portanto, existe fundamento para investigar uma
+        arquitetura de gestão que externalize e automatize parte dessas operações, preservando decisão e autonomia do usuário.
+    - locator: SRC-ADM-20260821:p:68
+      paragraph_index: 68
+      text: O NICE inclusive reconhece modificações ambientais como parte relevante da redução do impacto funcional do TDAH
+        e menciona exemplos como reduzir períodos contínuos de foco e reforçar informação verbal com informação escrita. Isso
+        não valida diretamente essas features digitais, mas fortalece o princípio de que o ambiente pode ser configurado para
+        reduzir demandas desnecessárias sobre o indivíduo.
+    - locator: SRC-ADM-20260821:p:69
+      paragraph_index: 69
+      text: 'Portanto, o seu conceito de neurodesign não deveria ser “simplificar uma UI para TDAH”. A formulação tecnicamente
+        mais relevante é:'
+    - locator: SRC-ADM-20260821:p:70
+      paragraph_index: 70
+      text: transferir carga executiva evitável do operador para o sistema.
+    - locator: SRC-ADM-20260821:p:71
+      paragraph_index: 71
+      text: 'E isso encaixa diretamente na arquitetura do documento-base: cadeia única de objetos e dependências, decomposição
+        até ação observável, estado persistente, redução de alternâncias e capacidade inferida a partir da execução real,
+        não da expectativa subjetiva.'
+    - locator: SRC-ADM-20260821:p:74
+      paragraph_index: 74
+      text: O usuário executa. O sistema sustenta a execução.
+    - locator: SRC-ADM-20260821:p:77
+      paragraph_index: 77
+      text: SUA TESE, AGORA COM CORREÇÕES EPISTÊMICAS
+    - locator: SRC-ADM-20260821:p:78
+      paragraph_index: 78
+      text: 'Seu documento propõe:'
+    - locator: SRC-ADM-20260821:p:79
+      paragraph_index: 79
+      text: 'priorização → sistema prioriza;
+
+        memória de trabalho → reduzir variáveis;
+
+        inicialização → reduzir complexidade;
+
+        tempo → flexibilizar;
+
+        planejamento de longo prazo → ciclos;
+
+        troca de contexto → agrupar;
+
+        centralização → reduzir dispersão.'
+    - locator: SRC-ADM-20260821:p:80
+      paragraph_index: 80
+      text: 'Depois da pesquisa, eu classificaria assim:'
+    - locator: SRC-ADM-20260821:p:81
+      paragraph_index: 81
+      text: Essa separação é importante porque seu próprio documento já propõe não confundir horas disponíveis com capacidade
+        produtiva e calibrar throughput/cycle time por execução observada. Ele também corretamente separa EB = ação de Q30
+        = capacidade temporal, deixando a duração real como variável observada.
+    - locator: SRC-ADM-20260821:p:83
+      paragraph_index: 83
+      text: A RELAÇÃO FICA MAIS CLARA QUANDO VISTA COMO SISTEMA
+    - locator: SRC-ADM-20260821:p:84
+      paragraph_index: 84
+      text: 'A síntese é esta:'
+    - locator: SRC-ADM-20260821:p:85
+      paragraph_index: 85
+      text: GESTÃO DE PROJETOS
+    - locator: SRC-ADM-20260821:p:86
+      paragraph_index: 86
+      text: │
+    - locator: SRC-ADM-20260821:p:87
+      paragraph_index: 87
+      text: │ exige
+    - locator: SRC-ADM-20260821:p:88
+      paragraph_index: 88
+      text: ▼
+    - locator: SRC-ADM-20260821:p:89
+      paragraph_index: 89
+      text: OPERAÇÕES COGNITIVAS
+    - locator: SRC-ADM-20260821:p:90
+      paragraph_index: 90
+      text: │
+    - locator: SRC-ADM-20260821:p:91
+      paragraph_index: 91
+      text: ├── planejar
+    - locator: SRC-ADM-20260821:p:92
+      paragraph_index: 92
+      text: ├── organizar
+    - locator: SRC-ADM-20260821:p:93
+      paragraph_index: 93
+      text: ├── priorizar
+    - locator: SRC-ADM-20260821:p:94
+      paragraph_index: 94
+      text: ├── sequenciar
+    - locator: SRC-ADM-20260821:p:95
+      paragraph_index: 95
+      text: ├── lembrar
+    - locator: SRC-ADM-20260821:p:96
+      paragraph_index: 96
+      text: ├── iniciar
+    - locator: SRC-ADM-20260821:p:97
+      paragraph_index: 97
+      text: ├── sustentar atenção
+    - locator: SRC-ADM-20260821:p:98
+      paragraph_index: 98
+      text: ├── estimar/acompanhar tempo
+    - locator: SRC-ADM-20260821:p:99
+      paragraph_index: 99
+      text: ├── monitorar
+    - locator: SRC-ADM-20260821:p:100
+      paragraph_index: 100
+      text: ├── adaptar
+    - locator: SRC-ADM-20260821:p:101
+      paragraph_index: 101
+      text: └── finalizar
+    - locator: SRC-ADM-20260821:p:102
+      paragraph_index: 102
+      text: │
+    - locator: SRC-ADM-20260821:p:103
+      paragraph_index: 103
+      text: ▼
+    - locator: SRC-ADM-20260821:p:104
+      paragraph_index: 104
+      text: TDAH
+    - locator: SRC-ADM-20260821:p:105
+      paragraph_index: 105
+      text: pode aumentar a vulnerabilidade
+    - locator: SRC-ADM-20260821:p:106
+      paragraph_index: 106
+      text: em parte desses domínios
+    - locator: SRC-ADM-20260821:p:107
+      paragraph_index: 107
+      text: │
+    - locator: SRC-ADM-20260821:p:108
+      paragraph_index: 108
+      text: ▼
+    - locator: SRC-ADM-20260821:p:109
+      paragraph_index: 109
+      text: ATRITO OPERACIONAL
+    - locator: SRC-ADM-20260821:p:110
+      paragraph_index: 110
+      text: │
+    - locator: SRC-ADM-20260821:p:111
+      paragraph_index: 111
+      text: ├── início tardio
+    - locator: SRC-ADM-20260821:p:112
+      paragraph_index: 112
+      text: ├── planejamento incompleto
+    - locator: SRC-ADM-20260821:p:113
+      paragraph_index: 113
+      text: ├── prioridades instáveis
+    - locator: SRC-ADM-20260821:p:114
+      paragraph_index: 114
+      text: ├── múltiplos trabalhos abertos
+    - locator: SRC-ADM-20260821:p:115
+      paragraph_index: 115
+      text: ├── esquecimento de intenções
+    - locator: SRC-ADM-20260821:p:116
+      paragraph_index: 116
+      text: ├── perda de contexto
+    - locator: SRC-ADM-20260821:p:117
+      paragraph_index: 117
+      text: ├── atraso
+    - locator: SRC-ADM-20260821:p:118
+      paragraph_index: 118
+      text: └── fechamento incompleto
+    - locator: SRC-ADM-20260821:p:119
+      paragraph_index: 119
+      text: │
+    - locator: SRC-ADM-20260821:p:120
+      paragraph_index: 120
+      text: ▼
+    - locator: SRC-ADM-20260821:p:121
+      paragraph_index: 121
+      text: ARQUITETURA COMPENSATÓRIA
+    - locator: SRC-ADM-20260821:p:122
+      paragraph_index: 122
+      text: │
+    - locator: SRC-ADM-20260821:p:123
+      paragraph_index: 123
+      text: ├── externalizar
+    - locator: SRC-ADM-20260821:p:124
+      paragraph_index: 124
+      text: ├── decompor
+    - locator: SRC-ADM-20260821:p:125
+      paragraph_index: 125
+      text: ├── priorizar
+    - locator: SRC-ADM-20260821:p:126
+      paragraph_index: 126
+      text: ├── ordenar
+    - locator: SRC-ADM-20260821:p:127
+      paragraph_index: 127
+      text: ├── lembrar
+    - locator: SRC-ADM-20260821:p:128
+      paragraph_index: 128
+      text: ├── limitar WIP
+    - locator: SRC-ADM-20260821:p:129
+      paragraph_index: 129
+      text: ├── mostrar estado
+    - locator: SRC-ADM-20260821:p:130
+      paragraph_index: 130
+      text: ├── registrar histórico
+    - locator: SRC-ADM-20260821:p:131
+      paragraph_index: 131
+      text: └── prever com dados observados
+    - locator: SRC-ADM-20260821:p:132
+      paragraph_index: 132
+      text: │
+    - locator: SRC-ADM-20260821:p:133
+      paragraph_index: 133
+      text: ▼
+    - locator: SRC-ADM-20260821:p:134
+      paragraph_index: 134
+      text: MAIOR FRAÇÃO DA CAPACIDADE COGNITIVA
+    - locator: SRC-ADM-20260821:p:135
+      paragraph_index: 135
+      text: DISPONÍVEL PARA EXECUÇÃO
+    - locator: SRC-ADM-20260821:p:136
+      paragraph_index: 136
+      text: A última seta é E · hipótese de produto. Ainda precisa ser testada empiricamente; a literatura não permite, neste
+        estágio, afirmar que seu sistema necessariamente “liberará X% de capacidade cognitiva”.
+    - locator: SRC-ADM-20260821:p:139
+      paragraph_index: 139
+      text: MATRIZ TABULAR PRINCIPAL
+    - locator: SRC-ADM-20260821:p:141
+      paragraph_index: 141
+      text: schema_version
+    - locator: SRC-ADM-20260821:p:142
+      paragraph_index: 142
+      text: row_id
+    - locator: SRC-ADM-20260821:p:143
+      paragraph_index: 143
+      text: funcoes_fundamentais_gestao_projetos
+    - locator: SRC-ADM-20260821:p:144
+      paragraph_index: 144
+      text: funcoes_executivas_area_gestao_projetos
+    - locator: SRC-ADM-20260821:p:145
+      paragraph_index: 145
+      text: capacidades_humanas_operacionais_exigidas
+    - locator: SRC-ADM-20260821:p:146
+      paragraph_index: 146
+      text: funcao_deficit_tdah
+    - locator: SRC-ADM-20260821:p:147
+      paragraph_index: 147
+      text: fonte_clinica
+    - locator: SRC-ADM-20260821:p:148
+      paragraph_index: 148
+      text: fonte_cientifica
+    - locator: SRC-ADM-20260821:p:149
+      paragraph_index: 149
+      text: funcao_executiva_cognitiva
+    - locator: SRC-ADM-20260821:p:150
+      paragraph_index: 150
+      text: evidencia
+    - locator: SRC-ADM-20260821:p:151
+      paragraph_index: 151
+      text: impacto_operacional_funcao_afetada
+    - locator: SRC-ADM-20260821:p:152
+      paragraph_index: 152
+      text: impacto_operacional_mecanismo
+    - locator: SRC-ADM-20260821:p:153
+      paragraph_index: 153
+      text: impacto_operacional_consequencia
+    - locator: SRC-ADM-20260821:p:154
+      paragraph_index: 154
+      text: impacto_operacional_compensacao
+    - locator: SRC-ADM-20260821:p:155
+      paragraph_index: 155
+      text: conclusao_produto_design
+    - locator: SRC-ADM-20260821:p:156
+      paragraph_index: 156
+      text: classe_epistemica
+    - locator: SRC-ADM-20260821:p:157
+      paragraph_index: 157
+      text: estado_validacao
+    - locator: SRC-ADM-20260821:p:158
+      paragraph_index: 158
+      text: observacoes
+    - locator: SRC-ADM-20260821:p:159
+      paragraph_index: 159
+      text: neurodivergence
+    - locator: SRC-ADM-20260821:p:160
+      paragraph_index: 160
+      text: adhd
+    - locator: SRC-ADM-20260821:p:161
+      paragraph_index: 161
+      text: tdah
+    - locator: SRC-ADM-20260821:p:162
+      paragraph_index: 162
+      text: executive_function
+    - locator: SRC-ADM-20260821:p:163
+      paragraph_index: 163
+      text: executive_dysfunction
+    - locator: SRC-ADM-20260821:p:164
+      paragraph_index: 164
+      text: working_memory
+    - locator: SRC-ADM-20260821:p:165
+      paragraph_index: 165
+      text: inhibition
+    - locator: SRC-ADM-20260821:p:166
+      paragraph_index: 166
+      text: attention
+    - locator: SRC-ADM-20260821:p:167
+      paragraph_index: 167
+      text: time_perception
+    - locator: SRC-ADM-20260821:p:168
+      paragraph_index: 168
+      text: task_initiation
+    - locator: SRC-ADM-20260821:p:169
+      paragraph_index: 169
+      text: cognitive_flexibility
+    - locator: SRC-ADM-20260821:p:170
+      paragraph_index: 170
+      text: emotional_regulation
+    - locator: SRC-ADM-20260821:p:171
+      paragraph_index: 171
+      text: GESTÃO DE PROJETOS
+    - locator: SRC-ADM-20260821:p:172
+      paragraph_index: 172
+      text: │
+    - locator: SRC-ADM-20260821:p:173
+      paragraph_index: 173
+      text: ├── Definir objetivo
+    - locator: SRC-ADM-20260821:p:174
+      paragraph_index: 174
+      text: ├── Definir escopo
+    - locator: SRC-ADM-20260821:p:175
+      paragraph_index: 175
+      text: ├── Planejar
+    - locator: SRC-ADM-20260821:p:176
+      paragraph_index: 176
+      text: ├── Decompor trabalho
+    - locator: SRC-ADM-20260821:p:177
+      paragraph_index: 177
+      text: ├── Atribuir responsabilidades
+    - locator: SRC-ADM-20260821:p:178
+      paragraph_index: 178
+      text: ├── Estimar/definir prazo
+    - locator: SRC-ADM-20260821:p:179
+      paragraph_index: 179
+      text: ├── Sequenciar atividades
+    - locator: SRC-ADM-20260821:p:180
+      paragraph_index: 180
+      text: ├── Executar
+    - locator: SRC-ADM-20260821:p:181
+      paragraph_index: 181
+      text: ├── Acompanhar execução
+    - locator: SRC-ADM-20260821:p:182
+      paragraph_index: 182
+      text: ├── Monitorar prazo
+    - locator: SRC-ADM-20260821:p:183
+      paragraph_index: 183
+      text: ├── Monitorar indicadores
+    - locator: SRC-ADM-20260821:p:184
+      paragraph_index: 184
+      text: ├── Detectar desvios
+    - locator: SRC-ADM-20260821:p:185
+      paragraph_index: 185
+      text: ├── Resolver imprevistos
+    - locator: SRC-ADM-20260821:p:186
+      paragraph_index: 186
+      text: ├── Comunicar
+    - locator: SRC-ADM-20260821:p:187
+      paragraph_index: 187
+      text: ├── Dar/receber feedback
+    - locator: SRC-ADM-20260821:p:188
+      paragraph_index: 188
+      text: ├── Ajustar plano
+    - locator: SRC-ADM-20260821:p:189
+      paragraph_index: 189
+      text: ├── Finalizar
+    - locator: SRC-ADM-20260821:p:190
+      paragraph_index: 190
+      text: └── Registrar aprendizado
+    - locator: SRC-ADM-20260821:p:192
+      paragraph_index: 192
+      text: Funções fundamentais de gestão de projetos
+    - locator: SRC-ADM-20260821:p:193
+      paragraph_index: 193
+      text: O JSON fornece uma estrutura especialmente útil em SEC-002, dividida em quatro grandes funções.
+    - locator: SRC-ADM-20260821:p:194
+      paragraph_index: 194
+      text: GP-FUNC-01 · Iniciação e escopo
+    - locator: SRC-ADM-20260821:p:195
+      paragraph_index: 195
+      text: 'Funções:'
+    - locator: SRC-ADM-20260821:p:196
+      paragraph_index: 196
+      text: identificar necessidades;
+    - locator: SRC-ADM-20260821:p:197
+      paragraph_index: 197
+      text: identificar riscos;
+    - locator: SRC-ADM-20260821:p:198
+      paragraph_index: 198
+      text: identificar restrições;
+    - locator: SRC-ADM-20260821:p:199
+      paragraph_index: 199
+      text: avaliar viabilidade;
+    - locator: SRC-ADM-20260821:p:200
+      paragraph_index: 200
+      text: obter autorizações;
+    - locator: SRC-ADM-20260821:p:201
+      paragraph_index: 201
+      text: definir limites iniciais do projeto.
+    - locator: SRC-ADM-20260821:p:202
+      paragraph_index: 202
+      text: 'Resultado: definição inicial do projeto e de seu escopo.'
+    - locator: SRC-ADM-20260821:p:203
+      paragraph_index: 203
+      text: GP-FUNC-02 · Planejamento
+    - locator: SRC-ADM-20260821:p:204
+      paragraph_index: 204
+      text: 'Funções:'
+    - locator: SRC-ADM-20260821:p:205
+      paragraph_index: 205
+      text: construir plano de ação;
+    - locator: SRC-ADM-20260821:p:206
+      paragraph_index: 206
+      text: definir o que será feito;
+    - locator: SRC-ADM-20260821:p:207
+      paragraph_index: 207
+      text: atribuir responsáveis;
+    - locator: SRC-ADM-20260821:p:208
+      paragraph_index: 208
+      text: definir prazos;
+    - locator: SRC-ADM-20260821:p:209
+      paragraph_index: 209
+      text: identificar validadores;
+    - locator: SRC-ADM-20260821:p:210
+      paragraph_index: 210
+      text: montar cronograma.
+    - locator: SRC-ADM-20260821:p:211
+      paragraph_index: 211
+      text: 'Resultado: plano operacional + cronograma.'
+    - locator: SRC-ADM-20260821:p:212
+      paragraph_index: 212
+      text: GP-FUNC-03 · Execução
+    - locator: SRC-ADM-20260821:p:213
+      paragraph_index: 213
+      text: 'Funções:'
+    - locator: SRC-ADM-20260821:p:214
+      paragraph_index: 214
+      text: executar segundo o cronograma;
+    - locator: SRC-ADM-20260821:p:215
+      paragraph_index: 215
+      text: seguir definições do planejamento;
+    - locator: SRC-ADM-20260821:p:216
+      paragraph_index: 216
+      text: acompanhar responsabilidades;
+    - locator: SRC-ADM-20260821:p:217
+      paragraph_index: 217
+      text: acompanhar entregas;
+    - locator: SRC-ADM-20260821:p:218
+      paragraph_index: 218
+      text: acompanhar prazos;
+    - locator: SRC-ADM-20260821:p:219
+      paragraph_index: 219
+      text: utilizar ferramentas de gestão.
+    - locator: SRC-ADM-20260821:p:220
+      paragraph_index: 220
+      text: 'Resultado: entregas produzidas e projeto em andamento controlado.'
+    - locator: SRC-ADM-20260821:p:221
+      paragraph_index: 221
+      text: GP-FUNC-04 · Monitoramento e finalização
+    - locator: SRC-ADM-20260821:p:222
+      paragraph_index: 222
+      text: 'Funções:'
+    - locator: SRC-ADM-20260821:p:223
+      paragraph_index: 223
+      text: monitorar a execução;
+    - locator: SRC-ADM-20260821:p:224
+      paragraph_index: 224
+      text: detectar imprevistos;
+    - locator: SRC-ADM-20260821:p:225
+      paragraph_index: 225
+      text: criar alternativas;
+    - locator: SRC-ADM-20260821:p:226
+      paragraph_index: 226
+      text: evitar paralisações;
+    - locator: SRC-ADM-20260821:p:227
+      paragraph_index: 227
+      text: avaliar resultados;
+    - locator: SRC-ADM-20260821:p:228
+      paragraph_index: 228
+      text: comparar resultado × objetivo;
+    - locator: SRC-ADM-20260821:p:229
+      paragraph_index: 229
+      text: realizar retrospectiva;
+    - locator: SRC-ADM-20260821:p:230
+      paragraph_index: 230
+      text: registrar aprendizados.
+    - locator: SRC-ADM-20260821:p:231
+      paragraph_index: 231
+      text: 'Resultado: projeto encerrado + resultados avaliados + aprendizado acumulado.'
+    - locator: SRC-ADM-20260821:p:232
+      paragraph_index: 232
+      text: Capacidades humanas/operacionais exigidas
+    - locator: SRC-ADM-20260821:p:233
+      paragraph_index: 233
+      text: O JSON não chama essas capacidades de “funções executivas cognitivas”, mas contém vários comportamentos necessários
+        para executar projetos.
+    - locator: SRC-ADM-20260821:p:234
+      paragraph_index: 234
+      text: 'Em SEC-005 aparecem:'
+    - locator: SRC-ADM-20260821:p:235
+      paragraph_index: 235
+      text: criatividade;
+    - locator: SRC-ADM-20260821:p:236
+      paragraph_index: 236
+      text: definição de metas;
+    - locator: SRC-ADM-20260821:p:237
+      paragraph_index: 237
+      text: disseminação de metas;
+    - locator: SRC-ADM-20260821:p:238
+      paragraph_index: 238
+      text: feedback;
+    - locator: SRC-ADM-20260821:p:239
+      paragraph_index: 239
+      text: cobrança e acompanhamento de resultados;
+    - locator: SRC-ADM-20260821:p:240
+      paragraph_index: 240
+      text: planejamento de atividades;
+    - locator: SRC-ADM-20260821:p:241
+      paragraph_index: 241
+      text: controle de execução;
+    - locator: SRC-ADM-20260821:p:242
+      paragraph_index: 242
+      text: acompanhamento de indicadores;
+    - locator: SRC-ADM-20260821:p:243
+      paragraph_index: 243
+      text: comunicação interna;
+    - locator: SRC-ADM-20260821:p:244
+      paragraph_index: 244
+      text: treinamento;
+    - locator: SRC-ADM-20260821:p:245
+      paragraph_index: 245
+      text: ajuste contínuo.
+    - locator: SRC-ADM-20260821:p:246
+      paragraph_index: 246
+      text: Isso gera uma estrutura muito importante para sua análise.
+    - locator: SRC-ADM-20260821:p:247
+      paragraph_index: 247
+      text: Funções executivas de uma área de gestão de projetos
+    - locator: SRC-ADM-20260821:p:248
+      paragraph_index: 248
+      text: Há uma segunda camada muito relevante em SEC-004.
+    - locator: SRC-ADM-20260821:p:249
+      paragraph_index: 249
+      text: A missão da área é descrita como garantir a realização dos projetos, principalmente aqueles estratégicos.
+    - locator: SRC-ADM-20260821:p:250
+      paragraph_index: 250
+      text: 'As responsabilidades explícitas são:'
+    tables:
+    - locator: SRC-ADM-20260821:t:0
+      table_index: 0
+      rows:
+      - locator: SRC-ADM-20260821:t:0:r:0
+        row_index: 0
+        cells:
+        - Operação tradicionalmente humana
+        - Sistema pode assumir/assistir
+      - locator: SRC-ADM-20260821:t:0:r:1
+        row_index: 1
+        cells:
+        - lembrar tudo
+        - memória externa persistente
+      - locator: SRC-ADM-20260821:t:0:r:2
+        row_index: 2
+        cells:
+        - decompor projeto
+        - decomposição assistida
+      - locator: SRC-ADM-20260821:t:0:r:3
+        row_index: 3
+        cells:
+        - recalcular prioridade
+        - motor de prioridade
+      - locator: SRC-ADM-20260821:t:0:r:4
+        row_index: 4
+        cells:
+        - escolher continuamente o próximo passo
+        - next action
+      - locator: SRC-ADM-20260821:t:0:r:5
+        row_index: 5
+        cells:
+        - reconstruir contexto
+        - estado/contexto persistente
+      - locator: SRC-ADM-20260821:t:0:r:6
+        row_index: 6
+        cells:
+        - estimar capacidade intuitivamente
+        - throughput observado
+      - locator: SRC-ADM-20260821:t:0:r:7
+        row_index: 7
+        cells:
+        - lembrar prazo
+        - sistema temporal
+      - locator: SRC-ADM-20260821:t:0:r:8
+        row_index: 8
+        cells:
+        - acompanhar dependências
+        - grafo/dependency engine
+      - locator: SRC-ADM-20260821:t:0:r:9
+        row_index: 9
+        cells:
+        - perceber progresso
+        - progressão visual automática
+      - locator: SRC-ADM-20260821:t:0:r:10
+        row_index: 10
+        cells:
+        - saber se acabou
+        - DoD verificável
+      - locator: SRC-ADM-20260821:t:0:r:11
+        row_index: 11
+        cells:
+        - reorganizar após interrupção
+        - retomada do estado anterior
+      - locator: SRC-ADM-20260821:t:0:r:12
+        row_index: 12
+        cells:
+        - abrir múltiplas superfícies
+        - centralização por objeto
+    - locator: SRC-ADM-20260821:t:1
+      table_index: 1
+      rows:
+      - locator: SRC-ADM-20260821:t:1:r:0
+        row_index: 0
+        cells:
+        - Hipótese original
+        - Estado após pesquisa
+      - locator: SRC-ADM-20260821:t:1:r:1
+        row_index: 1
+        cells:
+        - Dificuldades de planejamento/organização são relevantes no TDAH adulto
+        - Sustentado — C
+      - locator: SRC-ADM-20260821:t:1:r:2
+        row_index: 2
+        cells:
+        - Gestão de tempo pode ser problemática
+        - Sustentado — C
+      - locator: SRC-ADM-20260821:t:1:r:3
+        row_index: 3
+        cells:
+        - Atenção sustentada pode prejudicar execução prolongada
+        - Sustentado — B/C
+      - locator: SRC-ADM-20260821:t:1:r:4
+        row_index: 4
+        cells:
+        - Memória prospectiva pode afetar follow-through
+        - Sustentado — B
+      - locator: SRC-ADM-20260821:t:1:r:5
+        row_index: 5
+        cells:
+        - Flexibilidade/set-shifting pode ser afetada
+        - Sustentado com heterogeneidade — B/C
+      - locator: SRC-ADM-20260821:t:1:r:6
+        row_index: 6
+        cells:
+        - Autoavaliação cognitiva sempre é imprecisa no TDAH
+        - Não sustentado como universal; há evidência de diferenças metacognitivas, mas não uma regra universal.
+      - locator: SRC-ADM-20260821:t:1:r:7
+        row_index: 7
+        cells:
+        - Sistema deve automaticamente priorizar
+        - E · decisão de produto plausível, não conclusão clínica
+      - locator: SRC-ADM-20260821:t:1:r:8
+        row_index: 8
+        cells:
+        - Sistema deve usar WIP=1
+        - E · política de arquitetura, não prescrição clínica
+      - locator: SRC-ADM-20260821:t:1:r:9
+        row_index: 9
+        cells:
+        - Impressão/analógico corrige memória de trabalho
+        - E · hipótese de design, ainda precisa ser validada
+      - locator: SRC-ADM-20260821:t:1:r:10
+        row_index: 10
+        cells:
+        - Ciclos fixos corrigem planejamento de longo prazo
+        - E · hipótese de produto, não resultado clínico demonstrado
+      - locator: SRC-ADM-20260821:t:1:r:11
+        row_index: 11
+        cells:
+        - Throughput histórico deve substituir percepção subjetiva de capacidade
+        - E · forte decisão de operações, mas precisa ser validada no produto
+    - locator: SRC-ADM-20260821:t:2
+      table_index: 2
+      rows:
+      - locator: SRC-ADM-20260821:t:2:r:0
+        row_index: 0
+        cells:
+        - ID
+        - Função de gestão
+      - locator: SRC-ADM-20260821:t:2:r:1
+        row_index: 1
+        cells:
+        - PM-01
+        - Coordenar projetos
+      - locator: SRC-ADM-20260821:t:2:r:2
+        row_index: 2
+        cells:
+        - PM-02
+        - Cumprir prazos
+      - locator: SRC-ADM-20260821:t:2:r:3
+        row_index: 3
+        cells:
+        - PM-03
+        - Manter aderência a metas e expectativas
+      - locator: SRC-ADM-20260821:t:2:r:4
+        row_index: 4
+        cells:
+        - PM-04
+        - Elaborar planos de ação
+      - locator: SRC-ADM-20260821:t:2:r:5
+        row_index: 5
+        cells:
+        - PM-05
+        - Manter comunicação alinhada
+      - locator: SRC-ADM-20260821:t:2:r:6
+        row_index: 6
+        cells:
+        - PM-06
+        - Buscar métodos e ferramentas
+      - locator: SRC-ADM-20260821:t:2:r:7
+        row_index: 7
+        cells:
+        - PM-07
+        - Promover melhoria contínua
+      - locator: SRC-ADM-20260821:t:2:r:8
+        row_index: 8
+        cells:
+        - PM-08
+        - Apoiar entregas eficazes e completas
+    - locator: SRC-ADM-20260821:t:3
+      table_index: 3
+      rows:
+      - locator: SRC-ADM-20260821:t:3:r:0
+        row_index: 0
+        cells:
+        - ID
+        - Funções fundamentais de gestão de projetos
+        - Funções executivas de uma área de gestão de projetos
+        - Capacidades humanas / operacionais exigidas
+        - FUNÇÃO / DÉFICIT TDAH associado
+        - Fonte clínica
+        - Fonte científica
+        - Função executiva
+        - Evidência
+        - IMPACTO · função afetada
+        - Mecanismo → consequência
+        - Compensação sistêmica
+        - CONCLUSÃO DE PRODUTO / DESIGN
+      - locator: SRC-ADM-20260821:t:3:r:1
+        row_index: 1
+        cells:
+        - GP-01
+        - 'Iniciação e escopo: necessidades, riscos, restrições, viabilidade'
+        - Definir problema, objetivo, limites e critérios
+        - Manter múltiplas variáveis; abstrair estado futuro; decidir
+        - Organização/planejamento podem ser frágeis; grandes tarefas podem gerar procrastinação
+        - NIMH relata desorganização, planejamento deficiente e dificuldade com grandes projetos. (NIMH)
+        - Meta-análise em TDAH adulto encontra diferenças moderadas em medidas executivas. (PubMed)
+        - Planejamento · memória de trabalho · controle executivo
+        - C · moderada/forte
+        - Definição do projeto
+        - Muitas decisões simultâneas → sobrecarga → escopo incompleto ou início postergado
+        - Brief guiado; progressive disclosure; restrições externalizadas; uma decisão por etapa
+        - O sistema deve estruturar o projeto antes de pedir ao usuário que o gerencie. E · Inferido
+      - locator: SRC-ADM-20260821:t:3:r:2
+        row_index: 2
+        cells:
+        - GP-02
+        - 'Planejamento: plano de ação, responsáveis, prazos, cronograma'
+        - Converter objetivo em trabalho executável
+        - Sequenciar, decompor, organizar, prever dependências
+        - Dificuldades de planejamento/organização
+        - NIMH inclui má gestão de tempo, planejamento e organização entre dificuldades funcionais possíveis. (NIMH)
+        - Boonstra et al.; Pievsky & McGrath sintetizam alterações neurocognitivas/executivas em TDAH. (PubMed)
+        - Planejamento · working memory · organização
+        - C · forte para associação; não universal
+        - Formação do plano
+        - Objetivo macro exige muitas transformações mentais → plano incompleto ou pouco executável
+        - Projeto → entregável → tarefa → ação atômica, dependências calculadas
+        - Decomposição deve ser função do motor, não trabalho cognitivo repetido do usuário. E
+      - locator: SRC-ADM-20260821:t:3:r:3
+        row_index: 3
+        cells:
+        - GP-03
+        - Priorizar e sequenciar
+        - Garantir aderência a metas; determinar ordem de ação
+        - Comparar valor, urgência, dependências e custo
+        - Priorização/organização podem ser prejudicadas; não é um critério diagnóstico isolado
+        - Revisões clínicas descrevem dificuldade de auto-organização, priorização e início; NIMH recomenda trabalhar organização
+          e tarefas sensíveis ao tempo. (PubMed Central (PMC))
+        - Modelos de EF em TDAH associam comportamento dirigido a metas à autorregulação executiva. (PubMed)
+        - Goal management · inibição · planejamento
+        - C · moderada
+        - Escolha do próximo trabalho
+        - Reavaliar continuamente alternativas → custo decisório → seleção instável/adiamento
+        - Motor de prioridade usando dependência, critical path, prazo, bloqueio e valor + override humano
+        - 'Não oferecer apenas uma lista: oferecer “próxima ação recomendada + por quê”. E'
+      - locator: SRC-ADM-20260821:t:3:r:4
+        row_index: 4
+        cells:
+        - GP-04
+        - Cronograma e prazos
+        - Apoiar cumprimento de prazos e sincronizar atividades
+        - Estimar duração; perceber passagem do tempo; lembrar eventos futuros
+        - Má gestão de tempo é clinicamente descrita; percepção temporal mostra resultados heterogêneos
+        - NIMH cita explicitamente gestão de tempo deficiente e dificuldade com compromissos. (NIMH)
+        - Revisão de percepção temporal em adultos conclui que há evidência relevante, mas não sustenta um déficit temporal
+          universal. (PubMed Central (PMC))
+        - Organização temporal · memória prospectiva
+        - C · moderada / heterogênea
+        - Schedule
+        - Dependência de estimativa intuitiva → atraso, compressão do prazo, planejamento otimista
+        - Tempo externalizado; marcos visíveis; buffers; dados históricos; previsão probabilística
+        - Tempo deve ser observado pelo sistema, não presumido pelo usuário. E
+      - locator: SRC-ADM-20260821:t:3:r:5
+        row_index: 5
+        cells:
+        - GP-05
+        - Iniciar execução
+        - Colocar o plano em movimento
+        - Transição intenção → ação; selecionar primeiro comportamento; reduzir ambiguidade
+        - Procrastinação e dificuldade de iniciar tarefas aparecem clinicamente
+        - NIMH registra procrastinação; literatura clínica adulta descreve dificuldade de começar tarefas. (NIMH)
+        - Estudos de memória prospectiva mostram que adultos com TDAH podem ter dificuldade para planejar e executar intenções
+          futuras. (PubMed)
+        - Ativação dirigida a objetivo · planejamento prospectivo
+        - C · moderada
+        - Start
+        - Tarefa abstrata/grande → alto custo de ativação → não iniciar
+        - Mostrar somente primeira ação concreta; critérios de conclusão explícitos; botão iniciar imediato
+        - A unidade de interface deve começar executável, não apenas informativa. E
+      - locator: SRC-ADM-20260821:t:3:r:6
+        row_index: 6
+        cells:
+        - GP-06
+        - Execução
+        - Produzir entregas conforme plano e prazo
+        - Atenção sustentada; persistência; inibição de distrações; memória operacional
+        - Distratibilidade, dificuldade em manter-se na tarefa e terminar projetos
+        - 'NIMH: dificuldade de atenção, distração, manutenção da tarefa e conclusão. (NIMH)'
+        - Estudos experimentais em adultos encontram prejuízo em atenção sustentada e deterioração relacionada ao tempo-na-tarefa.
+          (PubMed)
+        - Atenção sustentada · inibição
+        - B/C · forte
+        - Trabalho em andamento
+        - Competição entre estímulos + duração → abandono, fragmentação ou múltiplos trabalhos parcialmente abertos
+        - Modo foco, WIP baixo, fila separada, captura de interrupções sem abandonar tarefa atual
+        - 1 ação dominante + queue secundária é uma arquitetura coerente com a evidência. E
+      - locator: SRC-ADM-20260821:t:3:r:7
+        row_index: 7
+        cells:
+        - GP-07
+        - Monitorar execução e progresso
+        - Acompanhar status, entregas, prazo e indicadores
+        - Lembrar intenções; comparar estado atual × objetivo; autocontrole
+        - Esquecimento de tarefas + dificuldades de memória prospectiva
+        - NIMH cita dificuldade em lembrar tarefas diárias. (NIMH)
+        - Fuermaier et al. observaram comprometimento em memória prospectiva complexa, especialmente ligado ao planejamento.
+          (PubMed)
+        - Memória prospectiva · working memory
+        - B/C · moderada/forte
+        - Controle de estado
+        - Estado existe apenas “na cabeça” → intenção desaparece → trabalho fica incompleto
+        - Status persistente; progresso automático; lembretes vinculados ao objeto; critérios DoD
+        - O sistema deve ser memória externa do estado operacional. E
+      - locator: SRC-ADM-20260821:t:3:r:8
+        row_index: 8
+        cells:
+        - GP-08
+        - Detectar desvios e adaptar
+        - Criar alternativas e responder a imprevistos
+        - Flexibilidade cognitiva; alternar conjunto mental sem perder objetivo
+        - Evidência de dificuldade de set-shifting existe, mas é menos uniforme que atenção/organização
+        - Não é um sintoma clínico específico isolado em NIMH/NICE; deve ser tratado como domínio neuropsicológico, não característica
+          obrigatória
+        - Estudos em adultos encontraram dificuldades específicas de set-shifting; resultados na literatura permanecem heterogêneos.
+          (PubMed)
+        - Flexibilidade cognitiva · set shifting
+        - B/C · moderada
+        - Replanejamento
+        - Mudança inesperada exige reconstrução mental do plano → perda de contexto/dependências
+        - Branches pré-calculados; alternativas limitadas; dependências preservadas; retorno ao ponto anterior
+        - Permitir não-linearidade controlada, não navegação caótica. E
+      - locator: SRC-ADM-20260821:t:3:r:9
+        row_index: 9
+        cells:
+        - GP-09
+        - Comunicação e stakeholders
+        - Manter partes alinhadas, registrar decisões e follow-up
+        - Atenção, memória prospectiva, inibição, recuperação contextual
+        - Esquecimento, distração e impulsividade podem interferir na continuidade comunicacional
+        - NIMH inclui esquecimento, distração e interrupção/impulsividade entre manifestações possíveis. (NIMH)
+        - Evidência de memória prospectiva e controle executivo oferece mecanismo plausível. (PubMed)
+        - Memória prospectiva · inibição · atenção
+        - C + E para efeito específico em PM
+        - Follow-up
+        - Informação espalhada → necessidade de reconstrução de contexto → decisões e compromissos perdidos
+        - Comunicação associada ao objeto; resumos; decisões persistidas; follow-up convertido em ação
+        - Centralizar contexto é mais importante que simplesmente adicionar chat. E
+      - locator: SRC-ADM-20260821:t:3:r:10
+        row_index: 10
+        cells:
+        - GP-10
+        - Finalização e avaliação
+        - Confirmar entrega, comparar objetivo × resultado, retrospectiva
+        - Fechamento, autocontrole, avaliação do próprio desempenho
+        - Dificuldade em finalizar projetos + potenciais diferenças metacognitivas
+        - NIMH descreve dificuldade em terminar projetos. (NIMH)
+        - Estudo de metacognição em adultos encontrou falta de correspondência entre avaliações subjetivas e objetivas em
+          alguns domínios. (Springer)
+        - Metacognição · self-monitoring
+        - B/C · moderada
+        - Closure
+        - “Parece pronto” ≠ critério objetivo → fechamento inconsistente
+        - DoD explícito; evidência anexada; validação; retrospectiva estruturada
+        - DONE deve ser uma transição verificável, não uma sensação de conclusão. E
+      - locator: SRC-ADM-20260821:t:3:r:11
+        row_index: 11
+        cells:
+        - GP-11
+        - Capacidade e forecasting
+        - Planejar recursos/prazo e proteger compromisso de entrega
+        - Autoavaliação, previsão temporal e planejamento
+        - Má gestão temporal é documentada; desalinhamento metacognitivo é possível, não universal
+        - NIMH documenta problemas de planejamento/tempo; não afirma “incapacidade de estimar capacidade produtiva”. (NIMH)
+        - Evidência de percepção temporal e metacognição sustenta cautela com estimativas subjetivas, mas não valida diretamente
+          seu algoritmo. (PubMed Central (PMC))
+        - Metacognição · previsão · temporalidade
+        - C para vulnerabilidade; E para solução
+        - Compromisso de capacidade
+        - “horas livres” confundidas com output → excesso de compromisso
+        - Throughput, cycle time e histórico individual; forecast probabilístico; EB separado de tempo
+        - Sua arquitetura EB = ação, tempo = medida observada é defensável como decisão de operações, não como tratamento
+          clínico. E

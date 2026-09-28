@@ -70,6 +70,9 @@ sources:  # SRC-01…SRC-06 = Archive.zip entregue em 2026-09-27; SRC-01 → SRC
   - {id: SRC-05, title: Product mangemnet.docx (Checklist de Product Management), type: document, authority: complementar, status: active}
   - {id: SRC-06, title: PEM area .rtf (D16-DOC-PEM-001), type: document, authority: evidencia, status: active}
   - {id: SRC-07, title: "Handoff Spec: Cross-App Onboarding & Productivity Patterns (docs/handoff/handoff-spec-onboarding-patterns.md)", type: document, authority: evidencia, status: active}
+  - {id: SRC-08, title: "Projeto Claude \"27-09-WORKBOOK\" (export de conta, 2026-09-28) — evidence/", type: repository, authority: evidencia, status: active}
+  - {id: SRC-09, title: "Projeto Claude \"Eu-26-27\" + memória career-ai-europe.md (export de conta, 2026-09-28) — evidence/D17_emprego-portfolio/", type: repository, authority: evidencia, status: active}
+  - {id: SRC-10, title: "Projeto Claude \"HANDOFF-STORE\" (export de conta, 2026-09-28) — evidence/", type: repository, authority: evidencia, status: active}
 
 id_migrations:  # numeração antiga do INDX (tabela macroárea→domínios) → canônica. Registradas, não aplicadas silenciosamente.
   - {old_id: D0, new_id: TBD, reason: "PMBOK/Governança citado como D0 sob A00; sem domínio canônico — ver CNF-001", effective_at: '2026-09-27'}

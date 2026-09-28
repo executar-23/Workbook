@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workbook Operacional — Preview 7 Dias</title>
+<style>
+:root {
+  --primary:#1a365d;
+  --secondary:#f4f7fa;
+  --accent:#ff6b6b;
+  --data:#2196F3;
+  --success:#43A047;
+  --dark:#0a1526;
+  --ink:#334155;
+  --muted:#64748b;
+  --line:#dbe3ec;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#e0e5ec;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:32px;
+  padding:32px 0;
+}
+.a4-page{
+  width:210mm;
+  height:297mm;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 14px 34px rgba(10,21,38,.15);
+  flex-shrink:0;
+}
+.spine{
+  position:absolute;left:0;top:0;bottom:0;width:18mm;
+  background:linear-gradient(180deg,var(--primary),var(--dark));
+  color:white;
+}
+.spine-title{
+  position:absolute;top:24mm;left:50%;transform:translateX(-50%) rotate(-90deg);
+  transform-origin:center;white-space:nowrap;
+  font-size:9px;letter-spacing:2.6px;font-weight:700;
+}
+.spine-page{
+  position:absolute;bottom:18mm;left:50%;transform:translateX(-50%) rotate(-90deg);
+  transform-origin:center;white-space:nowrap;color:var(--accent);
+  font-size:10px;letter-spacing:2px;font-weight:700;
+}
+.page-content{
+  position:absolute;left:18mm;right:0;top:0;bottom:0;
+  padding:11mm 12mm 9mm 12mm;
+  display:flex;flex-direction:column;
+}
+.day-header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--accent);padding-bottom:5mm}
+.eyebrow{font-size:8px;letter-spacing:2px;color:var(--primary);font-weight:700;margin-bottom:2mm}
+h1{margin:0;font-size:28px;letter-spacing:-1px;color:var(--primary)}
+h1 span{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.5px}
+.date-block{text-align:right;border-left:1px solid var(--line);padding-left:6mm}
+.date-block span,.label{display:block;font-size:7px;letter-spacing:1.35px;color:var(--muted);font-weight:700}
+.date-block strong{display:block;font-size:12px;color:var(--dark);margin-top:1.5mm}
+.week-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:1.5mm;margin:4mm 0}
+.week-day{background:var(--secondary);border:1px solid var(--line);padding:2mm;text-align:center;border-radius:2px}
+.week-day b{display:block;font-size:8px;color:var(--primary)}
+.week-day span{display:block;font-size:6.5px;color:var(--muted);margin-top:.5mm}
+.week-day.current{background:var(--primary);border-color:var(--primary)}
+.week-day.current b,.week-day.current span{color:white}
+.mission{
+  display:grid;grid-template-columns:1fr 1fr .65fr;gap:3mm;
+  background:#f8fafc;border:1px solid var(--line);padding:3.5mm;margin-bottom:3.5mm;
+}
+.mission p{margin:1.2mm 0 0;font-family:Georgia,serif;font-size:8.5px;line-height:1.35;color:var(--ink)}
+.gate strong{display:block;margin-top:1.2mm;font-size:8.5px;color:var(--primary)}
+.workflow{
+  border:1px solid var(--line);margin-bottom:3mm;padding:3mm 3.5mm;
+  border-radius:3px;background:white;
+}
+.workflow-head{display:flex;align-items:center;gap:2.5mm;border-bottom:1px solid var(--line);padding-bottom:2mm;margin-bottom:2mm}
+.workflow-no{width:8mm;height:8mm;color:#fff;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700}
+.workflow-kicker{font-size:6.5px;letter-spacing:1.2px;color:var(--muted);font-weight:700}
+.workflow h2{margin:.5mm 0 0;font-size:11px;color:var(--primary);letter-spacing:.6px}
+.task-id{margin-left:auto;font-family:"Courier New",monospace;font-size:8px;font-weight:700;color:var(--primary)}
+.task-title{font-size:10px;font-weight:700;color:var(--dark);margin-bottom:2.2mm}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.field{min-width:0}
+.field p{margin:1mm 0 0;font-family:Georgia,serif;font-size:7.6px;line-height:1.3;color:var(--ink)}
+.mono{font-family:"Courier New",monospace!important;font-size:7.1px!important}
+.steps{margin:2mm 0}
+.steps ul{list-style:none;padding:0;margin:1.2mm 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.8mm 3mm}
+.steps li{font-size:7.2px;color:var(--ink);display:flex;align-items:flex-start;gap:1.2mm}
+.box{width:3mm;height:3mm;border:1px solid #94a3b8;display:inline-block;flex:0 0 auto}
+.evidence-row{display:flex;align-items:center;gap:2mm;border-top:1px dashed var(--line);padding-top:2mm;margin-top:2mm}
+.evidence-row .line{height:1px;background:#cbd5e1;flex:1}
+.state{font-size:7px;font-weight:700;color:var(--primary)}
+.closing{background:var(--secondary);border-top:3px solid var(--primary);padding:3mm 3.5mm;margin-top:auto}
+.closing-title{font-size:8px;font-weight:800;color:var(--primary);letter-spacing:1.3px;margin-bottom:2mm}
+.check-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5mm 3mm}
+.check-grid span{font-size:7px;color:var(--ink)}
+.check-grid i{display:inline-block;width:3mm;height:3mm;border:1px solid #94a3b8;vertical-align:middle;margin-right:1mm}
+.closing-lines{display:grid;grid-template-columns:1fr 1fr;gap:2mm 4mm;margin-top:2.5mm}
+.closing-lines div{display:flex;align-items:center;gap:2mm}
+.closing-lines b{font-size:6.5px;color:var(--muted);white-space:nowrap}
+.closing-lines span{height:1px;background:#aeb9c6;flex:1}
+footer{display:flex;justify-content:space-between;font-family:"Courier New",monospace;font-size:6.5px;color:#94a3b8;margin-top:2.5mm}
+@page{size:A4;margin:0}
+@media print{
+  body{background:none;padding:0;gap:0;display:block}
+  .a4-page{box-shadow:none;page-break-after:always;break-after:page}
+}
+</style>
+</head>
+<body>
+
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 01</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 01 <span>/ SEGUNDA</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>28 SET 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day current'><b>D01</b><span>SEG</span></div><div class='week-day'><b>D02</b><span>TER</span></div><div class='week-day'><b>D03</b><span>QUA</span></div><div class='week-day'><b>D04</b><span>QUI</span></div><div class='week-day'><b>D05</b><span>SEX</span></div><div class='week-day'><b>D06</b><span>SÁB</span></div><div class='week-day'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Organizar a primeira frente de execução e produzir o primeiro pacote diário rastreável.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Pacote do Dia 01 validado, salvo e pronto para registro no repositório.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-D01 · Entrada organizada</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-001</div>
+      </div>
+      <div class="task-title">Estruturar pacote de ativos base</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>lorem-design-tokens/ · logo.svg · identidade/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>design-system-base.zip</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Conferir origem dos arquivos</li><li><span class='box'></span>Validar nomes e formatos</li><li><span class='box'></span>Organizar estrutura alvo</li><li><span class='box'></span>Preparar pacote de submissão</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">packages/design-system/base/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Pacote íntegro, nomenclatura válida e destino definido.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-001</div>
+      </div>
+      <div class="task-title">Pesquisa e mapa conceitual</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>research-notes.md · fontes/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>research-map.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Consolidar referências</li><li><span class='box'></span>Separar conceitos-chave</li><li><span class='box'></span>Registrar lacunas</li><li><span class='box'></span>Fechar outline inicial</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">content/editorial/pilar-1/research/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Mapa conceitual completo e pronto para outline.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-001</div>
+      </div>
+      <div class="task-title">Preparar kit visual do primeiro conteúdo</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>brand-kit/ · research-map.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>studio-kit-day01/</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Selecionar referências</li><li><span class='box'></span>Definir grid</li><li><span class='box'></span>Preparar templates</li><li><span class='box'></span>Salvar primeira versão</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">assets/studio/day-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Kit visual base salvo e identificado.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 01 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 02</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 02 <span>/ TERÇA</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>29 SET 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day'><b>D01</b><span>SEG</span></div><div class='week-day current'><b>D02</b><span>TER</span></div><div class='week-day'><b>D03</b><span>QUA</span></div><div class='week-day'><b>D04</b><span>QUI</span></div><div class='week-day'><b>D05</b><span>SEX</span></div><div class='week-day'><b>D06</b><span>SÁB</span></div><div class='week-day'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Transformar os ativos organizados em componentes utilizáveis e fechar a base editorial.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Estrutura técnica + vocabulário editorial do ciclo prontos.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-D02 · Base estruturada</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-002</div>
+      </div>
+      <div class="task-title">Organizar componentes e estilos</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>design-system-base.zip</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>component-map.yaml</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Separar tokens</li><li><span class='box'></span>Classificar componentes</li><li><span class='box'></span>Mapear dependências</li><li><span class='box'></span>Registrar destinos</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">packages/design-system/components/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Mapa de componentes legível e sem itens órfãos.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-002</div>
+      </div>
+      <div class="task-title">Definir vocabulário editorial</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>research-map.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>vocabulario-pilar-1.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Escolher termos canônicos</li><li><span class='box'></span>Eliminar ambiguidades</li><li><span class='box'></span>Definir exemplos</li><li><span class='box'></span>Atualizar outline</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">content/editorial/pilar-1/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Vocabulário fechado e utilizável na redação.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-002</div>
+      </div>
+      <div class="task-title">Criar linguagem visual de infográficos</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>studio-kit-day01/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>infographic-system-v1/</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Definir estilos</li><li><span class='box'></span>Criar 3 layouts</li><li><span class='box'></span>Testar legibilidade</li><li><span class='box'></span>Exportar amostras</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">assets/studio/infographics/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Sistema visual testado em três formatos.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 02 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 03</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 03 <span>/ QUARTA</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>30 SET 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day'><b>D01</b><span>SEG</span></div><div class='week-day'><b>D02</b><span>TER</span></div><div class='week-day current'><b>D03</b><span>QUA</span></div><div class='week-day'><b>D04</b><span>QUI</span></div><div class='week-day'><b>D05</b><span>SEX</span></div><div class='week-day'><b>D06</b><span>SÁB</span></div><div class='week-day'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Converter estrutura em primeira versão integrada do produto e da peça-mãe.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Primeira integração técnica e outline editorial completo.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-D03 · Estrutura integrada</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-003</div>
+      </div>
+      <div class="task-title">Integrar layout base do blog</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>component-map.yaml · templates/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>layout-base/</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Montar shell</li><li><span class='box'></span>Aplicar tokens</li><li><span class='box'></span>Validar responsividade</li><li><span class='box'></span>Registrar pendências</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">apps/blog/src/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Layout base compilável e documentado.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-003</div>
+      </div>
+      <div class="task-title">Fechar outline da peça-mãe</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>vocabulario-pilar-1.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>outline-artigo-01.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Definir tese</li><li><span class='box'></span>Organizar seções</li><li><span class='box'></span>Mapear evidências</li><li><span class='box'></span>Planejar fechamento</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">content/editorial/pilar-1/article-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Outline com começo, desenvolvimento, conclusão e evidências.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-003</div>
+      </div>
+      <div class="task-title">Produzir wireframes dos derivados</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>outline-artigo-01.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>derivatives-wireframes/</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Mapear mensagens-chave</li><li><span class='box'></span>Distribuir formatos</li><li><span class='box'></span>Desenhar 4 wireframes</li><li><span class='box'></span>Nomear saídas</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">assets/studio/article-01/wireframes/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Wireframes suficientes para produção no dia seguinte.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 03 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 04</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 04 <span>/ QUINTA</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>01 OUT 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day'><b>D01</b><span>SEG</span></div><div class='week-day'><b>D02</b><span>TER</span></div><div class='week-day'><b>D03</b><span>QUA</span></div><div class='week-day current'><b>D04</b><span>QUI</span></div><div class='week-day'><b>D05</b><span>SEX</span></div><div class='week-day'><b>D06</b><span>SÁB</span></div><div class='week-day'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Produzir conteúdo e validar a experiência ponta a ponta.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Draft completo da peça-mãe e primeira experiência navegável.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-D04 · Produção</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-004</div>
+      </div>
+      <div class="task-title">Validar navegação e páginas essenciais</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>layout-base/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>qa-navigation.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Testar rotas</li><li><span class='box'></span>Revisar navegação</li><li><span class='box'></span>Checar erros visuais</li><li><span class='box'></span>Registrar evidências</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">evidence/engineering/day-04/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Fluxo principal navegável sem bloqueios críticos.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-004</div>
+      </div>
+      <div class="task-title">Redigir peça-mãe</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>outline-artigo-01.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>artigo-01-draft.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Redigir abertura</li><li><span class='box'></span>Desenvolver corpo</li><li><span class='box'></span>Inserir exemplos</li><li><span class='box'></span>Fechar conclusão</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">content/editorial/pilar-1/article-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Draft completo, sem seções vazias.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-004</div>
+      </div>
+      <div class="task-title">Produzir infográficos principais</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>artigo-01-draft.md · derivatives-wireframes/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>infographics-article-01/</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Extrair dados</li><li><span class='box'></span>Produzir arte</li><li><span class='box'></span>Revisar contraste</li><li><span class='box'></span>Exportar PNG/SVG</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">assets/studio/article-01/infographics/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Infográficos exportados em formatos finais.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 04 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 05</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 05 <span>/ SEXTA</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>02 OUT 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day'><b>D01</b><span>SEG</span></div><div class='week-day'><b>D02</b><span>TER</span></div><div class='week-day'><b>D03</b><span>QUA</span></div><div class='week-day'><b>D04</b><span>QUI</span></div><div class='week-day current'><b>D05</b><span>SEX</span></div><div class='week-day'><b>D06</b><span>SÁB</span></div><div class='week-day'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Concluir a primeira entrega publicável e registrar todas as evidências.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Pilar 1 pronto para publicação.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-PILAR1 · Revisão final</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-005</div>
+      </div>
+      <div class="task-title">QA técnico da primeira entrega</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>apps/blog/src/ · assets/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>qa-release-01.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Executar checklist técnico</li><li><span class='box'></span>Checar links</li><li><span class='box'></span>Revisar assets</li><li><span class='box'></span>Registrar resultado</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">evidence/engineering/release-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Checklist técnico sem bloqueio crítico.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-005</div>
+      </div>
+      <div class="task-title">Revisar e fechar artigo</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>artigo-01-draft.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>artigo-01-final.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Revisar conteúdo</li><li><span class='box'></span>Checar coerência</li><li><span class='box'></span>Aplicar ajustes</li><li><span class='box'></span>Gerar versão final</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">content/editorial/pilar-1/article-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Artigo revisado e marcado como pronto para publicação.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-005</div>
+      </div>
+      <div class="task-title">Fechar pacote visual</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>infographics-article-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>visual-package-article-01.zip</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Revisar exports</li><li><span class='box'></span>Gerar capas</li><li><span class='box'></span>Conferir nomes</li><li><span class='box'></span>Empacotar</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">assets/studio/article-01/final/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Pacote visual final completo e rastreável.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 05 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 06</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 06 <span>/ SÁBADO</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>03 OUT 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day'><b>D01</b><span>SEG</span></div><div class='week-day'><b>D02</b><span>TER</span></div><div class='week-day'><b>D03</b><span>QUA</span></div><div class='week-day'><b>D04</b><span>QUI</span></div><div class='week-day'><b>D05</b><span>SEX</span></div><div class='week-day current'><b>D06</b><span>SÁB</span></div><div class='week-day'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Consolidar evidências, limpar pendências e preparar a próxima frente sem abrir novo WIP indevido.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Semana consolidada e próxima frente preparada.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-W01 · Fechamento semanal</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-006</div>
+      </div>
+      <div class="task-title">Consolidar evidências técnicas</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>evidence/engineering/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>engineering-evidence-index.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Agrupar evidências</li><li><span class='box'></span>Checar lacunas</li><li><span class='box'></span>Atualizar índice</li><li><span class='box'></span>Marcar pendências</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">evidence/index/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Toda entrega técnica da semana possui evidência localizável.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-006</div>
+      </div>
+      <div class="task-title">Consolidar ativos editoriais</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>content/editorial/pilar-1/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>editorial-week-01-index.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Revisar árvore de arquivos</li><li><span class='box'></span>Checar nomes</li><li><span class='box'></span>Mapear derivados</li><li><span class='box'></span>Preparar próxima pauta</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">content/editorial/index/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Inventário editorial da semana fechado.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-006</div>
+      </div>
+      <div class="task-title">Organizar biblioteca visual</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>assets/studio/article-01/</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>studio-library-index.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Consolidar exports</li><li><span class='box'></span>Eliminar duplicatas</li><li><span class='box'></span>Classificar fontes</li><li><span class='box'></span>Atualizar índice</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">assets/studio/index/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Biblioteca visual navegável e sem duplicação óbvia.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 06 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <div class="spine">
+        <div class="spine-title">WORKBOOK · EPIC 01</div>
+        <div class="spine-page">DIA 07</div>
+      </div>
+
+      <main class="page-content">
+        <header class="day-header">
+          <div>
+            <div class="eyebrow">LANÇAMENTO DO BLOG · SEMANA 01</div>
+            <h1>DIA 07 <span>/ DOMINGO</span></h1>
+          </div>
+          <div class="date-block">
+            <span>DATA</span>
+            <strong>04 OUT 2026</strong>
+          </div>
+        </header>
+
+        <div class="week-strip">
+          <div class='week-day'><b>D01</b><span>SEG</span></div><div class='week-day'><b>D02</b><span>TER</span></div><div class='week-day'><b>D03</b><span>QUA</span></div><div class='week-day'><b>D04</b><span>QUI</span></div><div class='week-day'><b>D05</b><span>SEX</span></div><div class='week-day'><b>D06</b><span>SÁB</span></div><div class='week-day current'><b>D07</b><span>DOM</span></div>
+        </div>
+
+        <section class="mission">
+          <div>
+            <span class="label">OBJETIVO DO DIA</span>
+            <p>Fazer revisão operacional da semana e deixar a segunda semana pronta para iniciar.</p>
+          </div>
+          <div>
+            <span class="label">ENTREGA PRINCIPAL</span>
+            <p>Semana 01 encerrada e Semana 02 preparada.</p>
+          </div>
+          <div class="gate">
+            <span class="label">GATE / MARCO</span>
+            <strong>G-RESET · Próxima semana pronta</strong>
+          </div>
+        </section>
+
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#2196F3">01</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 01</div>
+          <h2>ENGENHARIA</h2>
+        </div>
+        <div class="task-id">ENG-007</div>
+      </div>
+      <div class="task-title">Revisão de prontidão da próxima semana</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>engineering-evidence-index.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>engineering-next-week.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Ler pendências</li><li><span class='box'></span>Confirmar desbloqueios</li><li><span class='box'></span>Separar inputs</li><li><span class='box'></span>Definir primeiro item executável</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">planning/week-02/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Primeira tarefa técnica da semana 02 pronta para iniciar.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#43A047">02</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 02</div>
+          <h2>EDITORIAL</h2>
+        </div>
+        <div class="task-id">EDT-007</div>
+      </div>
+      <div class="task-title">Preparar pauta do próximo ciclo</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>editorial-week-01-index.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>editorial-next-week.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Revisar backlog</li><li><span class='box'></span>Confirmar dependências</li><li><span class='box'></span>Separar fontes</li><li><span class='box'></span>Definir próxima peça</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">planning/week-02/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Primeira tarefa editorial da semana 02 claramente definida.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+        
+    <section class="workflow">
+      <div class="workflow-head">
+        <div class="workflow-no" style="background:#ff6b6b">03</div>
+        <div>
+          <div class="workflow-kicker">WORKFLOW 03</div>
+          <h2>STUDIOS</h2>
+        </div>
+        <div class="task-id">STD-007</div>
+      </div>
+      <div class="task-title">Preparar fila de produção visual</div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">INPUT</span>
+          <p>studio-library-index.md</p>
+        </div>
+        <div class="field">
+          <span class="label">ARTEFATO</span>
+          <p>studio-next-week.md</p>
+        </div>
+      </div>
+      <div class="field steps">
+        <span class="label">EXECUTAR</span>
+        <ul><li><span class='box'></span>Revisar templates</li><li><span class='box'></span>Separar briefs</li><li><span class='box'></span>Organizar fila</li><li><span class='box'></span>Preparar diretórios</li></ul>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <span class="label">DESTINO</span>
+          <p class="mono">planning/week-02/</p>
+        </div>
+        <div class="field">
+          <span class="label">DEFINITION OF DONE</span>
+          <p>Primeiro lote visual da semana 02 preparado.</p>
+        </div>
+      </div>
+      <div class="evidence-row">
+        <span class="label">EVIDÊNCIA</span>
+        <span class="line"></span>
+        <span class="state">[ ] FEITO</span>
+      </div>
+    </section>
+    
+
+        <section class="closing">
+          <div class="closing-title">FECHAMENTO DO DIA</div>
+          <div class="check-grid">
+            <span><i></i> Entregas concluídas</span>
+            <span><i></i> Arquivos salvos</span>
+            <span><i></i> Destinos conferidos</span>
+            <span><i></i> Evidências registradas</span>
+            <span><i></i> Gate verificado</span>
+            <span><i></i> Amanhã preparado</span>
+          </div>
+          <div class="closing-lines">
+            <div><b>FEITO</b><span></span></div>
+            <div><b>EVIDÊNCIA</b><span></span></div>
+            <div><b>BLOQUEIO</b><span></span></div>
+            <div><b>AMANHÃ COMEÇA COM</b><span></span></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>PREVIEW FICTÍCIO · NÃO REPRESENTA O ROADMAP CANÔNICO</span>
+          <span>PG. 07 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+</body>
+</html>

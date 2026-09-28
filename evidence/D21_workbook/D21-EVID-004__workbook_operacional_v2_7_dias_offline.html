@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workbook Operacional V2 — 7 Dias</title>
+<style>
+:root{
+  --navy:#1a365d;
+  --navy-deep:#0a1526;
+  --paper:#ffffff;
+  --surface:#f4f7fa;
+  --ink:#263548;
+  --muted:#64748b;
+  --line:#d9e2ec;
+  --coral:#ff6b6b;
+  --blue:#2196F3;
+  --green:#43A047;
+  --amber:#d97706;
+  --red:#dc2626;
+  --font-reading:"Atkinson Hyperlegible",Arial,Helvetica,sans-serif;
+  --font-ui:"Inter",Arial,Helvetica,sans-serif;
+  --font-mono:"JetBrains Mono","Courier New",monospace;
+  --font-editorial:"Playfair Display",Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#dde3ea;
+  color:var(--ink);
+  font-family:var(--font-reading);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:28px;
+  padding:28px 0;
+  -webkit-font-smoothing:antialiased;
+}
+.a4-page{
+  width:210mm;
+  height:297mm;
+  position:relative;
+  overflow:hidden;
+  background:var(--paper);
+  box-shadow:0 14px 32px rgba(10,21,38,.14);
+}
+.a4-page::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(10,21,38,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(10,21,38,.022) 1px,transparent 1px);
+  background-size:20px 20px;
+  pointer-events:none;
+}
+.spine{
+  position:absolute;
+  z-index:2;
+  left:0;top:0;bottom:0;
+  width:11mm;
+  color:#fff;
+  background:linear-gradient(180deg,var(--navy),var(--navy-deep));
+}
+.spine::before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:3px;
+  background:var(--coral);
+}
+.spine-title,.spine-meta,.spine-day{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%) rotate(-90deg);
+  transform-origin:center;
+  white-space:nowrap;
+  font-family:var(--font-mono);
+}
+.spine-title{top:22mm;font-size:7pt;font-weight:700;letter-spacing:2px}
+.spine-meta{bottom:33mm;font-size:6.5pt;color:#bec9d7;letter-spacing:1.3px}
+.spine-day{bottom:14mm;font-size:8pt;font-weight:700;color:var(--coral);letter-spacing:1.8px}
+
+.content{
+  position:absolute;
+  z-index:3;
+  left:11mm;right:0;top:0;bottom:0;
+  padding:8mm 9mm 7mm;
+  display:flex;
+  flex-direction:column;
+}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding-bottom:3mm;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  font:700 7pt/1.1 var(--font-mono);
+  letter-spacing:1.2px;
+  color:var(--navy);
+  margin-bottom:1mm;
+}
+.topbar h1{
+  margin:0;
+  color:var(--navy);
+  font:900 22pt/1 var(--font-editorial);
+  letter-spacing:-.5px;
+}
+.topbar h1 span{
+  font:700 10pt/1 var(--font-ui);
+  color:var(--muted);
+  letter-spacing:.3px;
+}
+.date{
+  min-width:35mm;
+  text-align:right;
+  padding-left:4mm;
+  border-left:1px solid var(--line);
+}
+.date span{
+  display:block;
+  font:700 7pt var(--font-mono);
+  letter-spacing:1px;
+  color:var(--muted);
+}
+.date b{
+  display:block;
+  margin-top:1mm;
+  color:var(--navy-deep);
+  font:800 10pt var(--font-ui);
+}
+
+/* HERO — primeiro foco visual */
+.hero{
+  margin-top:3.5mm;
+  padding:4mm 4.5mm 3.5mm;
+  border:1px solid #cbd5e1;
+  border-top:4px solid var(--coral);
+  background:#fff;
+}
+.hero-kicker{
+  font:700 7pt var(--font-mono);
+  letter-spacing:1.4px;
+  color:var(--coral);
+}
+.hero-title{
+  margin-top:1.2mm;
+  max-width:155mm;
+  color:var(--navy-deep);
+  font:800 16pt/1.18 var(--font-ui);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 30mm;
+  gap:4mm;
+  margin-top:2.4mm;
+  align-items:start;
+}
+.micro{
+  display:block;
+  color:var(--muted);
+  font:700 7pt/1 var(--font-mono);
+  letter-spacing:.8px;
+}
+.hero-grid p{
+  margin:1mm 0 0;
+  color:var(--ink);
+  font:400 9pt/1.35 var(--font-reading);
+}
+.gate-box{
+  border-left:2px solid var(--navy);
+  padding-left:3mm;
+}
+.gate-box b{
+  display:block;
+  margin-top:1mm;
+  color:var(--navy);
+  font:800 10pt var(--font-ui);
+}
+.state-rail{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1.5mm;
+  margin-top:2.8mm;
+}
+.state-pill{
+  padding:1.4mm 1.2mm;
+  text-align:center;
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:#6b7280;
+  font:700 6.6pt var(--font-mono);
+}
+.state-pill.entry{
+  border-color:#94a3b8;
+  box-shadow:inset 0 -3px 0 #94a3b8;
+}
+.state-pill.exit{
+  color:var(--navy);
+  border-color:var(--navy);
+  background:#eef4fb;
+  box-shadow:inset 0 -3px 0 var(--navy);
+}
+
+/* indicadores compactos */
+.exec-strip{
+  display:grid;
+  grid-template-columns:repeat(4,21mm) 1fr;
+  gap:2mm;
+  margin-top:2.8mm;
+}
+.metric{
+  min-height:17mm;
+  padding:2.3mm;
+  border:1px solid var(--line);
+  background:var(--surface);
+}
+.metric span{
+  display:block;
+  color:var(--muted);
+  font:700 6.5pt var(--font-mono);
+  letter-spacing:.6px;
+}
+.metric b{
+  display:block;
+  margin-top:.6mm;
+  color:var(--navy-deep);
+  font:800 14pt var(--font-ui);
+}
+.metric small{
+  display:block;
+  margin-top:.6mm;
+  color:#718096;
+  font:400 6.2pt/1.15 var(--font-reading);
+}
+.capacity{
+  padding:2.1mm 2.5mm;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.cap-title{
+  margin-bottom:1.1mm;
+  color:var(--navy);
+  font:700 6.6pt var(--font-mono);
+  letter-spacing:.7px;
+}
+.cap-row{
+  display:grid;
+  grid-template-columns:19mm 12mm 1fr;
+  align-items:center;
+  gap:1.2mm;
+  margin-bottom:.7mm;
+}
+.cap-row span{
+  color:var(--ink);
+  font:700 6.5pt var(--font-ui);
+}
+.cap-row b{
+  color:var(--navy);
+  font:700 6.5pt var(--font-mono);
+}
+.cap-track{
+  height:2.5mm;
+  background:#edf1f5;
+  border:1px solid #e2e8f0;
+  overflow:hidden;
+}
+.cap-track i{display:block;height:100%}
+.cap-footer{
+  display:flex;
+  justify-content:space-between;
+  margin-top:1mm;
+  padding-top:.8mm;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font:700 6.3pt var(--font-mono);
+}
+.cap-footer b{color:var(--navy-deep)}
+
+/* task cards */
+.tasks{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2.2mm;
+  margin-top:2.8mm;
+}
+.task-card{
+  position:relative;
+  min-height:108mm;
+  border:1px solid #cfd8e3;
+  border-top:4px solid var(--wf);
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+.task-head{
+  display:flex;
+  align-items:center;
+  gap:1.5mm;
+  padding:2.2mm 2.5mm;
+  border-bottom:1px solid var(--line);
+}
+.task-badge{
+  width:7mm;height:7mm;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;background:var(--wf);
+  font:700 7pt var(--font-mono);
+}
+.task-name{
+  color:var(--navy);
+  font:800 8.5pt var(--font-ui);
+  letter-spacing:.25px;
+}
+.task-trace{
+  margin-left:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:.2mm;
+}
+.task-trace span{
+  color:#667085;
+  font:700 6.2pt var(--font-mono);
+}
+.task-action{
+  padding:2.5mm;
+  background:#fbfcfe;
+  border-bottom:1px solid var(--line);
+}
+.task-action strong{
+  display:block;
+  margin-top:1mm;
+  color:var(--navy-deep);
+  font:700 9pt/1.27 var(--font-reading);
+}
+.task-meta{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.6mm;
+  padding:2.3mm 2.5mm;
+  border-bottom:1px solid var(--line);
+}
+.task-meta b{
+  display:block;
+  margin-top:.7mm;
+  color:var(--ink);
+  font:700 7.5pt/1.2 var(--font-ui);
+}
+.task-meta b.mono{
+  font-family:var(--font-mono);
+  font-size:6.7pt;
+  word-break:break-word;
+}
+.task-body{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.8mm;
+  padding:2.3mm 2.5mm;
+  border-bottom:1px solid var(--line);
+}
+.steps ul,.dod ul{
+  list-style:none;
+  margin:1mm 0 0;
+  padding:0;
+}
+.steps li,.dod li{
+  display:flex;
+  gap:1mm;
+  align-items:flex-start;
+  margin-bottom:.9mm;
+  color:var(--ink);
+  font:400 8.2pt/1.25 var(--font-reading);
+}
+.check{
+  flex:0 0 auto;
+  display:inline-block;
+  width:3.3mm;height:3.3mm;
+  margin-top:.2mm;
+  border:1px solid #7f8c9b;
+  background:#fff;
+}
+.output{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.4mm;
+  padding-top:1mm;
+  border-top:1px dashed var(--line);
+}
+.output b{
+  display:block;
+  margin-top:.7mm;
+  color:var(--ink);
+  font:700 7.4pt/1.2 var(--font-ui);
+}
+.output .mono{
+  font-family:var(--font-mono);
+  font-size:6.6pt;
+  word-break:break-word;
+}
+.dod{
+  padding:2.2mm 2.5mm;
+  background:#fafbfd;
+  border-bottom:1px solid var(--line);
+}
+.evidence{
+  padding:2.2mm 2.5mm;
+  border-bottom:1px solid var(--line);
+}
+.ev-label{
+  display:flex;
+  justify-content:space-between;
+  gap:2mm;
+  align-items:baseline;
+}
+.ev-label small{
+  color:#667085;
+  font:400 6.4pt var(--font-reading);
+}
+.write-lines{
+  margin-top:1mm;
+  display:flex;
+  flex-direction:column;
+  gap:2.1mm;
+}
+.write-lines i{
+  height:1px;
+  background:#9eabb8;
+}
+.unlock{
+  margin-top:auto;
+  padding:2mm 2.5mm;
+  background:#f7f9fb;
+}
+.unlock b{
+  display:block;
+  margin-top:.7mm;
+  color:var(--navy);
+  font:800 7.6pt var(--font-ui);
+}
+
+/* fechamento: área manuscrita */
+.closing{
+  margin-top:3mm;
+  min-height:48mm;
+  padding:3mm 3.5mm;
+  border-top:4px solid var(--navy);
+  background:var(--surface);
+}
+.closing-head{
+  display:flex;
+  justify-content:space-between;
+  gap:5mm;
+  align-items:flex-start;
+}
+.closing-head h2{
+  margin:1mm 0 0;
+  color:var(--navy);
+  font:800 10pt var(--font-ui);
+}
+.close-checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.8mm 3mm;
+  color:var(--ink);
+  font:400 7.5pt var(--font-reading);
+}
+.closing-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.5mm 4mm;
+  margin-top:3mm;
+}
+.write-box{
+  min-height:15mm;
+  padding:1.8mm 2mm;
+  border:1px solid #cbd5e1;
+  background:#fff;
+}
+.write-box b{
+  display:block;
+  color:var(--muted);
+  font:700 6.8pt var(--font-mono);
+  letter-spacing:.6px;
+}
+.write-box i{
+  display:block;
+  height:1px;
+  background:#aab6c3;
+  margin-top:4.2mm;
+}
+footer{
+  margin-top:auto;
+  padding-top:2mm;
+  display:flex;
+  justify-content:space-between;
+  color:#8a98a8;
+  font:400 6pt var(--font-mono);
+}
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff;padding:0;gap:0;display:block}
+  .a4-page{box-shadow:none;page-break-after:always;break-after:page}
+  .task-card,.hero,.metric,.capacity,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media print and (monochrome){
+  *{color:#000!important}
+}
+</style>
+</head>
+<body>
+
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 01</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 01 <span>· SEGUNDA</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>28 SET 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Pacote de ativos base organizado, validado e pronto para versionamento.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Abrir a frente técnica e editorial com inputs organizados e rastreáveis.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-D01</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill entry'>PLANNED</div><div class='state-pill exit'>STRUCTURED</div><div class='state-pill '>IMPLEMENTED</div><div class='state-pill '>PRODUCED</div><div class='state-pill '>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>18%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>2/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>02:00</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>03:00</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>01:30</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>01:30</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-001</span>
+          <span>#008</span>
+          <span>P1-001</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Estruturar o pacote de ativos base que alimenta o blog.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>A_DEFINIR</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">/local/assets/design/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Conferir arquivos de origem</li><li><span class='check'></span>Validar nomes e formatos</li><li><span class='check'></span>Organizar estrutura alvo</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>design-system-base.zip</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">packages/design-system/base/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Estrutura completa</li><li><span class='check'></span>Nomes válidos</li><li><span class='check'></span>Destino confirmado</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>commit / arquivo / URL</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>ENG-002</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-001</span>
+          <span>#009</span>
+          <span>P1-002</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Consolidar pesquisa e criar o primeiro mapa conceitual editorial.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>A_DEFINIR</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">research-notes.md · fontes/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Consolidar referências</li><li><span class='check'></span>Separar conceitos-chave</li><li><span class='check'></span>Fechar outline inicial</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>research-map.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">content/editorial/pilar-1/research/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Mapa completo</li><li><span class='check'></span>Lacunas explícitas</li><li><span class='check'></span>Outline utilizável</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / backlink</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>EDT-002</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-001</span>
+          <span>#010</span>
+          <span>P1-003</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Preparar o kit visual base para o primeiro conteúdo.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-001</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">brand-kit/ · research-map.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Selecionar referências</li><li><span class='check'></span>Definir grid</li><li><span class='check'></span>Preparar templates</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>studio-kit-day01/</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">assets/studio/day-01/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Kit salvo</li><li><span class='check'></span>Templates identificados</li><li><span class='check'></span>Entrada do próximo dia pronta</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / screenshot</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>STD-002</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 01 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 02</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 02 <span>· TERÇA</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>29 SET 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Base técnica estruturada e vocabulário editorial fechado.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Transformar os ativos organizados em componentes reutilizáveis e linguagem editorial consistente.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-D02</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill '>PLANNED</div><div class='state-pill entry exit'>STRUCTURED</div><div class='state-pill '>IMPLEMENTED</div><div class='state-pill '>PRODUCED</div><div class='state-pill '>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>31%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>2/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>02:30</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>02:30</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>01:30</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>01:30</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-002</span>
+          <span>#011</span>
+          <span>P1-004</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Organizar componentes, tokens e estilos para integração.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>ENG-001</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">design-system-base.zip</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Separar tokens</li><li><span class='check'></span>Classificar componentes</li><li><span class='check'></span>Mapear dependências</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>component-map.yaml</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">packages/design-system/components/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Mapa legível</li><li><span class='check'></span>Sem itens órfãos</li><li><span class='check'></span>Dependências explícitas</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>commit / arquivo</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>ENG-003</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-002</span>
+          <span>#012</span>
+          <span>P1-005</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Definir vocabulário editorial e termos canônicos.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-001</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">research-map.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Escolher termos</li><li><span class='check'></span>Eliminar ambiguidades</li><li><span class='check'></span>Definir exemplos</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>vocabulario-pilar-1.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">content/editorial/pilar-1/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Termos definidos</li><li><span class='check'></span>Exemplos incluídos</li><li><span class='check'></span>Sem ambiguidades críticas</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / backlink</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>EDT-003</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-002</span>
+          <span>#013</span>
+          <span>P2-001</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Criar linguagem visual inicial de infográficos.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>STD-001</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">studio-kit-day01/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Definir estilos</li><li><span class='check'></span>Criar três layouts</li><li><span class='check'></span>Testar legibilidade</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>infographic-system-v1/</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">assets/studio/infographics/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Três layouts prontos</li><li><span class='check'></span>Contraste validado</li><li><span class='check'></span>Exports de teste salvos</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivos / screenshot</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>STD-003</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 02 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 03</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 03 <span>· QUARTA</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>30 SET 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Primeira integração técnica e outline editorial completo.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Converter estrutura em primeira versão integrada do produto e da peça-mãe.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-D03</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill '>PLANNED</div><div class='state-pill entry'>STRUCTURED</div><div class='state-pill exit'>IMPLEMENTED</div><div class='state-pill '>PRODUCED</div><div class='state-pill '>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>46%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>3/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>03:00</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>02:00</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>01:30</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>01:30</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-003</span>
+          <span>#014</span>
+          <span>P2-002</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Integrar o layout base do blog com tokens e componentes.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>ENG-002</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">component-map.yaml · templates/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Montar shell</li><li><span class='check'></span>Aplicar tokens</li><li><span class='check'></span>Validar responsividade</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>layout-base/</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">apps/blog/src/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Shell íntegro</li><li><span class='check'></span>Tokens aplicados</li><li><span class='check'></span>Responsividade básica validada</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>commit / QA</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>ENG-004</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-003</span>
+          <span>#015</span>
+          <span>P2-003</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Fechar o outline completo da peça-mãe.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-002</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">vocabulario-pilar-1.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Definir tese</li><li><span class='check'></span>Organizar seções</li><li><span class='check'></span>Mapear evidências</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>outline-artigo-01.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">content/editorial/pilar-1/article-01/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Tese clara</li><li><span class='check'></span>Estrutura completa</li><li><span class='check'></span>Evidências mapeadas</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / revisão</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>EDT-004</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-003</span>
+          <span>#016</span>
+          <span>P2-004</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Produzir wireframes dos derivados do artigo.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-003</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">outline-artigo-01.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Mapear mensagens-chave</li><li><span class='check'></span>Distribuir formatos</li><li><span class='check'></span>Desenhar wireframes</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>derivatives-wireframes/</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">assets/studio/article-01/wireframes/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Wireframes completos</li><li><span class='check'></span>Formatos definidos</li><li><span class='check'></span>Nomes atribuídos</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivos / screenshot</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>STD-004</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 03 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 04</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 04 <span>· QUINTA</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>01 OUT 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Draft completo da peça-mãe e experiência navegável validada.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Produzir conteúdo e testar a experiência ponta a ponta.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-D04</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill '>PLANNED</div><div class='state-pill '>STRUCTURED</div><div class='state-pill entry'>IMPLEMENTED</div><div class='state-pill exit'>PRODUCED</div><div class='state-pill '>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>62%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>4/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>02:00</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>03:00</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>01:30</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>01:30</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-004</span>
+          <span>#017</span>
+          <span>P2-005</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Validar navegação e páginas essenciais do blog.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>ENG-003</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">layout-base/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Testar rotas</li><li><span class='check'></span>Revisar navegação</li><li><span class='check'></span>Registrar falhas</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>qa-navigation.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">evidence/engineering/day-04/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Fluxo principal navegável</li><li><span class='check'></span>Falhas registradas</li><li><span class='check'></span>Sem bloqueio crítico</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>QA / commit</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>ENG-005</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-004</span>
+          <span>#018</span>
+          <span>P3-001</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Redigir a peça-mãe do ciclo.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-003</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">outline-artigo-01.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Redigir abertura</li><li><span class='check'></span>Desenvolver corpo</li><li><span class='check'></span>Fechar conclusão</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>artigo-01-draft.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">content/editorial/pilar-1/article-01/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Draft completo</li><li><span class='check'></span>Sem seções vazias</li><li><span class='check'></span>Argumento coerente</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / revisão</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>EDT-005</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-004</span>
+          <span>#019</span>
+          <span>P3-002</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Produzir os infográficos principais do artigo.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-004</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">artigo-01-draft.md · derivatives-wireframes/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Extrair dados</li><li><span class='check'></span>Produzir arte</li><li><span class='check'></span>Exportar PNG/SVG</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>infographics-article-01/</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">assets/studio/article-01/infographics/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Infográficos completos</li><li><span class='check'></span>Contraste validado</li><li><span class='check'></span>Exports finais salvos</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivos / screenshot</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>STD-005</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 04 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 05</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 05 <span>· SEXTA</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>02 OUT 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Pilar 1 tecnicamente e editorialmente pronto para publicação.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Concluir a primeira entrega publicável e fechar as evidências.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-PILAR1</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill '>PLANNED</div><div class='state-pill '>STRUCTURED</div><div class='state-pill '>IMPLEMENTED</div><div class='state-pill entry'>PRODUCED</div><div class='state-pill exit'>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>78%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>2/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>02:00</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>02:30</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>02:00</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>01:30</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-005</span>
+          <span>#020</span>
+          <span>P3-003</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Executar QA técnico da primeira entrega.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>ENG-004</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">apps/blog/src/ · assets/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Executar checklist</li><li><span class='check'></span>Checar links</li><li><span class='check'></span>Registrar resultado</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>qa-release-01.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">evidence/engineering/release-01/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Checklist completo</li><li><span class='check'></span>Links válidos</li><li><span class='check'></span>Sem bloqueio crítico</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>QA / commit</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>PUB-001</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-005</span>
+          <span>#021</span>
+          <span>P3-004</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Revisar e fechar a versão final do artigo.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-004</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">artigo-01-draft.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Revisar conteúdo</li><li><span class='check'></span>Checar coerência</li><li><span class='check'></span>Gerar versão final</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>artigo-01-final.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">content/editorial/pilar-1/article-01/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Texto revisado</li><li><span class='check'></span>Versão final salva</li><li><span class='check'></span>Pronto para publicação</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / aprovação</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>PUB-001</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-005</span>
+          <span>#022</span>
+          <span>P3-005</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Fechar o pacote visual da primeira publicação.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>STD-004</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">infographics-article-01/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Revisar exports</li><li><span class='check'></span>Gerar capas</li><li><span class='check'></span>Empacotar</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>visual-package-article-01.zip</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">assets/studio/article-01/final/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Pacote completo</li><li><span class='check'></span>Nomes conferidos</li><li><span class='check'></span>Arquivos finais prontos</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>arquivo / checksum</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>PUB-001</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 05 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 06</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 06 <span>· SÁBADO</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>03 OUT 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Semana consolidada, evidências indexadas e pendências explícitas.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Fechar a semana sem abrir novo WIP e preparar a próxima frente.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-W01</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill '>PLANNED</div><div class='state-pill '>STRUCTURED</div><div class='state-pill '>IMPLEMENTED</div><div class='state-pill '>PRODUCED</div><div class='state-pill entry exit'>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>90%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>1/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>02:00</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>02:00</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>02:00</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>02:00</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-006</span>
+          <span>#023</span>
+          <span>A_DEFINIR</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Consolidar todas as evidências técnicas da semana.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>ENG-005</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">evidence/engineering/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Agrupar evidências</li><li><span class='check'></span>Checar lacunas</li><li><span class='check'></span>Atualizar índice</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>engineering-evidence-index.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">evidence/index/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Todas as entregas indexadas</li><li><span class='check'></span>Lacunas explícitas</li><li><span class='check'></span>Backlinks conferidos</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>índice / commits</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>ENG-007</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-006</span>
+          <span>#024</span>
+          <span>A_DEFINIR</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Consolidar os ativos editoriais produzidos na semana.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-005</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">content/editorial/pilar-1/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Revisar árvore</li><li><span class='check'></span>Checar nomes</li><li><span class='check'></span>Preparar próxima pauta</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>editorial-week-01-index.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">content/editorial/index/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Inventário fechado</li><li><span class='check'></span>Arquivos localizáveis</li><li><span class='check'></span>Próxima pauta preparada</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>índice / arquivos</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>EDT-007</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-006</span>
+          <span>#025</span>
+          <span>A_DEFINIR</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Organizar a biblioteca visual e remover duplicações.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>STD-005</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">assets/studio/article-01/</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Consolidar exports</li><li><span class='check'></span>Eliminar duplicatas</li><li><span class='check'></span>Atualizar índice</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>studio-library-index.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">assets/studio/index/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Biblioteca navegável</li><li><span class='check'></span>Duplicatas removidas</li><li><span class='check'></span>Índice atualizado</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>índice / arquivos</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>STD-007</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 06 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+    <article class="a4-page">
+      <aside class="spine">
+        <div class="spine-title">EXECUTAR WORKBOOK</div>
+        <div class="spine-meta">C01 · W01</div>
+        <div class="spine-day">DIA 07</div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">EPIC 01 · LANÇAMENTO DO BLOG</div>
+            <h1>DIA 07 <span>· DOMINGO</span></h1>
+          </div>
+          <div class="date">
+            <span>DATA</span>
+            <b>04 OUT 2026</b>
+          </div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ENTREGA DO DIA</div>
+          <div class="hero-title">Semana 01 encerrada e Semana 02 pronta para começar sem consulta externa.</div>
+          <div class="hero-grid">
+            <div>
+              <span class="micro">OBJETIVO</span>
+              <p>Fazer revisão operacional e preparar o primeiro item executável da semana seguinte.</p>
+            </div>
+            <div class="gate-box">
+              <span class="micro">GATE</span>
+              <b>G-RESET</b>
+            </div>
+          </div>
+          <div class='state-rail'><div class='state-pill exit'>PLANNED</div><div class='state-pill '>STRUCTURED</div><div class='state-pill '>IMPLEMENTED</div><div class='state-pill '>PRODUCED</div><div class='state-pill entry'>VERIFIED</div></div>
+        </section>
+
+        <section class="exec-strip">
+          <div class="metric"><span>READINESS</span><b>100%</b><small>peso concluído / peso total</small></div>
+          <div class="metric"><span>WIP</span><b>1</b><small>tarefas ativas agora</small></div>
+          <div class="metric"><span>ARTEFATOS</span><b>3</b><small>saídas concretas</small></div>
+          <div class="metric"><span>RISCO</span><b>1/5</b><small>bloqueio + dependência + gate</small></div>
+          
+    <div class="capacity">
+      <div class="cap-title">CAPACIDADE DO DIA</div>
+      <div class='cap-row'><span>ENGENHARIA</span><b>01:30</b><div class='cap-track'><i style='width:25%;background:#2196F3'></i></div></div><div class='cap-row'><span>EDITORIAL</span><b>01:30</b><div class='cap-track'><i style='width:31%;background:#43A047'></i></div></div><div class='cap-row'><span>STUDIOS</span><b>01:30</b><div class='cap-track'><i style='width:19%;background:#ff6b6b'></i></div></div>
+      <div class="cap-footer">
+        <span>TOTAL <b>08:00</b></span>
+        <span>BUFFER <b>03:30</b></span>
+      </div>
+    </div>
+    
+        </section>
+
+        <section class="tasks">
+          
+    <section class="task-card" style="--wf:#2196F3">
+      <div class="task-head">
+        <div class="task-badge">01</div>
+        <div class="task-name">ENGENHARIA</div>
+        <div class="task-trace">
+          <span>ENG-007</span>
+          <span>#026</span>
+          <span>A_DEFINIR</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Preparar o primeiro item técnico executável da Semana 02.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>ENG-006</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">engineering-evidence-index.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Ler pendências</li><li><span class='check'></span>Confirmar desbloqueios</li><li><span class='check'></span>Separar inputs</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>engineering-next-week.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">planning/week-02/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Primeira tarefa definida</li><li><span class='check'></span>Inputs separados</li><li><span class='check'></span>Dependências explícitas</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>plano / checklist</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>SEMANA-02</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#43A047">
+      <div class="task-head">
+        <div class="task-badge">02</div>
+        <div class="task-name">EDITORIAL</div>
+        <div class="task-trace">
+          <span>EDT-007</span>
+          <span>#027</span>
+          <span>A_DEFINIR</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Preparar a primeira pauta editorial da Semana 02.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>EDT-006</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">editorial-week-01-index.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Revisar backlog</li><li><span class='check'></span>Separar fontes</li><li><span class='check'></span>Definir próxima peça</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>editorial-next-week.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">planning/week-02/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Pauta definida</li><li><span class='check'></span>Fontes separadas</li><li><span class='check'></span>Dependências explícitas</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>plano / checklist</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>SEMANA-02</b>
+      </div>
+    </section>
+    
+    <section class="task-card" style="--wf:#ff6b6b">
+      <div class="task-head">
+        <div class="task-badge">03</div>
+        <div class="task-name">STUDIOS</div>
+        <div class="task-trace">
+          <span>STD-007</span>
+          <span>#028</span>
+          <span>A_DEFINIR</span>
+        </div>
+      </div>
+      <div class="task-action">
+        <span class="micro">FAZER</span>
+        <strong>Preparar a fila visual inicial da Semana 02.</strong>
+      </div>
+
+      <div class="task-meta">
+        <div><span class="micro">DEPENDE DE</span><b>STD-006</b></div>
+        <div><span class="micro">INPUT</span><b class="mono">studio-library-index.md</b></div>
+      </div>
+
+      <div class="task-body">
+        <div class="steps">
+          <span class="micro">PASSOS</span>
+          <ul><li><span class='check'></span>Revisar templates</li><li><span class='check'></span>Separar briefs</li><li><span class='check'></span>Organizar fila</li></ul>
+        </div>
+        <div class="output">
+          <div><span class="micro">ARTEFATO</span><b>studio-next-week.md</b></div>
+          <div><span class="micro">DESTINO</span><b class="mono">planning/week-02/</b></div>
+        </div>
+      </div>
+
+      <div class="dod">
+        <span class="micro">PRONTO QUANDO</span>
+        <ul><li><span class='check'></span>Primeiro lote preparado</li><li><span class='check'></span>Briefs separados</li><li><span class='check'></span>Diretórios prontos</li></ul>
+      </div>
+
+      <div class="evidence">
+        <div class="ev-label">
+          <span class="micro">EVIDÊNCIA</span>
+          <small>plano / checklist</small>
+        </div>
+        <div class="write-lines">
+          <i></i><i></i>
+        </div>
+      </div>
+
+      <div class="unlock">
+        <span class="micro">DESBLOQUEIA</span>
+        <b>SEMANA-02</b>
+      </div>
+    </section>
+    
+        </section>
+
+        <section class="closing">
+          <div class="closing-head">
+            <div>
+              <span class="micro">FECHAMENTO DO DIA</span>
+              <h2>Registrar o que realmente aconteceu.</h2>
+            </div>
+            <div class="close-checks">
+              <span>□ arquivos salvos</span>
+              <span>□ destino conferido</span>
+              <span>□ evidência registrada</span>
+              <span>□ gate verificado</span>
+            </div>
+          </div>
+          <div class="closing-grid">
+            <div class="write-box"><b>FEITO</b><i></i><i></i></div>
+            <div class="write-box"><b>EVIDÊNCIA</b><i></i><i></i></div>
+            <div class="write-box"><b>BLOQUEIO</b><i></i><i></i></div>
+            <div class="write-box"><b>AMANHÃ COMEÇA COM</b><i></i><i></i></div>
+          </div>
+        </section>
+
+        <footer>
+          <span>OFFLINE · A4 · PRINT-SAFE · GRAYSCALE-SAFE</span>
+          <span>PG. 07 / 07</span>
+        </footer>
+      </main>
+    </article>
+    
+</body>
+</html>

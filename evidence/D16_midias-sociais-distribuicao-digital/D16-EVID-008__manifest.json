@@ -1,0 +1,25 @@
+{
+  "domain_id": "D16",
+  "domain_name": "Mídias Sociais e Distribuição Digital",
+  "contexto": "Opera conteúdo, canais, distribuição, comunidade, escuta, mensuração e conversão social no modelo de negócio liderado por criador.",
+  "documento_macro": "D16-DOC-PEM-001",
+  "plugin_referencia_externo": "marketing",
+  "idioma_canonico": "pt-BR",
+  "aliases": [
+    "mídias sociais",
+    "social",
+    "instagram",
+    "youtube",
+    "tiktok",
+    "linkedin",
+    "whatsapp",
+    "conteúdo",
+    "calendário editorial",
+    "comunidade",
+    "escuta social",
+    "distribuição digital"
+  ],
+  "taxonomia_csv": "D16_TAXONOMIA.csv",
+  "documentos_csv": "D16_DOCUMENTOS.csv",
+  "regra_plugin": "REFERENCIA_APENAS"
+}

@@ -1,0 +1,46 @@
+Planejamento estartegico GTM. 
+
+
+
+
+01-Central de controle e links
+
+Email 		
+Conta 	operacional : Executar-rotina@outlook.com	principal : hub.executar@gmail.com
+----		
+Conta Github	executar-23 [ https://github.com ]	Central de tarefas : https://github.com/executar-23/ADM_Copiloto
+Repositorio : Copiloto 	https://github.com/executar-23/Copiloto-ops	Issues central : https://github.com/issues/assigned
+Repositorio :  Workbook	https://github.com/executar-23/Workbook	ados como `EVIDENCE_GAP`, não preenchidos por suposição.
+Repositorio : Blog Fullstack	https://github.com/executar-23/Blog-full-stack	
+------		
+01: Notion : Central de controle operacional  [ principal : hub.executar@gmail.com ]	https://app.notion.com/p/GTM-RISCO-COGNITVO-3e7d1d673fb380d0a3eed8fbcca2d70d?source=copy_link	README : https://claude.ai/share/bbc05c3d-e7b1-4678-8995-f3eb527c78f2
+---		
+02 : Google Drive  Backup drive [ principal : hub.executar@gmail.com ] 	03 : ADM_COPILOTO :  https://drive.google.com/drive/folders/1-xf_WCyui8Qdq0-E-9fj0h-NyvazC4Hk	
+--		
+03 : ANTROPICH - CLAUDE 	conta 01 : sas_executar : https://claude.ai/new  	 Conta modelo e central do copiloto e automacaoes 
+04: CMS CONTROLE EDITORIAL : https://claude.ai/chat/023d44e4-b16f-80ea-a799-a2a6ae8391ae 	conta 02 : Maiajoaovinicius ; https://claude.ai/new 	conta dev 
+---	Claude code conta de ingestao github 	https://claude.ai/code/session_01JVJoxw6qieMDtfA3Us3Lee
+	Conta blog full stack: 	https://claude.ai/code/session_01NzTZdgsmudLkMGAbXTMhda
+	auditoria repostios conta claude code -github	https://claude.ai/code/session_01Fx1tscvGjQFD8saWp1HSKH
+	desyng system 	https://claude.ai/code/session_01PdyX39viXatDLSR73PRLZL
+--		
+Cloudflare :  sas_executar.	https://dash.cloudflare.com/99b69a0d6b75b6b4f13beff73c5fa0b9/home	Executar Blog : https://dash.cloudflare.com/99b69a0d6b75b6b4f13beff73c5fa0b9/workers/services/view/executar-blog/production
+
+TITULO [     ] 
+
+
+
+Quality gate passou (5 frameworks rastreáveis, seções obrigatórias presentes).Sim — essa skill se encaixa melhor porque exige justificativa rastreável de cada framework (não apenas aplicá-los), então refiz o descritivo nesse formato:
+
+**Frameworks selecionados** (conjunto mínimo suficiente, com justificativa registrada no relatório):
+- **5W2H** — execução operacional
+- **JTBD** — progresso que o usuário/agente contrata
+- **PDCA** — como o ciclo editorial de 15 dias aprende
+- **SIPOC** — o pipeline "peça-mãe → derivação → distribuição" que o seu anexo já descreve, só que sem nome formal
+- **Pre-Mortem** — os riscos que o próprio documento já declara (overkill, retrabalho, componente sem aplicabilidade), tratados qualitativamente porque não há dado de probabilidade/impacto
+
+Descartei SCQA formalmente (não está no catálogo `executar-safe-frameworks` — seu próprio anexo já nota isso na seção F7) e Risk Matrix/FMEA (exigiriam números que você não tem, o que criaria precisão falsa).
+
+**Achado central da síntese cruzada:** os três frameworks de execução (5W2H, SIPOC, PDCA) convergem no mesmo ponto fraco — a etapa "Checar" não tem meta numérica por métrica —, e o Pre-Mortem tensiona diretamente com a extensão da fundação F0–F8 (o próprio documento chama overkill de risco principal e, ao mesmo tempo, especifica oito frentes de fundação antes do primeiro ciclo provado).
+
+**Gaps registrados:** owner/canonical_uri do objeto ainda `A_DEFINIR`; métricas sem meta; riscos sem severidade quantificada — todos marc

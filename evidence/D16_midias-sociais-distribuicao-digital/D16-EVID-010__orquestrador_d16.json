@@ -1,0 +1,18 @@
+{
+  "orchestrator_id": "ORQ-D16-001",
+  "domain_id": "D16",
+  "domain_name": "Mídias Sociais e Distribuição Digital",
+  "responsabilidade": "Especializar a entrada no contexto do domínio, selecionar documentos e preservar rastreabilidade.",
+  "plugin_referencia_externo": "marketing",
+  "fluxo": [
+    "receber",
+    "classificar_topico",
+    "selecionar_documentos",
+    "validar",
+    "gerar_ordem_de_trabalho"
+  ],
+  "documento_macro": "D16-DOC-PEM-001",
+  "saida": "WORK_ORDER_JSON",
+  "status": "ATIVO",
+  "version": "2.0"
+}
