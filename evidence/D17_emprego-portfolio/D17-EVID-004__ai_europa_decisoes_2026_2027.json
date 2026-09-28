@@ -1,0 +1,4387 @@
+{
+  "meta": {
+    "titulo": "Sistema de decisão de carreira Applied AI — Europa",
+    "data_base": "2026-09-18",
+    "horizonte": "2027-02-18",
+    "idioma": "pt-BR",
+    "versao": "1.0",
+    "natureza": "Recomendações, não alteração automática do charter"
+  },
+  "metodo": {
+    "janela_preferencial": [
+      "2026-03-18",
+      "2026-09-18"
+    ],
+    "paginas_de_vagas_investigadas": 54,
+    "amostra_principal": 40,
+    "exclusoes": 14,
+    "limite_cumprimento": "40 anúncios com texto analisável, classificados como junior/mid, faixa mista ou sem senioridade declarada. Não são 40 vagas junior/mid confirmadas pelo empregador nem 40 vagas abertas. Não foi possível validar abertura e data original de todos os agregados.",
+    "amostragem": "Intencional, orientada aos cargos desejados. Forte concentração em Portugal e em um board de Agentic AI. Frequência nesta amostra não estima prevalência no mercado europeu.",
+    "codificacao": {
+      "R": "Requisito expresso, familiaridade requerida ou tecnologia aceita como alternativa; não significa que todas as alternativas sejam obrigatórias",
+      "D": "Desejável, valorizado ou preferencial",
+      "T": "Atividade ou stack específico da função; não classificado como filtro obrigatório",
+      "ausencia": "Não mencionado no texto disponível; não prova dispensa"
+    },
+    "regras": [
+      "Uma vaga multigeografia conta uma vez; país principal usado apenas para resumo.",
+      "Excluídos senior/lead explícitos e duplicação provável; casos superiores ou sem nível permanecem identificados.",
+      "Stack corporativo genérico e benefício de pagar certificações não contam como requisito.",
+      "Expired do board decorre de idade maior que 60 dias; não confirma contratação concluída.",
+      "As datas do agregador são evidência de indexação/publicação, não data primária comprovada. J08 menciona março sem dia.",
+      "Competências GitHub são declaradas pelo usuário/charter; não foi feita auditoria dos repositórios.",
+      "Sem inferir nationality, anos profissionais, grau acadêmico geral, fluência ou autorização de trabalho do usuário."
+    ],
+    "canais": [
+      {
+        "canal": "ITJobs",
+        "resultado": "Anúncios individuais de empresas, principal fonte portuguesa",
+        "url": "https://www.itjobs.pt/emprego?q=ai"
+      },
+      {
+        "canal": "Agentic Engineering Jobs",
+        "resultado": "Descrições e resumos individuais, majoritariamente referências históricas",
+        "url": "https://agentic-engineering-jobs.com/jobs/mid/eu"
+      },
+      {
+        "canal": "Careers pages",
+        "resultado": "Índices Reaktor/Kefron lidos; vaga DNV 404; Dust exigiu JavaScript; Mistral inacessível. Sem confirmação generalizada de abertura.",
+        "url": "https://www.reaktor.com/careers/all-open-positions"
+      },
+      {
+        "canal": "LinkedIn",
+        "resultado": "Pesquisado; descrições específicas verificáveis não recuperadas. Zero registros atribuídos a LinkedIn na matriz.",
+        "url": "https://pt.linkedin.com/jobs/ai-engineer-vagas"
+      },
+      {
+        "canal": "Indeed",
+        "resultado": "Pesquisado; acesso à busca bloqueado/inacessível. Zero registros atribuídos a Indeed na matriz.",
+        "url": "https://ie.indeed.com/jobs?q=junior+ai+engineer&l=Dublin%2C+County+Dublin"
+      },
+      {
+        "canal": "EURES",
+        "resultado": "Portal e serviços consultados; motor de vagas inacessível na sessão. Nenhuma vaga EURES entra no denominador.",
+        "url": "https://eures.europa.eu/index_en"
+      }
+    ],
+    "confianca": "Moderada para priorização técnica; baixa para estimar probabilidade de contratação, salários europeus ou oportunidades abertas por país. Prioridade exige revalidar anúncio individual antes de candidatura."
+  },
+  "contagens": {
+    "pais_principal": {
+      "PT": 18,
+      "IE": 1,
+      "DE": 5,
+      "UK": 4,
+      "ES": 2,
+      "NL": 4,
+      "FR": 6
+    },
+    "senioridade": {
+      "Não declarada": 1,
+      "Mid explícito": 3,
+      "Junior explícito": 3,
+      "Mid superior inferido": 4,
+      "Mid inferido": 2,
+      "Mid no board": 11,
+      "Mid no board; plataforma": 1,
+      "Mid no board; exigência alta": 1,
+      "AI Engineer II / Mid": 1,
+      "Medior explícito": 1,
+      "Junior no board; 1–3 anos": 1,
+      "Junior no board; 2+ anos": 1,
+      "Mid no board; grade vários níveis": 1,
+      "Mid; 2+ anos": 2,
+      "Junior explícito; 1–3 anos": 1,
+      "Mid; 3–4 anos": 1,
+      "Não declarada; especialização ML": 1,
+      "Não declarada; sem mínimo de anos": 1,
+      "Execução sob liderança; 1 ano aplicado": 1,
+      "Consultant / Senior Consultant; faixa mista": 1,
+      "Não declarada; função de entrada possível": 1
+    },
+    "fonte": {
+      "Anúncio da empresa em ITJobs": 15,
+      "Resumo em job board técnico": 25
+    }
+  },
+  "vagas": [
+    {
+      "id": "J01",
+      "empresa": "Kwalit",
+      "pais_principal": "PT",
+      "local": "Braga híbrido",
+      "titulo": "Full‑Stack AI Developer (Node + Angular + Kafka + Typescript) - Kwalit, business software solutions - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516938/full-stack-ai-developer-node-angular-kafka-typescript",
+      "data_exibida": "2026-09-14",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Não declarada",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "LLM": "D",
+        "TS": "R",
+        "API": "R",
+        "SQL": "R",
+        "CLOUD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Node, Angular e Kafka são centrais. Next.js não substitui Angular. Duas posições no mesmo anúncio contam uma vez.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J02",
+      "empresa": "ITDS",
+      "pais_principal": "PT",
+      "local": "Porto híbrido",
+      "titulo": "",
+      "url": "https://www.itjobs.pt/oferta/516660/mid-level-ai-engineer-software-development-machine-learning",
+      "data_exibida": "2026-09-18",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid explícito",
+      "experiencia_minima_anos": 2,
+      "formacao": "Não mencionada",
+      "skills": {
+        "TEST": "T",
+        "EVAL": "T",
+        "PY": "D",
+        "TS": "D",
+        "CERT": "D",
+        "LLM": "R",
+        "RAG": "R",
+        "VEC": "R",
+        "FRAME": "R",
+        "API": "R",
+        "CLOUD": "R",
+        "ML": "R"
+      },
+      "idiomas": "Inglês fluente",
+      "elegibilidade": "Direito de trabalho já existente na UE é obrigatório",
+      "nota": "Python e/ou TypeScript/JavaScript preferidos; exemplos de frameworks são alternativas. Referência 9994.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J03",
+      "empresa": "Eurotux",
+      "pais_principal": "PT",
+      "local": "Braga híbrido",
+      "titulo": "Junior AI Engineer - Eurotux - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516630/data-scientist",
+      "data_exibida": "2026-09-03",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Junior explícito",
+      "experiencia_minima_anos": null,
+      "formacao": "Superior em área técnica/científica",
+      "skills": {
+        "LLM": "T",
+        "RAG": "T",
+        "AGENT": "T",
+        "FRAME": "D",
+        "API": "D",
+        "CLOUD": "D",
+        "CONTAINER": "D",
+        "PY": "R",
+        "ML": "R",
+        "SQL": "R",
+        "EVAL": "R"
+      },
+      "idiomas": "Inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "RAG e agentes: experiência OU forte interesse; conhecimento não equivale a anos de produção.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J04",
+      "empresa": "GRiT",
+      "pais_principal": "PT",
+      "local": "Lisboa híbrido",
+      "titulo": "AI Engineer - GRiT Solutions - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516254/ai-engineer",
+      "data_exibida": "2026-08-25",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid superior inferido",
+      "experiencia_minima_anos": 4,
+      "formacao": "Preferencial",
+      "skills": {
+        "PROD": "T",
+        "PORTFOLIO": "D",
+        "ML": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "FRAME": "R",
+        "AGENT": "R",
+        "GRAPH": "R",
+        "API": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Exige quatro anos de ML aplicado. Python não aparece expressamente. Não é uma vaga de entrada.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J05",
+      "empresa": "Imaginary Cloud",
+      "pais_principal": "PT",
+      "local": "Portugal remoto",
+      "titulo": "AI Engineer (.NET / Azure AI) - Imaginary Cloud - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516819/ai-engineer-net-azure-ai",
+      "data_exibida": "2026-09-10",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid inferido",
+      "experiencia_minima_anos": 3,
+      "formacao": "Formação acadêmica relacionada",
+      "skills": {
+        "CSHARP": "R",
+        "API": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "ML": "R",
+        "CLOUD": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Inglês fluente",
+      "elegibilidade": "Residir ou estar disposto e legalmente habilitado a trabalhar em Portugal",
+      "nota": "C#/.NET obrigatório. Python e JavaScript aparecem no stack geral da empresa e foram excluídos da codificação da função. €27.785–43.450 brutos/ano.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J06",
+      "empresa": "Mind Source",
+      "pais_principal": "PT",
+      "local": "Grande Lisboa híbrido",
+      "titulo": "AI Engineering Agent - Mind Source - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516761/ai-engineering-agent",
+      "data_exibida": "2026-09-08",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid inferido",
+      "experiencia_minima_anos": 3,
+      "formacao": "Licenciatura relacionada",
+      "skills": {
+        "RAG": "D",
+        "VEC": "D",
+        "CLOUD": "D",
+        "PY": "R",
+        "FRAME": "R",
+        "LLM": "R",
+        "AGENT": "R",
+        "API": "R",
+        "EVAL": "R",
+        "TEST": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Residência na Grande Lisboa obrigatória",
+      "nota": "Mais de três anos em funções similares.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J07",
+      "empresa": "YellowIpe",
+      "pais_principal": "PT",
+      "local": "Portugal presencial",
+      "titulo": "Generative AI Product Engineer - YellowIpe - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516113/generative-ai-product-engineer",
+      "data_exibida": "2026-08-30",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid superior inferido",
+      "experiencia_minima_anos": 4,
+      "formacao": "Não mencionada",
+      "skills": {
+        "GOV": "T",
+        "CLOUD": "D",
+        "FRAME": "D",
+        "GRAPH": "D",
+        "VEC": "D",
+        "PY": "R",
+        "SQL": "R",
+        "RAG": "R",
+        "LLM": "R",
+        "EVAL": "R",
+        "OBS": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Mais de quatro anos em AI/ML/DS e 18 meses em GenAI; observar barra de experiência.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J08",
+      "empresa": "Kefron",
+      "pais_principal": "IE",
+      "local": "Dublin híbrido",
+      "titulo": "Junior AI Engineer · Kefron",
+      "url": "https://agentic-engineering-jobs.com/jobs/kefron-junior-ai-engineer-6YZLjV",
+      "data_exibida": "2026-04-01",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Junior explícito",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "TEST": "T",
+        "OBS": "T",
+        "PY": "R",
+        "FASTAPI": "R",
+        "ML": "R",
+        "SQL": "R",
+        "LLM": "R",
+        "AGENT": "R",
+        "RAG": "R",
+        "CLOUD": "R",
+        "CONTAINER": "R",
+        "FRAME": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Direito de trabalho na Irlanda obrigatório",
+      "nota": "Corpo diz março/2026; dia original desconhecido. Salário do board é estimativa Glassdoor, não oferta salarial.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J09",
+      "empresa": "Nelly",
+      "pais_principal": "DE",
+      "local": "Berlim híbrido",
+      "titulo": "Junior AI Engineer · Nelly",
+      "url": "https://agentic-engineering-jobs.com/jobs/nelly-junior-ai-engineer-d3KFTp",
+      "data_exibida": "2026-04-25",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Junior explícito",
+      "experiencia_minima_anos": null,
+      "formacao": "Graduação relacionada",
+      "skills": {
+        "RAG": "T",
+        "PROD": "T",
+        "PY": "R",
+        "FRAME": "R",
+        "GRAPH": "R",
+        "CLOUD": "R",
+        "LLM": "R",
+        "AGENT": "R"
+      },
+      "idiomas": "Alemão e inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J10",
+      "empresa": "G-Research",
+      "pais_principal": "UK",
+      "local": "Londres presencial",
+      "titulo": "Applied AI Engineer · G-Research",
+      "url": "https://agentic-engineering-jobs.com/jobs/g-research-applied-ai-engineer-Tyn1Q7",
+      "data_exibida": "2026-06-24",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "API": "T",
+        "FINE": "D",
+        "CONTAINER": "D",
+        "PORTFOLIO": "D",
+        "PY": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "AGENT": "R",
+        "GRAPH": "R",
+        "MCP": "R",
+        "EVAL": "R",
+        "OBS": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Anúncio menciona apoio à imigração/relocação; confirmar disponibilidade para esta contratação",
+      "nota": "Engenharia Python em produção; comunicação e julgamento técnico. Publicações e open source são diferenciais.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J11",
+      "empresa": "DNV / GreenPowerMonitor",
+      "pais_principal": "ES",
+      "local": "Barcelona/Madrid; também UK, IT, NO, PL",
+      "titulo": "ML Engineer – Generative AI · DNV (GreenPowerMonitor)",
+      "url": "https://agentic-engineering-jobs.com/jobs/dnv-greenpowermonitor-ml-engineer-generative-ai-trPJiJ",
+      "data_exibida": "2026-07-27",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Mestrado ou equivalente; equivalência não definida",
+      "skills": {
+        "AGENT": "T",
+        "EVAL": "T",
+        "CICD": "D",
+        "CONTAINER": "D",
+        "PY": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "VEC": "R",
+        "ML": "R",
+        "FINE": "R"
+      },
+      "idiomas": "Inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Entrevista pede apresentação de um agente. Uma vaga, vários países. Link para o empregador retornou 404.",
+      "estado": "Sem aviso de expiração no board; link original 404, abertura não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J12",
+      "empresa": "Orbit",
+      "pais_principal": "DE",
+      "local": "Hamburgo/remoto UE",
+      "titulo": "Product Engineer (m/w/d) · Orbit",
+      "url": "https://agentic-engineering-jobs.com/jobs/orbit-product-engineer-mwd-bSoC5p",
+      "data_exibida": "2026-07-07",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "TEST": "T",
+        "API": "T",
+        "LLM": "T",
+        "OBS": "T",
+        "IAC": "T",
+        "TS": "D",
+        "CLOUD": "D",
+        "EVAL": "D",
+        "PROD": "R",
+        "AGENT": "R"
+      },
+      "idiomas": "Alemão preferencial",
+      "elegibilidade": "Base na Europa; verificar contratação no país de residência",
+      "nota": "Product engineering e entrega do zero ao produto. Stack TypeScript/Node/React/AWS; não há filtro de diploma no texto.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J13",
+      "empresa": "Machine Learning Reply",
+      "pais_principal": "DE",
+      "local": "Munique/Berlim híbrido",
+      "titulo": "AI Application Engineer – AI Products (LLM & RAG) (m/f/d) · Machine Learning Reply",
+      "url": "https://agentic-engineering-jobs.com/jobs/machine-learning-reply-ai-application-engineer-ai-products-llm-and-rag-mfd-cHGiDB",
+      "data_exibida": "2026-06-13",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Graduação técnica",
+      "skills": {
+        "LLM": "T",
+        "RAG": "T",
+        "VEC": "T",
+        "AGENT": "T",
+        "FRAME": "D",
+        "PY": "R",
+        "CLOUD": "R",
+        "CONTAINER": "R",
+        "CICD": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Alemão C1 e inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "AI Application Engineer – AI Products. Viagens até 20%.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J14",
+      "empresa": "Machine Learning Reply",
+      "pais_principal": "DE",
+      "local": "Munique/Berlim híbrido",
+      "titulo": "Agentic AI Software Engineer (Data Frameworks) · Machine Learning Reply",
+      "url": "https://agentic-engineering-jobs.com/jobs/machine-learning-reply-agentic-ai-software-engineer-data-frameworks-A4_awF",
+      "data_exibida": "2026-06-13",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Formação universitária técnica",
+      "skills": {
+        "CLOUD": "T",
+        "AGENT": "T",
+        "FRAME": "T",
+        "GRAPH": "T",
+        "RAG": "T",
+        "VEC": "T",
+        "API": "T",
+        "PY": "R",
+        "TS": "R",
+        "FASTAPI": "R",
+        "LLM": "R",
+        "FINE": "R",
+        "CONTAINER": "R",
+        "CICD": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Alemão C1 e inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Duas linguagens entre Python/Java/Rust/JavaScript; backend FastAPI/Flask/Spring Boot. Tecnologias alternativas, não todas obrigatórias.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J15",
+      "titulo": "Ingeniero/a en Inteligencia Artificial · Converteo",
+      "url": "https://agentic-engineering-jobs.com/jobs/converteo-ingenieroa-en-inteligencia-artificial-DSa2bF",
+      "amostra_principal": false,
+      "motivo_exclusao": "Resumo reconhecidamente parcial; não usar no denominador",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J16",
+      "empresa": "Blip",
+      "pais_principal": "PT",
+      "local": "Porto",
+      "titulo": "AI Platform Engineer · Blip",
+      "url": "https://agentic-engineering-jobs.com/jobs/blip-ai-platform-engineer-ZJNVDa",
+      "data_exibida": "2026-06-06",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board; plataforma",
+      "experiencia_minima_anos": 3,
+      "formacao": "Não mencionada",
+      "skills": {
+        "EVAL": "T",
+        "RAG": "D",
+        "VEC": "D",
+        "FINE": "D",
+        "CERT": "D",
+        "PY": "R",
+        "FRAME": "R",
+        "GRAPH": "R",
+        "CLOUD": "R",
+        "CONTAINER": "R",
+        "IAC": "R",
+        "API": "R",
+        "OBS": "R",
+        "TEST": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "3–5 anos; também Go, AWS profundo, Kubernetes/Terraform. Certificação AWS é diferencial. Alto custo de entrada em plataforma.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J17",
+      "empresa": "Reaktor",
+      "pais_principal": "NL",
+      "local": "Amsterdã híbrido",
+      "titulo": "AI Developer - LLM Applications · Reaktor",
+      "url": "https://agentic-engineering-jobs.com/jobs/reaktor-ai-developer-llm-applications-fwG6mK",
+      "data_exibida": "2026-05-21",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "PY": "T",
+        "TS": "T",
+        "FASTAPI": "T",
+        "FRAME": "T",
+        "LLM": "T",
+        "RAG": "T",
+        "EVAL": "T",
+        "FINE": "T",
+        "API": "T",
+        "PROD": "R",
+        "CLOUD": "R",
+        "CONTAINER": "R",
+        "CICD": "R",
+        "TEST": "R",
+        "VEC": "R",
+        "SQL": "R",
+        "GOV": "R"
+      },
+      "idiomas": "Inglês; holandês diferencial",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Python ou Node/TypeScript conforme o projeto. Vaga não encontrada no índice atual de carreiras.",
+      "estado": "Referência histórica; índice atual do empregador não lista esta posição",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J18",
+      "titulo": "AI Engineer - FDE (Forward Deployed Engineer) · Databricks",
+      "url": "https://agentic-engineering-jobs.com/jobs/databricks-ai-engineer-fde-forward-deployed-engineer-1W89b0",
+      "amostra_principal": false,
+      "motivo_exclusao": "All levels, mas texto exige experiência extensa; nível de entrada/mid não isolável",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J19",
+      "empresa": "Resilient Co / ZKO",
+      "pais_principal": "ES",
+      "local": "Madrid híbrido",
+      "titulo": "Full Stack Engineer · Resilient Co",
+      "url": "https://agentic-engineering-jobs.com/jobs/resilient-co-full-stack-engineer-YWYtlp",
+      "data_exibida": "2026-05-19",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "LLM": "T",
+        "AGENT": "T",
+        "MCP": "T",
+        "FRAME": "T",
+        "LOWCODE": "T",
+        "OBS": "T",
+        "PY": "R",
+        "FASTAPI": "R",
+        "TS": "R",
+        "API": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Full-stack com Python/FastAPI/Pydantic e React. Integração documental e automações.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J20",
+      "empresa": "LangChain",
+      "pais_principal": "UK",
+      "local": "Londres híbrido; clientes sul EMEA",
+      "titulo": "Deployed Engineer (South EMEA) · LangChain",
+      "url": "https://agentic-engineering-jobs.com/jobs/langchain-deployed-engineer-south-emea-XXmT7L",
+      "data_exibida": "2026-05-19",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": 3,
+      "formacao": "Não mencionada",
+      "skills": {
+        "GRAPH": "D",
+        "FRAME": "D",
+        "EVAL": "D",
+        "OBS": "D",
+        "GOV": "D",
+        "CLOUD": "D",
+        "CONTAINER": "D",
+        "PY": "R",
+        "TS": "R",
+        "AGENT": "R",
+        "API": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Francês nativo",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Deployed Engineer requer atuação técnica com clientes, workshops e integração.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J21",
+      "empresa": "Mirakl",
+      "pais_principal": "FR",
+      "local": "Bordeaux híbrido; freelance",
+      "titulo": "Agent Builder - Freelance · Mirakl",
+      "url": "https://agentic-engineering-jobs.com/jobs/mirakl-agent-builder-freelance-zkLt9a",
+      "data_exibida": "2026-05-06",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": 3,
+      "formacao": "Não mencionada",
+      "skills": {
+        "GOV": "T",
+        "CLOUD": "T",
+        "FRAME": "D",
+        "PY": "R",
+        "SQL": "R",
+        "RAG": "R",
+        "AGENT": "R",
+        "API": "R",
+        "MCP": "R",
+        "LOWCODE": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Francês e inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "3–5 anos; função interna de automação. Regime freelance exige verificar condições contratuais e autorização local.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J22",
+      "empresa": "YLD",
+      "pais_principal": "PT",
+      "local": "Lisboa/Porto híbrido",
+      "titulo": "AI Engineer · YLD",
+      "url": "https://agentic-engineering-jobs.com/jobs/yld-ai-engineer-GA6xEP",
+      "data_exibida": "2026-04-25",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board; exigência alta",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "API": "T",
+        "MCP": "T",
+        "SQL": "T",
+        "OBS": "T",
+        "TEST": "T",
+        "PY": "R",
+        "TS": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "VEC": "R",
+        "EVAL": "R",
+        "GOV": "R",
+        "AGENT": "R",
+        "FINE": "R",
+        "CLOUD": "R",
+        "CONTAINER": "R",
+        "CICD": "R",
+        "IAC": "R",
+        "FRAME": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Descrição muito ampla: RAG avançado, fine-tuning e infraestrutura. Usar como direção de médio prazo, sem tentar dominar tudo antes de candidatar.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J23",
+      "titulo": "Software Engineer - Applied ML - UK Public Sector · Cohere",
+      "url": "https://agentic-engineering-jobs.com/jobs/cohere-software-engineer-applied-ml-uk-public-sector-Gxm6Km",
+      "amostra_principal": false,
+      "motivo_exclusao": "Oito anos e cidadania/clearance UK; fora do recorte de entrada/mid",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J24",
+      "titulo": "AI Engineer · Xerxes Global",
+      "url": "https://agentic-engineering-jobs.com/jobs/xerxes-global-ai-engineer-R4oYoL",
+      "amostra_principal": false,
+      "motivo_exclusao": "Resumo muito curto sem critérios completos; retenção como referência irlandesa",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J25",
+      "titulo": "AI Engineer · group.one",
+      "url": "https://agentic-engineering-jobs.com/jobs/groupone-ai-engineer-VPE82E",
+      "amostra_principal": false,
+      "motivo_exclusao": "Mínimo cinco anos e perfil experiente; fora da amostra principal",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J26",
+      "titulo": "ML Engineer (m/f/d) · Thieme Group",
+      "url": "https://agentic-engineering-jobs.com/jobs/thieme-group-ml-engineer-mfd-XvaTbQ",
+      "amostra_principal": false,
+      "motivo_exclusao": "Data original 09/03/2026 anterior à janela; indexação em abril não renova anúncio",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J27",
+      "titulo": "Machine Learning Engineer (AI Core Team) · Manychat",
+      "url": "https://agentic-engineering-jobs.com/jobs/manychat-machine-learning-engineer-ai-core-team-Iwuw-L",
+      "amostra_principal": false,
+      "motivo_exclusao": "Atualização original 17/02/2026 anterior à janela",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J28",
+      "titulo": "AI Engineer - Category Strategy Optimization Platform, FinTech · Booking.com",
+      "url": "https://agentic-engineering-jobs.com/jobs/bookingcom-ai-engineer-category-strategy-optimization-platform-fintech-WKk5Gq",
+      "amostra_principal": false,
+      "motivo_exclusao": "Faixa 4–8 anos e responsabilidades ampliadas; não usar como alvo de entrada",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J29",
+      "empresa": "paiqo",
+      "pais_principal": "DE",
+      "local": "Paderborn/Frankfurt",
+      "titulo": "AI Engineer II - Agentic AI Platform · paiqo GmbH",
+      "url": "https://agentic-engineering-jobs.com/jobs/paiqo-gmbh-ai-engineer-ii-agentic-ai-platform-m7wr1_",
+      "data_exibida": "2026-04-02",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "AI Engineer II / Mid",
+      "experiencia_minima_anos": 2,
+      "formacao": "Não mencionada",
+      "skills": {
+        "GOV": "T",
+        "PY": "R",
+        "CLOUD": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "VEC": "R",
+        "FRAME": "R",
+        "GRAPH": "R",
+        "AGENT": "R",
+        "API": "R",
+        "CICD": "R"
+      },
+      "idiomas": "Alemão e inglês",
+      "elegibilidade": "Residência na Alemanha",
+      "nota": "2–5 anos e ao menos um em GenAI/agentes. GraphRAG é tendência a acompanhar, não requisito exigido.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J30",
+      "empresa": "Ascending AI",
+      "pais_principal": "NL",
+      "local": "Amsterdã/remoto ±3h CET",
+      "titulo": "Full-Stack AI Engineer (mid-level) · Ascending AI",
+      "url": "https://agentic-engineering-jobs.com/jobs/ascending-ai-full-stack-ai-engineer-mid-level-pB6G0C",
+      "data_exibida": "2026-03-31",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid explícito",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "API": "T",
+        "VEC": "D",
+        "FRAME": "D",
+        "MCP": "D",
+        "GOV": "D",
+        "CLOUD": "D",
+        "OBS": "D",
+        "PY": "R",
+        "TS": "R",
+        "SQL": "R",
+        "LLM": "R",
+        "AGENT": "R",
+        "RAG": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Node/TypeScript OU Python. Startup em stealth; identidade e situação não corroboradas em fonte primária. Confiança menor.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J31",
+      "empresa": "ML6",
+      "pais_principal": "NL",
+      "local": "Amsterdã; também Alemanha/Bélgica",
+      "titulo": "Medior AI Engineer · ML6",
+      "url": "https://agentic-engineering-jobs.com/jobs/ml6-medior-ai-engineer-LbVqQM",
+      "data_exibida": "2026-05-08",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Medior explícito",
+      "experiencia_minima_anos": 2,
+      "formacao": "Graduação relacionada",
+      "skills": {
+        "LLM": "T",
+        "RAG": "T",
+        "AGENT": "T",
+        "MCP": "T",
+        "CLOUD": "D",
+        "PORTFOLIO": "D",
+        "PY": "R",
+        "ML": "R"
+      },
+      "idiomas": "Inglês e holandês",
+      "elegibilidade": "Permissão de trabalho requerida; texto informa ausência de sponsorship",
+      "nota": "",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J32",
+      "empresa": "Lleverage",
+      "pais_principal": "NL",
+      "local": "Amsterdã",
+      "titulo": "AI Engineer · Lleverage",
+      "url": "https://agentic-engineering-jobs.com/jobs/lleverage-ai-engineer-igLK6G",
+      "data_exibida": "2026-04-19",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "LLM": "T",
+        "AGENT": "T",
+        "EVAL": "T",
+        "RAG": "T",
+        "VEC": "T",
+        "FINE": "T",
+        "OBS": "T",
+        "TS": "R",
+        "API": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "TypeScript/Next.js e sistemas de agentes. Descrição sem anos ou diploma expressos.",
+      "estado": "Fechada segundo o board",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J33",
+      "empresa": "Visor.ai",
+      "pais_principal": "PT",
+      "local": "Portugal remoto",
+      "titulo": "AI Engineer · Visor.ai",
+      "url": "https://agentic-engineering-jobs.com/jobs/visorai-ai-engineer-WGqvqP",
+      "data_exibida": "2026-04-09",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Junior no board; 1–3 anos",
+      "experiencia_minima_anos": 1,
+      "formacao": "Não mencionada",
+      "skills": {
+        "RERANK": "T",
+        "API": "T",
+        "EVAL": "T",
+        "CLOUD": "D",
+        "AGENT": "D",
+        "GRAPH": "D",
+        "PY": "R",
+        "ML": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "VEC": "R",
+        "FRAME": "R",
+        "OBS": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Retrieval, reranking e memória aparecem nas atividades; Python/NLP são requisitos.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J34",
+      "empresa": "Owkin",
+      "pais_principal": "UK",
+      "local": "Remoto UK/DE/FR com viagens a clientes",
+      "titulo": "Forward Deployed Engineer · Owkin",
+      "url": "https://agentic-engineering-jobs.com/jobs/owkin-forward-deployed-engineer-jgWiUW",
+      "data_exibida": "2026-04-24",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Junior no board; 2+ anos",
+      "experiencia_minima_anos": 2,
+      "formacao": "Não mencionada",
+      "skills": {
+        "CLOUD": "D",
+        "TS": "D",
+        "PY": "R",
+        "LLM": "R",
+        "AGENT": "R",
+        "API": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Forward Deployed Engineer; backend e contato com clientes. Não é zero experiência.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J35",
+      "empresa": "ITDS",
+      "pais_principal": "PT",
+      "local": "Porto híbrido",
+      "titulo": "Mid-Level Generative AI and LLM QA Automation Engineer - ITDS Portugal - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516659/mid-level-ai-automation-qa-engineer-ai-driven-testing",
+      "data_exibida": "2026-09-17",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid explícito",
+      "experiencia_minima_anos": 3,
+      "formacao": "Não mencionada",
+      "skills": {
+        "GOV": "T",
+        "CERT": "D",
+        "PY": "R",
+        "TS": "R",
+        "TEST": "R",
+        "LLM": "R",
+        "EVAL": "R",
+        "OBS": "R",
+        "CICD": "R"
+      },
+      "idiomas": "Inglês",
+      "elegibilidade": "Direito de trabalho existente na UE",
+      "nota": "Referência 9992; QA/SDET específico. Portfólio de evals não substitui três anos em automação de testes.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J36",
+      "empresa": "360Learning",
+      "pais_principal": "FR",
+      "local": "França remoto",
+      "titulo": "AI Engineer · 360Learning",
+      "url": "https://agentic-engineering-jobs.com/jobs/360learning-ai-engineer-FSwD1H",
+      "data_exibida": "2026-06-16",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board",
+      "experiencia_minima_anos": 2,
+      "formacao": "Não mencionada",
+      "skills": {
+        "FASTAPI": "T",
+        "CLOUD": "T",
+        "PY": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "VEC": "R",
+        "AGENT": "R",
+        "OBS": "R",
+        "EVAL": "R",
+        "ML": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Python, custo/latência e produção de longo prazo; FastAPI/Pydantic AI/Azure no stack da função.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J37",
+      "empresa": "Dust",
+      "pais_principal": "FR",
+      "local": "Paris",
+      "titulo": "Software Engineer · Dust",
+      "url": "https://agentic-engineering-jobs.com/jobs/dust-software-engineer-SEzSlG",
+      "data_exibida": "2026-05-08",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid no board; grade vários níveis",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "TS": "T",
+        "SQL": "T",
+        "VEC": "T",
+        "CONTAINER": "T",
+        "IAC": "T",
+        "OBS": "T",
+        "CICD": "T",
+        "API": "T",
+        "LLM": "T",
+        "AGENT": "T",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Relocação e procedimentos de permissão citados; confirmar para o nível pretendido",
+      "nota": "Stack declarado da função, não lista de requisitos obrigatórios. Apoio a permissão de trabalho no texto.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J38",
+      "empresa": "Mistral AI",
+      "pais_principal": "FR",
+      "local": "Paris; Critical & Sovereign Institutions",
+      "titulo": "Applied AI, Fullstack Software Engineer, Critical and Sovereign Institutions, Paris · Mistral AI",
+      "url": "https://agentic-engineering-jobs.com/jobs/mistral-ai-applied-ai-fullstack-software-engineer-critical-and-sovereign-institutions-paris-bUJ0fU",
+      "data_exibida": "2026-05-06",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid; 2+ anos",
+      "experiencia_minima_anos": 2,
+      "formacao": "Graduação relacionada",
+      "skills": {
+        "LLM": "T",
+        "PY": "R",
+        "TS": "R",
+        "API": "R",
+        "PROD": "R"
+      },
+      "idiomas": "Inglês",
+      "elegibilidade": "Cidadania francesa e elegibilidade para clearance requeridas",
+      "nota": "Benefício genérico de sponsorship não remove filtro específico de cidadania.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J39",
+      "empresa": "Mistral AI",
+      "pais_principal": "FR",
+      "local": "Paris; Prototyping",
+      "titulo": "Applied AI Engineer, Prototyping · Mistral AI",
+      "url": "https://agentic-engineering-jobs.com/jobs/mistral-ai-applied-ai-engineer-prototyping-AUaSng",
+      "data_exibida": "2026-04-24",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid; 2+ anos",
+      "experiencia_minima_anos": 2,
+      "formacao": "Não mencionada",
+      "skills": {
+        "API": "T",
+        "CONTAINER": "D",
+        "CLOUD": "D",
+        "IAC": "D",
+        "PORTFOLIO": "D",
+        "TS": "D",
+        "PY": "R",
+        "FASTAPI": "R",
+        "LLM": "R",
+        "RAG": "R",
+        "AGENT": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Apesar de 2+ anos e rótulo Mid, descreve technical lead de entregas; alvo ambicioso, exige produção de ponta a ponta e autonomia alta.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J40",
+      "empresa": "Olisipo",
+      "pais_principal": "PT",
+      "local": "Lisboa; modalidade divergente",
+      "titulo": "AI Agentforce Junior - Olisipo - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/515956/ai-agentforce-junior",
+      "data_exibida": "2026-08-19",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Junior explícito; 1–3 anos",
+      "experiencia_minima_anos": 1,
+      "formacao": "Licenciatura/mestrado relacionado",
+      "skills": {
+        "API": "T",
+        "PY": "R",
+        "LLM": "R",
+        "VEC": "R",
+        "RAG": "R",
+        "AGENT": "R",
+        "SALESFORCE": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "€23.650–28.600/ano. Header presencial e corpo híbrido. Salesforce/Agentforce demanda trilha própria.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J41",
+      "empresa": "Mistral AI",
+      "pais_principal": "FR",
+      "local": "Paris híbrido",
+      "titulo": "AI Engineer, Product · Mistral AI",
+      "url": "https://agentic-engineering-jobs.com/jobs/mistral-ai-ai-engineer-product-p4R-mr",
+      "data_exibida": "2026-04-01",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Mid; 3–4 anos",
+      "experiencia_minima_anos": 3,
+      "formacao": "Não mencionada",
+      "skills": {
+        "TEST": "T",
+        "CICD": "T",
+        "GOV": "D",
+        "PY": "R",
+        "TS": "R",
+        "LLM": "R",
+        "AGENT": "R",
+        "EVAL": "R",
+        "OBS": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Python OU TypeScript; release canário, métricas de produto, qualidade e custos.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J42",
+      "titulo": "Anúncio inactivo - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/515930/ai-privacy-engineer",
+      "amostra_principal": false,
+      "motivo_exclusao": "Anúncio inativo sem texto recuperável",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J43",
+      "empresa": "Neotalent Conclusion",
+      "pais_principal": "PT",
+      "local": "Portugal remoto",
+      "titulo": "AI Engineer - Neotalent Conclusion - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/515678/ai-engineer",
+      "data_exibida": "2026-08-10",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid superior inferido",
+      "experiencia_minima_anos": 4,
+      "formacao": "Graduação técnica",
+      "skills": {
+        "GOV": "T",
+        "PY": "D",
+        "CSHARP": "D",
+        "LLM": "R",
+        "CLOUD": "R",
+        "API": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Referência MSR_AI Engineer; quatro anos em AI e busca avançada. Linguagens citadas como valorizadas.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J44",
+      "titulo": "AI Engineer - Neotalent Conclusion - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/515169/ai-engineer",
+      "amostra_principal": false,
+      "motivo_exclusao": "Corpo declara Senior, embora título da listagem omita",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J45",
+      "empresa": "Visual Thinking",
+      "pais_principal": "PT",
+      "local": "Porto presencial",
+      "titulo": "Engenheiro de AI/ML - Visual Thinking - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/515449/engenheiro-de-ai-ml",
+      "data_exibida": "2026-07-27",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Não declarada; especialização ML",
+      "experiencia_minima_anos": null,
+      "formacao": "Licenciatura científica/técnica",
+      "skills": {
+        "LLM": "T",
+        "FINE": "D",
+        "CONTAINER": "D",
+        "PY": "R",
+        "ML": "R",
+        "EVAL": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Engenharia e treino de modelos; mestrado/doutorado valorizado. Pouca aderência ao objetivo até fevereiro sem experiência ML prévia.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J46",
+      "titulo": "Data & AI Engineer - IT House - Global Business Solutions - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516194/data-ai-engineer",
+      "amostra_principal": false,
+      "motivo_exclusao": "Liderança técnica explícita",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J47",
+      "empresa": "Integer Consulting",
+      "pais_principal": "PT",
+      "local": "Portugal híbrido",
+      "titulo": "AI Engineer (Generative AI Specialist) - Integer Consulting - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516135/ai-engineer-generative-ai-specialist",
+      "data_exibida": "2026-08-20",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Não declarada; sem mínimo de anos",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "PY": "D",
+        "CLOUD": "D",
+        "AGENT": "D",
+        "RAG": "D",
+        "VEC": "D",
+        "LLM": "R",
+        "FRAME": "R",
+        "API": "R"
+      },
+      "idiomas": "Inglês fluente",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Aceita experiência em projetos AI/ML/GenAI/DS; confirmar nível e projeto cliente antes de investir preparação específica.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J48",
+      "empresa": "Critical Manufacturing",
+      "pais_principal": "PT",
+      "local": "Porto/Maia híbrido",
+      "titulo": "AI Software Engineer - Critical Manufacturing - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/515809/ai-software-engineer",
+      "data_exibida": "2026-08-06",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Execução sob liderança; 1 ano aplicado",
+      "experiencia_minima_anos": 1,
+      "formacao": "Não mencionada",
+      "skills": {
+        "MCP": "T",
+        "OBS": "D",
+        "EVAL": "T",
+        "GOV": "T",
+        "AGENT": "T",
+        "PY": "D",
+        "FRAME": "D",
+        "ML": "R",
+        "LLM": "R",
+        "API": "R",
+        "CONTAINER": "R",
+        "TEST": "R",
+        "CICD": "R"
+      },
+      "idiomas": "Inglês",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Um ano em ML e um em LLMs; períodos podem se sobrepor. Prototipagem não é experiência profissional presumida.",
+      "estado": "Texto histórico recuperado; segunda verificação retornou anúncio inativo",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J49",
+      "titulo": "Agentic AI Software Engineer · Machine Learning Reply",
+      "url": "https://agentic-engineering-jobs.com/jobs/machine-learning-reply-agentic-ai-software-engineer-_DLK7T",
+      "amostra_principal": false,
+      "motivo_exclusao": "Possível duplicação/republicação de J14 e descrição parcial; excluído conservadoramente",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J50",
+      "titulo": "Full-Stack Developer (Lisbon)",
+      "url": "https://www.reaktor.com/careers/full-stack-developer-lisbon",
+      "amostra_principal": false,
+      "motivo_exclusao": "Corpo menciona Lead e cerca de 6+ anos; também sem data de publicação",
+      "consultado_em": "2026-09-18"
+    },
+    {
+      "id": "J51",
+      "empresa": "Capgemini Invent",
+      "pais_principal": "UK",
+      "local": "Londres/Manchester/Glasgow híbrido",
+      "titulo": "Agentic / GenAI Consultant / Senior Consultant · Capgemini Invent",
+      "url": "https://agentic-engineering-jobs.com/jobs/capgemini-invent-agentic-genai-consultant-senior-consultant-BLHIjU",
+      "data_exibida": "2026-04-01",
+      "natureza_data": "Publicação/indexação no agregador; data original não confirmada",
+      "fonte": "Resumo em job board técnico",
+      "senioridade": "Consultant / Senior Consultant; faixa mista",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "PY": "T",
+        "TS": "T",
+        "SQL": "T",
+        "API": "T",
+        "FASTAPI": "T",
+        "CLOUD": "T",
+        "CONTAINER": "T",
+        "CICD": "T",
+        "LLM": "T",
+        "RAG": "T",
+        "FRAME": "T",
+        "AGENT": "T",
+        "EVAL": "T",
+        "GOV": "T",
+        "TEST": "T",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Cinco anos ou mais de residência no UK exigidos",
+      "nota": "Stack listado não significa domínio obrigatório de todos os componentes; elegibilidade bloqueia boa parte dos recém-chegados.",
+      "estado": "Expirado automaticamente no board após 60 dias; situação no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J52",
+      "empresa": "Winners Group",
+      "pais_principal": "PT",
+      "local": "Moscavide/Lisboa presencial",
+      "titulo": "AI & Automation Enthusiast - Winners Group - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516825/ai-automation-enthusiast",
+      "data_exibida": "2026-09-10",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Não declarada; função de entrada possível",
+      "experiencia_minima_anos": null,
+      "formacao": "Não mencionada",
+      "skills": {
+        "LOWCODE": "T",
+        "PY": "D",
+        "TS": "D",
+        "API": "D",
+        "LLM": "R",
+        "AGENT": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "€13.000–21.000/ano e trabalho de terça a sábado. Só considerar se remuneração, horário e aprendizagem forem aceitáveis.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J53",
+      "empresa": "Mind Source",
+      "pais_principal": "PT",
+      "local": "Lisboa híbrido",
+      "titulo": "Generative AI Developer - Mind Source - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516514/generative-ai-developer",
+      "data_exibida": "2026-08-31",
+      "natureza_data": "Data do anúncio",
+      "fonte": "Anúncio da empresa em ITJobs",
+      "senioridade": "Mid superior inferido",
+      "experiencia_minima_anos": 4,
+      "formacao": "Licenciatura relacionada",
+      "skills": {
+        "PY": "R",
+        "LLM": "R",
+        "API": "R",
+        "CICD": "R",
+        "CONTAINER": "R",
+        "CLOUD": "R",
+        "PROD": "R"
+      },
+      "idiomas": "",
+      "elegibilidade": "Não informada no texto acessível",
+      "nota": "Python OU C++; quatro anos em IA/ML/GenAI. Referência IJ_GAI.",
+      "estado": "Texto e opção de candidatura exibidos; abertura no empregador não confirmada",
+      "consultado_em": "2026-09-18",
+      "amostra_principal": true
+    },
+    {
+      "id": "J54",
+      "titulo": "Anúncio inactivo - ITJobs",
+      "url": "https://www.itjobs.pt/oferta/516024/consultor-salesforce-ai-junior",
+      "amostra_principal": false,
+      "motivo_exclusao": "Anúncio inativo sem texto recuperável",
+      "consultado_em": "2026-09-18"
+    }
+  ],
+  "market_skill_matrix": [
+    {
+      "skill_id": "LLM",
+      "skill": "LLMs e integração GenAI",
+      "exigida_ou_alternativa": 25,
+      "desejavel": 1,
+      "atividade_ou_stack": 11,
+      "mencoes_total": 37,
+      "percentual_mencoes": 92.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J02",
+          "J04",
+          "J05",
+          "J06",
+          "J07",
+          "J08",
+          "J09",
+          "J10",
+          "J11",
+          "J14",
+          "J22",
+          "J29",
+          "J30",
+          "J33",
+          "J34",
+          "J35",
+          "J36",
+          "J39",
+          "J40",
+          "J41",
+          "J43",
+          "J47",
+          "J48",
+          "J52",
+          "J53"
+        ],
+        "D": [
+          "J01"
+        ],
+        "T": [
+          "J03",
+          "J12",
+          "J13",
+          "J17",
+          "J19",
+          "J31",
+          "J32",
+          "J37",
+          "J38",
+          "J45",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "PY",
+      "skill": "Python",
+      "exigida_ou_alternativa": 27,
+      "desejavel": 5,
+      "atividade_ou_stack": 2,
+      "mencoes_total": 34,
+      "percentual_mencoes": 85.0,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J03",
+          "J06",
+          "J07",
+          "J08",
+          "J09",
+          "J10",
+          "J11",
+          "J13",
+          "J14",
+          "J16",
+          "J19",
+          "J20",
+          "J21",
+          "J22",
+          "J29",
+          "J30",
+          "J31",
+          "J33",
+          "J34",
+          "J35",
+          "J36",
+          "J38",
+          "J39",
+          "J40",
+          "J41",
+          "J45",
+          "J53"
+        ],
+        "D": [
+          "J02",
+          "J43",
+          "J47",
+          "J48",
+          "J52"
+        ],
+        "T": [
+          "J17",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "API",
+      "skill": "APIs e integrações",
+      "exigida_ou_alternativa": 17,
+      "desejavel": 2,
+      "atividade_ou_stack": 11,
+      "mencoes_total": 30,
+      "percentual_mencoes": 75.0,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J01",
+          "J02",
+          "J04",
+          "J05",
+          "J06",
+          "J16",
+          "J19",
+          "J20",
+          "J21",
+          "J29",
+          "J32",
+          "J34",
+          "J38",
+          "J43",
+          "J47",
+          "J48",
+          "J53"
+        ],
+        "D": [
+          "J03",
+          "J52"
+        ],
+        "T": [
+          "J10",
+          "J12",
+          "J14",
+          "J17",
+          "J22",
+          "J30",
+          "J33",
+          "J37",
+          "J39",
+          "J40",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "AGENT",
+      "skill": "Agentes / tool calling / workflows",
+      "exigida_ou_alternativa": 17,
+      "desejavel": 2,
+      "atividade_ou_stack": 10,
+      "mencoes_total": 29,
+      "percentual_mencoes": 72.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J04",
+          "J06",
+          "J08",
+          "J09",
+          "J10",
+          "J12",
+          "J20",
+          "J21",
+          "J22",
+          "J29",
+          "J30",
+          "J34",
+          "J36",
+          "J39",
+          "J40",
+          "J41",
+          "J52"
+        ],
+        "D": [
+          "J33",
+          "J47"
+        ],
+        "T": [
+          "J03",
+          "J11",
+          "J13",
+          "J14",
+          "J19",
+          "J31",
+          "J32",
+          "J37",
+          "J48",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "CLOUD",
+      "skill": "Cloud",
+      "exigida_ou_alternativa": 12,
+      "desejavel": 11,
+      "atividade_ou_stack": 4,
+      "mencoes_total": 27,
+      "percentual_mencoes": 67.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J01",
+          "J02",
+          "J05",
+          "J08",
+          "J09",
+          "J13",
+          "J16",
+          "J17",
+          "J22",
+          "J29",
+          "J43",
+          "J53"
+        ],
+        "D": [
+          "J03",
+          "J06",
+          "J07",
+          "J12",
+          "J20",
+          "J30",
+          "J31",
+          "J33",
+          "J34",
+          "J39",
+          "J47"
+        ],
+        "T": [
+          "J14",
+          "J21",
+          "J36",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "RAG",
+      "skill": "RAG / retrieval aplicado",
+      "exigida_ou_alternativa": 15,
+      "desejavel": 3,
+      "atividade_ou_stack": 8,
+      "mencoes_total": 26,
+      "percentual_mencoes": 65.0,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J02",
+          "J04",
+          "J05",
+          "J07",
+          "J08",
+          "J10",
+          "J11",
+          "J21",
+          "J22",
+          "J29",
+          "J30",
+          "J33",
+          "J36",
+          "J39",
+          "J40"
+        ],
+        "D": [
+          "J06",
+          "J16",
+          "J47"
+        ],
+        "T": [
+          "J03",
+          "J09",
+          "J13",
+          "J14",
+          "J17",
+          "J31",
+          "J32",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "PROD",
+      "skill": "Experiência de entrega/produção explicitamente pedida",
+      "exigida_ou_alternativa": 21,
+      "desejavel": 0,
+      "atividade_ou_stack": 2,
+      "mencoes_total": 23,
+      "percentual_mencoes": 57.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J05",
+          "J07",
+          "J10",
+          "J12",
+          "J13",
+          "J14",
+          "J16",
+          "J17",
+          "J19",
+          "J20",
+          "J21",
+          "J33",
+          "J34",
+          "J36",
+          "J37",
+          "J38",
+          "J39",
+          "J41",
+          "J45",
+          "J51",
+          "J53"
+        ],
+        "D": [],
+        "T": [
+          "J04",
+          "J09"
+        ]
+      }
+    },
+    {
+      "skill_id": "FRAME",
+      "skill": "Frameworks de LLM/agentes",
+      "exigida_ou_alternativa": 10,
+      "desejavel": 7,
+      "atividade_ou_stack": 4,
+      "mencoes_total": 21,
+      "percentual_mencoes": 52.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J02",
+          "J04",
+          "J06",
+          "J08",
+          "J09",
+          "J16",
+          "J22",
+          "J29",
+          "J33",
+          "J47"
+        ],
+        "D": [
+          "J03",
+          "J07",
+          "J13",
+          "J20",
+          "J21",
+          "J30",
+          "J48"
+        ],
+        "T": [
+          "J14",
+          "J17",
+          "J19",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "EVAL",
+      "skill": "Avaliação de modelos/LLMs",
+      "exigida_ou_alternativa": 9,
+      "desejavel": 2,
+      "atividade_ou_stack": 8,
+      "mencoes_total": 19,
+      "percentual_mencoes": 47.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J03",
+          "J06",
+          "J07",
+          "J10",
+          "J22",
+          "J35",
+          "J36",
+          "J41",
+          "J45"
+        ],
+        "D": [
+          "J12",
+          "J20"
+        ],
+        "T": [
+          "J02",
+          "J11",
+          "J16",
+          "J17",
+          "J32",
+          "J33",
+          "J48",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "TS",
+      "skill": "TypeScript / JavaScript / Node",
+      "exigida_ou_alternativa": 10,
+      "desejavel": 5,
+      "atividade_ou_stack": 3,
+      "mencoes_total": 18,
+      "percentual_mencoes": 45.0,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J01",
+          "J14",
+          "J19",
+          "J20",
+          "J22",
+          "J30",
+          "J32",
+          "J35",
+          "J38",
+          "J41"
+        ],
+        "D": [
+          "J02",
+          "J12",
+          "J34",
+          "J39",
+          "J52"
+        ],
+        "T": [
+          "J17",
+          "J37",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "VEC",
+      "skill": "Embeddings / bancos vetoriais",
+      "exigida_ou_alternativa": 8,
+      "desejavel": 5,
+      "atividade_ou_stack": 4,
+      "mencoes_total": 17,
+      "percentual_mencoes": 42.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J02",
+          "J11",
+          "J17",
+          "J22",
+          "J29",
+          "J33",
+          "J36",
+          "J40"
+        ],
+        "D": [
+          "J06",
+          "J07",
+          "J16",
+          "J30",
+          "J47"
+        ],
+        "T": [
+          "J13",
+          "J14",
+          "J32",
+          "J37"
+        ]
+      }
+    },
+    {
+      "skill_id": "CONTAINER",
+      "skill": "Docker / Kubernetes",
+      "exigida_ou_alternativa": 8,
+      "desejavel": 6,
+      "atividade_ou_stack": 2,
+      "mencoes_total": 16,
+      "percentual_mencoes": 40.0,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J08",
+          "J13",
+          "J14",
+          "J16",
+          "J17",
+          "J22",
+          "J48",
+          "J53"
+        ],
+        "D": [
+          "J03",
+          "J10",
+          "J11",
+          "J20",
+          "J39",
+          "J45"
+        ],
+        "T": [
+          "J37",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "OBS",
+      "skill": "Observabilidade / tracing / monitorização",
+      "exigida_ou_alternativa": 7,
+      "desejavel": 3,
+      "atividade_ou_stack": 6,
+      "mencoes_total": 16,
+      "percentual_mencoes": 40.0,
+      "denominador": 40,
+      "classificacao": "Competência operacional recorrente",
+      "evidencias": {
+        "R": [
+          "J07",
+          "J10",
+          "J16",
+          "J33",
+          "J35",
+          "J36",
+          "J41"
+        ],
+        "D": [
+          "J20",
+          "J30",
+          "J48"
+        ],
+        "T": [
+          "J08",
+          "J12",
+          "J19",
+          "J22",
+          "J32",
+          "J37"
+        ]
+      }
+    },
+    {
+      "skill_id": "CICD",
+      "skill": "CI/CD / DevOps",
+      "exigida_ou_alternativa": 8,
+      "desejavel": 1,
+      "atividade_ou_stack": 3,
+      "mencoes_total": 12,
+      "percentual_mencoes": 30.0,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J13",
+          "J14",
+          "J17",
+          "J22",
+          "J29",
+          "J35",
+          "J48",
+          "J53"
+        ],
+        "D": [
+          "J11"
+        ],
+        "T": [
+          "J37",
+          "J41",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "GOV",
+      "skill": "Guardrails / privacidade / auditoria / governança",
+      "exigida_ou_alternativa": 2,
+      "desejavel": 3,
+      "atividade_ou_stack": 7,
+      "mencoes_total": 12,
+      "percentual_mencoes": 30.0,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J17",
+          "J22"
+        ],
+        "D": [
+          "J20",
+          "J30",
+          "J41"
+        ],
+        "T": [
+          "J07",
+          "J21",
+          "J29",
+          "J35",
+          "J43",
+          "J48",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "ML",
+      "skill": "Fundamentos ou prática de ML",
+      "exigida_ou_alternativa": 11,
+      "desejavel": 0,
+      "atividade_ou_stack": 0,
+      "mencoes_total": 11,
+      "percentual_mencoes": 27.5,
+      "denominador": 40,
+      "classificacao": "Requisito recorrente",
+      "evidencias": {
+        "R": [
+          "J02",
+          "J03",
+          "J04",
+          "J05",
+          "J08",
+          "J11",
+          "J31",
+          "J33",
+          "J36",
+          "J45",
+          "J48"
+        ],
+        "D": [],
+        "T": []
+      }
+    },
+    {
+      "skill_id": "TEST",
+      "skill": "Testes de software",
+      "exigida_ou_alternativa": 5,
+      "desejavel": 0,
+      "atividade_ou_stack": 6,
+      "mencoes_total": 11,
+      "percentual_mencoes": 27.5,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J06",
+          "J16",
+          "J17",
+          "J35",
+          "J48"
+        ],
+        "D": [],
+        "T": [
+          "J02",
+          "J08",
+          "J12",
+          "J22",
+          "J41",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "SQL",
+      "skill": "SQL / PostgreSQL",
+      "exigida_ou_alternativa": 7,
+      "desejavel": 0,
+      "atividade_ou_stack": 3,
+      "mencoes_total": 10,
+      "percentual_mencoes": 25.0,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J01",
+          "J03",
+          "J07",
+          "J08",
+          "J17",
+          "J21",
+          "J30"
+        ],
+        "D": [],
+        "T": [
+          "J22",
+          "J37",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "GRAPH",
+      "skill": "LangGraph / estado / memória",
+      "exigida_ou_alternativa": 5,
+      "desejavel": 3,
+      "atividade_ou_stack": 1,
+      "mencoes_total": 9,
+      "percentual_mencoes": 22.5,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J04",
+          "J09",
+          "J10",
+          "J16",
+          "J29"
+        ],
+        "D": [
+          "J07",
+          "J20",
+          "J33"
+        ],
+        "T": [
+          "J14"
+        ]
+      }
+    },
+    {
+      "skill_id": "FINE",
+      "skill": "Fine-tuning / adaptação de modelos",
+      "exigida_ou_alternativa": 3,
+      "desejavel": 3,
+      "atividade_ou_stack": 2,
+      "mencoes_total": 8,
+      "percentual_mencoes": 20.0,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J11",
+          "J14",
+          "J22"
+        ],
+        "D": [
+          "J10",
+          "J16",
+          "J45"
+        ],
+        "T": [
+          "J17",
+          "J32"
+        ]
+      }
+    },
+    {
+      "skill_id": "FASTAPI",
+      "skill": "FastAPI",
+      "exigida_ou_alternativa": 4,
+      "desejavel": 0,
+      "atividade_ou_stack": 3,
+      "mencoes_total": 7,
+      "percentual_mencoes": 17.5,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J08",
+          "J14",
+          "J19",
+          "J39"
+        ],
+        "D": [],
+        "T": [
+          "J17",
+          "J36",
+          "J51"
+        ]
+      }
+    },
+    {
+      "skill_id": "MCP",
+      "skill": "Model Context Protocol",
+      "exigida_ou_alternativa": 2,
+      "desejavel": 1,
+      "atividade_ou_stack": 4,
+      "mencoes_total": 7,
+      "percentual_mencoes": 17.5,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J10",
+          "J21"
+        ],
+        "D": [
+          "J30"
+        ],
+        "T": [
+          "J19",
+          "J22",
+          "J31",
+          "J48"
+        ]
+      }
+    },
+    {
+      "skill_id": "IAC",
+      "skill": "Infrastructure as Code",
+      "exigida_ou_alternativa": 2,
+      "desejavel": 1,
+      "atividade_ou_stack": 2,
+      "mencoes_total": 5,
+      "percentual_mencoes": 12.5,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [
+          "J16",
+          "J22"
+        ],
+        "D": [
+          "J39"
+        ],
+        "T": [
+          "J12",
+          "J37"
+        ]
+      }
+    },
+    {
+      "skill_id": "PORTFOLIO",
+      "skill": "Portfólio / open source / publicação explicitamente valorizados",
+      "exigida_ou_alternativa": 0,
+      "desejavel": 4,
+      "atividade_ou_stack": 0,
+      "mencoes_total": 4,
+      "percentual_mencoes": 10.0,
+      "denominador": 40,
+      "classificacao": "Diferencial ou nicho",
+      "evidencias": {
+        "R": [],
+        "D": [
+          "J04",
+          "J10",
+          "J31",
+          "J39"
+        ],
+        "T": []
+      }
+    },
+    {
+      "skill_id": "LOWCODE",
+      "skill": "Automação / low-code",
+      "exigida_ou_alternativa": 1,
+      "desejavel": 0,
+      "atividade_ou_stack": 2,
+      "mencoes_total": 3,
+      "percentual_mencoes": 7.5,
+      "denominador": 40,
+      "classificacao": "Menção rara nesta amostra",
+      "evidencias": {
+        "R": [
+          "J21"
+        ],
+        "D": [],
+        "T": [
+          "J19",
+          "J52"
+        ]
+      }
+    },
+    {
+      "skill_id": "CERT",
+      "skill": "Certificação como diferencial do candidato",
+      "exigida_ou_alternativa": 0,
+      "desejavel": 3,
+      "atividade_ou_stack": 0,
+      "mencoes_total": 3,
+      "percentual_mencoes": 7.5,
+      "denominador": 40,
+      "classificacao": "Menção rara nesta amostra",
+      "evidencias": {
+        "R": [],
+        "D": [
+          "J02",
+          "J16",
+          "J35"
+        ],
+        "T": []
+      }
+    },
+    {
+      "skill_id": "CSHARP",
+      "skill": "C# / .NET",
+      "exigida_ou_alternativa": 1,
+      "desejavel": 1,
+      "atividade_ou_stack": 0,
+      "mencoes_total": 2,
+      "percentual_mencoes": 5.0,
+      "denominador": 40,
+      "classificacao": "Menção rara nesta amostra",
+      "evidencias": {
+        "R": [
+          "J05"
+        ],
+        "D": [
+          "J43"
+        ],
+        "T": []
+      }
+    },
+    {
+      "skill_id": "SALESFORCE",
+      "skill": "Salesforce / Agentforce",
+      "exigida_ou_alternativa": 1,
+      "desejavel": 0,
+      "atividade_ou_stack": 0,
+      "mencoes_total": 1,
+      "percentual_mencoes": 2.5,
+      "denominador": 40,
+      "classificacao": "Menção rara nesta amostra",
+      "evidencias": {
+        "R": [
+          "J40"
+        ],
+        "D": [],
+        "T": []
+      }
+    },
+    {
+      "skill_id": "RERANK",
+      "skill": "Reranking explícito",
+      "exigida_ou_alternativa": 0,
+      "desejavel": 0,
+      "atividade_ou_stack": 1,
+      "mencoes_total": 1,
+      "percentual_mencoes": 2.5,
+      "denominador": 40,
+      "classificacao": "Menção rara nesta amostra",
+      "evidencias": {
+        "R": [],
+        "D": [],
+        "T": [
+          "J33"
+        ]
+      }
+    }
+  ],
+  "cursos_certificacoes": [
+    {
+      "id": "C01",
+      "nome": "CS50’s Introduction to Programming with Python",
+      "decisao": "Escolha padrão para Python; não fazer também Helsinki completo",
+      "preco": {
+        "valor": 0,
+        "moeda": "USD",
+        "escopo": "Material e certificado CS50; certificado verificado edX é opcional e não incluído"
+      },
+      "duracao_oficial": "10 semanas de conteúdo",
+      "horas_estimadas": "60–80; base reserva 60 de estudo e prática reaproveitada no projeto",
+      "dependencias": "Experiência prévia em programação ajuda; nenhuma formação específica obrigatória",
+      "roi": "Alto como formação; moderado como sinal curricular. Nenhuma vaga da amostra pede CS50.",
+      "vagas": [
+        "J02",
+        "J06",
+        "J33",
+        "J39",
+        "J48"
+      ],
+      "evidencia": "Exercícios aprovados, projeto e certificado gratuito após nota mínima de 70% em cada problema e projeto",
+      "urls": [
+        "https://cs50.harvard.edu/python/",
+        "https://cs50.harvard.edu/python/certificate/"
+      ]
+    },
+    {
+      "id": "C02",
+      "nome": "FastAPI Tutorial + pytest Get Started",
+      "decisao": "Obrigatório na trilha principal",
+      "preco": {
+        "valor": 0,
+        "moeda": "EUR",
+        "escopo": "Documentação aberta; infraestrutura à parte"
+      },
+      "duracao_oficial": "Autodirigido; sem carga oficial única",
+      "horas_estimadas": "20 de estudo; implementação dentro de P02",
+      "dependencias": "Python, tipagem, exceções, async, HTTP",
+      "roi": "Alto: transforma Python em evidência de backend testável.",
+      "vagas": [
+        "J08",
+        "J14",
+        "J19",
+        "J39"
+      ],
+      "evidencia": "API tipada, testes de contrato/integração, mocks de LLM, CI",
+      "urls": [
+        "https://fastapi.tiangolo.com/tutorial/",
+        "https://docs.pytest.org/en/stable/getting-started.html"
+      ]
+    },
+    {
+      "id": "C03",
+      "nome": "RAG: pgvector + Weaviate hybrid search + Sentence Transformers retrieve/rerank",
+      "decisao": "Estudar conceitos e construir com PostgreSQL/pgvector; não abrir três bancos",
+      "preco": {
+        "valor": 0,
+        "moeda": "EUR",
+        "escopo": "Documentação e bibliotecas; uso de modelos/hosting à parte"
+      },
+      "duracao_oficial": "Autodirigido",
+      "horas_estimadas": "16 de leitura/experimentos guiados; implementação dentro de P02",
+      "dependencias": "Python, SQL, API e dataset de avaliação",
+      "roi": "Muito alto; fecha RAG/vector, reaproveitando PostgreSQL existente.",
+      "vagas": [
+        "J02",
+        "J17",
+        "J33",
+        "J36"
+      ],
+      "evidencia": "Comparação dense/lexical/hybrid/rerank, métricas com holdout e relatório de custo",
+      "urls": [
+        "https://github.com/pgvector/pgvector",
+        "https://docs.weaviate.io/weaviate/search/hybrid",
+        "https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html"
+      ]
+    },
+    {
+      "id": "C04",
+      "nome": "LangChain Academy — Introduction to LangGraph (Python)",
+      "decisao": "Fazer após API e primeiro RAG; priorizar estado, memória, HITL e deployment",
+      "preco": {
+        "valor": 0,
+        "moeda": "USD",
+        "escopo": "Curso; APIs e deployment à parte"
+      },
+      "duracao_oficial": "55 lições; 6 horas de vídeo",
+      "horas_estimadas": "8 de estudo + 12–18 de implementação já dentro de P03",
+      "dependencias": "Python e tool calling",
+      "roi": "Alto para funções agentic; baixo se consumir vários frameworks em paralelo.",
+      "vagas": [
+        "J09",
+        "J14",
+        "J29"
+      ],
+      "evidencia": "Workflow retomável, estado persistido, aprovação e teste de falhas",
+      "urls": [
+        "https://academy.langchain.com/courses/intro-to-langgraph"
+      ]
+    },
+    {
+      "id": "C05",
+      "nome": "Google Machine Learning Crash Course",
+      "decisao": "Fundamentos desde outubro; não esperar janeiro",
+      "preco": {
+        "valor": 0,
+        "moeda": "USD",
+        "escopo": "Conteúdo aberto"
+      },
+      "duracao_oficial": "Modular; trilha personalizada sem duração única adotada",
+      "horas_estimadas": "20; reforço adicional usa as horas de entrevista",
+      "dependencias": "Python básico e álgebra elementar",
+      "roi": "Alto para entrevistas e para não confundir conhecimento de APIs com ML.",
+      "vagas": [
+        "J03",
+        "J08",
+        "J11",
+        "J48"
+      ],
+      "evidencia": "Notebook com baseline, split, leakage, overfitting, precisão/recall e análise de erros",
+      "urls": [
+        "https://developers.google.com/machine-learning/crash-course"
+      ]
+    },
+    {
+      "id": "C06",
+      "nome": "Langfuse — observabilidade e avaliação",
+      "decisao": "Instrumentar primeiro o sistema atual e reutilizar nos demais cases",
+      "preco": {
+        "valor": 0,
+        "moeda": "EUR",
+        "escopo": "Documentação; cloud/self-hosting e chamadas podem ter custo"
+      },
+      "duracao_oficial": "Autodirigido",
+      "horas_estimadas": "6 de estudo + implementação dentro de P01/P02/P03",
+      "dependencias": "Aplicação com eventos e chamadas LLM",
+      "roi": "Alto: amplia evidências já existentes de evals e governança.",
+      "vagas": [
+        "J07",
+        "J36",
+        "J41",
+        "J48"
+      ],
+      "evidencia": "Traces, dataset versionado, custo, p95, comparação de prompts/modelos",
+      "urls": [
+        "https://langfuse.com/docs"
+      ]
+    },
+    {
+      "id": "C07",
+      "nome": "Microsoft AI-103 — Azure AI Apps and Agents Developer Associate",
+      "decisao": "Uma certificação opcional, somente após dois cases e sinal de vagas Azure",
+      "preco": {
+        "valor": null,
+        "moeda": null,
+        "escopo": "Preço oficial varia por país de realização; valor local não apareceu no leitor. Confirmar no agendamento; não estimar como preço verificado."
+      },
+      "duracao_oficial": "Exame de 120 minutos",
+      "horas_estimadas": "40–60 de preparação estimada, além da base prática; não está no orçamento-base de 627h",
+      "dependencias": "Python, serviços Azure/Foundry e implementação em cloud",
+      "roi": "Condicional: vagas valorizam cloud; não foi encontrado pedido explícito de AI-103 nesta amostra.",
+      "vagas": [
+        "J02",
+        "J07",
+        "J29",
+        "J43"
+      ],
+      "evidencia": "Exame supervisionado + deployment com identidade, custos, logs e avaliação",
+      "urls": [
+        "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/",
+        "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103"
+      ]
+    },
+    {
+      "id": "C08",
+      "nome": "University of Helsinki — Introduction to Programming, Python MOOC 2026",
+      "decisao": "Alternativa acadêmica ao CS50P; escolher um",
+      "preco": {
+        "valor": 0,
+        "moeda": "EUR",
+        "escopo": "MOOC aberto e gratuito. Procedimento/custo eventual de registro acadêmico deve ser confirmado para a situação do participante."
+      },
+      "duracao_oficial": "Partes 1–7, disciplina de 5 ECTS, exercícios e exame; prova de até 4 horas",
+      "horas_estimadas": "100–140, estimativa conservadora de planejamento; não confundir com duração de vídeo",
+      "dependencias": "Exercícios e aprovação; registro dos créditos pela Open University após exame",
+      "roi": "Médio: avaliação formal e possível transcript; não equivale a licenciatura e não há preferência pelo programa nas vagas.",
+      "vagas": [
+        "J03",
+        "J08",
+        "J48"
+      ],
+      "evidencia": "Certificado após aprovação; créditos condicionados ao processo de registro, sem promessa de equivalência a diploma",
+      "datas_exame": [
+        "2026-10-27",
+        "2026-12-05",
+        "2027-01-16"
+      ],
+      "urls": [
+        "https://programming-26.mooc.fi/",
+        "https://programming-26.mooc.fi/grading-and-exams/",
+        "https://programming-26.mooc.fi/faq/"
+      ]
+    },
+    {
+      "id": "C09",
+      "nome": "Hugging Face LLM Course",
+      "decisao": "Consulta seletiva; adiar trilha completa e treino avançado",
+      "preco": {
+        "valor": 0,
+        "moeda": "USD",
+        "escopo": "Curso aberto; compute à parte"
+      },
+      "duracao_oficial": "12 capítulos; orientação de cerca de 6–8 horas por capítulo/semana",
+      "horas_estimadas": "12–16 apenas se substituir material equivalente; não somar ao plano-base",
+      "dependencias": "Python forte e introdução a deep learning recomendada",
+      "roi": "Médio para fundamentos; menor retorno imediato que API/RAG/testes no perfil atual.",
+      "vagas": [
+        "J03",
+        "J11",
+        "J45"
+      ],
+      "evidencia": "Explicação de tokens/transformers e notebook; não prometer certificação",
+      "urls": [
+        "https://huggingface.co/learn/llm-course/chapter1/1"
+      ]
+    },
+    {
+      "id": "C10",
+      "nome": "Rumos — Academia Software Developer & AI",
+      "decisao": "Adiar; custo e data de conclusão incompatíveis com o ciclo",
+      "preco": {
+        "valor": 2750,
+        "moeda": "EUR",
+        "escopo": "Preço no anúncio de formação ITJobs; condições, IVA e prova incluída precisam ser confirmados com o fornecedor"
+      },
+      "duracao_oficial": "152h; edição 17/09/2026 a 18/03/2027",
+      "horas_estimadas": "152 de formação, além de prática",
+      "dependencias": "Disponibilidade pós-laboral; formação .NET/web e AI",
+      "roi": "Baixo neste ciclo: repete software/web, introduz C# e termina após 18/02. Pode servir a uma transição .NET posterior.",
+      "vagas": [
+        "J05"
+      ],
+      "evidencia": "Projeto e formação profissional; prepara AI+ Developer Practitioner. Não foi encontrada exigência dessa credencial na amostra.",
+      "urls": [
+        "https://www.itjobs.pt/curso/7646/academia-full-stack-developer"
+      ]
+    },
+    {
+      "id": "C11",
+      "nome": "AWS Certified Machine Learning Engineer — Associate",
+      "decisao": "Adiar; priorizar um deployment antes de examinar certificação MLOps",
+      "preco": {
+        "valor": 150,
+        "moeda": "USD",
+        "escopo": "Exame padrão anunciado; beta C02 anunciada por US$75, disponibilidade e impostos devem ser reconfirmados"
+      },
+      "duracao_oficial": "Padrão: 130min; beta: 170min. Página informa mudança de versão em setembro/2026.",
+      "horas_estimadas": "60–100 de preparação, estimativa; fora do plano-base",
+      "dependencias": "Página recomenda experiência de aproximadamente um ano em ML e AWS",
+      "roi": "Baixo agora; J16 valoriza AWS mas pede 3–5 anos e plataforma avançada.",
+      "vagas": [
+        "J16"
+      ],
+      "evidencia": "Certificação de operação de ML, pouco substituto de experiência aplicada",
+      "urls": [
+        "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/"
+      ]
+    }
+  ],
+  "credenciais_eliminadas": [
+    {
+      "nome": "Azure AI Engineer Associate / AI-102",
+      "motivo": "Retirada; não comprar preparação visando novo exame",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/"
+    },
+    {
+      "nome": "Microsoft Applied Skills: Create an AI agent",
+      "motivo": "Página informa avaliação retirada",
+      "url": "https://learn.microsoft.com/en-us/credentials/applied-skills/create-an-ai-agent/"
+    },
+    {
+      "nome": "Databricks Generative AI Engineer Associate",
+      "motivo": "Examinada, mas preço/guia completos não foram recuperados de fonte primária acessível. Sem recomendação de compra; aderência principal seria J18/J46, fora do alvo imediato.",
+      "url": "https://www.databricks.com/learn/certification/generative-ai-engineer-associate"
+    }
+  ],
+  "premissas": {
+    "tempo": "30h/semana por padrão; 22 semanas inclusivas de sexta a quinta. 627h efetivas após semanas reduzidas.",
+    "semanas_reduzidas": {
+      "2026-12-04": "15h, em razão da viagem prevista para 08/12",
+      "2026-12-25": "18h, hipótese de fim de ano",
+      "2027-01-01": "24h, retomada"
+    },
+    "orcamento": "Cursos da trilha-base: €0. Propor teto de €150 para APIs/cloud durante o ciclo, não uma cotação de consumo nem autorização de gasto. Examinar gasto semanal e desligar recursos ociosos. Não usar a reserva de mudança de país para credenciais.",
+    "nao_conhecido": [
+      "Horas reais disponíveis",
+      "Orçamento de formação autorizado",
+      "Anos de experiência profissional verificável",
+      "Formação universitária em outras áreas",
+      "Fluência em inglês/alemão/francês/holandês",
+      "Direito atual de trabalho por país"
+    ],
+    "origem": "Charter anexado PRJ-CAR-AI-EU-C01-2026-27; RES-06, FIN-03/04, RSK-04/06 e metas OBJ-02 a OBJ-07."
+  },
+  "executive_decision_brief": {
+    "recomendacao": "Posicionar-se como Applied AI / Full-stack AI Engineer: TypeScript para produto e integração; Python para RAG, APIs e avaliação. Agentic AI é especialidade demonstrável, não único título de busca.",
+    "confronto_estrategia": [
+      {
+        "decisao": "Reduzir cinco posicionamentos públicos a um principal e uma variante de CV",
+        "porque": "J01/J12/J32/J37 valorizam produto/software; J02/J39 combinam experiência existente com Python. Cinco títulos diluem a narrativa.",
+        "vagas": [
+          "J01",
+          "J02",
+          "J12",
+          "J32",
+          "J37",
+          "J39"
+        ]
+      },
+      {
+        "decisao": "Antecipar candidaturas e observabilidade; não esperar terminar os três cases",
+        "porque": "J47 aceita experiência em projetos; J02 privilegia software e RAG. Tracing cria evidência reutilizável imediatamente.",
+        "vagas": [
+          "J02",
+          "J36",
+          "J47",
+          "J48"
+        ]
+      },
+      {
+        "decisao": "Trazer fundamentos de ML para outubro",
+        "porque": "Vagas junior também pedem ML, SQL e experimentação; nome junior não elimina formação ou experiência.",
+        "vagas": [
+          "J03",
+          "J08",
+          "J48"
+        ]
+      },
+      {
+        "decisao": "Trocar coleta de certificados por uma formação estruturada e dois deployments",
+        "porque": "Certificações são diferenciais em três anúncios, sem garantia de contornar diploma.",
+        "vagas": [
+          "J02",
+          "J16",
+          "J35"
+        ]
+      },
+      {
+        "decisao": "Manter governança como engenharia demonstrada",
+        "porque": "Controle de ferramentas, privacidade, aprovação e auditoria aparecem integrados ao produto; não há base para priorizar uma nova carreira de compliance no mesmo ciclo.",
+        "vagas": [
+          "J17",
+          "J21",
+          "J22",
+          "J41",
+          "J48",
+          "J51"
+        ]
+      }
+    ],
+    "risco_dominante": "Aderência técnica não equivale a elegibilidade: experiência profissional, idiomas e autorização de trabalho podem bloquear o processo antes da entrevista técnica.",
+    "meta_controlavel": "Até 15/01: três cases com código, testes/evals, demo, métricas e autoria explicável; até 18/02: pipeline qualificado e decisão de continuidade. Oferta é objetivo, não promessa."
+  },
+  "gap_analysis": [
+    {
+      "gap": "Elegibilidade, experiência e inglês",
+      "estado": "Desconhecido; resolver na semana 1",
+      "prioridade": "P0",
+      "teste": "Escrever uma ficha factual: localização, países de trabalho autorizados, disponibilidade, diploma real e anos profissionais; explicar um case em inglês por 10min.",
+      "vagas": [
+        "J02",
+        "J08",
+        "J20",
+        "J31",
+        "J38",
+        "J51"
+      ],
+      "horas": "4–6, dentro das horas de candidatura"
+    },
+    {
+      "gap": "Python idiomático, async, typing e testes",
+      "estado": "Gap declarado",
+      "prioridade": "P1",
+      "teste": "Implementar endpoint e teste sem assistência; explicar exceções, concorrência, validação e mocks.",
+      "vagas": [
+        "J08",
+        "J19",
+        "J39"
+      ],
+      "horas": "60h estudo Python + 20h API/testes; prática no case P02"
+    },
+    {
+      "gap": "RAG, embeddings e retrieval",
+      "estado": "Gap declarado",
+      "prioridade": "P1",
+      "teste": "Comparar recuperação lexical, vetorial, híbrida e reranking num holdout; explicar quando abster-se.",
+      "vagas": [
+        "J02",
+        "J17",
+        "J33",
+        "J36"
+      ],
+      "horas": "16h estudo + parte das 84h de P02"
+    },
+    {
+      "gap": "Fundamentos ML e avaliação estatística",
+      "estado": "Gap declarado; formalização insuficiente",
+      "prioridade": "P1",
+      "teste": "Treinar baseline simples, evitar leakage, distinguir recall/precision, explicar validação e overfitting.",
+      "vagas": [
+        "J03",
+        "J08",
+        "J48"
+      ],
+      "horas": "20h estudo, com prática e explicação em sessões de entrevista"
+    },
+    {
+      "gap": "Observabilidade e cloud",
+      "estado": "Deploy Vercel declarado; operação LLM/cloud não comprovada",
+      "prioridade": "P1",
+      "teste": "Um deployment com identidade/secrets, métricas p95/custo, logs redigidos, alertas e rollback.",
+      "vagas": [
+        "J07",
+        "J36",
+        "J41",
+        "J48"
+      ],
+      "horas": "12h estudo + prática dentro dos cases"
+    },
+    {
+      "gap": "LangGraph, estado e memória",
+      "estado": "Tool calling/HITL existentes; persistência e recuperação são lacunas",
+      "prioridade": "P2",
+      "teste": "Interromper e retomar execução sem duplicar efeito; controlar autorização e expiração de memória.",
+      "vagas": [
+        "J09",
+        "J14",
+        "J29"
+      ],
+      "horas": "8h estudo + parte das 51h de P03"
+    },
+    {
+      "gap": "Diploma técnico específico",
+      "estado": "Usuário informa ausência de formação AI/CS; outra graduação não foi descartada",
+      "prioridade": "P2 seletiva",
+      "teste": "Selecionar vagas sem filtro expresso ou com equivalência aceita; não declarar diploma inexistente. Curso livre não substitui graduação exigida.",
+      "vagas": [
+        "J03",
+        "J05",
+        "J13",
+        "J38",
+        "J45"
+      ],
+      "horas": "2h triagem inicial; formação longa após fevereiro"
+    },
+    {
+      "gap": "Capacidades já declaradas no GitHub",
+      "estado": "TypeScript, MCP, HITL, evals, RLS e CI/CD; sem auditoria independente nesta pesquisa",
+      "prioridade": "Manter e empacotar",
+      "teste": "README, demonstração de falha controlada, arquitetura e alteração ao vivo sem agente.",
+      "vagas": [
+        "J01",
+        "J12",
+        "J32",
+        "J48"
+      ],
+      "horas": "44h P01, incluindo instrumentação e documentação"
+    }
+  ],
+  "ranking_estudo": [
+    {
+      "ordem": 1,
+      "tema": "Python + FastAPI + pytest",
+      "horas_estudo_base": 80,
+      "cursos": [
+        "C01",
+        "C02"
+      ],
+      "entrega": "API testável até 31/10; conclusão formal de Python pode seguir em novembro",
+      "vagas": [
+        "J08",
+        "J19",
+        "J39"
+      ]
+    },
+    {
+      "ordem": 2,
+      "tema": "RAG + embeddings + pgvector + hybrid/rerank",
+      "horas_estudo_base": 16,
+      "cursos": [
+        "C03"
+      ],
+      "entrega": "P02 até 30/11",
+      "vagas": [
+        "J02",
+        "J17",
+        "J33",
+        "J36"
+      ]
+    },
+    {
+      "ordem": 3,
+      "tema": "Fundamentos de ML",
+      "horas_estudo_base": 20,
+      "cursos": [
+        "C05"
+      ],
+      "entrega": "Baseline em outubro; explicação consolidada até janeiro",
+      "vagas": [
+        "J03",
+        "J08",
+        "J48"
+      ]
+    },
+    {
+      "ordem": 4,
+      "tema": "Observabilidade e avaliação de LLM",
+      "horas_estudo_base": 6,
+      "cursos": [
+        "C06"
+      ],
+      "entrega": "Primeiras traces em outubro; nos três cases até janeiro",
+      "vagas": [
+        "J07",
+        "J36",
+        "J48"
+      ]
+    },
+    {
+      "ordem": 5,
+      "tema": "Uma cloud, segurança e operação",
+      "horas_estudo_base": 6,
+      "cursos": [
+        "C07"
+      ],
+      "entrega": "Um deployment Azure com logs e controle de custos; usar conteúdo, sem exame obrigatório",
+      "vagas": [
+        "J07",
+        "J29",
+        "J43"
+      ]
+    },
+    {
+      "ordem": 6,
+      "tema": "LangGraph, estado e memória",
+      "horas_estudo_base": 8,
+      "cursos": [
+        "C04"
+      ],
+      "entrega": "P03 até 15/01",
+      "vagas": [
+        "J09",
+        "J14",
+        "J29"
+      ]
+    }
+  ],
+  "opcoes_estrategicas": [
+    {
+      "id": "POS-A",
+      "tema": "Posicionamento",
+      "opcao": "Applied AI / Full-stack AI Engineer",
+      "recomendacao": "Principal",
+      "beneficio": "Aproveita software e produto já existentes; acrescenta Python de forma focada",
+      "custo": "€0; custo de oportunidade de organizar evidências",
+      "horas": "6–8 para CV/perfil, dentro do plano",
+      "dependencias": "Autoria demonstrável; distinguir projeto pessoal de emprego",
+      "risco": "Exigência de experiência permanece",
+      "vagas_relevantes": [
+        "J01",
+        "J02",
+        "J12",
+        "J32",
+        "J37",
+        "J39"
+      ],
+      "evidencia_gerada": "CV em inglês, demo e três cases"
+    },
+    {
+      "id": "POS-B",
+      "tema": "Posicionamento",
+      "opcao": "Agentic AI Engineer",
+      "recomendacao": "Especialidade a partir de novembro",
+      "beneficio": "Explora MCP, HITL, estado e reliability",
+      "custo": "APIs/cloud dentro do teto proposto",
+      "horas": "4–6 de adaptação da narrativa; técnica em P03",
+      "dependencias": "Python e P03 retomável",
+      "risco": "Vagas podem exigir plataforma muito mais profunda",
+      "vagas_relevantes": [
+        "J09",
+        "J14",
+        "J29",
+        "J48"
+      ],
+      "evidencia_gerada": "Traces de execução, invariantes, recovery tests"
+    },
+    {
+      "id": "POS-C",
+      "tema": "Posicionamento",
+      "opcao": "AI Automation / AI QA Engineer",
+      "recomendacao": "Alternativa seletiva",
+      "beneficio": "Conecta evals e automação a um problema operacional claro",
+      "custo": "€0 adicional",
+      "horas": "8–12 de adaptação e prova QA, substituindo polimento",
+      "dependencias": "Experiência QA real para J35; domínio do processo cliente",
+      "risco": "Salários/horários e trajetória podem divergir do objetivo",
+      "vagas_relevantes": [
+        "J19",
+        "J21",
+        "J35",
+        "J52"
+      ],
+      "evidencia_gerada": "Workflow com testes, produtividade medida e exceções"
+    },
+    {
+      "id": "ST-A",
+      "tema": "Stack",
+      "opcao": "TypeScript/Next + Python/FastAPI + PostgreSQL/pgvector + LangGraph + Langfuse + Docker + Azure",
+      "recomendacao": "Escolhida",
+      "beneficio": "Fecha gaps reutilizando backend, dados e UI existentes",
+      "custo": "€0 material; propor €150 para APIs/cloud",
+      "horas": "136 estudo + 179 construção, não somar de novo ao plano",
+      "dependencias": "PostgreSQL, HTTP e disciplina de testes",
+      "risco": "Duas linguagens exigem interfaces pequenas e tipadas",
+      "vagas_relevantes": [
+        "J02",
+        "J17",
+        "J29",
+        "J36",
+        "J39"
+      ],
+      "evidencia_gerada": "Produto com API Python, RAG, evals e deployment"
+    },
+    {
+      "id": "ST-B",
+      "tema": "Stack",
+      "opcao": "Python principal + AWS + infraestrutura/MLOps",
+      "recomendacao": "Adiar especialização de plataforma",
+      "beneficio": "Aderência a ambientes operacionais e vagas cloud profundas",
+      "custo": "Compute variável; exame opcional fora do teto-base",
+      "horas": "80–140 adicionais para plataforma, estimativa",
+      "dependencias": "AWS, IAM, containers, IaC e experiência real de operação",
+      "risco": "Desloca tempo de candidatura; J16 pede 3–5 anos",
+      "vagas_relevantes": [
+        "J09",
+        "J16"
+      ],
+      "evidencia_gerada": "Deployment AWS e runbook de incidentes"
+    },
+    {
+      "id": "ST-C",
+      "tema": "Stack",
+      "opcao": ".NET/C# + Azure AI",
+      "recomendacao": "Somente com pipeline contratado nessa stack",
+      "beneficio": "Acesso a um nicho empresarial concreto",
+      "custo": "Formação gratuita possível; academia avaliada €2.750",
+      "horas": "80–120 extras se C# novo; academia 152h",
+      "dependencias": "Fundamentos C#/.NET e APIs empresariais",
+      "risco": "Reconstruir linguagem sem demanda pessoal validada",
+      "vagas_relevantes": [
+        "J05",
+        "J43"
+      ],
+      "evidencia_gerada": "Backend .NET integrado à Azure"
+    },
+    {
+      "id": "EST-A",
+      "tema": "Estudos",
+      "opcao": "30h por semana: 627h efetivas",
+      "recomendacao": "Plano-base",
+      "beneficio": "Equilibra formação, construção e busca de emprego",
+      "custo": "Cursos €0 + teto proposto €150 de laboratório",
+      "horas": "627 totais até 18/02",
+      "dependencias": "Dedicação disponível e semanas de viagem reduzidas",
+      "risco": "Sem folga para cursos longos simultâneos",
+      "vagas_relevantes": [
+        "J02",
+        "J19",
+        "J29",
+        "J39",
+        "J47"
+      ],
+      "evidencia_gerada": "Três cases, quatro textos e 120 candidaturas planejadas"
+    },
+    {
+      "id": "EST-B",
+      "tema": "Estudos",
+      "opcao": "20h por semana: 418h efetivas",
+      "recomendacao": "Plano de restrição",
+      "beneficio": "Preserva tempo para trabalho e mudança",
+      "custo": "Cursos €0 + teto proposto €100",
+      "horas": "418, usando 2/3 do orçamento semanal-base",
+      "dependencias": "P03 precisa ser extensão de P02; eliminar certificado opcional e deploy extra",
+      "risco": "Menos profundidade; não tentar manter todos os entregáveis com mesmo acabamento",
+      "vagas_relevantes": [
+        "J01",
+        "J02",
+        "J47"
+      ],
+      "evidencia_gerada": "Três cases menores da mesma plataforma; 60–80 candidaturas como alvo de atividade"
+    },
+    {
+      "id": "EST-C",
+      "tema": "Estudos",
+      "opcao": "40h por semana: 836h efetivas",
+      "recomendacao": "Só com capacidade sustentável",
+      "beneficio": "Acrescenta colaboração real e entrevistas, não mais frameworks",
+      "custo": "Cursos €0 + teto proposto €250",
+      "horas": "836, proporção 4/3 do plano-base",
+      "dependencias": "Rotina sustentável e problema real com usuário parceiro",
+      "risco": "Mais horas não equivalem a experiência de emprego nem oferta",
+      "vagas_relevantes": [
+        "J19",
+        "J21",
+        "J37",
+        "J39"
+      ],
+      "evidencia_gerada": "Pilotagem com feedback externo e contribuição open source"
+    },
+    {
+      "id": "CER-A",
+      "tema": "Credenciais",
+      "opcao": "CS50P gratuito + evidência técnica",
+      "recomendacao": "Escolhida",
+      "beneficio": "Aprendizado estruturado com baixo gasto",
+      "custo": "€0",
+      "horas": "60–80, já dentro de C01",
+      "dependencias": "Resolver avaliações e projeto conforme regras do curso",
+      "risco": "Certificado livre não remove filtro de graduação",
+      "vagas_relevantes": [
+        "J02",
+        "J08",
+        "J39"
+      ],
+      "evidencia_gerada": "Certificado CS50 e código próprio"
+    },
+    {
+      "id": "CER-B",
+      "tema": "Credenciais",
+      "opcao": "Helsinki Python 5 ECTS",
+      "recomendacao": "Alternativa ao CS50P",
+      "beneficio": "Avaliação formal e possibilidade de registro acadêmico",
+      "custo": "MOOC €0; confirmar processo acadêmico individual",
+      "horas": "100–140; substituir C01 e reduzir outros refinamentos",
+      "dependencias": "Exercícios, exame e registro Open University",
+      "risco": "Mais tempo; não é diploma; reconhecimento pelo empregador não demonstrado",
+      "vagas_relevantes": [
+        "J03",
+        "J08",
+        "J48"
+      ],
+      "evidencia_gerada": "Certificado e, se registrado, transcript de 5 ECTS"
+    },
+    {
+      "id": "CER-C",
+      "tema": "Credenciais",
+      "opcao": "AI-103 após dois cases",
+      "recomendacao": "Condicional",
+      "beneficio": "Sinal de conhecimento Azure alinhado a parte das vagas",
+      "custo": "Preço regional não recuperado; confirmar no agendamento",
+      "horas": "40–60 adicionais; exige substituir polimento de cases ou ampliar capacidade",
+      "dependencias": "Python/Foundry e ao menos três oportunidades qualificadas Azure no pipeline",
+      "risco": "Estudar exame sem retorno de mercado; não há exigência nominal na amostra",
+      "vagas_relevantes": [
+        "J02",
+        "J07",
+        "J29",
+        "J43"
+      ],
+      "evidencia_gerada": "Certificação supervisionada e laboratório documentado"
+    },
+    {
+      "id": "POR-A",
+      "tema": "Portfólio",
+      "opcao": "Três cases sobre uma plataforma e componentes compartilhados",
+      "recomendacao": "Escolhida",
+      "beneficio": "Máximo reaproveitamento com três provas distintas",
+      "custo": "Dentro do teto de €150",
+      "horas": "179 construção no plano-base",
+      "dependencias": "Reuso EXECUTAR, APIs e dataset",
+      "risco": "Evitar três descrições do mesmo recurso; cada case tem pergunta e métricas próprias",
+      "vagas_relevantes": [
+        "J02",
+        "J17",
+        "J29",
+        "J48"
+      ],
+      "evidencia_gerada": "P01 reliability; P02 retrieval; P03 workflow retomável"
+    },
+    {
+      "id": "POR-B",
+      "tema": "Portfólio",
+      "opcao": "Três aplicações independentes",
+      "recomendacao": "Não priorizar",
+      "beneficio": "Mostra amplitude de produto",
+      "custo": "€150–300 de teto de planejamento, não cotação",
+      "horas": "250–330 construção estimada",
+      "dependencias": "Três UIs, deployments e manutenções",
+      "risco": "Duplica infraestrutura e atrasa candidaturas",
+      "vagas_relevantes": [
+        "J12",
+        "J32",
+        "J37"
+      ],
+      "evidencia_gerada": "Três demos separadas"
+    },
+    {
+      "id": "POR-C",
+      "tema": "Portfólio",
+      "opcao": "Uma aplicação vertical + contribuição em projeto externo",
+      "recomendacao": "Boa alternativa se houver parceiro disponível",
+      "beneficio": "Gera evidência de colaboração e revisão de código",
+      "custo": "€0–150 de teto proposto",
+      "horas": "160–210; colaboração depende de terceiros",
+      "dependencias": "Issue/escopo aceito, dados utilizáveis, feedback de usuário",
+      "risco": "Aceitação de PR e disponibilidade do parceiro não controláveis",
+      "vagas_relevantes": [
+        "J10",
+        "J31",
+        "J39"
+      ],
+      "evidencia_gerada": "Case de usuário e PR revisado; manter três análises técnicas publicáveis"
+    },
+    {
+      "id": "EDI-A",
+      "tema": "Editorial",
+      "opcao": "Engenharia de agentes confiáveis",
+      "recomendacao": "Linha principal",
+      "beneficio": "Torna MCP/evals/observabilidade úteis ao hiring manager",
+      "custo": "€0 de publicação",
+      "horas": "12 das 35h editoriais",
+      "dependencias": "P01/P03 com falhas e métricas reais",
+      "risco": "Texto genérico sem experimentos produz pouco sinal",
+      "vagas_relevantes": [
+        "J10",
+        "J41",
+        "J48"
+      ],
+      "evidencia_gerada": "Artigo com incidente reproduzível, trade-offs e repo"
+    },
+    {
+      "id": "EDI-B",
+      "tema": "Editorial",
+      "opcao": "RAG: qualidade, custo e latência",
+      "recomendacao": "Linha técnica complementar",
+      "beneficio": "Demonstra competência num gap recorrente",
+      "custo": "€0, experimentos dentro de P02",
+      "horas": "12 das 35h editoriais",
+      "dependencias": "Holdout e comparação justa de configurações",
+      "risco": "Resultados em dataset pequeno não generalizam para empresas",
+      "vagas_relevantes": [
+        "J02",
+        "J17",
+        "J33",
+        "J36"
+      ],
+      "evidencia_gerada": "Benchmark, metodologia, dados e limitações"
+    },
+    {
+      "id": "EDI-C",
+      "tema": "Editorial",
+      "opcao": "Governança implementada em código",
+      "recomendacao": "Diferencial transversal",
+      "beneficio": "Liga controles técnicos a uso empresarial",
+      "custo": "€0",
+      "horas": "11 das 35h editoriais",
+      "dependencias": "RLS, aprovações, logs e testes de autorização",
+      "risco": "Não transformar controles em promessa de conformidade jurídica",
+      "vagas_relevantes": [
+        "J17",
+        "J21",
+        "J22",
+        "J51"
+      ],
+      "evidencia_gerada": "Matriz requisito→controle→teste→evidência"
+    },
+    {
+      "id": "APP-A",
+      "tema": "Candidaturas/networking",
+      "opcao": "Portugal: produto, integração e consultorias",
+      "recomendacao": "Prioridade inicial condicionada à elegibilidade",
+      "beneficio": "Usa proximidade linguística e o mercado previsto no charter",
+      "custo": "€0 plataformas; deslocamentos fora deste orçamento",
+      "horas": "60% das 177h de candidaturas",
+      "dependencias": "Direito de trabalho, faixa salarial e nível profissional",
+      "risco": "Consultorias podem exigir anos/diploma; não confundir remoto PT com remoto global",
+      "vagas_relevantes": [
+        "J01",
+        "J02",
+        "J35",
+        "J47",
+        "J52"
+      ],
+      "evidencia_gerada": "CV específico, registro de funil e feedback de recrutamento"
+    },
+    {
+      "id": "APP-B",
+      "tema": "Candidaturas/networking",
+      "opcao": "UE/UK: empresas de produto e posições com idioma/sponsorship compatíveis",
+      "recomendacao": "Expansão seletiva",
+      "beneficio": "Explora produto full-stack e software aplicado",
+      "custo": "€0 busca; mudança internacional fora do orçamento",
+      "horas": "30% das 177h",
+      "dependencias": "Inglês demonstrável e elegibilidade no país específico",
+      "risco": "Idioma local, clearance e patrocínio variam por vaga",
+      "vagas_relevantes": [
+        "J10",
+        "J19",
+        "J30",
+        "J36",
+        "J37",
+        "J39"
+      ],
+      "evidencia_gerada": "CV em inglês, walkthrough gravado e contatos técnicos"
+    },
+    {
+      "id": "APP-C",
+      "tema": "Candidaturas/networking",
+      "opcao": "Backend/full-stack e automação adjacentes",
+      "recomendacao": "Plano de redução de risco",
+      "beneficio": "Amplia entrada sem abandonar desenvolvimento de IA",
+      "custo": "€0 busca",
+      "horas": "10% das 177h; aumentar se o funil não responder",
+      "dependencias": "Aderência concreta ao core de software ou QA",
+      "risco": "Desvio de carreira se a função não desenvolver competências transferíveis",
+      "vagas_relevantes": [
+        "J01",
+        "J19",
+        "J35",
+        "J52"
+      ],
+      "evidencia_gerada": "Versão de CV orientada a software e caso operacional"
+    }
+  ],
+  "otimizacao_recursos": {
+    "estudar": [
+      "Python/FastAPI/pytest",
+      "RAG e avaliação",
+      "ML suficiente para explicar e testar",
+      "Uma cloud e um framework de estado"
+    ],
+    "construir": [
+      "Instrumentação de EXECUTAR",
+      "API RAG Python com benchmark",
+      "Workflow persistente reaproveitando os dois anteriores"
+    ],
+    "publicar": [
+      "3 artigos próprios em inglês com resumos em português",
+      "1 proposta de artigo externo; publicação não é garantida"
+    ],
+    "certificar": [
+      "CS50P OU Helsinki; AI-103 apenas sob gatilho de demanda e capacidade"
+    ],
+    "aplicar_imediatamente": [
+      "J47 após verificar situação atual e nível",
+      "J01 se houver capacidade de Angular/Kafka",
+      "J02 se experiência e direito UE forem atendidos; informar RAG ainda em consolidação"
+    ],
+    "adiar": [
+      "Kubernetes avançado, multi-cloud e IaC profundo",
+      "Fine-tuning avançado e serving GPU",
+      "Diploma longo e academia que acaba em março",
+      "Certificações AWS/Databricks sem oportunidade correspondente"
+    ],
+    "eliminar": [
+      "Nova marca/produto paralelo para cada curso",
+      "Três bancos vetoriais e cinco frameworks para fazer a mesma tarefa",
+      "Compra de preparação AI-102 ou avaliação retirada",
+      "Conteúdo genérico diário e certificados apenas por marca"
+    ],
+    "hype_versus_demanda": "Agentes, RAG e MCP têm anúncios concretos; não são classificados como hype. A amostra não sustenta exigir enxames de agentes, A2A ou GraphRAG como credenciais de entrada. A2A só apareceu em resumo excluído; GraphRAG como tendência. Ausência na amostra não prova ausência de mercado.",
+    "valor_composto": "Cada bloco de estudo termina em implementação → commit/teste → métrica → trecho do case → publicação → evidência anexada à candidatura → explicação de entrevista."
+  },
+  "portfolio_roadmap": [
+    {
+      "id": "P01",
+      "nome": "EXECUTAR: engenharia de confiabilidade para ferramentas de IA",
+      "prazo": "2026-10-15",
+      "horas_construcao": 44,
+      "custo": "Parte do teto compartilhado de €150; custo incremental não cotado",
+      "beneficio": "Transforma competências já declaradas em prova rápida de software aplicado",
+      "dependencias": [
+        "Repositório existente",
+        "Casos de uso e permissões explícitos"
+      ],
+      "risco": "Não atribuir ao usuário resultados que ainda não foram medidos; tornar autoria explicável",
+      "vagas": [
+        "J01",
+        "J10",
+        "J12",
+        "J32",
+        "J48"
+      ],
+      "escopo": [
+        "Selecionar um fluxo útil existente; consolidar arquitetura e setup em inglês",
+        "Instrumentar chamadas/tool use com custos, latência e redaction",
+        "Demonstrar RLS, validação de argumentos, tool allowlist e aprovação humana",
+        "Documentar duas decisões reais e uma alternativa rejeitada"
+      ],
+      "aceite": [
+        "Demo de 3–5 minutos e execução local reproduzível",
+        "20 cenários versionados, incluindo negação de permissão, timeout e prompt injection",
+        "Sem execução de ação de escrita sem aprovação nos testes definidos; declarar alcance limitado do teste",
+        "Release identificável, CI e alteração ao vivo sem assistência"
+      ],
+      "evidencia": [
+        "README",
+        "Diagrama",
+        "Traces sanitizadas",
+        "Resultados de testes/evals",
+        "Case com autoria e limitações"
+      ],
+      "horas_ate_primeira_versao": 32,
+      "horas_refinamento_posterior": 12,
+      "interpretacao_prazo": "Primeira versão publicável com os critérios essenciais. Horas restantes são refinamentos no decorrer do ciclo, até 18/02."
+    },
+    {
+      "id": "P02",
+      "nome": "Enterprise RAG em Python: precisão, acesso e custo",
+      "prazo": "2026-11-30",
+      "horas_construcao": 84,
+      "custo": "Parte do teto compartilhado de €150; limitar chamadas e reutilizar dataset",
+      "beneficio": "Fecha o gap mais conectado a vagas Applied AI preservando PostgreSQL/Next",
+      "dependencias": [
+        "Python/FastAPI/pytest",
+        "Corpus público com licença e data registradas",
+        "PostgreSQL/pgvector"
+      ],
+      "risco": "Sobreajuste no conjunto de perguntas; usar partição de desenvolvimento e holdout antes de otimizar",
+      "vagas": [
+        "J02",
+        "J08",
+        "J17",
+        "J33",
+        "J36",
+        "J39"
+      ],
+      "escopo": [
+        "Ingestão idempotente; chunking, metadados e filtros por usuário",
+        "Comparar lexical, dense, hybrid e rerank; manter baseline simples",
+        "Responder com citações e abstenção; avaliar contexto e resposta separadamente",
+        "API tipada, UI existente, Docker, CI, observabilidade e um deployment"
+      ],
+      "aceite": [
+        "60 perguntas rotuladas: 40 desenvolvimento e 20 holdout; incluir sem resposta, ambiguidade e acesso negado",
+        "Relatar recall@k/MRR quando aplicável, suporte das citações, taxa de abstenção, p50/p95 e custo por consulta",
+        "Registrar versão de corpus/modelo/configuração e repetir condições; sem meta de melhoria inventada",
+        "Teste de isolamento entre usuários/tenants e comparação do custo adicional do reranker"
+      ],
+      "evidencia": [
+        "Dataset sem dados pessoais",
+        "Script de benchmark",
+        "Resultados exportáveis",
+        "Case com trade-offs",
+        "Demo e API documentada"
+      ],
+      "horas_ate_primeira_versao": 80,
+      "horas_refinamento_posterior": 4,
+      "interpretacao_prazo": "Primeira versão publicável com os critérios essenciais. Horas restantes são refinamentos no decorrer do ciclo, até 18/02."
+    },
+    {
+      "id": "P03",
+      "nome": "Workflow empresarial retomável com aprovação humana",
+      "prazo": "2027-01-15",
+      "horas_construcao": 51,
+      "custo": "Parte do mesmo teto compartilhado; sem novo SaaS pago",
+      "beneficio": "Demonstra estado/memória e operação agentic com invariantes verificáveis",
+      "dependencias": [
+        "P01/P02 reutilizáveis",
+        "LangGraph básico",
+        "Fluxo de triagem de documentos/tickets definido"
+      ],
+      "risco": "Autonomia desnecessária e efeitos duplicados; comparar com pipeline determinístico",
+      "vagas": [
+        "J14",
+        "J19",
+        "J21",
+        "J29",
+        "J48",
+        "J51"
+      ],
+      "escopo": [
+        "Usar triagem de documentos/tickets com dados sintéticos; chamadas de escrita simuladas",
+        "Persistir estado e memória escopada; interromper, aprovar, retomar e expirar",
+        "Retries com limites, idempotência, timeout, fallback e observabilidade",
+        "Conectar ferramentas via MCP quando isso simplificar o contrato; não adicionar agentes sem ganho medido"
+      ],
+      "aceite": [
+        "20 cenários: crash/restart, retry, duplicação, rejeição humana, contexto ausente e tentativa de acesso indevido",
+        "Comparar baseline determinístico com agente em conclusão, erros, intervenção humana, custo e tempo",
+        "Demonstrar que a ferramenta de escrita simulada só executa após aprovação e uma vez por chave nos testes",
+        "Gravar walkthrough de 10min em inglês e explicar limites da memória"
+      ],
+      "evidencia": [
+        "State diagram",
+        "Trace de recuperação",
+        "Testes de invariantes",
+        "Resultados comparativos",
+        "Case e demo integrados"
+      ],
+      "horas_ate_primeira_versao": 43,
+      "horas_refinamento_posterior": 8,
+      "interpretacao_prazo": "Primeira versão publicável com os critérios essenciais. Horas restantes são refinamentos no decorrer do ciclo, até 18/02."
+    }
+  ],
+  "editorial_roadmap": {
+    "idioma": "Artigos e README em inglês; resumos em português para a rede local. Revisar clareza e terminologia.",
+    "cadencia": "Quatro peças substanciais; reutilizar gráficos/resultados e publicar até dois trechos curtos por peça. Não criar obrigação de postar diariamente.",
+    "pecas": [
+      {
+        "id": "E01",
+        "prazo": "2026-11-06",
+        "linha": "EDI-A",
+        "titulo_proposto": "What fails when an AI tool call leaves the happy path",
+        "base": [
+          "P01"
+        ],
+        "evidencia": "Falhas, regras de autorização e traces sanitizadas",
+        "destino": "Blog próprio/GitHub; divulgação manual em LinkedIn",
+        "vagas": [
+          "J10",
+          "J48"
+        ]
+      },
+      {
+        "id": "E02",
+        "prazo": "2026-11-27",
+        "linha": "EDI-B",
+        "titulo_proposto": "When reranking earns its latency budget",
+        "base": [
+          "P02"
+        ],
+        "evidencia": "Método, baseline e resultados preliminares rotulados como tais",
+        "destino": "Blog próprio; atualizar com release final em 30/11",
+        "vagas": [
+          "J02",
+          "J17",
+          "J33"
+        ]
+      },
+      {
+        "id": "E03",
+        "prazo": "2026-12-18",
+        "linha": "EDI-C",
+        "titulo_proposto": "Human approval and tenant isolation as executable requirements",
+        "base": [
+          "P01",
+          "P03"
+        ],
+        "evidencia": "Requisito→controle→teste; distinguir implementação pronta de trabalho em andamento",
+        "destino": "Blog próprio/Schola AI",
+        "vagas": [
+          "J17",
+          "J21",
+          "J51"
+        ]
+      },
+      {
+        "id": "E04",
+        "prazo": "2026-12-30",
+        "linha": "EDI-A",
+        "titulo_proposto": "A failure-first approach to shipping applied AI",
+        "base": [
+          "P01",
+          "P02"
+        ],
+        "evidencia": "Resultados consolidados e lições reproduzíveis",
+        "destino": "Proposta a veículo/comunidade técnica europeia; selecionar política editorial antes de enviar",
+        "vagas": [
+          "J10",
+          "J39"
+        ]
+      }
+    ],
+    "veiculo_externo": "Na semana 13, verificar chamada vigente, audiência de engenheiros e política de originalidade de um veículo europeu; não depender de aceitação editorial para candidaturas. A pesquisa não validou uma chamada aberta específica.",
+    "medir": [
+      "Conversas técnicas iniciadas",
+      "Comentários de engenheiros/recrutadores",
+      "Acesso ao case em candidatura",
+      "Uso da peça em entrevista"
+    ],
+    "nao_usar_como_kpi_principal": [
+      "Likes",
+      "Impressões isoladas",
+      "Promessa de viralização"
+    ],
+    "horas": 35,
+    "custo": "€0 previsto; não contratar promoção paga"
+  },
+  "application_roadmap": {
+    "inicio": "2026-09-18",
+    "horas_planejadas": 177,
+    "alvo_atividade": "120 candidaturas direcionadas no calendário; reduzir quantidade quando entrevista/teste técnico exigir. Meta de atividade, não previsão de entrevistas.",
+    "antes_de_enviar": [
+      "Reabrir o anúncio no empregador: data, local, regime e formulário",
+      "Aplicar filtros eliminatórios: autorização, idioma, cidadania/clearance, diploma e experiência",
+      "Relacionar 3–5 requisitos a links de evidência; indicar lacunas honestamente",
+      "Usar título correspondente ao anúncio sem inventar senioridade ou anos profissionais"
+    ],
+    "cv_variantes": [
+      {
+        "nome": "Product/full-stack",
+        "stack": "TypeScript/Node/Next; APIs, SQL, tools e entrega",
+        "vagas": [
+          "J01",
+          "J12",
+          "J32",
+          "J37"
+        ]
+      },
+      {
+        "nome": "Applied AI",
+        "stack": "Python/FastAPI, RAG, evals, observabilidade e agente retomável",
+        "vagas": [
+          "J02",
+          "J19",
+          "J29",
+          "J36",
+          "J39"
+        ]
+      }
+    ],
+    "shortlist_acao": [
+      {
+        "vagas": [
+          "J47"
+        ],
+        "acao": "Verificar e candidatar agora com projetos; perguntar nível/cliente e autorização exigida"
+      },
+      {
+        "vagas": [
+          "J01"
+        ],
+        "acao": "Verificar agora se Angular e Kafka são demonstráveis; Next.js sozinho deixa gap"
+      },
+      {
+        "vagas": [
+          "J02"
+        ],
+        "acao": "Prioridade se 2+ anos profissionais e direito UE estiverem comprovados; RAG é requerido"
+      },
+      {
+        "vagas": [
+          "J03"
+        ],
+        "acao": "Junior, mas graduação e ML são filtros; avaliar formação real antes de investir"
+      },
+      {
+        "vagas": [
+          "J35"
+        ],
+        "acao": "Somente se houver histórico QA/SDET; evals pessoais não substituem experiência"
+      },
+      {
+        "vagas": [
+          "J52"
+        ],
+        "acao": "Considerar apenas após comparar salário/horário com necessidades pessoais"
+      },
+      {
+        "vagas": [
+          "J48",
+          "J17",
+          "J32"
+        ],
+        "acao": "Referências históricas para prospectar empresas e acompanhar reabertura; não tratar como abertas"
+      },
+      {
+        "vagas": [
+          "J10",
+          "J37",
+          "J39"
+        ],
+        "acao": "Pesquisar posição equivalente vigente; sinais de relocation não garantem sponsorship individual"
+      }
+    ],
+    "geografia": [
+      {
+        "pais": "Portugal",
+        "foco": "Primeiro funil; integração/produto e consultorias",
+        "filtro": "Autorização, localização e diploma por anúncio",
+        "vagas": [
+          "J01",
+          "J02",
+          "J47"
+        ]
+      },
+      {
+        "pais": "Alemanha",
+        "foco": "Selecionar vagas compatíveis com idioma real",
+        "filtro": "Alemão C1 em Reply; alemão em Nelly/paiqo",
+        "vagas": [
+          "J09",
+          "J13",
+          "J14",
+          "J29"
+        ]
+      },
+      {
+        "pais": "Holanda",
+        "foco": "Produto/AI full-stack; inglês onde o anúncio aceite",
+        "filtro": "ML6 pede holandês e não patrocina; Reaktor vê holandês como diferencial",
+        "vagas": [
+          "J17",
+          "J30",
+          "J31",
+          "J32"
+        ]
+      },
+      {
+        "pais": "Irlanda",
+        "foco": "Automação documental e Python",
+        "filtro": "Kefron exige direito de trabalho; amostra principal tem só uma vaga irlandesa, insuficiente para comparar o país",
+        "vagas": [
+          "J08",
+          "J24"
+        ]
+      },
+      {
+        "pais": "França",
+        "foco": "Empresas de produto com inglês e nível compatível",
+        "filtro": "Mirakl exige francês; função soberana Mistral exige cidadania",
+        "vagas": [
+          "J21",
+          "J36",
+          "J37",
+          "J38",
+          "J39"
+        ]
+      },
+      {
+        "pais": "Espanha",
+        "foco": "Full-stack Python/TS e aplicações GenAI",
+        "filtro": "Apenas duas vagas no núcleo; não estimar volume relativo de oportunidades",
+        "vagas": [
+          "J11",
+          "J19"
+        ]
+      },
+      {
+        "pais": "UK",
+        "foco": "Selecionar empregadores/posições com elegibilidade compatível",
+        "filtro": "LangChain exige francês; Capgemini residência de 5 anos; public sector pode pedir clearance/cidadania",
+        "vagas": [
+          "J10",
+          "J20",
+          "J23",
+          "J34",
+          "J51"
+        ]
+      }
+    ],
+    "networking": "Planejar dois contatos personalizados por semana, reduzidos em viagem/feriados: um recrutador da vaga e um engenheiro/comunidade. Compartilhar uma pergunta técnica e evidência relevante; pedir feedback, não indicação automática. Não foram enviadas mensagens nesta tarefa.",
+    "contribuicao": "Uma contribuição pequena e útil a projeto usado no portfólio — documentação reproduzível, bug ou teste. Revisão/merge dependem do mantenedor.",
+    "registro_funil": [
+      "data",
+      "vaga_URL",
+      "pais",
+      "nivel",
+      "elegibilidade",
+      "CV_usado",
+      "case_enviado",
+      "contato",
+      "resposta",
+      "etapa",
+      "motivo_rejeicao",
+      "proxima_acao"
+    ],
+    "gates": [
+      {
+        "quando": "Após 20 candidaturas qualificadas ou 4 semanas",
+        "se": "Nenhum contato inicial",
+        "acao": "Revisar elegibilidade, CV, título e qualidade da lista antes de comprar outro curso"
+      },
+      {
+        "quando": "Após três entrevistas técnicas comparáveis",
+        "se": "Mesmo gap impede avanço",
+        "acao": "Substituir um bloco de polimento por treino desse gap"
+      },
+      {
+        "quando": "Mensal",
+        "se": "Somente vagas incompatíveis com work rights/idioma",
+        "acao": "Reorientar lista e geografia antes de ampliar volume"
+      },
+      {
+        "quando": "2027-02-18",
+        "se": "Pipeline insuficiente e orçamento exige estabilização",
+        "acao": "Acionar plano B de software/automação adjacente ou trabalho compatível; manter IA em regime parcial"
+      }
+    ],
+    "thresholds": "Os números dos gates são regras de gestão propostas, não benchmarks empíricos de conversão.",
+    "cenarios_experiencia": [
+      {
+        "condicao": "Sem dois anos de experiência profissional comprovável em software/AI",
+        "ajuste": "Priorizar junior, trainee, integração e software adjacente; candidatar-se seletivamente a funções sem mínimo expresso. Três projetos não transformam automaticamente o perfil em Mid.",
+        "vagas": [
+          "J01",
+          "J03",
+          "J47",
+          "J52"
+        ]
+      },
+      {
+        "condicao": "Dois ou mais anos de software profissional, mas pouca experiência AI",
+        "ajuste": "Aproveitar a experiência de engenharia para Applied AI; fechar Python/RAG e mostrar entrega em produção, separando emprego de projetos pessoais.",
+        "vagas": [
+          "J02",
+          "J19",
+          "J34",
+          "J39"
+        ]
+      },
+      {
+        "condicao": "Sem autorização de trabalho no país da vaga",
+        "ajuste": "Não contar a oportunidade como qualificada até confirmar via apropriada e suporte do empregador; benefícios genéricos de relocation não bastam.",
+        "vagas": [
+          "J02",
+          "J08",
+          "J10",
+          "J31",
+          "J37",
+          "J38"
+        ]
+      }
+    ]
+  },
+  "plano_semanal": [
+    {
+      "semana": 1,
+      "inicio": "2026-09-18",
+      "fim": "2026-09-24",
+      "horas": {
+        "estudo": 12,
+        "construcao": 8,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Ficha de elegibilidade, dois CVs e diagnóstico Python; escolher P01",
+      "mercado": "4 candidaturas piloto; 2 contatos",
+      "candidaturas_alvo": 4,
+      "aceite": "P01: definir fluxo, requisitos e baseline"
+    },
+    {
+      "semana": 2,
+      "inicio": "2026-09-25",
+      "fim": "2026-10-01",
+      "horas": {
+        "estudo": 12,
+        "construcao": 8,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Python tipos/exceções; revisar orçamento e viagem até 01/10",
+      "mercado": "4 candidaturas; revisar sinais iniciais",
+      "candidaturas_alvo": 4,
+      "aceite": "P01: arquitetura e testes de permissão"
+    },
+    {
+      "semana": 3,
+      "inicio": "2026-10-02",
+      "fim": "2026-10-08",
+      "horas": {
+        "estudo": 12,
+        "construcao": 8,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Python módulos/async; primeira instrumentação e fundamentos ML",
+      "mercado": "4 candidaturas; explicar case em inglês",
+      "candidaturas_alvo": 4,
+      "aceite": "P01: traces e cenários de falha"
+    },
+    {
+      "semana": 4,
+      "inicio": "2026-10-09",
+      "fim": "2026-10-15",
+      "horas": {
+        "estudo": 12,
+        "construcao": 8,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "FastAPI inicial e packaging de EXECUTAR até 15/10",
+      "mercado": "4 candidaturas com link do primeiro case",
+      "candidaturas_alvo": 4,
+      "aceite": "P01 v1 publicável; P02: corpus e contrato API"
+    },
+    {
+      "semana": 5,
+      "inicio": "2026-10-16",
+      "fim": "2026-10-22",
+      "horas": {
+        "estudo": 12,
+        "construcao": 8,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "pytest, mocks, SQL/pgvector; baseline de classificação e leakage",
+      "mercado": "4 candidaturas; 2 contatos técnicos",
+      "candidaturas_alvo": 4,
+      "aceite": "P02: endpoint e testes; notebook ML"
+    },
+    {
+      "semana": 6,
+      "inicio": "2026-10-23",
+      "fim": "2026-10-29",
+      "horas": {
+        "estudo": 12,
+        "construcao": 8,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "API tipada, Docker e CI; gate técnico de 31/10 preparado",
+      "mercado": "4 candidaturas; revisar 20+ envios qualificados",
+      "candidaturas_alvo": 4,
+      "aceite": "P02: API executável e teste sem assistência"
+    },
+    {
+      "semana": 7,
+      "inicio": "2026-10-30",
+      "fim": "2026-11-05",
+      "horas": {
+        "estudo": 6,
+        "construcao": 13,
+        "candidaturas_networking": 6,
+        "editorial": 2,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Concluir gate de 31/10 no início da semana; retrieval lexical/dense",
+      "mercado": "6 candidaturas; primeira mock curta",
+      "candidaturas_alvo": 6,
+      "aceite": "P02: comparação inicial; finalizar texto E01 para 06/11"
+    },
+    {
+      "semana": 8,
+      "inicio": "2026-11-06",
+      "fim": "2026-11-12",
+      "horas": {
+        "estudo": 6,
+        "construcao": 13,
+        "candidaturas_networking": 6,
+        "editorial": 2,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Hybrid search, filtros e dataset; concluir Python formal se pendente",
+      "mercado": "6 candidaturas; publicar E01 em 06/11",
+      "candidaturas_alvo": 6,
+      "aceite": "P02: conjunto dev/holdout congelado"
+    },
+    {
+      "semana": 9,
+      "inicio": "2026-11-13",
+      "fim": "2026-11-19",
+      "horas": {
+        "estudo": 6,
+        "construcao": 13,
+        "candidaturas_networking": 6,
+        "editorial": 2,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Rerank, citações e abstenção; testes de isolamento",
+      "mercado": "6 candidaturas; 2 conversas técnicas propostas",
+      "candidaturas_alvo": 6,
+      "aceite": "P02: benchmark e análise de erros"
+    },
+    {
+      "semana": 10,
+      "inicio": "2026-11-20",
+      "fim": "2026-11-26",
+      "horas": {
+        "estudo": 6,
+        "construcao": 13,
+        "candidaturas_networking": 6,
+        "editorial": 2,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Uma cloud, identidade, logs e custo; preparar release RAG",
+      "mercado": "6 candidaturas; demonstração de arquitetura",
+      "candidaturas_alvo": 6,
+      "aceite": "P02: deployment e versão candidata"
+    },
+    {
+      "semana": 11,
+      "inicio": "2026-11-27",
+      "fim": "2026-12-03",
+      "horas": {
+        "estudo": 6,
+        "construcao": 13,
+        "candidaturas_networking": 6,
+        "editorial": 2,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Publicar E02 em 27/11 e P02 final até 30/11",
+      "mercado": "6 candidaturas; gate de novembro",
+      "candidaturas_alvo": 6,
+      "aceite": "P02 release, resultados e limitações"
+    },
+    {
+      "semana": 12,
+      "inicio": "2026-12-04",
+      "fim": "2026-12-10",
+      "horas": {
+        "estudo": 2,
+        "construcao": 3,
+        "candidaturas_networking": 6,
+        "editorial": 1,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 15,
+      "foco": "Semana reduzida; viagem prevista 08/12; revisão leve de estado",
+      "mercado": "2 candidaturas; logística e agenda local",
+      "candidaturas_alvo": 2,
+      "aceite": "P03: escopo mínimo e interfaces"
+    },
+    {
+      "semana": 13,
+      "inicio": "2026-12-11",
+      "fim": "2026-12-17",
+      "horas": {
+        "estudo": 4,
+        "construcao": 12,
+        "candidaturas_networking": 8,
+        "editorial": 3,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "LangGraph estado/HITL; retomar networking; escolher veículo editorial",
+      "mercado": "6 candidaturas; 2 contatos locais",
+      "candidaturas_alvo": 6,
+      "aceite": "P03: aprovação e persistência"
+    },
+    {
+      "semana": 14,
+      "inicio": "2026-12-18",
+      "fim": "2026-12-24",
+      "horas": {
+        "estudo": 4,
+        "construcao": 12,
+        "candidaturas_networking": 8,
+        "editorial": 3,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Retries/idempotência; publicar E03 em 18/12",
+      "mercado": "6 candidaturas; preparar pitch técnico",
+      "candidaturas_alvo": 6,
+      "aceite": "P03: testes de falha; E04 rascunho"
+    },
+    {
+      "semana": 15,
+      "inicio": "2026-12-25",
+      "fim": "2026-12-31",
+      "horas": {
+        "estudo": 2,
+        "construcao": 4,
+        "candidaturas_networking": 6,
+        "editorial": 3,
+        "entrevistas": 1,
+        "review_reserva": 2
+      },
+      "total_horas": 18,
+      "foco": "Semana reduzida; editar/submeter E04 até 30/12",
+      "mercado": "2 candidaturas; follow-ups seletivos",
+      "candidaturas_alvo": 2,
+      "aceite": "E04 pronta; envio pelo usuário; gates de memória P03"
+    },
+    {
+      "semana": 16,
+      "inicio": "2027-01-01",
+      "fim": "2027-01-07",
+      "horas": {
+        "estudo": 4,
+        "construcao": 6,
+        "candidaturas_networking": 8,
+        "editorial": 2,
+        "entrevistas": 2,
+        "review_reserva": 2
+      },
+      "total_horas": 24,
+      "foco": "Retomada; recovery e memória escopada",
+      "mercado": "4 candidaturas; 1 mock",
+      "candidaturas_alvo": 4,
+      "aceite": "P03: crash/restart e comparação baseline"
+    },
+    {
+      "semana": 17,
+      "inicio": "2027-01-08",
+      "fim": "2027-01-14",
+      "horas": {
+        "estudo": 4,
+        "construcao": 10,
+        "candidaturas_networking": 9,
+        "editorial": 2,
+        "entrevistas": 3,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Fechar três cases e rehearsal até 15/01",
+      "mercado": "6 candidaturas com pacote completo",
+      "candidaturas_alvo": 6,
+      "aceite": "P03 release; demos e evidências versionadas"
+    },
+    {
+      "semana": 18,
+      "inicio": "2027-01-15",
+      "fim": "2027-01-21",
+      "horas": {
+        "estudo": 4,
+        "construcao": 5,
+        "candidaturas_networking": 12,
+        "editorial": 1,
+        "entrevistas": 6,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Polimento conforme feedback; entrevista Python/RAG",
+      "mercado": "8 candidaturas; 2 mocks curtas",
+      "candidaturas_alvo": 8,
+      "aceite": "Correções motivadas por feedback, sem nova stack"
+    },
+    {
+      "semana": 19,
+      "inicio": "2027-01-22",
+      "fim": "2027-01-28",
+      "horas": {
+        "estudo": 4,
+        "construcao": 5,
+        "candidaturas_networking": 12,
+        "editorial": 1,
+        "entrevistas": 6,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "System design: custo, segurança, escala; gate de credencial opcional",
+      "mercado": "8 candidaturas; conversas com equipes-alvo",
+      "candidaturas_alvo": 8,
+      "aceite": "Decisão AI-103 somente se substituir horas existentes"
+    },
+    {
+      "semana": 20,
+      "inicio": "2027-01-29",
+      "fim": "2027-02-04",
+      "horas": {
+        "estudo": 4,
+        "construcao": 5,
+        "candidaturas_networking": 12,
+        "editorial": 1,
+        "entrevistas": 6,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Consolidar fundamentos até 31/01 e prontidão até 01/02",
+      "mercado": "8 candidaturas; testes técnicos e inglês",
+      "candidaturas_alvo": 8,
+      "aceite": "Alterar e explicar os três cases sem assistência"
+    },
+    {
+      "semana": 21,
+      "inicio": "2027-02-05",
+      "fim": "2027-02-11",
+      "horas": {
+        "estudo": 1,
+        "construcao": 2,
+        "candidaturas_networking": 15,
+        "editorial": 1,
+        "entrevistas": 9,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Priorizar processos em andamento e lacuna recorrente de entrevista",
+      "mercado": "8 candidaturas; reduzir envios se houver take-home",
+      "candidaturas_alvo": 8,
+      "aceite": "Notas de entrevistas e versões finais dos cases"
+    },
+    {
+      "semana": 22,
+      "inicio": "2027-02-12",
+      "fim": "2027-02-18",
+      "horas": {
+        "estudo": 1,
+        "construcao": 2,
+        "candidaturas_networking": 15,
+        "editorial": 1,
+        "entrevistas": 9,
+        "review_reserva": 2
+      },
+      "total_horas": 30,
+      "foco": "Fechar evidências; gate de 18/02 e plano do próximo ciclo",
+      "mercado": "8 candidaturas ou esforço equivalente em entrevistas",
+      "candidaturas_alvo": 8,
+      "aceite": "Decisão continuar/ajustar/plano B com dados do funil"
+    }
+  ],
+  "orcamento_tempo": {
+    "total_horas": 627,
+    "distribuicao": {
+      "estudo": 136,
+      "construcao": 179,
+      "candidaturas_networking": 177,
+      "editorial": 35,
+      "entrevistas": 56,
+      "review_reserva": 44
+    },
+    "candidaturas_planejadas": 120,
+    "regra": "Estudo, construção, escrita, candidatura e entrevista são contabilizados separadamente; uma hora não aparece duas vezes. As horas dos cursos/opções descrevem a mesma capacidade, não obrigações cumulativas. Review/reserva pode absorver atraso; não comprometer todo o saldo com certificado."
+  },
+  "analise_sensibilidade": {
+    "nota": "Subamostra de anúncios de empresas no ITJobs, todos em Portugal. Confere direção das prioridades; não é validação estatística independente.",
+    "denominador": 15,
+    "mencoes": {
+      "PY": 12,
+      "TS": 4,
+      "RAG": 8,
+      "CLOUD": 9,
+      "EVAL": 7,
+      "OBS": 3,
+      "CERT": 2
+    }
+  },
+  "top_5_decisoes_agora": [
+    {
+      "ordem": 1,
+      "decisao": "Escolher Applied AI / Full-stack AI como identidade principal; Agentic como especialidade",
+      "prazo": "2026-09-24",
+      "evidencia": [
+        "J01",
+        "J02",
+        "J12",
+        "J32",
+        "J39"
+      ]
+    },
+    {
+      "ordem": 2,
+      "decisao": "Fixar Python/FastAPI/pytest e uma stack RAG; escolher CS50P OU Helsinki",
+      "prazo": "2026-09-24",
+      "evidencia": [
+        "J08",
+        "J19",
+        "J33",
+        "J39"
+      ]
+    },
+    {
+      "ordem": 3,
+      "decisao": "Confirmar horas reais, teto financeiro e condições de trabalho por país antes de depender da mudança",
+      "prazo": "2026-09-24",
+      "evidencia": [
+        "J02",
+        "J08",
+        "J31",
+        "J38",
+        "J51",
+        "Charter RSK-06 / FIN-04"
+      ]
+    },
+    {
+      "ordem": 4,
+      "decisao": "Iniciar candidaturas já e congelar novos produtos; empacotar EXECUTAR primeiro",
+      "prazo": "2026-09-24",
+      "evidencia": [
+        "J01",
+        "J47",
+        "J48"
+      ]
+    },
+    {
+      "ordem": 5,
+      "decisao": "Adiar exame pago até dois cases e demanda concreta; descartar AI-102 retirada",
+      "prazo": "2026-09-24",
+      "evidencia": [
+        "J02",
+        "J16",
+        "J35",
+        "C07"
+      ],
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EXECUTAR — Oficina / Solution Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+/* TOKENS — amostrados na extração (interface-analysis.md §9). Origem entre parênteses = ID da tela */
+:root{
+--canvas:#F2F3F5;/*002*/--surface:#fff;/*002,006,016*/--muted:#F2F2F2;/*006*/--ink:#111;--mute:#6b7075;--line:#e2e5e8;/*008*/
+--badge:#292E32;/*002*/--stage:#4AB3F7;/*016*/--ok:#65C466;/*006*/--soft:#A3C8C1;/*012*/--slate:#89929B;/*008*/
+--g-start:linear-gradient(90deg,#C1D576,#F79935);/*002 Personal*/--g-dl:linear-gradient(90deg,#3CBEF0,#2FF6F9,#7EE4B2);/*002 Business*/
+--r-lg:32px;--r-md:20px;--r-pill:999px;/*002,006,016*/--sh:0 12px 32px rgba(20,30,50,.10);--sp:32px;
+--serif:"Instrument Serif",Georgia,serif;--mono:ui-monospace,Menlo,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--canvas:#16181a;--surface:#212427;--muted:#2b2f33;--ink:#f1f2f3;--mute:#a0a6ab;--line:#33383c;--badge:#f1f2f3}}
+:root[data-theme="dark"]{--canvas:#16181a;--surface:#212427;--muted:#2b2f33;--ink:#f1f2f3;--mute:#a0a6ab;--line:#33383c;--badge:#f1f2f3}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--canvas);color:var(--ink);font:400 14px/1.55 Poppins,"Helvetica Neue",Arial,sans-serif}
+.w{max-width:1160px;margin:0 auto;padding:16px}
+section,footer{background:var(--surface);border-radius:var(--r-lg);padding:var(--sp);margin-bottom:16px;box-shadow:var(--sh)}
+h1,h2,h3{font-weight:500;line-height:1.12}h2{font-size:clamp(26px,3.6vw,42px)}
+em{font:italic 400 1.08em var(--serif)}
+p{color:var(--mute)}
+:focus-visible{outline:3px solid var(--stage);outline-offset:2px}
+.btn{display:inline-flex;gap:8px;align-items:center;border:1px solid transparent;border-radius:var(--r-pill);padding:10px 20px;font:500 13px Poppins,Arial,sans-serif;background:var(--ink);color:var(--canvas);cursor:pointer;text-decoration:none}
+.btn.start{background:var(--g-start);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.btn.dl{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.dl:hover{background:var(--g-dl);border-color:transparent}
+.chip{display:inline-block;border-radius:var(--r-pill);padding:3px 12px;font-size:12px;background:var(--muted);color:var(--ink)}
+.chip.dark{background:var(--badge);color:var(--canvas);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.mono{font-family:var(--mono);font-size:12px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-radius:var(--r-pill);padding:10px 22px;margin-bottom:16px;display:flex;gap:16px;align-items:center;justify-content:space-between;box-shadow:var(--sh)}
+.logo{font-weight:600;white-space:nowrap}nav{display:flex;gap:6px;align-items:center}
+nav a{color:var(--ink);text-decoration:none;padding:6px 14px;border-radius:var(--r-pill)}nav a:hover{background:var(--muted)}
+#menu{display:none;background:0;border:0;font-size:22px;color:var(--ink)}
+#q{border:1px solid var(--line);background:var(--muted);color:var(--ink);border-radius:var(--r-pill);padding:8px 16px;font:13px Poppins,Arial,sans-serif;width:210px}
+/* 02 hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--sp);align-items:center;background:linear-gradient(135deg,#dff0fb,var(--surface) 60%);padding:48px}
+.hero h1{font-size:clamp(32px,5vw,58px);margin-bottom:16px}
+.poster{border-radius:var(--r-md);min-height:280px;background:linear-gradient(120deg,var(--soft),#cfe9f8 55%,#e6f7ef);display:grid;place-items:center;color:var(--slate);font:12px var(--mono);border:1px solid var(--line)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+select{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--r-pill);padding:8px 14px;font:13px Poppins,Arial,sans-serif}
+/* 03 */
+.ben{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:var(--muted)}
+.ben div{display:flex;gap:14px;align-items:flex-start}.dot{flex:none;width:44px;height:44px;border-radius:50%;background:var(--g-start)}.ben div:nth-child(2) .dot{background:var(--g-dl)}.ben div:nth-child(3) .dot{background:var(--soft)}
+.ben b{display:block;font-weight:500}
+/* 04 grid */
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.tabs{display:flex;gap:6px;background:var(--muted);padding:6px;border-radius:var(--r-pill);flex-wrap:wrap}
+.tab{border:0;background:0;padding:7px 16px;border-radius:var(--r-pill);font:13px Poppins,Arial,sans-serif;color:var(--mute);cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:var(--canvas)}
+.arrows{display:flex;gap:8px}.arrow{width:36px;height:36px;border-radius:50%;border:0;background:var(--muted);color:var(--ink);cursor:pointer}
+.grid{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 14px}
+.grid::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column}
+.card .stage{background:var(--stage);color:#fff;text-align:center;font-size:12px;letter-spacing:.08em;padding:6px;text-transform:uppercase}
+.card .in{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:18px}.card.sel{outline:2px solid var(--ink)}
+.card .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.card .open{background:0;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer;padding:0}
+.sk{height:250px;border-radius:var(--r-md);background:linear-gradient(90deg,var(--muted),var(--line),var(--muted));background-size:200% 100%;animation:sh 1.2s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+.state{grid-column:1/-1;text-align:center;padding:36px;border:1px dashed var(--line);border-radius:var(--r-md)}
+/* 05 onboarding */
+.guide{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--sp);background:var(--muted)}
+.dots{display:flex;gap:6px;margin:14px 0}.dots i{height:6px;flex:1;border-radius:9px;background:var(--line)}.dots i.on{background:var(--g-start)}
+.step{border-left:3px solid var(--ink);padding-left:18px;min-height:150px}
+.step h3{margin-bottom:8px}
+.nav2{display:flex;gap:10px;margin-top:16px}
+pre{background:var(--badge);color:var(--canvas);border-radius:var(--r-md);padding:14px;font:12px/1.6 var(--mono);white-space:pre-wrap;margin-top:10px}
+/* 06 detail */
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp);align-items:start}
+.pane{background:var(--canvas);border-radius:var(--r-md);padding:22px}
+.tb{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+/* 07 */
+.how{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+.how>div>div{border-bottom:1px solid var(--line);padding:12px 0}.how b{font-weight:500;font-size:19px;display:block}
+.resp{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px;font:12px/1.9 var(--mono)}
+.resp span{color:var(--mute)}
+/* 08,09 */
+.learn{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scrollbar-width:none}
+.lc{background:var(--canvas);border-radius:var(--r-md);padding:16px;min-height:150px;display:flex;flex-direction:column;gap:8px;justify-content:space-between}
+.col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.col article{background:var(--canvas);border-radius:var(--r-md);padding:22px;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.col article.hot{background:var(--badge);color:var(--canvas)}.col article.hot p{color:var(--line)}
+.col span{position:absolute;top:18px;right:22px;font-size:18px}
+.col h3{font-size:22px;margin-bottom:8px}.col a{color:inherit;margin-top:12px;font-size:13px}
+footer{background:var(--badge);color:var(--canvas);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer p,footer button{color:var(--line);font-size:12px}footer button{background:0;border:0;text-decoration:underline;cursor:pointer;font-family:inherit;padding:0}
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);transform:translateX(-50%);background:var(--badge);color:var(--canvas);border-radius:var(--r-pill);padding:10px 20px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:20}
+#toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:860px){
+section,footer{padding:22px}#menu{display:block}#q{width:100%}
+header{border-radius:var(--r-md);flex-wrap:wrap}
+nav{display:none;width:100%;flex-direction:column;align-items:flex-start}nav.open{display:flex}
+.hero,.guide,.detail,.how,.col,footer,.ben{grid-template-columns:1fr}.hero{padding:24px}
+.grid{grid-auto-columns:84%}.learn{grid-auto-columns:78%}}
+</style>
+</head>
+<body>
+<div class="w">
+<!-- 01 HEADER (wireframe 08 · navbar 018) -->
+<header>
+  <span class="logo">EXECUTAR / OFICINA</span>
+  <input id="q" type="search" placeholder="Buscar solução…" aria-label="Buscar" form="none">
+  <button id="menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <nav id="nav" aria-label="Principal"><a href="#discover">Discover</a><a href="#colecoes">Collections</a><a href="#learn">Learn</a><a href="#mapa">Mapa Cognitivo</a></nav>
+</header>
+<main>
+<!-- 02 HERO comercial (004/018) -->
+<section class="hero" id="discover">
+  <div>
+    <span class="chip dark">Solution Store</span>
+    <h1 style="margin-top:14px">Encontre uma solução para o que precisa <em>executar</em></h1>
+    <p>Skills reais do ambiente EXECUTAR, com Start guiado e Download independente.</p>
+    <div class="filters">
+      <select id="fa" aria-label="Área"><option value="">Área ▾</option><option>Operações</option><option>Design</option><option>Builders</option></select>
+      <select id="ft" aria-label="Tipo"><option value="">Tipo ▾</option><option>Copiloto</option><option>Workflow</option><option>Generator</option><option>Especialista</option><option>Orquestrador</option></select>
+      <select id="fs" aria-label="Ordenar"><option value="">Ordenar ▾</option><option value="n">Nome A–Z</option><option value="t">Tipo</option></select>
+    </div>
+  </div>
+  <div class="poster" role="img" aria-label="Poster / video loop (placeholder)">[ POSTER / VIDEO LOOP ]</div>
+</section>
+<!-- 03 BARRA (wireframe: 3 benefícios) -->
+<section class="ben" aria-label="Princípios">
+  <div><span class="dot"></span><span><b>Fonte única</b><p>O card é projeção do objeto SOLUTION.</p></span></div>
+  <div><span class="dot"></span><span><b>Start ≠ Download</b><p>Start abre onboarding; Download é ação independente.</p></span></div>
+  <div><span class="dot"></span><span><b>Sem invenção</b><p>Só skills e comandos existentes no ambiente.</p></span></div>
+</section>
+<!-- 04 GRID DE CARDS + seleção por área -->
+<section id="colecao-grid">
+  <div class="bar">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="arrows"><button class="arrow" data-d="-1" aria-label="Anterior">‹</button><button class="arrow" data-d="1" aria-label="Próximo">›</button></div>
+  </div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</section>
+<!-- 05 USER GUIDE → ONBOARDING (Start) -->
+<section class="guide" id="start">
+  <div><h2>User guide for <em>first timer</em></h2><p id="gsub">Escolha uma solução e clique em Start.</p><div class="dots" id="dots"></div></div>
+  <div><div class="step" id="step"></div><div class="nav2"><button class="btn dl" id="prev">← Voltar</button><button class="btn" id="next">Continuar →</button></div></div>
+</section>
+<!-- 06 CLIENTS → DETALHE ABERTO (002/016) -->
+<section id="detalhe"><div class="detail"><div class="poster" id="dposter" style="min-height:300px"></div><div class="pane" id="dpane"></div></div></section>
+<!-- 07 STATS → PROBLEMA / PROCESSO / PROGRESSO + resposta do Copiloto -->
+<section class="how" id="mapa">
+  <div><div><b>Problema</b><p>Estado operacional fragmentado entre memória, planilhas e conversas.</p></div><div><b>Processo</b><p>ATIVAR → VALIDAR → RESOLVER → EXECUTAR → VERIFICAR → CALCULAR → REGISTRAR → EMITIR</p></div><div><b>Progresso</b><p>Fonte única → tarefa atual → DoD → evidência → próxima ação</p></div></div>
+  <div class="poster" style="min-height:250px">Schema → Mapa Cognitivo → Quick Framework → Store → Copiloto → Action</div>
+  <div><h3 style="margin-bottom:12px;font-size:18px">Resposta operacional do Copiloto</h3><div class="resp"><span>[PROGRESSO] [SPRINT/C72] [GATE]</span><br>AGORA: <span>ID — ação</span><br>TEMPO: <span>duração</span><br>CONCLUI QUANDO: <span>DoD</span><br>EVIDÊNCIA: <span>prova esperada</span><br>PRÓXIMA: <span>uma ação</span></div></div>
+</section>
+<!-- 08 BLOG → LEARN / relacionados -->
+<section id="learn"><div class="bar"><h2 style="font-size:26px">Learn <em>· relacionados</em></h2></div>
+  <div class="learn">
+    <div class="lc"><span class="chip">Fundamento</span><h3>Schema Unificado</h3><p>Base dos objetos SOLUTION.</p></div>
+    <div class="lc"><span class="chip">Fundamento</span><h3>Mapa Cognitivo</h3><p>Problem → Concept → Evidence.</p></div>
+    <div class="lc"><span class="chip">Método</span><h3>Quick Framework</h3><p>Do framework ao bloco reutilizável.</p></div>
+    <div class="lc"><span class="chip">Método</span><h3>Evidence / Result</h3><p>Ação, prova, métrica e aprendizado.</p></div>
+  </div></section>
+<!-- 09 SERVICES → COLLECTIONS -->
+<section id="colecoes"><h2 style="text-align:center;margin-bottom:22px;font-size:clamp(22px,3vw,30px)">Collections</h2>
+  <div class="col">
+    <article class="hot"><span>01</span><h3>EXECUTAR — Operational Skills</h3><p>10 skills reais em 5 tipos.</p><a href="#discover" data-a="">Ver tudo</a></article>
+    <article><span>02</span><h3>Operações</h3><p>Rotina, planos, mapa e calendário.</p><a href="#colecao-grid" data-a="Operações">Filtrar área</a></article>
+    <article><span>03</span><h3>Builders</h3><p>Criação de skills, árvores e Store.</p><a href="#colecao-grid" data-a="Builders">Filtrar área</a></article>
+  </div></section>
+</main>
+<!-- 10 FOOTER: rota de produção (PRD) -->
+<footer>
+  <div><b>EXECUTAR / OFICINA</b><p>SOURCE → INGESTED → CLASSIFIED → SCHEMA_COMPLETE (G1) → BUNDLE_READY (G2) → IN_EDITORIAL_PRODUCTION → ASSETS_READY (G3) → QA_READY (G4) → STORE_READY (G5) → PUBLISHED (G6)</p></div>
+  <div><b>Rotas</b><p>D11 UX · D12 React · D19 Store · D22 ADRs · D23 Blueprints</p></div>
+  <div><b>Estados</b><p>Loading, empty e error/retry.</p><button id="simerr">Simular erro</button></div>
+</footer>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+/* Fonte única: um objeto SOLUTION por skill real; card, detalhe, onboarding e busca derivam dele.
+   Dados: nomes/descrições das skills disponíveis no ambiente. Campos não documentados ficam vazios (não inventados). */
+var S=[
+{id:"copiloto-executar",n:"Copiloto EXECUTAR",t:"Copiloto",a:"Operações",d:"Copiloto operacional para conduzir a rotina diária sobre uma fonte única de verdade, com WIP controlado, DoD e evidências.",p:["Operations","Project Manager","Entrepreneur"],c:["/bomdia","/agora","/estado","/fechardia","/replanejamento"],v:"v1.0.0"},
+{id:"plano-operacional-rastreavel",n:"Plano Operacional Rastreável",t:"Workflow",a:"Operações",d:"Gera o pacote de planejamento operacional mensal com IDs estáveis e classificação FACT/DECISION/ASSUMPTION/GAP/CONFLICT.",c:[]},
+{id:"executar-mapa-os",n:"Mapa-OS",t:"Workflow",a:"Operações",d:"Transforma documentos, planos e evidências em Mapa-OS com horizontes Agora/Próximo/Depois e próxima ação elegível.",c:[]},
+{id:"executar-calendar",n:"Calendário Sprint Swiss",t:"Generator",a:"Operações",d:"Gera calendário Sprint Swiss em SVG/PDF A4 e planilha .xlsx a partir de dados brutos de planejamento.",c:["ExCa-AUTO-00"]},
+{id:"executar-design",n:"EXECUTAR Design",t:"Generator",a:"Design",d:"Gera entregáveis visuais: Workbook Desk&Go, cards Prisma A4, showrooms EMITIR e kits Fractal Fluent.",c:[]},
+{id:"executar-arvore-roadmap",n:"Árvore Roadmap",t:"Generator",a:"Builders",d:"Converte planos e cronogramas longos em árvore navegável mês → semana → dia → ciclo → tarefa.",c:[]},
+{id:"executar-skill-creator",n:"Skill Creator EXECUTAR",t:"Especialista",a:"Builders",d:"Arquiteto de Skills: transforma processos e metodologias em pacotes de Skill rastreáveis e testáveis.",c:[]},
+{id:"gerador-skill-directory",n:"Gerador de Skill Directory",t:"Generator",a:"Builders",d:"Gera Skills completas em diretório (SKILL.md, references, schemas, tests) com rastreabilidade.",c:[]},
+{id:"executar-solution-store",n:"Solution Store",t:"Orquestrador",a:"Builders",d:"Opera a Oficina: ingere, classifica, gera handoff, valida assets e conduz a publicação autorizada.",c:[]},
+{id:"executar-safe-frameworks",n:"S.A.F.E. Frameworks",t:"Especialista",a:"Builders",d:"Seleciona e aplica frameworks para transformar perguntas e documentos em análises estruturadas e rastreáveis.",c:[]}];
+var $=function(i){return document.getElementById(i)},st={area:"",type:"",sort:"",q:"",sel:S[0],step:0,err:false};
+function log(e,x){try{(window.dataLayer=window.dataLayer||[]).push({event:e,solution:x&&x.id})}catch(_){}}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(function(){t.classList.remove("on")},2200)}
+function cmd(s){return s.c.length?s.c.join("  "):"Invoque a skill pelo nome: "+s.id}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function list(){var r=S.filter(function(s){return(!st.area||s.a===st.area)&&(!st.type||s.t===st.type)&&(!st.q||(s.n+s.d+s.id).toLowerCase().indexOf(st.q)>-1)});
+ if(st.sort==="n")r.sort(function(a,b){return a.n.localeCompare(b.n)});if(st.sort==="t")r.sort(function(a,b){return a.t.localeCompare(b.t)});return r}
+function render(load){var g=$("grid");
+ $("tabs").innerHTML=["","Operações","Design","Builders"].map(function(a){return'<button class="tab" role="tab" data-a="'+a+'" aria-selected="'+(st.area===a)+'">'+(a||"Todos")+"</button>"}).join("");
+ if(load){g.innerHTML='<div class="sk"></div><div class="sk"></div><div class="sk"></div>';return}
+ if(st.err){g.innerHTML='<div class="state"><b>Não foi possível carregar.</b><p>Verifique a conexão e tente de novo.</p><button class="btn" id="retry">Tentar novamente</button></div>';return}
+ var r=list();if(!r.length){g.innerHTML='<div class="state"><b>Nenhuma solução encontrada.</b><p>Ajuste a busca ou os filtros.</p><button class="btn dl" id="clr">Limpar filtros</button></div>';return}
+ g.innerHTML=r.map(function(s){return'<article class="card'+(s===st.sel?" sel":"")+'"><div class="stage">'+esc(s.t)+" · "+esc(s.a)+'</div><div class="in"><button class="open" data-o="'+s.id+'"><h3>'+esc(s.n)+"</h3></button><p>"+esc(s.d)+'</p><div class="acts"><button class="btn start" data-s="'+s.id+'">Start</button><button class="btn dl" data-dl="'+s.id+'">Download</button></div></div></article>'}).join("")}
+function load(){render(true);setTimeout(function(){render()},500)}
+function pick(id){st.sel=S.filter(function(s){return s.id===id})[0];detail();render();log("view_detail",st.sel)}
+function detail(tab){var s=st.sel;tab=tab||"Overview";
+ $("dposter").textContent="[ POSTER · "+s.id+" ]";
+ var body={Overview:"<p>"+esc(s.d)+"</p>"+(s.p?'<p style="margin-top:8px">'+s.p.map(function(x){return'<span class="chip">'+esc(x)+"</span> "}).join("")+"</p>":""),
+ Contents:'<p class="mono">'+esc(cmd(s))+"</p>",
+ "Examples / Try it":"<p>Abra o Start para ver o exemplo e o comando real.</p>",
+ Dependencies:"<p>Não documentadas nos metadados desta skill.</p>"}[tab];
+ $("dpane").innerHTML='<span class="chip dark">'+esc(s.t)+"</span> "+(s.v?'<span class="chip">'+s.v+"</span>":"")+'<h2 style="margin:10px 0;font-size:30px">'+esc(s.n)+'</h2><div class="tb">'+Object.keys({Overview:1,Contents:1,"Examples / Try it":1,Dependencies:1}).map(function(k){return'<button class="tab" role="tab" data-tab="'+k+'" aria-selected="'+(k===tab)+'">'+k+"</button>"}).join("")+"</div>"+body+'<div class="acts" style="display:flex;gap:8px;margin-top:16px"><button class="btn start" data-s="'+s.id+'">Start</button><button class="btn dl" data-dl="'+s.id+'">Download</button></div>'}
+var T=["O que é","O que você precisa","Como funciona","Exemplo","Executar"];
+function ob(){var s=st.sel,i=st.step;$("gsub").textContent="Onboarding · "+s.n;
+ $("dots").innerHTML=T.map(function(_,k){return'<i class="'+(k<=i?"on":"")+'"></i>'}).join("");
+ var b=[esc(s.d),"Acesso ao ambiente EXECUTAR onde a skill "+esc(s.id)+" está instalada.","A skill é a fonte canônica; card, detalhe e este onboarding derivam do mesmo objeto.",s.c.length?"Exemplo de invocação: <span class='mono'>"+esc(s.c[0])+"</span>":"Exemplo: peça a skill pelo nome e descreva o objetivo.",'Ação real: <pre>'+esc(cmd(s))+"</pre>"][i];
+ $("step").innerHTML="<h3>0"+(i+1)+" — "+T[i]+"</h3><p>"+b+"</p>";$("prev").disabled=i===0;$("next").textContent=i===4?"Concluir ✓":"Continuar →"}
+document.addEventListener("click",function(e){var t=e.target.closest("button,a");if(!t)return;var d=t.dataset;
+ if(d.o)pick(d.o);
+ if(d.s){pick(d.s);st.step=0;ob();log("start",st.sel);$("start").scrollIntoView()}
+ if(d.dl){var s=S.filter(function(x){return x.id===d.dl})[0];log("download",s);toast("Download de "+s.id+" solicitado (demo)")}
+ if(d.tab)detail(d.tab);
+ if(t.classList.contains("tab")&&d.a!==undefined&&t.closest("#tabs")){st.area=d.a;$("fa").value=d.a;render()}
+ if(t.tagName==="A"&&d.a!==undefined&&t.closest(".col")){st.area=d.a;$("fa").value=d.a;render()}
+ if(t.id==="retry"){st.err=false;load()}if(t.id==="clr"){st.area=st.type=st.q="";$("q").value=$("fa").value=$("ft").value="";render()}
+ if(t.id==="simerr"){st.err=true;render();$("colecao-grid").scrollIntoView()}
+ if(t.id==="next"){if(st.step<4)st.step++;else toast("Onboarding concluído");ob()}if(t.id==="prev"){st.step--;ob()}
+ if(t.classList.contains("arrow")){var g=$("grid");g.scrollBy({left:d.d*g.clientWidth*.6,behavior:"smooth"})}
+ if(t.id==="menu"){var o=$("nav").classList.toggle("open");t.setAttribute("aria-expanded",o)}});
+$("q").oninput=function(e){st.q=e.target.value.toLowerCase();render()};
+$("fa").onchange=function(e){st.area=e.target.value;render()};$("ft").onchange=function(e){st.type=e.target.value;render()};$("fs").onchange=function(e){st.sort=e.target.value;render()};
+detail();ob();load();
+</script>
+</body>
+</html>
