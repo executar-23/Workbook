@@ -32,7 +32,7 @@ conferir esta regra em `CLAUDE.md` antes de fechar a edição.
 | WB-H01 | Visão Executiva | WB-P1 | vazio — aguardando população | — |
 | WB-H02 | Governança | WB-P1 | vazio — aguardando população | — |
 | WB-H03 | Cadeia de Valor | WB-P1 | vazio — aguardando população | — |
-| WB-H04 | Áreas do Ecossistema | WB-P2 | vazio — aguardando população | — |
+| WB-H04 | Áreas do Ecossistema | WB-P2 | populado | 2026-09-29 |
 | WB-H05 | Portfólio | WB-P1 | vazio — aguardando população | — |
 | WB-H06 | Planejamento (estratégico/tático/operacional) | WB-P3 | vazio — aguardando população | — |
 | WB-H07 | Roteiro de Evolução (agora/próximo/futuro) | WB-P3 | vazio — aguardando população | — |
@@ -40,17 +40,169 @@ conferir esta regra em `CLAUDE.md` antes de fechar a edição.
 | WB-H09 | Processos | WB-P2 | vazio — aguardando população | — |
 | WB-H10 | Interfaces entre Áreas | WB-P2 | vazio — aguardando população | — |
 | WB-H11 | Dados e Fontes Principais | WB-P1 | vazio — aguardando população | — |
-| WB-H12 | Documentos e Evidências | WB-P1 | vazio — aguardando população | — |
+| WB-H12 | Documentos e Evidências | WB-P1 | rascunho — GM01 populado, GM02–06 pendentes | 2026-09-29 |
 | WB-H13 | Riscos Problemas e Bloqueios | WB-P3 | vazio — aguardando população | — |
 | WB-H14 | Indicadores | WB-P1 | vazio — aguardando população | — |
 | WB-H15 | Painel Executivo | WB-P3 | vazio — aguardando população | — |
-| WB-H16 | Lacunas e Decisões Pendentes | SA-10 | vazio — aguardando população | — |
+| WB-H16 | Lacunas e Decisões Pendentes | SA-10 | rascunho — GM01 populado, GM02–06 pendentes | 2026-09-29 |
 | WB-H17 | Rastreabilidade | SA-00 | vazio — aguardando população | — |
 
 Fonte da lista de páginas: `registry/session_a/workbook_manual.yaml#html_edition.parts`.
-Nenhuma página tem conteúdo ainda — este commit só formata capa e índice.
+
+### Painel de Completude
+
+Progresso: 1/17 páginas com status `populado` (6%) — 2/17 em `rascunho`.
+Recalculado mecanicamente a cada execução de
+`docs/prompts/POPULAR_AREA_WORKBOOK.prompt.md`; não editar à mão.
+
+Mapa global (estrutura completa, `WB-H04`) já está em `populado` — não
+depende de área. As demais páginas dependem de conteúdo/evidência por
+domínio e continuam sendo atacadas **uma `Dxx`/`GMxx` por execução**
+(WIP=1), conforme `docs/prompts/POPULAR_AREA_WORKBOOK.prompt.md`.
+Checklist de domínios por Grande Macro, para acompanhar o que falta:
+
+| Grande Macro | Domínios | Processados (WB-H12/WB-H16) | Pendentes |
+|---|---|---|---|
+| GM01 Estratégia, Governança e Corporativo | D01, D02, D03, D04, D17, D22 | D01, D02, D03, D04, D17, D22 | — |
+| GM02 Negócio, Mercado e Growth | D13, D14, D15, D16 | — | D13, D14, D15, D16 |
+| GM03 Produto e Experiência | D10, D11 | — | D10, D11 |
+| GM04 Engenharia, Plataforma e Operações | D08, D12 | — | D08, D12 |
+| GM05 Dados, Conhecimento e Documentação | D05, D06, D09, D18, D21, D23 | — | D05, D06, D09, D18, D21, D23 |
+| GM06 Execução, Automação e Ferramentas | D07, D19, D20 | — | D07, D19, D20 |
+
+"Processados" aqui significa que o domínio já foi varrido por uma
+execução do prompt para `WB-H12`/`WB-H16` (mesmo que o resultado tenha
+sido `TBD` por falta de evidência, como D01–D04/D22) — não significa que
+o domínio tem conteúdo completo.
 
 ---
+
+## WB-H04 · Áreas do Ecossistema — Página
+
+`mapeamento: WB-P2` · `status: populado` · `atualizado: 2026-09-29`
+
+Mapa global — as 6 Grandes Macros (`GMnn`), as 13 macroáreas (`Axx`) e os
+23 domínios (`Dxx`), completo. É estrutura pura (não depende de insumo em
+`evidence/`), por isso vai inteiro numa única execução, ao contrário das
+páginas com conteúdo dependente de área (essas continuam uma por vez).
+Fonte: `registry/session_a/architecture.yaml#macro_areas[].grupo_macro`
+e `#domains[].primary_area`.
+
+| Grande Macro | Macroáreas (Axx) | Domínios (Dxx) |
+|---|---|---|
+| GM01 Estratégia, Governança e Corporativo | A00, A07, A12 | D01, D22 (A00) · D02, D03, D04 (A07) · D17 (A12) |
+| GM02 Negócio, Mercado e Growth | A01, A08 | D13, D14, D15 (A01) · D16 (A08) |
+| GM03 Produto e Experiência | A02, A03 | D10, D11 (A02) · — (A03) |
+| GM04 Engenharia, Plataforma e Operações | A04, A05 | D12 (A04) · D08 (A05) |
+| GM05 Dados, Conhecimento e Documentação | A06, A10 | D05, D06, D09 (A06) · D18, D21, D23 (A10) |
+| GM06 Execução, Automação e Ferramentas | A09, A11 | D07 (A09) · D19, D20 (A11) |
+
+Nota de divergência: a proposta original do usuário alocava `D09
+Pesquisa e Inovação` em GM03; o registry canônico
+(`architecture.yaml#domains`) define `primary_area: A06`, portanto
+`D09` fica em **GM05** — mantido conforme a fonte, não conforme a
+proposta manual (regra `AGENTS.md`: registry é a fonte canônica). `A03
+Handoff Produto para Engenharia` não tem domínio com `primary_area: A03`
+— domínios que a citam (`D10`, `D11`, `D12`) têm-na como área de apoio,
+não principal.
+
+| Domínio | Nome | Área principal | Áreas de apoio | Grande Macro |
+|---|---|---|---|---|
+| D01 | Gestão Empresarial | A00 | — | GM01 |
+| D02 | Jurídico Riscos e Conformidade | A07 | A00 | GM01 |
+| D03 | Finanças | A07 | A00 | GM01 |
+| D04 | Pessoas e RH | A07 | — | GM01 |
+| D05 | Dados | A06 | A04 | GM05 |
+| D06 | Conhecimento e Busca | A06 | A10 | GM05 |
+| D07 | Produtividade e Execução | A09 | — | GM06 |
+| D08 | Operações | A05 | — | GM04 |
+| D09 | Pesquisa e Inovação | A06 | A02 | GM05 |
+| D10 | Gestão de Produto | A02 | A03 | GM03 |
+| D11 | Experiência e Projeto | A02 | A03 | GM03 |
+| D12 | Engenharia | A04 | A03, A05 | GM04 |
+| D13 | Mercado e Demanda | A01 | — | GM02 |
+| D14 | Vendas | A01 | — | GM02 |
+| D15 | Atendimento e Sucesso | A01 | — | GM02 |
+| D16 | Mídias e Comunicação | A08 | A01 | GM02 |
+| D17 | Emprego e Portfólio | A12 | — | GM01 |
+| D18 | Contratos e Esquemas | A10 | — | GM05 |
+| D19 | Assets e CTA | A11 | A08 | GM06 |
+| D20 | Plataformas e Repositórios | A11 | A05 | GM06 |
+| D21 | Workbook | A10 | — | GM05 |
+| D22 | Decision and Register Log | A00 | A10 | GM01 |
+| D23 | Blueprints | A10 | A11 | GM05 |
+
+--- fim da página WB-H04 ---
+
+## WB-H12 · Documentos e Evidências — Página
+
+`mapeamento: WB-P1` · `status: rascunho` · `atualizado: 2026-09-29`
+
+Fatia GM01. Fonte: `registry/session_a/documents.yaml` (documentos
+canônicos) e `evidence/master_index.yaml` (evidência de intake).
+
+### Documentos canônicos (GM01)
+
+| ID | Nome | Domínio | Classe | Estado do documento | Aprovação |
+|---|---|---|---|---|---|
+| D01-DOC-DDE-001 | Documento de Direção Empresarial | D01 | MACRO | PRE_PREENCHIDO | PENDENTE |
+| D01-DOC-TAP-001 | Termo de Abertura do Ecossistema | D01 | SPECIALIZED | PRE_PREENCHIDO | PENDENTE |
+| D01-DOC-MNE-001 | Modelo de Negócio do Ecossistema | D01 | SPECIALIZED | PRE_PREENCHIDO | PENDENTE |
+| D01-DOC-MRE-001 | Mapa de Relações do Ecossistema | D01 | SPECIALIZED | PRE_PREENCHIDO | PENDENTE |
+| D02-DOC-DGRC-001 | Documento de Governança, Riscos e Conformidade | D02 | MACRO | PRE_PREENCHIDO | PENDENTE |
+| D02-DOC-MRC-001 | Matriz de Riscos e Controles | D02 | SPECIALIZED | PRE_PREENCHIDO | PENDENTE |
+| D02-DOC-PPT-001 | Política de Privacidade e Termos | D02 | SPECIALIZED | PRE_PREENCHIDO | PENDENTE |
+| D03-DOC-PFO-001 | Plano Financeiro e Orçamentário | D03 | MACRO | PRE_PREENCHIDO | PENDENTE |
+| D03-DOC-MFO-001 | Modelo Financeiro do Ecossistema | D03 | SPECIALIZED | PRE_PREENCHIDO | PENDENTE |
+| D04-DOC-PPC-001 | Plano de Pessoas e Capacidade | D04 | MACRO | PRE_PREENCHIDO | PENDENTE |
+| D17-DOC-PEP-001 | Plano de Emprego e Portfólio | D17 | MACRO | PRE_PREENCHIDO | PENDENTE |
+| D22-DOC-DRL-001 | Decision and Register Log do Ecossistema | D22 | MACRO | PRE_PREENCHIDO | PENDENTE |
+
+Nenhum dos 12 tem seção de conteúdo preenchida ainda — `sections` no
+registry é só o esquema de campos, não o valor. Ver `documents.yaml`.
+
+### Evidência de intake (GM01)
+
+D01, D02, D03, D04 e D22 não têm nenhum arquivo em `evidence/` ainda. D17
+(Emprego e Portfólio) tem 13:
+
+| ID | Nome original | Classe |
+|---|---|---|
+| D17-EVID-001 | Contexto | evidencia |
+| D17-EVID-002 | Carreira Applied AI na Europa — decisões até 18/02/2027 | evidencia |
+| D17-EVID-003 | PROJECT_CHARTER_CICLO_01_AI_EUROPA_2026_27.csv | evidencia |
+| D17-EVID-004 | ai_europa_decisoes_2026_2027.json | evidencia |
+| D17-EVID-005 | Estratégia | evidencia |
+| D17-EVID-006 | Gtm profissional | evidencia |
+| D17-EVID-007 | Prompt | evidencia |
+| D17-EVID-008 | claude/PLANO_MESTRE_CICLO_01.md | evidencia |
+| D17-EVID-009 | claude/CAPABILITY_MATRIX_CICLO_01.md | evidencia |
+| D17-EVID-010 | claude/BACKLOG_CICLO_01.csv | evidencia |
+| D17-EVID-011 | claude/PACOTE_SPRINT_01.md | evidencia |
+| D17-EVID-012 | claude/FUNIL_CANDIDATURAS.csv | evidencia |
+| D17-EVID-013 | career-ai-europe.md | evidencia |
+
+Tudo `status: proposed` — nenhum promovido a canônico.
+
+--- fim da página WB-H12 ---
+
+## WB-H16 · Lacunas e Decisões Pendentes — Página
+
+`mapeamento: SA-10` · `status: rascunho` · `atualizado: 2026-09-29`
+
+Fatia GM01. Fonte: `registry/session_a/governance.yaml#gaps`/`conflicts`
+— só itens que bloqueiam ou tocam diretamente governança/domínios GM01.
+
+| ID | Lacuna/Conflito | Impacto | Quem decide | O que desbloqueia |
+|---|---|---|---|---|
+| GAP-006 | Fontes SRC-01…SRC-05 citadas no Business Docs original (Governança Operacional) e os 1.125 campos do Control Plane não foram fornecidos | Control Plane (SA-06) incompleto | humano (fonte original) | SA-06 |
+| GAP-007 | Nomes e critérios de aceite dos gates G01–G11 | Gates sem critério de aceite | decisão humana | gates |
+| GAP-008 | Owners de macroáreas, domínios e documentos | Nenhum documento GM01 tem owner definido | decisão humana | domain_contracts |
+| CNF-007 | Regra de commit — `AGENTS.md` (commit direto em `main`) × instrução da sessão de automação (branch dedicada + PR) | Ambiguidade de processo de governança de mudança | decisão humana | regra permanente de commit |
+
+GM02–GM06 ficam `TBD` até a execução deste prompt para essas áreas.
+
+--- fim da página WB-H16 ---
 
 ## Sobre este repositório
 
