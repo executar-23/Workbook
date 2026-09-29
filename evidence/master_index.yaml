@@ -37,6 +37,7 @@ domain_coverage:
 entries:
   - id: D06-EVID-001
     dominio: D06
+    grupo_macro: GM05
     nome_original: "RC-KNW-001__knowledge-pack-tp001-fatores-risco-cognitivo__v01.docx"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -46,6 +47,7 @@ entries:
     status: proposed
   - id: D06-EVID-002
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0011__pilares-editoriais-e-niveis-consciencia.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -54,6 +56,7 @@ entries:
     status: proposed
   - id: D06-EVID-003
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0008__schema-v2-ai-native-creator-os.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -62,6 +65,7 @@ entries:
     status: proposed
   - id: D06-EVID-004
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0007__arquitetura-agentes-ai-creator-ops.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -70,6 +74,7 @@ entries:
     status: proposed
   - id: D06-EVID-005
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0013__cadeia-causal-risco-cognitivo.rtf"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -78,6 +83,7 @@ entries:
     status: proposed
   - id: D06-EVID-006
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0015__biblioteca-visual-risco-cognitivo.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -86,6 +92,7 @@ entries:
     status: proposed
   - id: D06-EVID-007
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0003__conceito-blog-full-stack.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -94,6 +101,7 @@ entries:
     status: proposed
   - id: D06-EVID-008
     dominio: D06
+    grupo_macro: GM05
     nome_original: "INDEX_AI.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -102,6 +110,7 @@ entries:
     status: proposed
   - id: D06-EVID-009
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0002__arquitetura-blog-creator-economy-operacao-integrada.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -110,6 +119,7 @@ entries:
     status: proposed
   - id: D06-EVID-010
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0005__topologia-diretorios-creator-led-blog-2026.docx"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -118,6 +128,7 @@ entries:
     status: proposed
   - id: D06-EVID-011
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0009__proximo-artefato-ai-native-creator-os-schema.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -126,6 +137,7 @@ entries:
     status: proposed
   - id: D06-EVID-012
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0010__estrategia-tres-pilares-riscos-cognitivos.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -134,6 +146,7 @@ entries:
     status: proposed
   - id: D06-EVID-013
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0012__progressao-curricular-editorial-riscos-cognitivos.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -142,6 +155,7 @@ entries:
     status: proposed
   - id: D06-EVID-014
     dominio: D06
+    grupo_macro: GM05
     nome_original: "README_AI.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -150,6 +164,7 @@ entries:
     status: proposed
   - id: D06-EVID-015
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0014__risco-endogeno-primario-secundario-loop.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -158,6 +173,7 @@ entries:
     status: proposed
   - id: D06-EVID-016
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0006__equipe-aquisicao-retencao-experiencia.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -167,6 +183,7 @@ entries:
     status: proposed
   - id: D06-EVID-017
     dominio: D06
+    grupo_macro: GM05
     nome_original: "AIKB-0004__topologia-diretorios-creator-led-blog-2026.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -175,6 +192,7 @@ entries:
     status: proposed
   - id: D07-EVID-001
     dominio: D07
+    grupo_macro: GM06
     nome_original: "PD-CLB-20260906-F01-DOC-V01.bundle.yaml"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -183,6 +201,7 @@ entries:
     status: proposed
   - id: D07-EVID-002
     dominio: D07
+    grupo_macro: GM06
     nome_original: "PD-CLB-20260906-F01-DOC-V01__process-doc-padrao-multiplataforma.docx"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -191,6 +210,7 @@ entries:
     status: proposed
   - id: null
     dominio: D07
+    grupo_macro: GM06
     nome_original: "AIKB-0001__process-doc-creator-led-growth-multiplataforma.docx"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -199,6 +219,7 @@ entries:
     status: proposed
   - id: D10-EVID-001
     dominio: D10
+    grupo_macro: GM03
     nome_original: "EXECUTAR — Oficina _ Solution Store.html"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -207,6 +228,7 @@ entries:
     status: proposed
   - id: D10-EVID-002
     dominio: D10
+    grupo_macro: GM03
     nome_original: "PRD-FULLPAGE STORE"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -215,6 +237,7 @@ entries:
     status: proposed
   - id: D11-EVID-001
     dominio: D11
+    grupo_macro: GM03
     nome_original: "CMD-01"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -223,6 +246,7 @@ entries:
     status: proposed
   - id: D11-EVID-002
     dominio: D11
+    grupo_macro: GM03
     nome_original: "Interface Analysis"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -231,6 +255,7 @@ entries:
     status: proposed
   - id: D11-EVID-003
     dominio: D11
+    grupo_macro: GM03
     nome_original: "wireframe ASCII atualizado"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -239,6 +264,7 @@ entries:
     status: proposed
   - id: D11-EVID-004
     dominio: D11
+    grupo_macro: GM03
     nome_original: "CMD_02"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -247,6 +273,7 @@ entries:
     status: proposed
   - id: D11-EVID-005
     dominio: D11
+    grupo_macro: GM03
     nome_original: "best_practice"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -255,6 +282,7 @@ entries:
     status: proposed
   - id: D11-EVID-006
     dominio: D11
+    grupo_macro: GM03
     nome_original: "TOKENS - CARDS"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -263,6 +291,7 @@ entries:
     status: proposed
   - id: D11-EVID-007
     dominio: D11
+    grupo_macro: GM03
     nome_original: "WIREFRAMES"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -271,6 +300,7 @@ entries:
     status: proposed
   - id: D11-EVID-008
     dominio: D11
+    grupo_macro: GM03
     nome_original: "tokens"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -279,6 +309,7 @@ entries:
     status: proposed
   - id: D11-EVID-009
     dominio: D11
+    grupo_macro: GM03
     nome_original: "WIREFRAMEASCI"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -287,6 +318,7 @@ entries:
     status: proposed
   - id: D11-EVID-010
     dominio: D11
+    grupo_macro: GM03
     nome_original: "TOKENS CARD"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -295,6 +327,7 @@ entries:
     status: proposed
   - id: null
     dominio: D11
+    grupo_macro: GM03
     nome_original: "PREVIEW"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -303,6 +336,7 @@ entries:
     status: proposed
   - id: D12-EVID-001
     dominio: D12
+    grupo_macro: GM04
     nome_original: "ADR-MODELO DE PORCESSO REUTILAZEVEL"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -311,6 +345,7 @@ entries:
     status: proposed
   - id: D12-EVID-002
     dominio: D12
+    grupo_macro: GM04
     nome_original: "AIKB-0016__pacote-claude-design-react-fullstack.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -319,6 +354,7 @@ entries:
     status: proposed
   - id: D13-EVID-001
     dominio: D13
+    grupo_macro: GM02
     nome_original: "EXECUTAR_Foundation_Doc_GTM_Blog.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -327,6 +363,7 @@ entries:
     status: proposed
   - id: D13-EVID-002
     dominio: D13
+    grupo_macro: GM02
     nome_original: "CAMPANHA"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -335,6 +372,7 @@ entries:
     status: proposed
   - id: D16-EVID-001
     dominio: D16
+    grupo_macro: GM02
     nome_original: "CSM-Hub Editorial Risco Cognitivo.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -343,6 +381,7 @@ entries:
     status: proposed
   - id: D16-EVID-002
     dominio: D16
+    grupo_macro: GM02
     nome_original: "D16-DOC-PCP-003_PLANO_DE_CANAIS_E_PUBLICOS.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -351,6 +390,7 @@ entries:
     status: proposed
   - id: D16-EVID-003
     dominio: D16
+    grupo_macro: GM02
     nome_original: "D16-DOC-PEL-004_PLANO_EDITORIAL_MULTICANAL.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -359,6 +399,7 @@ entries:
     status: proposed
   - id: D16-EVID-004
     dominio: D16
+    grupo_macro: GM02
     nome_original: "D16-DOC-PGM-002_PLANO_DE_GOVERNANCA_DE_MIDIAS_SOCIAIS.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -367,6 +408,7 @@ entries:
     status: proposed
   - id: D16-EVID-005
     dominio: D16
+    grupo_macro: GM02
     nome_original: "D16-DOC-PEM-001_PLANO_ESTRATEGICO_DE_MIDIAS_SOCIAIS.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -375,6 +417,7 @@ entries:
     status: proposed
   - id: D16-EVID-006
     dominio: D16
+    grupo_macro: GM02
     nome_original: "D16-DOC-RDS-006_RELATORIO_DE_DESEMPENHO_SOCIAL.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -383,6 +426,7 @@ entries:
     status: proposed
   - id: D16-EVID-007
     dominio: D16
+    grupo_macro: GM02
     nome_original: "D16-DOC-PDM-005_PLANO_DE_DISTRIBUICAO_MULTICANAL.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -391,6 +435,7 @@ entries:
     status: proposed
   - id: D16-EVID-008
     dominio: D16
+    grupo_macro: GM02
     nome_original: "manifest.json"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -399,6 +444,7 @@ entries:
     status: proposed
   - id: D16-EVID-009
     dominio: D16
+    grupo_macro: GM02
     nome_original: "README_D16_MIDIAS_SOCIAIS_E_DISTRIBUICAO_DIGITAL.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -407,6 +453,7 @@ entries:
     status: proposed
   - id: D16-EVID-010
     dominio: D16
+    grupo_macro: GM02
     nome_original: "ORQUESTRADOR_D16.json"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -415,6 +462,7 @@ entries:
     status: proposed
   - id: D16-EVID-011
     dominio: D16
+    grupo_macro: GM02
     nome_original: "risco-cognitivo.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -424,6 +472,7 @@ entries:
     status: proposed
   - id: D16-EVID-012
     dominio: D16
+    grupo_macro: GM02
     nome_original: "linear-import-editorial-blog-risco-cognitivo-2026-10.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -432,6 +481,7 @@ entries:
     status: proposed
   - id: D16-EVID-013
     dominio: D16
+    grupo_macro: GM02
     nome_original: "plano-interno-editorial-blog-risco-cognitivo-2026-10.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -440,6 +490,7 @@ entries:
     status: proposed
   - id: D16-EVID-014
     dominio: D16
+    grupo_macro: GM02
     nome_original: "roadmap-editorial-blog-risco-cognitivo-2026-10.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -448,6 +499,7 @@ entries:
     status: proposed
   - id: D16-EVID-015
     dominio: D16
+    grupo_macro: GM02
     nome_original: "calendario-editorial-blog-risco-cognitivo-2026-10.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -456,6 +508,7 @@ entries:
     status: proposed
   - id: D17-EVID-001
     dominio: D17
+    grupo_macro: GM01
     nome_original: "Contexto"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -464,6 +517,7 @@ entries:
     status: proposed
   - id: D17-EVID-002
     dominio: D17
+    grupo_macro: GM01
     nome_original: "Carreira Applied AI na Europa — decisões até 18/02/2027"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -472,6 +526,7 @@ entries:
     status: proposed
   - id: D17-EVID-003
     dominio: D17
+    grupo_macro: GM01
     nome_original: "PROJECT_CHARTER_CICLO_01_AI_EUROPA_2026_27.csv"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -480,6 +535,7 @@ entries:
     status: proposed
   - id: D17-EVID-004
     dominio: D17
+    grupo_macro: GM01
     nome_original: "ai_europa_decisoes_2026_2027.json"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -488,6 +544,7 @@ entries:
     status: proposed
   - id: D17-EVID-005
     dominio: D17
+    grupo_macro: GM01
     nome_original: "Estratégia"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -496,6 +553,7 @@ entries:
     status: proposed
   - id: D17-EVID-006
     dominio: D17
+    grupo_macro: GM01
     nome_original: "Gtm profissional"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -504,6 +562,7 @@ entries:
     status: proposed
   - id: D17-EVID-007
     dominio: D17
+    grupo_macro: GM01
     nome_original: "Prompt"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -512,6 +571,7 @@ entries:
     status: proposed
   - id: D17-EVID-008
     dominio: D17
+    grupo_macro: GM01
     nome_original: "claude/PLANO_MESTRE_CICLO_01.md"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -520,6 +580,7 @@ entries:
     status: proposed
   - id: D17-EVID-009
     dominio: D17
+    grupo_macro: GM01
     nome_original: "claude/CAPABILITY_MATRIX_CICLO_01.md"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -528,6 +589,7 @@ entries:
     status: proposed
   - id: D17-EVID-010
     dominio: D17
+    grupo_macro: GM01
     nome_original: "claude/BACKLOG_CICLO_01.csv"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -536,6 +598,7 @@ entries:
     status: proposed
   - id: D17-EVID-011
     dominio: D17
+    grupo_macro: GM01
     nome_original: "claude/PACOTE_SPRINT_01.md"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -544,6 +607,7 @@ entries:
     status: proposed
   - id: D17-EVID-012
     dominio: D17
+    grupo_macro: GM01
     nome_original: "claude/FUNIL_CANDIDATURAS.csv"
     projeto_origem: "Eu-26-27"
     fonte: SRC-09
@@ -552,6 +616,7 @@ entries:
     status: proposed
   - id: D17-EVID-013
     dominio: D17
+    grupo_macro: GM01
     nome_original: "career-ai-europe.md"
     projeto_origem: "memories"
     fonte: SRC-09
@@ -561,6 +626,7 @@ entries:
     status: proposed
   - id: D18-EVID-001
     dominio: D18
+    grupo_macro: GM05
     nome_original: "EXECUTAR_projetosaasentrypoint_EXPANDIDO.schema.json"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -569,6 +635,7 @@ entries:
     status: proposed
   - id: D20-EVID-001
     dominio: D20
+    grupo_macro: GM06
     nome_original: "ROTA SKILLS REPOSTROIOS"
     projeto_origem: "HANDOFF-STORE"
     fonte: SRC-10
@@ -577,6 +644,7 @@ entries:
     status: proposed
   - id: D21-EVID-001
     dominio: D21
+    grupo_macro: GM05
     nome_original: "INDEX"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -585,6 +653,7 @@ entries:
     status: proposed
   - id: D21-EVID-002
     dominio: D21
+    grupo_macro: GM05
     nome_original: "docs/ARVORE-PROJETO-ALVO.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -593,6 +662,7 @@ entries:
     status: proposed
   - id: D21-EVID-003
     dominio: D21
+    grupo_macro: GM05
     nome_original: "workbook_preview_7_dias.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -601,6 +671,7 @@ entries:
     status: proposed
   - id: D21-EVID-004
     dominio: D21
+    grupo_macro: GM05
     nome_original: "workbook_operacional_v2_7_dias_offline.html"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -609,6 +680,7 @@ entries:
     status: proposed
   - id: D21-EVID-005
     dominio: D21
+    grupo_macro: GM05
     nome_original: "HUB.txt"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -617,6 +689,7 @@ entries:
     status: proposed
   - id: D21-EVID-006
     dominio: D21
+    grupo_macro: GM05
     nome_original: "02_AGENT_INDEX.md"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -625,6 +698,7 @@ entries:
     status: proposed
   - id: D23-EVID-001
     dominio: D23
+    grupo_macro: GM05
     nome_original: "01_YAML_BUNDLE.yaml"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -633,6 +707,7 @@ entries:
     status: proposed
   - id: D23-EVID-002
     dominio: D23
+    grupo_macro: GM05
     nome_original: "SCHEMA SKILL"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
@@ -641,6 +716,7 @@ entries:
     status: proposed
   - id: D06-EVID-018
     dominio: D06
+    grupo_macro: GM05
     nome_original: "RC-DOMAIN-EXPERT-OS_MANUAL-DE-USO_v1.1.html"
     projeto_origem: "upload-direto-2026-09-29"
     fonte: SRC-11
@@ -650,6 +726,7 @@ entries:
     status: proposed
   - id: D13-EVID-003
     dominio: D13
+    grupo_macro: GM02
     nome_original: "EXECUTAR_Projeto_GTM_Atualizado.xlsx"
     projeto_origem: "upload-direto-2026-09-29"
     fonte: SRC-11
@@ -659,6 +736,7 @@ entries:
     status: proposed
   - id: D21-EVID-007
     dominio: D21
+    grupo_macro: GM05
     nome_original: "Ecossistema_.html"
     projeto_origem: "upload-direto-2026-09-29"
     fonte: SRC-11
@@ -668,6 +746,7 @@ entries:
     status: proposed
   - id: null
     dominio: D18
+    grupo_macro: GM05
     nome_original: "EXECUTAR_projetosaasentrypoint_EXPANDIDO.schema.json"
     projeto_origem: "upload-direto-2026-09-29"
     fonte: SRC-11
@@ -676,6 +755,7 @@ entries:
     status: proposed
   - id: null
     dominio: D13
+    grupo_macro: GM02
     nome_original: "EXECUTAR_Foundation_Doc_GTM_Blog.md"
     projeto_origem: "upload-direto-2026-09-29"
     fonte: SRC-11
@@ -684,6 +764,7 @@ entries:
     status: proposed
   - id: D09-EVID-001
     dominio: D09
+    grupo_macro: GM05
     nome_original: "__PMI_X_TDHA_X_Evidencias_-_21.08.docx"
     projeto_origem: "upload-direto-2026-09-29-lote3"
     fonte: SRC-12
@@ -693,6 +774,7 @@ entries:
     status: proposed
   - id: D09-EVID-002
     dominio: D09
+    grupo_macro: GM05
     nome_original: "__ADM-26-21-08.docx"
     projeto_origem: "upload-direto-2026-09-29-lote3"
     fonte: SRC-12
@@ -702,6 +784,7 @@ entries:
     status: proposed
   - id: D10-EVID-003
     dominio: D10
+    grupo_macro: GM03
     nome_original: "METHOD.docx"
     projeto_origem: "upload-direto-2026-09-29-lote3"
     fonte: SRC-12
@@ -711,6 +794,7 @@ entries:
     status: proposed
   - id: D06-EVID-019
     dominio: D06
+    grupo_macro: GM05
     nome_original: "RC-KNW-001__knowledge-pack-tp001-fatores-risco-cognitivo__v013.docx"
     projeto_origem: "upload-direto-2026-09-29-lote3"
     fonte: SRC-12
@@ -720,6 +804,7 @@ entries:
     status: proposed
   - id: D06-EVID-020
     dominio: D06
+    grupo_macro: GM05
     nome_original: "dashboard_sintese_tdah_694_V2.html"
     projeto_origem: "upload-direto-2026-09-29-lote3"
     fonte: SRC-12

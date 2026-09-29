@@ -55,24 +55,46 @@ ingeridas.
 
 ## Classificação por domínio
 
-| Domínio | Nome | Arquivos |
-|---|---|---|
-| D06 | Conhecimento e Busca | 20 |
-| D07 | Produtividade e Execução | 2 |
-| D09 | Pesquisa e Inovação | 2 |
-| D10 | Gestão de Produto | 3 |
-| D11 | Experiência e Projeto | 10 |
-| D12 | Engenharia | 2 |
-| D13 | Mercado e Demanda | 3 |
-| D16 | Mídias e Comunicação | 15 |
-| D17 | Emprego e Portfólio | 13 |
-| D18 | Contratos e Esquemas | 1 |
-| D20 | Plataformas e Repositórios | 1 |
-| D21 | Workbook | 7 |
-| D23 | Blueprints | 2 |
+| Domínio | Nome | Grupo Macro | Arquivos |
+|---|---|---|---|
+| D06 | Conhecimento e Busca | GM05 | 20 |
+| D07 | Produtividade e Execução | GM06 | 2 |
+| D09 | Pesquisa e Inovação | GM05 | 2 |
+| D10 | Gestão de Produto | GM03 | 3 |
+| D11 | Experiência e Projeto | GM03 | 10 |
+| D12 | Engenharia | GM04 | 2 |
+| D13 | Mercado e Demanda | GM02 | 3 |
+| D16 | Mídias e Comunicação | GM02 | 15 |
+| D17 | Emprego e Portfólio | GM01 | 13 |
+| D18 | Contratos e Esquemas | GM05 | 1 |
+| D20 | Plataformas e Repositórios | GM06 | 1 |
+| D21 | Workbook | GM05 | 7 |
+| D23 | Blueprints | GM05 | 2 |
 
 D01–D05, D08, D14, D15, D19, D22 não receberam arquivo em nenhum lote — isso
 não é uma lacuna (`GAP-nnn`), só ausência de insumo nas importações até agora.
+
+## Grupo Macro (GM01–GM06)
+
+Camada nova acima de `Axx`, adicionada em `architecture.yaml#macro_areas[].grupo_macro`
+e propagada a cada entrada de `master_index.yaml`/`.csv` via `Dxx → primary_area
+(Axx) → GMnn` (tabela fixa em `RECLASSIFICACAO_GM01-06.prompt.md#CONSTRAINTS`).
+`status: proposed` como todo o resto — camada mecânica, não revisada por humano.
+
+| Grupo Macro | Nome | Entradas |
+|---|---|---|
+| GM01 | Estratégia, Governança e Corporativo | 13 |
+| GM02 | Negócio, Mercado e Growth | 19 |
+| GM03 | Produto e Experiência | 14 |
+| GM04 | Engenharia, Plataforma e Operações | 2 |
+| GM05 | Dados, Conhecimento e Documentação | 33 |
+| GM06 | Execução, Automação e Ferramentas | 4 |
+
+As seções `I. Controle e Navegação`, `III. Portfólio/Operação/Governança` e
+`IV. Conhecimento e Continuidade` da árvore-alvo do Workbook não são domínio
+de insumo — já correspondem a arquivos existentes do registry (`portfolio.yaml`,
+`governance.yaml`, `documents.yaml`, `objects.yaml`, `evidence/` como Corpus);
+ver a tabela completa em `RECLASSIFICACAO_GM01-06.prompt.md#CONSTRAINTS`.
 
 Três entradas têm classificação marcada como ambígua em `master_index.yaml`
 (nota `ambiguo:`) — mantidas na classificação mais defensável, sujeitas a
