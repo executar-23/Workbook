@@ -2,23 +2,25 @@
 # Lote 1 (export da conta Claude, 2026-09-28): SRC-08/09/10.
 # Lote 2 (upload direto de 5 arquivos, 2026-09-29): SRC-11 -- 2 eram duplicatas exatas
 # do lote 1 (mesmo hash de conteudo, re-enviados) e nao geraram novo arquivo fisico.
+# Lote 3 (upload direto de 5 arquivos, 2026-09-29): SRC-12 -- inclui RC-KNW-001 v013,
+# que atualiza D06-EVID-001 (v01); v01 fica doc_class: historico, nao removido.
 # status: proposed em todas as entradas -- nada aqui e canonico sem aprovacao humana.
 status: proposed
-source_refs: [SRC-08, SRC-09, SRC-10, SRC-11]
+source_refs: [SRC-08, SRC-09, SRC-10, SRC-11, SRC-12]
 generated_at: '2026-09-29'
-total_files: 76
-total_entries: 80
+total_files: 81
+total_entries: 85
 domain_coverage:
   - {domain: D01, name: "Gestão Empresarial", files: 0}
   - {domain: D02, name: "Jurídico Riscos e Conformidade", files: 0}
   - {domain: D03, name: "Finanças", files: 0}
   - {domain: D04, name: "Pessoas e RH", files: 0}
   - {domain: D05, name: "Dados", files: 0}
-  - {domain: D06, name: "Conhecimento e Busca", files: 18}
+  - {domain: D06, name: "Conhecimento e Busca", files: 20}
   - {domain: D07, name: "Produtividade e Execução", files: 2}
   - {domain: D08, name: "Operações", files: 0}
-  - {domain: D09, name: "Pesquisa e Inovação", files: 0}
-  - {domain: D10, name: "Gestão de Produto", files: 2}
+  - {domain: D09, name: "Pesquisa e Inovação", files: 2}
+  - {domain: D10, name: "Gestão de Produto", files: 3}
   - {domain: D11, name: "Experiência e Projeto", files: 10}
   - {domain: D12, name: "Engenharia", files: 2}
   - {domain: D13, name: "Mercado e Demanda", files: 3}
@@ -38,8 +40,9 @@ entries:
     nome_original: "RC-KNW-001__knowledge-pack-tp001-fatores-risco-cognitivo__v01.docx"
     projeto_origem: "27-09-WORKBOOK"
     fonte: SRC-08
-    doc_class: evidencia
+    doc_class: historico
     caminho: evidence/D06_conhecimento-busca-corporativa/D06-EVID-001__rc-knw-001_knowledge-pack-tp001-fatores-risco-cognitivo_v01__extraido.md
+    nota: "superado por D06-EVID-019 (mesmo knowledge pack, v013); mantido como historico, nao removido"
     status: proposed
   - id: D06-EVID-002
     dominio: D06
@@ -678,4 +681,49 @@ entries:
     fonte: SRC-11
     doc_class: duplicado
     nota: "conteudo identico (sha1 6f71f20f...) a D13-EVID-001, ja ingerido no lote 1; nao gerou novo arquivo"
+    status: proposed
+  - id: D09-EVID-001
+    dominio: D09
+    nome_original: "__PMI_X_TDHA_X_Evidencias_-_21.08.docx"
+    projeto_origem: "upload-direto-2026-09-29-lote3"
+    fonte: SRC-12
+    doc_class: evidencia
+    caminho: evidence/D09_pesquisa-inovacao/D09-EVID-001__pmi_x_tdha_x_evidencias_21.08.docx
+    nota: "DATA-ADHD-PM-001 -- matriz de evidencias PMBOK x TDAH; docx binario real, mantido sem extracao"
+    status: proposed
+  - id: D09-EVID-002
+    dominio: D09
+    nome_original: "__ADM-26-21-08.docx"
+    projeto_origem: "upload-direto-2026-09-29-lote3"
+    fonte: SRC-12
+    doc_class: evidencia
+    caminho: evidence/D09_pesquisa-inovacao/D09-EVID-002__adm-26-21-08.docx
+    nota: "ambiguo: matriz funcao-de-gestao x deficit-TDAH; poderia ser D01/D04; classificado D09 como par de D09-EVID-001"
+    status: proposed
+  - id: D10-EVID-003
+    dominio: D10
+    nome_original: "METHOD.docx"
+    projeto_origem: "upload-direto-2026-09-29-lote3"
+    fonte: SRC-12
+    doc_class: evidencia
+    caminho: evidence/D10_gestao-produto/D10-EVID-003__method.docx
+    nota: "PRD-EXEC-DISPATCH-004 -- PRD do motor adaptativo de execucao, Projeto EXECUTAR"
+    status: proposed
+  - id: D06-EVID-019
+    dominio: D06
+    nome_original: "RC-KNW-001__knowledge-pack-tp001-fatores-risco-cognitivo__v013.docx"
+    projeto_origem: "upload-direto-2026-09-29-lote3"
+    fonte: SRC-12
+    doc_class: evidencia
+    caminho: evidence/D06_conhecimento-busca-corporativa/D06-EVID-019__rc-knw-001_knowledge-pack-tp001-fatores-risco-cognitivo_v013.docx
+    nota: "versao atualizada de D06-EVID-001 (v01 -> v013); docx binario real, mantido sem extracao"
+    status: proposed
+  - id: D06-EVID-020
+    dominio: D06
+    nome_original: "dashboard_sintese_tdah_694_V2.html"
+    projeto_origem: "upload-direto-2026-09-29-lote3"
+    fonte: SRC-12
+    doc_class: evidencia
+    caminho: evidence/D06_conhecimento-busca-corporativa/D06-EVID-020__dashboard_sintese_tdah_694_v2.html
+    nota: "dashboard de evidencia governada TDAH x Framework 694 (evidence_question_link)"
     status: proposed
