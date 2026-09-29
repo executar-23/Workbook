@@ -1,14 +1,15 @@
 # Evidência de intake (fora do `registry/`)
 
-Insumo bruto importado de um export da conta claude.ai (categoria `projects`,
-2026-09-28), organizado pela mesma taxonomia de domínios `D01–D23` já canônica
-em `registry/session_a/architecture.yaml`. Ver `master_index.yaml` /
+Insumo bruto de dois lotes — (1) export da conta claude.ai, categoria
+`projects`, 2026-09-28, e (2) upload direto de 5 arquivos, 2026-09-29 —
+organizado pela mesma taxonomia de domínios `D01–D23` já canônica em
+`registry/session_a/architecture.yaml`. Ver `master_index.yaml` /
 `master_index.csv` para o índice completo.
 
 ## O que é / o que não é
 
 - `registry/` é schema-validado e fechado em 37 documentos canônicos (23 MACRO
-  + 14 SPECIALIZED). Estes 73 arquivos **não são** documentos canônicos novos —
+  + 14 SPECIALIZED). Estes 76 arquivos **não são** documentos canônicos novos —
   são evidência/insumo bruto para eventualmente preencher ou informar
   documentos existentes (ex.: os 6 arquivos `D16-DOC-*` aqui dentro são
   **candidatos** a preencher os documentos já registrados `D16-DOC-PEM-001` e
@@ -27,6 +28,12 @@ em `registry/session_a/architecture.yaml`. Ver `master_index.yaml` /
 - `SRC-09` — projeto Claude "Eu-26-27" + arquivo de memória `career-ai-europe.md`
   (13 arquivos, todos em `D17_emprego-portfolio/`)
 - `SRC-10` — projeto Claude "HANDOFF-STORE" (14 arquivos únicos)
+- `SRC-11` — upload direto de 5 arquivos (2026-09-29): 3 novos (manual da skill
+  RC Domain Expert OS, planilha GTM atualizada, "Ecossistema\_.html" — um
+  workbook reader integral) + 2 que já existiam idênticos no lote `SRC-08`
+  (`EXECUTAR_projetosaasentrypoint_EXPANDIDO.schema.json` e
+  `EXECUTAR_Foundation_Doc_GTM_Blog.md`, mesmo hash SHA1 — registrados como
+  `duplicado` no índice, sem novo arquivo físico).
 
 Registradas em `registry/session_a/governance.yaml#sources`, mesmo padrão do
 `SRC-07` (handoff): um `SRC-nn` por lote de origem, não um por arquivo.
@@ -40,17 +47,17 @@ ingeridas.
 
 | Domínio | Nome | Arquivos |
 |---|---|---|
-| D06 | Conhecimento e Busca | 17 |
+| D06 | Conhecimento e Busca | 18 |
 | D07 | Produtividade e Execução | 2 |
 | D10 | Gestão de Produto | 2 |
 | D11 | Experiência e Projeto | 10 |
 | D12 | Engenharia | 2 |
-| D13 | Mercado e Demanda | 2 |
+| D13 | Mercado e Demanda | 3 |
 | D16 | Mídias e Comunicação | 15 |
 | D17 | Emprego e Portfólio | 13 |
 | D18 | Contratos e Esquemas | 1 |
 | D20 | Plataformas e Repositórios | 1 |
-| D21 | Workbook | 6 |
+| D21 | Workbook | 7 |
 | D23 | Blueprints | 2 |
 
 D01–D05, D08, D09, D14, D15, D19, D22 não receberam arquivo neste lote — isso

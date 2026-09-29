@@ -73,6 +73,7 @@ sources:  # SRC-01…SRC-06 = Archive.zip entregue em 2026-09-27; SRC-01 → SRC
   - {id: SRC-08, title: "Projeto Claude \"27-09-WORKBOOK\" (export de conta, 2026-09-28) — evidence/", type: repository, authority: evidencia, status: active}
   - {id: SRC-09, title: "Projeto Claude \"Eu-26-27\" + memória career-ai-europe.md (export de conta, 2026-09-28) — evidence/D17_emprego-portfolio/", type: repository, authority: evidencia, status: active}
   - {id: SRC-10, title: "Projeto Claude \"HANDOFF-STORE\" (export de conta, 2026-09-28) — evidence/", type: repository, authority: evidencia, status: active}
+  - {id: SRC-11, title: "Upload direto de 5 arquivos (2026-09-29): manual RC Domain Expert OS, GTM xlsx, Ecossistema/Workbook Reader — evidence/", type: document, authority: evidencia, status: active}
 
 id_migrations:  # numeração antiga do INDX (tabela macroárea→domínios) → canônica. Registradas, não aplicadas silenciosamente.
   - {old_id: D0, new_id: TBD, reason: "PMBOK/Governança citado como D0 sob A00; sem domínio canônico — ver CNF-001", effective_at: '2026-09-27'}
