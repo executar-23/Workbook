@@ -19,6 +19,7 @@ Regex canônicas: `registry/workbook.yaml#id_conventions` e `registry/session_b/
 | A | `ADR-nnn` · `REQ-nnn` | Decisão de arquitetura · requisito | ADR-001 |
 | A | `WB-P1-nn` · `WB-Hnn` · `CTR-*` · `Ln` | Workbook · edição HTML · contrato · nível | CTR-INTERFACE |
 | A | `Dxx-EVID-nnn` | Evidência de intake (arquivo bruto importado, fora do registry) — vive só em `evidence/`, nunca em `registry/`; classe (`principal/derivado/evidencia/historico/duplicado/obsoleto/em_conflito`) e fonte (`SRC-nn`) em `evidence/master_index.yaml`. Não é documento canônico (`Dxx-DOC-ACR-nnn`) até promoção humana explícita. | D16-EVID-005 |
+| A | `GMnn` (01–06) | Grupo Macro — camada acima de `Axx`, agrupando macroáreas (`architecture.yaml#macro_areas[].grupo_macro`) e propagada para cada entrada de `evidence/master_index.yaml` via `Dxx → primary_area (Axx) → GMnn`. Tabela fixa em `evidence/RECLASSIFICACAO_GM01-06.prompt.md#CONSTRAINTS`. | GM05 |
 | B | `SB-nn` (00–11) | Seção do Foundation Doc | SB-02 |
 | B | `CYC-AAAA-nn` `OBJ-` `RDM-` `BKL-` `SPR-` `TSK-` `ISS-` `PRJ-Mn-` | Ciclo e execução | SPR-001 |
 | B | `RB-Dxx-nnn` `ROT-` `CRN-` `TPL-` `AGT-` `CMD-` `EDL-` `WF-XXX-nnn` `SOP-` | Runbook, rotina, cronograma, template, agente, slash command, linha editorial, workflow, procedimento | RB-D08-001 |

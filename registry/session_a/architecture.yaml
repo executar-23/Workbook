@@ -9,20 +9,22 @@ ecosystem:
   status: proposed
   source_refs: [SRC-01, SRC-02]
 
+# grupo_macro (GM01-GM06): camada nova acima de Axx, ainda status: proposed.
+# Origem/tabela: evidence/RECLASSIFICACAO_GM01-06.prompt.md#CONSTRAINTS.
 macro_areas:
-  - {id: A00, name: Governança Estratégia e Gestão, purpose: Direção decisões planejamento e controles, function: [direção, charter, decisões, planejamento, controles], aliases: [Governance], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A01, name: Negócio e Go to Market, purpose: Modelo de negócio mercado aquisição e comercialização, aliases: [Negócio], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A02, name: Produto e Experiência, purpose: Discovery e definição da solução, aliases: [Produto], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A03, name: Handoff Produto para Engenharia, purpose: Preparação de pacotes implementáveis, aliases: [Handoff, Handoff e Preparação para Desenvolvimento], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A04, name: Arquitetura Engenharia e Implementação, purpose: Arquitetura construção integração e qualidade técnica, aliases: [Arquitetura, Arquitetura e Engenharia], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A05, name: Operações Plataforma e Segurança, purpose: Produção observabilidade segurança e continuidade, aliases: [OPS, Operações Plataforma Deploy e Segurança], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A06, name: Dados Pesquisa e Conhecimento, purpose: Evidência dados pesquisa e inteligência, aliases: [Dados e Pesquisa], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A07, name: Corporativo e Suporte, purpose: Funções empresariais estruturantes, aliases: [Capacidades e Suporte], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A08, name: Conteúdo Comunicação e Growth, purpose: Produção editorial distribuição comunicação e crescimento, aliases: [Conteúdo], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A09, name: Execução e Planejamento do Trabalho, purpose: Planejamento convertido em trabalho executável, aliases: [Execução e Planejamento], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A10, name: Documentação e Governança do Conhecimento, purpose: Referências contratos registros e sínteses, aliases: [Documentação e Conhecimento], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A11, name: Ferramentas IA e Ativos Reutilizáveis, purpose: Capacidades técnicas e ativos reutilizáveis, aliases: [Ferramentas IA e Ativos], scope_hint: [skills, plugins, agentes, prompts, comandos, ferramentas], source_refs: [SRC-01, SRC-02], status: proposed}
-  - {id: A12, name: Stakeholders e Ecossistema, purpose: Relações com atores parceiros fornecedores e comunidade, scope_hint: [stakeholders, parceiros, fornecedores, comunidade, atores, matriz de relacionamento], source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A00, name: Governança Estratégia e Gestão, purpose: Direção decisões planejamento e controles, function: [direção, charter, decisões, planejamento, controles], aliases: [Governance], grupo_macro: GM01, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A01, name: Negócio e Go to Market, purpose: Modelo de negócio mercado aquisição e comercialização, aliases: [Negócio], grupo_macro: GM02, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A02, name: Produto e Experiência, purpose: Discovery e definição da solução, aliases: [Produto], grupo_macro: GM03, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A03, name: Handoff Produto para Engenharia, purpose: Preparação de pacotes implementáveis, aliases: [Handoff, Handoff e Preparação para Desenvolvimento], grupo_macro: GM03, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A04, name: Arquitetura Engenharia e Implementação, purpose: Arquitetura construção integração e qualidade técnica, aliases: [Arquitetura, Arquitetura e Engenharia], grupo_macro: GM04, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A05, name: Operações Plataforma e Segurança, purpose: Produção observabilidade segurança e continuidade, aliases: [OPS, Operações Plataforma Deploy e Segurança], grupo_macro: GM04, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A06, name: Dados Pesquisa e Conhecimento, purpose: Evidência dados pesquisa e inteligência, aliases: [Dados e Pesquisa], grupo_macro: GM05, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A07, name: Corporativo e Suporte, purpose: Funções empresariais estruturantes, aliases: [Capacidades e Suporte], grupo_macro: GM01, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A08, name: Conteúdo Comunicação e Growth, purpose: Produção editorial distribuição comunicação e crescimento, aliases: [Conteúdo], grupo_macro: GM02, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A09, name: Execução e Planejamento do Trabalho, purpose: Planejamento convertido em trabalho executável, aliases: [Execução e Planejamento], grupo_macro: GM06, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A10, name: Documentação e Governança do Conhecimento, purpose: Referências contratos registros e sínteses, aliases: [Documentação e Conhecimento], grupo_macro: GM05, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A11, name: Ferramentas IA e Ativos Reutilizáveis, purpose: Capacidades técnicas e ativos reutilizáveis, aliases: [Ferramentas IA e Ativos], scope_hint: [skills, plugins, agentes, prompts, comandos, ferramentas], grupo_macro: GM06, source_refs: [SRC-01, SRC-02], status: proposed}
+  - {id: A12, name: Stakeholders e Ecossistema, purpose: Relações com atores parceiros fornecedores e comunidade, scope_hint: [stakeholders, parceiros, fornecedores, comunidade, atores, matriz de relacionamento], grupo_macro: GM01, source_refs: [SRC-01, SRC-02], status: proposed}
 
 # primary_area/supporting_areas preservados do commit 718d21b. documents → documents.yaml.
 domains:
