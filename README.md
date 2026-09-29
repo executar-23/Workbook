@@ -32,7 +32,7 @@ conferir esta regra em `CLAUDE.md` antes de fechar a edição.
 | WB-H01 | Visão Executiva | WB-P1 | vazio — aguardando população | — |
 | WB-H02 | Governança | WB-P1 | vazio — aguardando população | — |
 | WB-H03 | Cadeia de Valor | WB-P1 | vazio — aguardando população | — |
-| WB-H04 | Áreas do Ecossistema | WB-P2 | rascunho — GM01 populado, GM02–06 pendentes | 2026-09-29 |
+| WB-H04 | Áreas do Ecossistema | WB-P2 | populado | 2026-09-29 |
 | WB-H05 | Portfólio | WB-P1 | vazio — aguardando população | — |
 | WB-H06 | Planejamento (estratégico/tático/operacional) | WB-P3 | vazio — aguardando população | — |
 | WB-H07 | Roteiro de Evolução (agora/próximo/futuro) | WB-P3 | vazio — aguardando população | — |
@@ -51,45 +51,86 @@ Fonte da lista de páginas: `registry/session_a/workbook_manual.yaml#html_editio
 
 ### Painel de Completude
 
-Progresso: 0/17 páginas com status `populado` (0%) — 3/17 em `rascunho`.
+Progresso: 1/17 páginas com status `populado` (6%) — 2/17 em `rascunho`.
 Recalculado mecanicamente a cada execução de
 `docs/prompts/POPULAR_AREA_WORKBOOK.prompt.md`; não editar à mão.
 
-| Grande Macro | Páginas WB-H afetadas até agora | Status |
-|---|---|---|
-| GM01 Estratégia, Governança e Corporativo | WB-H04, WB-H12, WB-H16 | processado |
-| GM02 Negócio, Mercado e Growth | — | pendente |
-| GM03 Produto e Experiência | — | pendente |
-| GM04 Engenharia, Plataforma e Operações | — | pendente |
-| GM05 Dados, Conhecimento e Documentação | — | pendente |
-| GM06 Execução, Automação e Ferramentas | — | pendente |
+Mapa global (estrutura completa, `WB-H04`) já está em `populado` — não
+depende de área. As demais páginas dependem de conteúdo/evidência por
+domínio e continuam sendo atacadas **uma `Dxx`/`GMxx` por execução**
+(WIP=1), conforme `docs/prompts/POPULAR_AREA_WORKBOOK.prompt.md`.
+Checklist de domínios por Grande Macro, para acompanhar o que falta:
+
+| Grande Macro | Domínios | Processados (WB-H12/WB-H16) | Pendentes |
+|---|---|---|---|
+| GM01 Estratégia, Governança e Corporativo | D01, D02, D03, D04, D17, D22 | D01, D02, D03, D04, D17, D22 | — |
+| GM02 Negócio, Mercado e Growth | D13, D14, D15, D16 | — | D13, D14, D15, D16 |
+| GM03 Produto e Experiência | D10, D11 | — | D10, D11 |
+| GM04 Engenharia, Plataforma e Operações | D08, D12 | — | D08, D12 |
+| GM05 Dados, Conhecimento e Documentação | D05, D06, D09, D18, D21, D23 | — | D05, D06, D09, D18, D21, D23 |
+| GM06 Execução, Automação e Ferramentas | D07, D19, D20 | — | D07, D19, D20 |
+
+"Processados" aqui significa que o domínio já foi varrido por uma
+execução do prompt para `WB-H12`/`WB-H16` (mesmo que o resultado tenha
+sido `TBD` por falta de evidência, como D01–D04/D22) — não significa que
+o domínio tem conteúdo completo.
 
 ---
 
 ## WB-H04 · Áreas do Ecossistema — Página
 
-`mapeamento: WB-P2` · `status: rascunho` · `atualizado: 2026-09-29`
+`mapeamento: WB-P2` · `status: populado` · `atualizado: 2026-09-29`
 
-Fatia GM01 (Estratégia, Governança e Corporativo). Fonte:
-`registry/session_a/architecture.yaml#macro_areas`/`domains`.
+Mapa global — as 6 Grandes Macros (`GMnn`), as 13 macroáreas (`Axx`) e os
+23 domínios (`Dxx`), completo. É estrutura pura (não depende de insumo em
+`evidence/`), por isso vai inteiro numa única execução, ao contrário das
+páginas com conteúdo dependente de área (essas continuam uma por vez).
+Fonte: `registry/session_a/architecture.yaml#macro_areas[].grupo_macro`
+e `#domains[].primary_area`.
 
-| Macroárea | Finalidade | Domínios | Grupo Macro |
-|---|---|---|---|
-| A00 Governança Estratégia e Gestão | Direção decisões planejamento e controles | D01, D22 | GM01 |
-| A07 Corporativo e Suporte | Funções empresariais estruturantes | D02, D03, D04 | GM01 |
-| A12 Stakeholders e Ecossistema | Relações com atores parceiros fornecedores e comunidade | D17 | GM01 |
+| Grande Macro | Macroáreas (Axx) | Domínios (Dxx) |
+|---|---|---|
+| GM01 Estratégia, Governança e Corporativo | A00, A07, A12 | D01, D22 (A00) · D02, D03, D04 (A07) · D17 (A12) |
+| GM02 Negócio, Mercado e Growth | A01, A08 | D13, D14, D15 (A01) · D16 (A08) |
+| GM03 Produto e Experiência | A02, A03 | D10, D11 (A02) · — (A03) |
+| GM04 Engenharia, Plataforma e Operações | A04, A05 | D12 (A04) · D08 (A05) |
+| GM05 Dados, Conhecimento e Documentação | A06, A10 | D05, D06, D09 (A06) · D18, D21, D23 (A10) |
+| GM06 Execução, Automação e Ferramentas | A09, A11 | D07 (A09) · D19, D20 (A11) |
 
-| Domínio | Nome | Área principal | Áreas de apoio |
-|---|---|---|---|
-| D01 | Gestão Empresarial | A00 | — |
-| D02 | Jurídico Riscos e Conformidade | A07 | A00 |
-| D03 | Finanças | A07 | A00 |
-| D04 | Pessoas e RH | A07 | — |
-| D17 | Emprego e Portfólio | A12 | — |
-| D22 | Decision and Register Log | A00 | A10 |
+Nota de divergência: a proposta original do usuário alocava `D09
+Pesquisa e Inovação` em GM03; o registry canônico
+(`architecture.yaml#domains`) define `primary_area: A06`, portanto
+`D09` fica em **GM05** — mantido conforme a fonte, não conforme a
+proposta manual (regra `AGENTS.md`: registry é a fonte canônica). `A03
+Handoff Produto para Engenharia` não tem domínio com `primary_area: A03`
+— domínios que a citam (`D10`, `D11`, `D12`) têm-na como área de apoio,
+não principal.
 
-GM02–GM06 (A01–A09, A11) ficam `TBD` até a execução deste prompt para
-essas áreas.
+| Domínio | Nome | Área principal | Áreas de apoio | Grande Macro |
+|---|---|---|---|---|
+| D01 | Gestão Empresarial | A00 | — | GM01 |
+| D02 | Jurídico Riscos e Conformidade | A07 | A00 | GM01 |
+| D03 | Finanças | A07 | A00 | GM01 |
+| D04 | Pessoas e RH | A07 | — | GM01 |
+| D05 | Dados | A06 | A04 | GM05 |
+| D06 | Conhecimento e Busca | A06 | A10 | GM05 |
+| D07 | Produtividade e Execução | A09 | — | GM06 |
+| D08 | Operações | A05 | — | GM04 |
+| D09 | Pesquisa e Inovação | A06 | A02 | GM05 |
+| D10 | Gestão de Produto | A02 | A03 | GM03 |
+| D11 | Experiência e Projeto | A02 | A03 | GM03 |
+| D12 | Engenharia | A04 | A03, A05 | GM04 |
+| D13 | Mercado e Demanda | A01 | — | GM02 |
+| D14 | Vendas | A01 | — | GM02 |
+| D15 | Atendimento e Sucesso | A01 | — | GM02 |
+| D16 | Mídias e Comunicação | A08 | A01 | GM02 |
+| D17 | Emprego e Portfólio | A12 | — | GM01 |
+| D18 | Contratos e Esquemas | A10 | — | GM05 |
+| D19 | Assets e CTA | A11 | A08 | GM06 |
+| D20 | Plataformas e Repositórios | A11 | A05 | GM06 |
+| D21 | Workbook | A10 | — | GM05 |
+| D22 | Decision and Register Log | A00 | A10 | GM01 |
+| D23 | Blueprints | A10 | A11 | GM05 |
 
 --- fim da página WB-H04 ---
 
