@@ -131,6 +131,14 @@ conflicts:
     resolution_rule: Esta mudança seguiu branch + PR draft; regra permanente fica para decisão humana.
     requires_human_decision: true
     status: proposed
+  - id: CNF-008
+    issue: Design system — ADR-DS-ROOT-MIGRATION-001 adota o design system de executar-23/Risco-cognitivo-blog (main, commit 530afe17) como default de todos os repositórios × tokens do Workbook em assets/design-system/ extraídos de SRC-07 (outra paleta, outra tipografia).
+    source_a: {source: "ADR-DS-ROOT-MIGRATION-001 / executar-23/Risco-cognitivo-blog src/styles/global.css", value: "primary #0A6FDB; famílias brand #304E83, attention #8A5A00, critical #A33A32; DM Sans"}
+    source_b: {source: "SRC-07 / assets/design-system/tokens.yaml", value: "primary-blue #0A63C9, accent-red #D93341; -apple-system/IBM Plex Mono"}
+    impact: Baixo hoje — o Workbook é README.md (sem HTML gerado), nada consome tokens.css em runtime. Bloqueia a escolha da paleta se a edição HTML voltar a ser gerada.
+    resolution_rule: Nenhum token foi trocado; o repositório só registra o apontador (DESIGN_SYSTEM.md, design-system.manifest.json, status VENDORED_REFERENCE_ONLY). Qual paleta vale para a edição HTML fica para decisão humana.
+    requires_human_decision: true
+    status: proposed
 
 gaps:
   - {id: GAP-001, missing_information: "Frente 'Copiloto-OPERACIONAL' confirmada como M5 Agente Copiloto?", requires_human_decision: true, blocks: [ecosystem_fronts]}

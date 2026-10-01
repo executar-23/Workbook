@@ -70,3 +70,9 @@ Nenhum conflito identificado no passo de inspeção (nenhum design system prévi
 repositório). Lacuna registrada: SRC-07 não tem token de "pendente/aviso" para
 `chip_estado--proposed` (ver `tokens.yaml#derivacao_governanca.gap`) — fica neutro até decisão
 humana; não é um `GAP-nnn` formal porque não bloqueia nenhuma entrega existente.
+
+Conflito registrado depois (2026-10-01): `CNF-008` em `registry/session_a/governance.yaml` —
+o ADR-DS-ROOT-MIGRATION-001 adota o design system do `executar-23/Risco-cognitivo-blog` como
+default do ecossistema, com paleta e tipografia diferentes das de SRC-07. Nenhum token deste
+pacote foi alterado; o apontador está em `DESIGN_SYSTEM.md` na raiz e a escolha da paleta fica
+para decisão humana.
